@@ -1,0 +1,7 @@
+h1. Dewey
+
+_Dewey_ is a site for the storage, management and accessing of events at Dewey Beach, DE.
+
+Content will be updated by the admin, and then users will be able to browse events, filter events by criteria, and discover dates, times and locations for events. Events are things like concerts and venues, drink specials, and other special events.
+
+
