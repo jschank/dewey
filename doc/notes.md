@@ -103,5 +103,13 @@ The admin page will support:
 #### Links
 * Main page
 
+Reference Materials
+===================
+
+Here are some links, notes, tips, etc. For reference when working on the dewey app.
+
+[A discussion of Rails Model Associations](http://guides.rubyonrails.org/association_basics.html)
+
+
 
 
