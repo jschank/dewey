@@ -108,6 +108,7 @@ Reference Materials
 
 Here are some links, notes, tips, etc. For reference when working on the dewey app.
 
+[All Rails guides](http://guides.rubyonrails.org/index.html)
 [A discussion of Rails Model Associations](http://guides.rubyonrails.org/association_basics.html)
 
 
