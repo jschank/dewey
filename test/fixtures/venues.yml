@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  logo: MyString
+  address: MyText
+  gps_coordinates: 
+  hours: MyText
+  link: MyString
+  description: MyText
+
+two:
+  name: MyString
+  logo: MyString
+  address: MyText
+  gps_coordinates: 
+  hours: MyText
+  link: MyString
+  description: MyText
