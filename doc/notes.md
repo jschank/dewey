@@ -111,6 +111,12 @@ Here are some links, notes, tips, etc. For reference when working on the dewey a
 * [All Rails guides](http://guides.rubyonrails.org/index.html)
 * [A discussion of Rails Model Associations](http://guides.rubyonrails.org/association_basics.html)
 
-
+To Do
+=====
+* Add phone number to venue
+* Figure out why the main Dewey page with title is not showing up
+* Separate Address into separate fields
+* Promotions should probably have a list of related promotions they know about (child promotions, see also)
+* Populate seeds.rb with basic data
 
 
