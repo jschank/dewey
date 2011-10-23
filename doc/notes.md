@@ -118,6 +118,4 @@ To Do
 * Separate Address into separate fields
 * Promotions should probably have a list of related promotions they know about (child promotions, see also)
 * Populate seeds.rb with basic data
-* Hello from Mike - John, here, testing push.
-
 
