@@ -1,4 +1,4 @@
-1319380342
+1319382416
 Application	/Users/jschank/Projects/Rails/dewey/config/application.rb	  class Application 
 ApplicationController	/Users/jschank/Projects/Rails/dewey/app/controllers/application_controller.rb	class ApplicationController 
 ApplicationHelper	/Users/jschank/Projects/Rails/dewey/app/helpers/application_helper.rb	module ApplicationHelper
