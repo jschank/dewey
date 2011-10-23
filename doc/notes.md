@@ -113,8 +113,8 @@ Here are some links, notes, tips, etc. For reference when working on the dewey a
 
 To Do
 =====
-* Add phone number to venue
 * Figure out why the main Dewey page with title is not showing up
+** It is working, the title is in the HEAD tag, so if you view the scaffold generated page, and then view source in your browser, you will see that the application layout is being respected
 * Separate Address into separate fields
 * Promotions should probably have a list of related promotions they know about (child promotions, see also)
 * Populate seeds.rb with basic data
