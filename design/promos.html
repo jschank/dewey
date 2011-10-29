@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Dewey Beach App</title>
+		
+		<!-- iPhone Stuff -->
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=0;" />
+		<link rel="apple-touch-icon" href="images/icon.png" />
+<style type="text/css">
+body	{
+	margin: 0;	
+	background: url(images/bg-settings.png) repeat;
+}
+/* events */
+.events {
+	margin: 5px 5px 5px 5px;
+	-webkit-box-shadow:rgba(0,0,0,.4) 0 1px 3px;
+	-moz-box-shadow:rgba(0,0,0,.4) 0 1px 3px;
+	box-shadow:rgba(0,0,0,.4) 0 1px 3px;
+	box-shadow:rgba(0,0,0,.4) 0 1px 6px \0/IE9;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	list-style: none;
+	min-height: 50px;
+	}
+.events a {
+	display:block;
+	background:#f5f5f5;
+	padding: 10px;
+	border:1px solid;
+	border-color:#e5e5e5 #dbdbdb #d2d2d2;
+	background:-webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#eeeeee));
+	background:-webkit-linear-gradient(top, #fafafa, #eeeeee);
+	background:-moz-linear-gradient(top, #fafafa, #eeeeee);
+	-webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;
+	text-decoration: none;
+	}
+.events a:nth-child(1n) {
+	border-color:#fff;
+	}
+.events a:hover {
+	background:#fdfdfd;
+	background:-webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#fafafa));
+	background:-webkit-linear-gradient(top, #fdfdfd, #fafafa);
+	background:-moz-linear-gradient(top, #fdfdfd, #fafafa);
+	}
+.show-starboard	{
+	background-image: url(images/starboard-logo.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 80px;
+	min-height: 36px;
+	}	
+.show-cork	{
+	background-image: url(images/cork-logo.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 80px;
+	min-height: 84px;
+}	
+.show-rudder	{
+	background-image: url(images/rudder-logo.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 80px;
+	min-height: 43px;
+	}	
+	
+.show-northbeach	{
+	background-image: url(images/northbeach-logo.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 80px;
+	min-height: 36px;
+	}	
+	
+.show-lighthouse	{
+	background-image: url(images/lighthouse-logo.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 80px;
+	min-height: 59px;
+	}	
+	
+.show-jimmys	{
+	background-image: url(images/jimmys-logo.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 80px;
+	min-height: 38px;
+	}	
+.event	{
+	color: #fff;
+	background-color: #4c566c;
+	font: bold 17px Helvetica;
+	text-transform: uppercase;
+	padding: 0 2px;
+}
+.act	{
+	color: #000;
+	font: bold 17px Helvetica;
+}
+.time	{
+	color: #636363;
+	font: normal 15px Helvetica;
+}
+#date	{
+	color: #000;
+	background-image: url(images/dateBackground.png);
+	background-repeat: repeat-x;
+	text-align: center;
+	padding: 3px 0;
+	font-weight: bold;
+	height: 25px;
+	}
+/* Set our fixed elements above everything else */
+#header {
+	display: block;
+	width: 100%;
+	height: 44px;
+	background: url("images/bg.png") repeat-x center top;
+}
+
+/* Header */
+#header h1 {
+	color: #fff;
+	text-shadow: rgba(0, 0, 0, 0.6) 0px -1px 0px;
+	font-size: 20px;
+	text-align: center;
+	line-height: 44px;
+	margin: 0;
+}
+h2	{
+	margin-bottom: 10px;
+	color: #000;
+	text-align: left;
+	font: bold 17px Helvetica;
+	text-align: center;
+	background: url("images/bg-date.png") repeat-x center top;
+	height: 23px;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	padding-top: 2px;
+	text-shadow: 0 1px #fff;
+}
+	.arrow	{
+	background: url(images/arrow.png) no-repeat right center;
+	min-height: 59px;
+}
+
+	
+</style>
+</head>
+<body>
+<div id="header"><h1>DEWEY BEACH</h1></div>
+<h2>Friday, September 2, 2011</h2>
+<div class="events"><a href="#"><div class="show-starboard"><div class="arrow"><span class="act">DJ Smoky</span><br><span class="time">9pm-1am</span></div></div></a></div>
+<div class="events"><a href="#"><div class="show-cork"><div class="arrow"><span class="act">DJ Smoky</span><br><span class="time">9pm-1am</span></div></div></a></div>
+<div class="events"><a href="#"><div class="show-rudder"><div class="arrow"><span class="act">DJ Smoky</span><br><span class="time">9pm-1am</span></div></div></a></div>
+<div class="events"><a href="#"><div class="show-northbeach"><div class="arrow"><span class="act">DJ Smoky</span><br><span class="time">9pm-1am</span></div></div></a></div>
+<div class="events"><a href="#"><div class="show-lighthouse"><div class="arrow"><span class="event">Taco Toss</span><br><span class="time">9pm-1am</span></div></div></a></div>
+<div class="events"><a href="#"><div class="show-jimmys"><div class="arrow"><span class="act">DJ Smoky</span><br><span class="time">9pm-1am</span></div></div></a></div>
+</div>
+
+<h2>Saturday, September 3, 2011</h2>
+<div class="events"><a href="#"><div class="show-starboard"><div class="arrow"><span class="act">DJ Smoky</span><br><span class="time">9pm-1am</span></div></div></a></div>
+<div class="events"><a href="#"><div class="show-cork"><div class="arrow"><span class="act">DJ Smoky</span><br><span class="time">9pm-1am</span></div></div></a></div>
+<div class="events"><a href="#"><div class="show-rudder"><div class="arrow"><span class="act">DJ Smoky</span><br><span class="time">9pm-1am</span></div></div></a></div>
+<div class="events"><a href="#"><div class="show-northbeach"><div class="arrow"><span class="act">DJ Smoky</span><br><span class="time">9pm-1am</span></div></div></a></div>
+<div class="events"><a href="#"><div class="show-lighthouse"><div class="arrow"><span class="act">DJ Smoky</span><br><span class="time">9pm-1am</span></div></div></a></div>
+<div class="events"><a href="#"><div class="show-jimmys"><div class="arrow"><span class="act">DJ Smoky</span><br><span class="time">9pm-1am</span></div></div></a></div>
+</div>
+
+
+</body>
+</html>
