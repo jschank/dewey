@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  description: MyString
+  link: MyString
+  logo: MyString
+  event: 
+  special_event_start: 2011-10-30 00:47:27
+  special_event_end: 2011-10-30 00:47:27
+
+two:
+  name: MyString
+  description: MyString
+  link: MyString
+  logo: MyString
+  event: 
+  special_event_start: 2011-10-30 00:47:27
+  special_event_end: 2011-10-30 00:47:27

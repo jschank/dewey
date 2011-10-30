@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111023174019) do
+ActiveRecord::Schema.define(:version => 20111030051706) do
 
   create_table "events", :force => true do |t|
     t.integer  "venue_id"
@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(:version => 20111023174019) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.string   "stage"
+    t.integer  "special_event_id"
   end
 
   add_index "events", ["promotion_id"], :name => "index_events_on_promotion_id"
@@ -37,10 +40,20 @@ ActiveRecord::Schema.define(:version => 20111023174019) do
     t.datetime "updated_at"
   end
 
+  create_table "special_events", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "link"
+    t.string   "logo"
+    t.datetime "special_event_start"
+    t.datetime "special_event_end"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "venues", :force => true do |t|
     t.string   "name"
     t.string   "logo"
-    t.text     "address"
     t.binary   "gps_coordinates"
     t.text     "hours"
     t.string   "link"
@@ -48,6 +61,11 @@ ActiveRecord::Schema.define(:version => 20111023174019) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "phone_number"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
   end
 
 end

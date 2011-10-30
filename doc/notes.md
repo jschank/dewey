@@ -111,11 +111,19 @@ Here are some links, notes, tips, etc. For reference when working on the dewey a
 * [All Rails guides](http://guides.rubyonrails.org/index.html)
 * [A discussion of Rails Model Associations](http://guides.rubyonrails.org/association_basics.html)
 
+Change Log
+==========
+### 2011-10-30
+* Broke out address on venue
+* Added stage to event (for now)
+* Created Special Events
+* Added self join to Events (features) so an event could have related events.
+
 To Do
 =====
 * Figure out why the main Dewey page with title is not showing up
-** It is working, the title is in the HEAD tag, so if you view the scaffold generated page, and then view source in your browser, you will see that the application layout is being respected
-* Separate Address into separate fields
+	* It is working, the title is in the HEAD tag, so if you view the scaffold generated page, and then view source in your browser, you will see that the application layout is being respected
 * Promotions should probably have a list of related promotions they know about (child promotions, see also)
+	* now they do. Each promotion should have a list of features - which are related promotions, each promotion may reach its parent through the feature field
 * Populate seeds.rb with basic data
 
