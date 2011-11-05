@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111030051706) do
+ActiveRecord::Schema.define(:version => 20111105173759) do
 
   create_table "events", :force => true do |t|
     t.integer  "venue_id"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20111030051706) do
     t.string   "name"
     t.string   "stage"
     t.integer  "special_event_id"
+    t.string   "logo"
   end
 
   add_index "events", ["promotion_id"], :name => "index_events_on_promotion_id"

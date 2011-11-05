@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Name</th>
     <th>Venue</th>
     <th>Promotion</th>
     <th>Event start</th>
@@ -16,8 +17,9 @@
 
 <% @events.each do |event| %>
   <tr>
-    <td><%= event.venue_id %></td>
-    <td><%= event.promotion_id %></td>
+    <td><%= event.name %></td>
+	<td><%= event.venue.name %></td>
+    <td><%= event.promotion && event.promotion.name %></td>
     <td><%= event.event_start %></td>
     <td><%= event.event_end %></td>
     <td><%= event.is_all_day %></td>
