@@ -103,6 +103,32 @@ The admin page will support:
 #### Links
 * Main page
 
+Venues have locations.
+Events tie a location to a Promotion and add time
+Promotions have related promotions
+special events are just a list of events
+
+We need a has many thorough, and the through table has a name which is often empty
+
+features have one promotion
+feature has one venue through location
+
+location just adds something like "indoor state A"
+
+Special events are just tagged events
+Event has a field "is special"
+
+Features have a priority
+Events have many promotions through features.
+
+nah features have priority field
+Priority is when we dont know the times
+
+
+
+
+
+
 Reference Materials
 ===================
 
