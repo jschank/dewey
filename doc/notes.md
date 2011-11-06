@@ -152,4 +152,8 @@ To Do
 * Promotions should probably have a list of related promotions they know about (child promotions, see also)
 	* now they do. Each promotion should have a list of features - which are related promotions, each promotion may reach its parent through the feature field
 * Populate seeds.rb with basic data
+* start over by deleting the db files, everything except seeds.rb look at foo for an example
+* delete the models views and controllers
+* create the new objects
+
 
