@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
 
 one:
-  venue_id: 
-  promotion_id: 
-  event_start: 2011-10-22 17:49:22
-  event_end: 2011-10-22 17:49:22
-  is_all_day: false
-  link: MyString
+  name: MyString
   description: MyText
+  url: MyString
+  logo: MyString
+  event_start: 2011-11-14 12:33:25
+  event_end: 2011-11-14 12:33:25
+  is_all_day: false
 
 two:
-  venue_id: 
-  promotion_id: 
-  event_start: 2011-10-22 17:49:22
-  event_end: 2011-10-22 17:49:22
-  is_all_day: false
-  link: MyString
+  name: MyString
   description: MyText
+  url: MyString
+  logo: MyString
+  event_start: 2011-11-14 12:33:25
+  event_end: 2011-11-14 12:33:25
+  is_all_day: false

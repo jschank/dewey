@@ -1,4 +1,4 @@
 class Promotion < ActiveRecord::Base
-  has_many :events
-  has_many :venues, :through => :events
+  has_many :features
+  has_many :events, :through => :features 
 end

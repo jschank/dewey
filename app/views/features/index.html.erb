@@ -1,0 +1,27 @@
+<h1>Listing features</h1>
+
+<table>
+  <tr>
+    <th>Location</th>
+    <th>Promotion</th>
+    <th>Event</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @features.each do |feature| %>
+  <tr>
+    <td><%= feature.location %></td>
+    <td><%= feature.promotion %></td>
+    <td><%= feature.event %></td>
+    <td><%= link_to 'Show', feature %></td>
+    <td><%= link_to 'Edit', edit_feature_path(feature) %></td>
+    <td><%= link_to 'Destroy', feature, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Feature', new_feature_path %>

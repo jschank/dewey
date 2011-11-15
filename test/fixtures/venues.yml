@@ -3,17 +3,23 @@
 one:
   name: MyString
   logo: MyString
-  address: MyText
-  gps_coordinates: 
-  hours: MyText
-  link: MyString
+  url: MyString
   description: MyText
+  phone: MyString
+  address1: MyString
+  address2: MyString
+  city: MyString
+  state: MyString
+  zip_code: MyString
 
 two:
   name: MyString
   logo: MyString
-  address: MyText
-  gps_coordinates: 
-  hours: MyText
-  link: MyString
+  url: MyString
   description: MyText
+  phone: MyString
+  address1: MyString
+  address2: MyString
+  city: MyString
+  state: MyString
+  zip_code: MyString

@@ -12,12 +12,20 @@ For example: Starboard, Bottle & Cork, the Lighthouse
 
 **Fields**
 
-* Icon/Image
 * Name
-* Address
-* GPS Location (populated on backend - Use google to convert Address to GPS)
-* Hours of operation?
-* Link (HTML link to any website the venue may have)
+* Logo - some means to identify an asset
+* URL
+* Description
+* Phone
+* Address1
+* Address2
+* City
+* State
+* Zip Code
+
+#### Todo:
+* Add Hours of operation
+* Add GPS coordinates
 
 #### Reasoning
 > the thought is that a specific bar or location doesn't change much. We can enter a place once and then
@@ -29,10 +37,14 @@ For example: Taco Toss, Drink Special, A Band... etc.
 
 **Fields**
 
-* Icon/Image
 * Name
+* Logo - some means to identify an asset
 * Description
-* Link (HTML link to any website the band, or event may have)
+* URL
+
+#### Todo:
+* Add a "kind" field using [classy_enum](https://github.com/beerlington/classy_enum)
+* Add "related promotions" using a [self-join association](http://edgeguides.rubyonrails.org/association_basics.html#self-joins)
 
 #### Reasoning
 > the thought is that a promotion also doesn't change much. or may recur frequently. For example, a specific Band may appear in more than one bar over the summer,
@@ -54,6 +66,24 @@ For example: (some band) at (some venue) from (some date-time) to (some date-tim
 #### Reasoning
 > the thought is that an event is the binder that ties together a Promotion and a Venue, and fixes them in time. 
 So an Event is a specific single occurrence of a Promotion at a Venue 
+
+---
+
+a venue has many features through locations  
+a venue can have many locations: Stage1, Rear stage2, bar, etc.  
+a feature has one venue through locations
+
+a feature has one promotion  
+a feature has one location  
+a feature has one event  
+
+an event has many features  
+an event has many venues through features  
+an event has many promotions through features  
+
+location just adds something like "indoor stage A"
+
+Features have a priority
 
 ---
 
@@ -96,38 +126,14 @@ The admin page will support:
 
 #### Shows:
 * Buttons for admin tasks:
-** Create Venue
-** Create Promotion
-** Create Event
+	* Create Venue
+	* Create Promotion
+	* Create Event
 
 #### Links
 * Main page
 
-Venues have locations.
-Events tie a location to a Promotion and add time
-Promotions have related promotions
-special events are just a list of events
-
-We need a has many thorough, and the through table has a name which is often empty
-
-features have one promotion
-feature has one venue through location
-
-location just adds something like "indoor state A"
-
-Special events are just tagged events
-Event has a field "is special"
-
-Features have a priority
-Events have many promotions through features.
-
-nah features have priority field
-Priority is when we dont know the times
-
-
-
-
-
+---
 
 Reference Materials
 ===================
@@ -136,6 +142,8 @@ Here are some links, notes, tips, etc. For reference when working on the dewey a
 
 * [All Rails guides](http://guides.rubyonrails.org/index.html)
 * [A discussion of Rails Model Associations](http://guides.rubyonrails.org/association_basics.html)
+* [How to setup Rails3 and RSpec2 (from scratch)](http://www.rubyinside.com/how-to-rails-3-and-rspec-2-4336.html)
+----
 
 Change Log
 ==========
@@ -145,15 +153,14 @@ Change Log
 * Created Special Events
 * Added self join to Events (features) so an event could have related events.
 
+### 2011-11-14
+* Destroyed all previous scaffolds
+* Recreated models
+
+----
+
 To Do
 =====
-* Figure out why the main Dewey page with title is not showing up
-	* It is working, the title is in the HEAD tag, so if you view the scaffold generated page, and then view source in your browser, you will see that the application layout is being respected
-* Promotions should probably have a list of related promotions they know about (child promotions, see also)
-	* now they do. Each promotion should have a list of features - which are related promotions, each promotion may reach its parent through the feature field
 * Populate seeds.rb with basic data
-* start over by deleting the db files, everything except seeds.rb look at foo for an example
-* delete the models views and controllers
-* create the new objects
-
+* use classy_enum to capture kinds of promotions: drink specials, band, etc.
 

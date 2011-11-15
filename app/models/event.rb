@@ -1,4 +1,6 @@
 class Event < ActiveRecord::Base
-  belongs_to :venue
-  belongs_to :promotion
+  has_many :features
+  has_many :promotions, :through => :features 
+  has_many :locations
+  has_many :venues, :through => :locations
 end

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SpecialEventTest < ActiveSupport::TestCase
+class FeatureTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

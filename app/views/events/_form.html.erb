@@ -12,12 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :venue_id %><br />
-    <%= f.text_field :venue_id %>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :promotion_id %><br />
-    <%= f.text_field :promotion_id %>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :logo %><br />
+    <%= f.text_field :logo %>
   </div>
   <div class="field">
     <%= f.label :event_start %><br />
@@ -30,14 +38,6 @@
   <div class="field">
     <%= f.label :is_all_day %><br />
     <%= f.check_box :is_all_day %>
-  </div>
-  <div class="field">
-    <%= f.label :link %><br />
-    <%= f.text_field :link %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
   </div>
   <div class="actions">
     <%= f.submit %>

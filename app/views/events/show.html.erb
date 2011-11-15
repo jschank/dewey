@@ -1,13 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Venue:</b>
-  <%= @event.venue_id %>
+  <b>Name:</b>
+  <%= @event.name %>
 </p>
 
 <p>
-  <b>Promotion:</b>
-  <%= @event.promotion_id %>
+  <b>Description:</b>
+  <%= @event.description %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @event.url %>
+</p>
+
+<p>
+  <b>Logo:</b>
+  <%= @event.logo %>
 </p>
 
 <p>
@@ -23,16 +33,6 @@
 <p>
   <b>Is all day:</b>
   <%= @event.is_all_day %>
-</p>
-
-<p>
-  <b>Link:</b>
-  <%= @event.link %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @event.description %>
 </p>
 
 

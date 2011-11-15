@@ -1,4 +1,4 @@
 class Venue < ActiveRecord::Base
-  has_many :events
-  has_many :promotions, :through => :events
+  has_many :locations
+  has_many :features, :through => :locations, :source => :venue
 end

@@ -3,13 +3,12 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Venue</th>
-    <th>Promotion</th>
+    <th>Description</th>
+    <th>Url</th>
+    <th>Logo</th>
     <th>Event start</th>
     <th>Event end</th>
     <th>Is all day</th>
-    <th>Link</th>
-    <th>Description</th>
     <th></th>
     <th></th>
     <th></th>
@@ -18,13 +17,12 @@
 <% @events.each do |event| %>
   <tr>
     <td><%= event.name %></td>
-	<td><%= event.venue.name %></td>
-    <td><%= event.promotion && event.promotion.name %></td>
+    <td><%= event.description %></td>
+    <td><%= event.url %></td>
+    <td><%= event.logo %></td>
     <td><%= event.event_start %></td>
     <td><%= event.event_end %></td>
     <td><%= event.is_all_day %></td>
-    <td><%= event.link %></td>
-    <td><%= event.description %></td>
     <td><%= link_to 'Show', event %></td>
     <td><%= link_to 'Edit', edit_event_path(event) %></td>
     <td><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
