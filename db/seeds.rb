@@ -26,6 +26,10 @@ bc.save!
 
 nb = Venue.create({:name => 'Northbeach', :description => 'Northbeach offers casual indoor and outdoor dining overlooking Rehoboth Bay. Northbeach is open mid-May through Labor Day. Join us for great food, frozen drinks and beautiful sunsets.', :url => 'http://www.deweybeachlife.com/', :address1 => '125 McKinley Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip_code => '19971', :phone => '302-226-8673'})
 
+lh = Venue.create({:name => 'Lighthouse', :description => 'Tall tower, bright light', :url => 'http://www.deweybeachlife.com/', :address1 => '2112 Shiny Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip_code => '19971', :phone => '302-555-1212'})
+lh1 = lh.locations.build({:name => "inside"})
+lh1.save!
+
 rr = Venue.create({:name => 'Rusty Rudder', :description => 'The Rudder is now open daily.  Join us for our famous all u can eat Land and Sea Buffet served Friday and Saturdays at 4:30.We have live entertainment weekly.', :url => 'http://www.deweybeachlife.com/', :address1 => '113 Dickinson Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip_code => '19971', :phone => '302-227-3888'})
 
 sb = Venue.create({:name => 'The Starboard', :description => 'John thinks it is too crowded.', :url => 'http://www.thestarboard.com/', :address1 => '2009 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip_code => '19971', :phone => '302-227-4600'})
@@ -38,19 +42,21 @@ la = Promotion.create({:name => 'Liquid A', :description => 'Coverband from Phil
 bs = Promotion.create({:name => 'Burnt Sienna', :description => 'Coverband from Philadelphia', :url => 'http://www.burntsiennaband.com/'})
 ls = Promotion.create({:name => 'Love Seed Momma Jump', :description => 'Coverband from Philadelphia', :url => 'http://www.loveseed.com/'})
 
+dj = Promotion.create({:name => 'DJ Jazzy Jeff', :description => 'Fresh Prince\'s Sidekick', :url => 'http://www.apple.com/'})
+
 # Events
 
-js1 = Event.create({:name => 'Jam Session', :description => 'Saturday Jam with three bands.', :url => 'http://www.deweybeachlife.com/'})
+js1 = Event.create({:name => 'Jam Session', :description => 'Saturday Jam with three bands.', :url => 'http://www.deweybeachlife.com/', :logo => 'cork-logo.png'})
 
 js1.features.build({:location => bc1, :promotion => gg, :start_time => '2011-10-01T19:00:00+00:00', :end_time => '2011-10-01T20:00:00+00:00'})
 js1.features.build({:location => bc2, :promotion => kn, :start_time => '2011-10-01T20:00:00+00:00', :end_time => '2011-10-01T21:00:00+00:00'})
 js1.features.build({:location => bc1, :promotion => bs, :start_time => '2011-10-01T21:00:00+00:00', :end_time => '2011-10-01T22:00:00+00:00'})
 js1.save!
-# Features
-# Feature.build!( {})
 
+tt = Event.create({:name => 'Taco Toss', :description => 'Friday happy hour featuring Orange Crushes and $1 tacos and hot dogs.', :url => 'http://www.ruddertowneusa.com/The-Lighthouse.html', :logo => 'lighthouse-logo.png'})
+tt.features.build({:location => lh1, :promotion => dj, :start_time => '2011-10-01T19:00:00+00:00', :end_time => '2011-10-01T20:00:00+00:00'})
+tt.save!
 
-# tt1 = Event.create({:name => 'Taco Toss', :description => 'Friday happy hour featuring Orange Crushes and $1 tacos and hot dogs.', :url => 'http://www.ruddertowneusa.com/The-Lighthouse.html', :venue => nb, :promotion => nil, :special_event_id => '', :stage => '', :event_start => '2011-10-01T19:00:00+00:00', :event_end => '2011-10-01T21:00:00+00:00', :logo => 'logo'})
 # 
 # tr1 = Event.create({:name => 'Thursday Night At The Rudder', :description => 'Thursday night show featuring Love Seed Momma Jump', :url => 'http://www.deweybeachlife.com/', :venue => rr, :promotion => ls, :special_event_id => nil, :stage => '', :event_start => '2011-10-01T19:00:00+00:00', :event_end => '2011-10-01T21:00:00+00:00', :logo => 'logo'})
 # 

@@ -1,0 +1,109 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+body	{
+	margin: 0;	
+	background: url(<%= asset_path 'bg-settings.png' %>) repeat;
+}
+h1 {
+	display: block;
+	width: 100%;
+	height: 44px;
+	background: url(<%= asset_path 'bg.png' %>) repeat-x center top;
+	color: #fff;
+	text-shadow: rgba(0, 0, 0, 0.6) 0px -1px 0px;
+	font-size: 20px;
+	text-align: center;
+	line-height: 44px;
+	margin: 0;
+}
+h2	{
+	margin: 10px;
+	color: #4c566c;
+	text-align: left;
+	font: bold 17px Helvetica;
+	text-shadow: 0 1px #fff;
+}
+.events {
+	margin: 0 10px 10px;
+	background-color: #fff;
+	border: 1px solid #a1a7ad;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+}
+.events a {
+	display:block;
+	padding: 7px 7px 7px 86px;
+	border-bottom: 1px solid #a1a7ad;
+	text-decoration: none;
+}
+.events a:hover {
+	display:block;
+	padding: 7px 7px 7px 86px;
+	border-bottom: 1px solid #a1a7ad;
+	text-decoration: none;
+	background-color: #ccc;
+}
+.events a:last-of-type {
+	border-bottom: none;
+}
+.arrow	{
+	background: url(<%= asset_path 'arrow.png' %>) no-repeat right center;
+	min-height: 59px;
+}
+.show-starboard	{
+	background: url(<%= asset_path 'starboard-logo.png' %>) no-repeat 7px center;
+	min-height: 36px;
+}	
+.show-cork	{
+	background-image: url(<%= 'cork-logo.png' %>);
+	background-repeat: no-repeat;
+	background-position: 13px center;
+	min-height: 84px;
+}	
+
+.show-rudder	{
+	background-image: url(<%= 'rudder-logo.png' %>);
+	background-repeat: no-repeat;
+	background-position: 7px center;
+	min-height: 43px;
+}	
+.show-northbeach	{
+	background-image: url(<%= 'northbeach-logo.png' %>);
+	background-repeat: no-repeat;
+	background-position: 7px center;
+	min-height: 36px;
+}	
+.show-lighthouse	{
+	background-image: url(<%= 'lighthouse-logo.png' %>);
+	background-repeat: no-repeat;
+	background-position: 7px center;
+	min-height: 59px;
+}	
+.show-jimmys	{
+	background-image: url(<%= 'jimmys-logo.png' %>);
+	background-repeat: no-repeat;
+	background-position: 7px center;
+	min-height: 38px;
+}	
+.event	{
+	color: #fff;
+	background-color: #4c566c;
+	font: bold 17px Helvetica;
+	text-transform: uppercase;
+	padding: 0 2px;
+}
+
+.act	{
+	color: #000;
+	font: bold 17px Helvetica;
+}
+.time	{
+	color: #636363;
+	font: normal 15px Helvetica;
+}
