@@ -1,3 +1,56 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.event_name	
+{
+	color: #fff;
+	background-color: #4c566c;
+	font: bold 17px Helvetica;
+	text-transform: uppercase;
+	padding: 0 2px;
+}
+
+.event_feature	
+{
+	color: #000;
+	font: bold 17px Helvetica;
+	margin: 0;
+}
+
+.event_times	
+{
+	color: #636363;
+	font: normal 15px Helvetica;
+}
+
+.events 
+{
+	margin: 0 10px 10px;
+	background-color: #fff;
+	border: 1px solid #a1a7ad;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+}
+.events a 
+{
+	display:block;
+	padding: 7px 7px 7px 90px;
+	border-bottom: 1px solid #a1a7ad;
+	text-decoration: none;
+}
+
+.events a:hover 
+{
+	display: block;
+	padding: 7px 7px 7px 90px;
+	border-bottom: 1px solid #a1a7ad;
+	text-decoration: none;
+	background-color: #ccc;
+}
+
+.events a:last-of-type 
+{
+	border-bottom: none;
+}

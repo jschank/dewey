@@ -46,16 +46,23 @@ dj = Promotion.create({:name => 'DJ Jazzy Jeff', :description => 'Fresh Prince\'
 
 # Events
 
-js1 = Event.create({:name => 'Jam Session', :description => 'Saturday Jam with three bands.', :url => 'http://www.deweybeachlife.com/', :logo => 'cork-logo.png'})
+js1 = Event.create({:name => 'Jam Session', :description => 'Saturday Jam with three bands.', :url => 'http://www.deweybeachlife.com/', :logo => 'cork-logo.png', :event_start => '2011-10-01T17:00:00+00:00', :event_end => '2011-10-02T01:00:00+00:00'})
 
 js1.features.build({:location => bc1, :promotion => gg, :start_time => '2011-10-01T19:00:00+00:00', :end_time => '2011-10-01T20:00:00+00:00'})
 js1.features.build({:location => bc2, :promotion => kn, :start_time => '2011-10-01T20:00:00+00:00', :end_time => '2011-10-01T21:00:00+00:00'})
 js1.features.build({:location => bc1, :promotion => bs, :start_time => '2011-10-01T21:00:00+00:00', :end_time => '2011-10-01T22:00:00+00:00'})
 js1.save!
 
-tt = Event.create({:name => 'Taco Toss', :description => 'Friday happy hour featuring Orange Crushes and $1 tacos and hot dogs.', :url => 'http://www.ruddertowneusa.com/The-Lighthouse.html', :logo => 'lighthouse-logo.png'})
+tt = Event.create({:name => 'Taco Toss', :description => 'Friday happy hour featuring Orange Crushes and $1 tacos and hot dogs.', :url => 'http://www.ruddertowneusa.com/The-Lighthouse.html', :logo => 'lighthouse-logo.png', :event_start => '2011-10-01T19:30:00+00:00', :event_end => '2011-10-01T20:00:00+00:00'})
 tt.features.build({:location => lh1, :promotion => dj, :start_time => '2011-10-01T19:00:00+00:00', :end_time => '2011-10-01T20:00:00+00:00'})
 tt.save!
+
+js1 = Event.create({:name => 'Jam Session', :description => 'Saturday Jam with three bands.', :url => 'http://www.deweybeachlife.com/', :logo => 'cork-logo.png', :event_start => '2011-10-07T17:00:00+00:00', :event_end => '2011-10-08T01:00:00+00:00'})
+
+js1.features.build({:location => bc1, :promotion => la, :start_time => '2011-10-07T19:00:00+00:00', :end_time => '2011-10-07T20:00:00+00:00'})
+js1.features.build({:location => bc2, :promotion => ls, :start_time => '2011-10-07T20:00:00+00:00', :end_time => '2011-10-07T21:00:00+00:00'})
+js1.features.build({:location => bc1, :promotion => bs, :start_time => '2011-10-07T21:00:00+00:00', :end_time => '2011-10-07T22:00:00+00:00'})
+js1.save!
 
 # 
 # tr1 = Event.create({:name => 'Thursday Night At The Rudder', :description => 'Thursday night show featuring Love Seed Momma Jump', :url => 'http://www.deweybeachlife.com/', :venue => rr, :promotion => ls, :special_event_id => nil, :stage => '', :event_start => '2011-10-01T19:00:00+00:00', :event_end => '2011-10-01T21:00:00+00:00', :logo => 'logo'})

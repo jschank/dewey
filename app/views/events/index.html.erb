@@ -1,27 +1,13 @@
-<div id="header"><h1>DEW IT!</h1></div>
 
-<h2><%= @events.first.start_date %></h2>
-
-<div class="events">
-
-<% @events.each do |event| %>
-
-    <a href="#" style="background-image: url(<%= image_path event.logo %>);
-	background-repeat: no-repeat;
-	background-position: left center;
-	min-height: 80px;
-	"><div class="arrow"><span class="event"><%= event.name %></span><br />
-
-	<span class="act">
-	<% event.features.each do |feature| %>
-		<%= feature.promotion.name %><br />
+<% @events.keys.each do |start_date| %>
+	<h2><%= start_date.strftime("%A, %B %d, %Y") %></h2>
+	<div class="events">
+	<% @events[start_date].each do |event| %>
+		<%= render event %>
 	<% end %>
-	</span>
-	<span class="time">4pm-9pm</span></div></a>
-
+	</div>               
 <% end %>
 
-</div>               
 
 <br />
 

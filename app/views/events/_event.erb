@@ -1,0 +1,11 @@
+<a href=<%= event_path(event) %> style="background-image: url(<%= image_path event.logo %>);
+background-repeat: no-repeat;
+background-position: left center;
+min-height: 80px;
+">
+<span class="event_name"><%= event.name %></span>
+
+<% event.features.each do |feature| %>
+	<p class="event_feature"><%= feature.promotion.name %></p>
+<% end %>
+<span class="event_times"><%= event_times(event) %></span></a>
