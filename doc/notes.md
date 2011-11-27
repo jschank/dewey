@@ -98,7 +98,6 @@ So an Event is a specific single occurrence of a Promotion at a Venue
 #### Reasoning
 > Gimme a reason for a feature
 
-
 ---
 
 Pages
