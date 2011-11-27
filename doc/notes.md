@@ -24,12 +24,19 @@ For example: Starboard, Bottle & Cork, the Lighthouse
 * Zip Code
 
 #### Todo:
-* Add Hours of operation
 * Add GPS coordinates
 
 #### Reasoning
 > the thought is that a specific bar or location doesn't change much. We can enter a place once and then
 add any number of events that reference it.
+
+#### Locations
+* Name
+
+#### Reasoning
+> a location is some portion of the venue, for example, Front stage and back stage, or upstairs vs downstairs, etc. a caveat is that when creating a venue, it will need at least 1 location, which will represent the venue as a whole.
+
+---
 
 ### Promotion (who/what)
 a promotion is a thing that happens.
@@ -47,8 +54,9 @@ For example: Taco Toss, Drink Special, A Band... etc.
 * Add "related promotions" using a [self-join association](http://edgeguides.rubyonrails.org/association_basics.html#self-joins)
 
 #### Reasoning
-> the thought is that a promotion also doesn't change much. or may recur frequently. For example, a specific Band may appear in more than one bar over the summer,
-or may appear at a venue more than once. Similarly, some promotions occur every weekend. The promotion itself doesn't change but the time and/or place does.
+> the thought is that a promotion also doesn't change much. or may recur frequently. For example, a specific Band may appear in more than one bar over the summer, or may appear at a venue more than once. Similarly, some promotions occur every weekend. The promotion itself doesn't change but the time and/or place does.
+
+---
 
 ### Event/Calendar/Schedule (When)
 A calendar, or schedule, relates an event to a venue, at a particular time (or series of times)
@@ -56,12 +64,17 @@ For example: (some band) at (some venue) from (some date-time) to (some date-tim
 
 **Fields**
 
-* Venue ID
-* Event ID
-* Start timestamp
-* End timestamp
-* All Day flag? - makes the times irrelevant
-* Link (HTML link to any website that may exist for this particular occurrence)
+* Name
+* Description
+* Url
+* Logo
+* Event_Start
+* Event_End
+* Is\_All\_Day
+* Is\_Special
+
+#### Todo:
+* Add "related events" using a [self-join association](http://edgeguides.rubyonrails.org/association_basics.html#self-joins)
 
 #### Reasoning
 > the thought is that an event is the binder that ties together a Promotion and a Venue, and fixes them in time. 
@@ -69,21 +82,22 @@ So an Event is a specific single occurrence of a Promotion at a Venue
 
 ---
 
-a venue has many features through locations  
-a venue can have many locations: Stage1, Rear stage2, bar, etc.  
-a feature has one venue through locations
+### Features
 
-a feature has one promotion  
-a feature has one location  
-a feature has one event  
+**Fields**
 
-an event has many features  
-an event has many venues through features  
-an event has many promotions through features  
+* Location_Id
+* Promotion_Id
+* Event_Id
+* Start_Time
+* End_Time
 
-location just adds something like "indoor stage A"
+#### Todo:
+* Add a priority - Priority 0 is a special case, which means we should not list the item as a separate feature but use the item as the event.
 
-Features have a priority
+#### Reasoning
+> Gimme a reason for a feature
+
 
 ---
 
@@ -143,10 +157,14 @@ Here are some links, notes, tips, etc. For reference when working on the dewey a
 * [All Rails guides](http://guides.rubyonrails.org/index.html)
 * [A discussion of Rails Model Associations](http://guides.rubyonrails.org/association_basics.html)
 * [How to setup Rails3 and RSpec2 (from scratch)](http://www.rubyinside.com/how-to-rails-3-and-rspec-2-4336.html)
-----
+
+---
 
 Change Log
 ==========
+### 2001-11-26
+* updated the event index page, and it now renders properly.
+
 ### 2011-10-30
 * Broke out address on venue
 * Added stage to event (for now)
