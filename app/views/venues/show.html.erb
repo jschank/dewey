@@ -1,55 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @venue.name %>
-</p>
+<div class="fred">
+	<%= image_tag image_path @venue.logo if @venue.logo %>
+	<%= @venue.name %>
+	<%= @venue.description %>
+	<%= @venue.address1 %>
+	<%= @venue.address2 if @venue.address2 %>
+	<%= @venue.city %>, <%= @venue.state %>  <%= @venue.zip_code %>
+	<%= @venue.phone %>
+</div>
 
-<p>
-  <b>Logo:</b>
-  <%= @venue.logo %>
-</p>
+<h2>Upcoming Events at <%= @venue.name %></h2>
 
-<p>
-  <b>Url:</b>
-  <%= @venue.url %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @venue.description %>
-</p>
-
-<p>
-  <b>Phone:</b>
-  <%= @venue.phone %>
-</p>
-
-<p>
-  <b>Address1:</b>
-  <%= @venue.address1 %>
-</p>
-
-<p>
-  <b>Address2:</b>
-  <%= @venue.address2 %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%= @venue.city %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%= @venue.state %>
-</p>
-
-<p>
-  <b>Zip code:</b>
-  <%= @venue.zip_code %>
-</p>
+<% @future_events_by_date.each do |start_date, events| %>
+	<h2><%= start_date.strftime("%A, %B %d, %Y") %></h2>
+	<div class="events">
+	<% events.each do |event| %>
+		<%= render 'upcoming_events', :event => event %>
+	<% end %>
+	</div>               
+<% end %>
 
 
-<%= link_to 'Edit', edit_venue_path(@venue) %> |
-<%= link_to 'Back', venues_path %>
