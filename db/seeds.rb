@@ -54,7 +54,7 @@ sbb = sb.locations.build({:name => "Deck Stage"})
 sb.save!
 
 # Jimmy's Grille
-jg = Venue.create({:name => 'Jimmy's Grille', :description => 'Outdoor Bar and Grille.', :url => 'http://www.deweybeachlife.com/', :address1 => 'Highway One and Bellevue Street', :city => 'Dewey Beach', :state => 'DE', :zip_code => '19971', :phone => '302-227-4600'})
+jg = Venue.create({:name => "Jimmy's Grille", :description => 'Outdoor Bar and Grille.', :url => 'http://www.deweybeachlife.com/', :address1 => 'Highway One and Bellevue Street', :city => 'Dewey Beach', :state => 'DE', :zip_code => '19971', :phone => '302-227-4600'})
 
 jg1 = jg.locations.build({:name => ""})
 jg.save!
@@ -73,7 +73,7 @@ sd = Promotion.create({:name => 'Split Decision', :description => 'Coverband', :
 ek = Promotion.create({:name => 'Element K', :description => 'Coverband', :url => 'http://elementkband.com/'})
 tt = Promotion.create({:name => 'Table Ten', :description => 'Coverband', :url => 'http://www.friendsoftableten.com/'})
 ls = Promotion.create({:name => 'Lifespeed', :description => 'Coverband', :url => 'http://www.lifespeed.tv/'})
-3am = Promotion.create({:name => '3 am', :description => 'Coverband', :url => 'http://www.idontknow.com/'})
+_3am = Promotion.create({:name => '3 am', :description => 'Coverband', :url => 'http://www.idontknow.com/'})
 cr = Promotion.create({:name => 'Chorduroy', :description => 'Coverband', :url => 'http://www.chorduroyband.com/'})
 
 # DJs
@@ -109,7 +109,7 @@ js3.save!
 # Jam 4
 js4 = Event.create({:name => 'Jam Session', :description => 'Saturday Jam with three bands.', :url => 'http://www.deweybeachlife.com/', :logo => 'cork-logo.png', :event_start => '2011-07-23T17:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00'})
 
-js4.features.build({:location => bc1, :promotion => 3am, :start_time => '2011-07-23T17:00:00+00:00', :end_time => '2011-07-24T01:00:00+00:00'})
+js4.features.build({:location => bc1, :promotion => _3am, :start_time => '2011-07-23T17:00:00+00:00', :end_time => '2011-07-24T01:00:00+00:00'})
 js4.features.build({:location => bc1, :promotion => ls, :start_time => '2011-07-23T17:00:00+00:00', :end_time => '2011-07-24T01:00:00+00:00'})
 js4.features.build({:location => bc1, :promotion => la, :start_time => '2011-07-23T17:00:00+00:00', :end_time => '2011-07-24T01:00:00+00:00'})
 js4.save!
@@ -153,7 +153,7 @@ tt5.features.build({:location => lh1, :promotion => djjj, :start_time => '2011-0
 tt5.save!
 
 # Rusty Rudder Saturday Night Concert 1
-scrr1 = Event.create({:name => '', :description => 'Saturday Night Concert at the Rudder.', :url => 'http://www.deweybeachlife.com', :logo => 'rudder-logo.png', :event_start => '2011-07-02T21:00:00+00:00', :event_end => '2011-07-03T01:00:00+00:00'})
+scrr1 = Event.create({:description => 'Saturday Night Concert at the Rudder.', :url => 'http://www.deweybeachlife.com', :logo => 'rudder-logo.png', :event_start => '2011-07-02T21:00:00+00:00', :event_end => '2011-07-03T01:00:00+00:00'})
 
 scrr1.features.build({:location => rr1, :promotion => kn, :start_time => '2011-07-02T21:00:00+00:00', :end_time => '2011-07-03T01:00:00+00:00'})
 scrr1.save!

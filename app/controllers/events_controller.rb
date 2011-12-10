@@ -2,13 +2,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Hash.new { |h, k| h[k] = [] }
-    events = Event.all
-    
-    # what we want is a hash with the key is a date, and the value is an array of the events which begin on that date.
-    events.each do |event|
-      @events[event.event_start.to_date] << event    
-    end
+    @events = Event.all.sort{ |a, b| a.event_start <=> b.event_start}.group_by { |event| event.event_start.to_date }
 
     respond_to do |format|
       format.html # index.html.erb
