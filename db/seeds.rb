@@ -85,41 +85,41 @@ djjj = Promotion.create({:name => 'DJ Jazzy Jeff', :description => 'Fresh Prince
 # Jam 1
 js1 = Event.create({:name => 'Jam Session', :description => 'Saturday Jam with three bands.', :url => 'http://www.deweybeachlife.com/', :logo => 'cork-logo.png', :event_start => '2011-07-02T17:00:00+00:00', :event_end => '2011-07-03T01:00:00+00:00'})
 
-js1.features.build({:location => bc1, :promotion => lsmj, :start_time => '2011-07-02T17:00:00+00:00', :end_time => '2011-07-03T01:00:00+00:00'})
-js1.features.build({:location => bc1, :promotion => la, :start_time => '2011-07-02T17:00:00+00:00', :end_time => '2011-07-03T01:00:00+00:00'})
-js1.features.build({:location => bc1, :promotion => ggg, :start_time => '2011-07-02T17:00:00+00:00', :end_time => '2011-07-03T01:00:00+00:00'})
+js1.features.build({:location => bc1, :promotion => lsmj, :start_time => '2011-07-02T17:00:00+00:00', :end_time => '2011-07-03T01:00:00+00:00', :priority => 1})
+js1.features.build({:location => bc1, :promotion => la, :start_time => '2011-07-02T17:00:00+00:00', :end_time => '2011-07-03T01:00:00+00:00', :priority => 2})
+js1.features.build({:location => bc1, :promotion => ggg, :start_time => '2011-07-02T17:00:00+00:00', :end_time => '2011-07-03T01:00:00+00:00', :priority => 3})
 js1.save!
 
 # Jam 2
 js2 = Event.create({:name => 'Jam Session', :description => 'Saturday Jam with three bands.', :url => 'http://www.deweybeachlife.com/', :logo => 'cork-logo.png', :event_start => '2011-07-09T17:00:00+00:00', :event_end => '2011-07-10T01:00:00+00:00'})
 
-js2.features.build({:location => bc1, :promotion => gg, :start_time => '2011-07-09T17:00:00+00:00', :end_time => '2011-07-10T01:00:00+00:00'})
-js2.features.build({:location => bc1, :promotion => bs, :start_time => '2011-07-09T17:00:00+00:00', :end_time => '2011-07-10T01:00:00+00:00'})
-js2.features.build({:location => bc1, :promotion => sd, :start_time => '2011-07-09T17:00:00+00:00', :end_time => '2011-07-10T01:00:00+00:00'})
+js2.features.build({:location => bc1, :promotion => gg, :start_time => '2011-07-09T17:00:00+00:00', :end_time => '2011-07-10T01:00:00+00:00', :priority => 3})
+js2.features.build({:location => bc1, :promotion => bs, :start_time => '2011-07-09T17:00:00+00:00', :end_time => '2011-07-10T01:00:00+00:00', :priority => 1})
+js2.features.build({:location => bc1, :promotion => sd, :start_time => '2011-07-09T17:00:00+00:00', :end_time => '2011-07-10T01:00:00+00:00', :priority => 2})
 js2.save!
 
 # Jam 3
 js3 = Event.create({:name => 'Jam Session', :description => 'Saturday Jam with three bands.', :url => 'http://www.deweybeachlife.com/', :logo => 'cork-logo.png', :event_start => '2011-07-16T17:00:00+00:00', :event_end => '2011-07-17T01:00:00+00:00'})
 
-js3.features.build({:location => bc1, :promotion => la, :start_time => '2011-07-16T17:00:00+00:00', :end_time => '2011-07-17T01:00:00+00:00'})
-js3.features.build({:location => bc1, :promotion => ek, :start_time => '2011-07-16T17:00:00+00:00', :end_time => '2011-07-17T01:00:00+00:00'})
-js3.features.build({:location => bc1, :promotion => tt, :start_time => '2011-07-16T17:00:00+00:00', :end_time => '2011-07-17T01:00:00+00:00'})
+js3.features.build({:location => bc1, :promotion => la, :start_time => '2011-07-16T17:00:00+00:00', :end_time => '2011-07-17T01:00:00+00:00', :priority => 1})
+js3.features.build({:location => bc1, :promotion => ek, :start_time => '2011-07-16T17:00:00+00:00', :end_time => '2011-07-17T01:00:00+00:00', :priority => 2})
+js3.features.build({:location => bc1, :promotion => tt, :start_time => '2011-07-16T17:00:00+00:00', :end_time => '2011-07-17T01:00:00+00:00', :priority => 3})
 js3.save!
 
 # Jam 4
 js4 = Event.create({:name => 'Jam Session', :description => 'Saturday Jam with three bands.', :url => 'http://www.deweybeachlife.com/', :logo => 'cork-logo.png', :event_start => '2011-07-23T17:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00'})
 
-js4.features.build({:location => bc1, :promotion => _3am, :start_time => '2011-07-23T17:00:00+00:00', :end_time => '2011-07-24T01:00:00+00:00'})
-js4.features.build({:location => bc1, :promotion => ls, :start_time => '2011-07-23T17:00:00+00:00', :end_time => '2011-07-24T01:00:00+00:00'})
-js4.features.build({:location => bc1, :promotion => la, :start_time => '2011-07-23T17:00:00+00:00', :end_time => '2011-07-24T01:00:00+00:00'})
+js4.features.build({:location => bc1, :promotion => _3am, :start_time => '2011-07-23T17:00:00+00:00', :end_time => '2011-07-24T01:00:00+00:00', :priority => 1})
+js4.features.build({:location => bc1, :promotion => ls, :start_time => '2011-07-23T17:00:00+00:00', :end_time => '2011-07-24T01:00:00+00:00', :priority => 2})
+js4.features.build({:location => bc1, :promotion => la, :start_time => '2011-07-23T17:00:00+00:00', :end_time => '2011-07-24T01:00:00+00:00', :priority => 3})
 js4.save!
 
 # Jam 5
 js5 = Event.create({:name => 'Jam Session', :description => 'Saturday Jam with three bands.', :url => 'http://www.deweybeachlife.com/', :logo => 'cork-logo.png', :event_start => '2011-07-30T17:00:00+00:00', :event_end => '2011-07-31T01:00:00+00:00'})
 
-js5.features.build({:location => bc1, :promotion => kn, :start_time => '2011-07-30T17:00:00+00:00', :end_time => '2011-07-31T01:00:00+00:00'})
-js5.features.build({:location => bc1, :promotion => ggg, :start_time => '2011-07-30T17:00:00+00:00', :end_time => '2011-07-31T01:00:00+00:00'})
-js5.features.build({:location => bc1, :promotion => la, :start_time => '2011-07-30T17:00:00+00:00', :end_time => '2011-07-31T01:00:00+00:00'})
+js5.features.build({:location => bc1, :promotion => kn, :start_time => '2011-07-30T17:00:00+00:00', :end_time => '2011-07-31T01:00:00+00:00', :priority => 1})
+js5.features.build({:location => bc1, :promotion => ggg, :start_time => '2011-07-30T17:00:00+00:00', :end_time => '2011-07-31T01:00:00+00:00', :priority => 2})
+js5.features.build({:location => bc1, :promotion => la, :start_time => '2011-07-30T17:00:00+00:00', :end_time => '2011-07-31T01:00:00+00:00', :priority => 3})
 js5.save!
 
 # Taco Toss 1
