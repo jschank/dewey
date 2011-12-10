@@ -14,6 +14,8 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @event = Event.find(params[:id])
+    @venues = @event.features.group_by { |f| f.venue }
+    @future_events = Event.all.sort{ |a, b| a.event_start <=> b.event_start}
 
     respond_to do |format|
       format.html # show.html.erb

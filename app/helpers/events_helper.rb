@@ -24,4 +24,5 @@ module EventsHelper
     event.features
   end
   
+  
 end

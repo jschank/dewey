@@ -2,7 +2,10 @@ class FeaturesController < ApplicationController
   # GET /features
   # GET /features.json
   def index
-    @features = Feature.all
+    # @features = Feature.all
+    @features = Feature.all.sort{ |a, b| a.start_time <=> b.start_time}
+    @events = @features.group_by { |feature| feature.event }
+    @dates = @events.keys.group_by{ |event| event.event_start.to_date }
 
     respond_to do |format|
       format.html # index.html.erb

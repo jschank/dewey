@@ -1,40 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @event.name %>
-</p>
+<div class="fred">
+	<%= image_tag image_path @event.logo if @event.logo %>
+	<%= @event.name %>
+	<%= @event.description %>
+	
+	<p>Venue</p>
+	<% @venues.each do |venue, features| %>
+		<%= link_to venue.name, venue_path(venue) %>
+		
+		<% features.each do |feature| %>
+			<%= link_to feature.promotion.name, promotion_path(feature.promotion) %>
+		<% end %>
 
-<p>
-  <b>Description:</b>
-  <%= @event.description %>
-</p>
+	<% end %>
+</div>
 
-<p>
-  <b>Url:</b>
-  <%= @event.url %>
-</p>
+<h2>Upcoming <%= @event.name.pluralize %></h2>
 
-<p>
-  <b>Logo:</b>
-  <%= @event.logo %>
-</p>
-
-<p>
-  <b>Event start:</b>
-  <%= @event.event_start %>
-</p>
-
-<p>
-  <b>Event end:</b>
-  <%= @event.event_end %>
-</p>
-
-<p>
-  <b>Is all day:</b>
-  <%= @event.is_all_day %>
-</p>
-
+<div class="events">
+	<% @future_events.each do |event| %>
+		<%= render 'upcoming_events', :event => event %>
+	<% end %>
+</div>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
