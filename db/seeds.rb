@@ -30,13 +30,13 @@ nb1 = nb.locations.build({:name => ""})
 nb.save!
 
 # Lighthouse
-lh = Venue.create({:name => 'Lighthouse', :description => 'Tall tower, bright light', :url => 'http://www.deweybeachlife.com/', :address1 => '2112 Shiny Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip_code => '19971', :phone => '302-555-1212'})
+lh = Venue.create({:name => 'Lighthouse', :description => 'Tall tower, bright light', :url => 'http://www.deweybeachlife.com/', :address1 => '2112 Shiny Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip_code => '19971', :phone => '302-555-1212', :logo => 'lighthouse-logo.png'})
 
 lh1 = lh.locations.build({:name => ""})
 lh.save!
 
 # Rusty Rudder
-rr = Venue.create({:name => 'Rusty Rudder', :description => 'The Rudder is now open daily.  Join us for our famous all u can eat Land and Sea Buffet served Friday and Saturdays at 4:30.We have live entertainment weekly.', :url => 'http://www.deweybeachlife.com/', :address1 => '113 Dickinson Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip_code => '19971', :phone => '302-227-3888'})
+rr = Venue.create({:name => 'Rusty Rudder', :description => 'The Rudder is now open daily.  Join us for our famous all u can eat Land and Sea Buffet served Friday and Saturdays at 4:30.We have live entertainment weekly.', :url => 'http://www.deweybeachlife.com/', :address1 => '113 Dickinson Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip_code => '19971', :phone => '302-227-3888', :logo => 'rudder-logo.png' })
 
 rr1 = rr.locations.build({:name => ""})
 rra = rr.locations.build({:name => "Stage A"})
@@ -123,25 +123,25 @@ js5.features.build({:location => bc1, :promotion => la, :start_time => '2011-07-
 js5.save!
 
 # Taco Toss 1
-tt1 = Event.create({:name => 'Taco Toss', :description => 'Friday happy hour featuring Orange Crushes and $1 tacos and hot dogs.', :url => 'http://www.ruddertowneusa.com/The-Lighthouse.html', :logo => 'lighthouse-logo.png', :event_start => '2011-07-01T16:00:00+00:00', :event_end => '2011-07-01T21:00:00+00:00'})
+tt1 = Event.create({:name => 'Taco Toss', :description => 'Friday happy hour featuring Orange Crushes and $1 tacos and hot dogs.', :url => 'http://www.ruddertowneusa.com/The-Lighthouse.html', :logo => 'tacotoss-logo.png', :event_start => '2011-07-01T16:00:00+00:00', :event_end => '2011-07-01T21:00:00+00:00'})
 
 tt1.features.build({:location => lh1, :promotion => djjj, :start_time => '2011-07-01T16:00:00+00:00', :end_time => '2011-07-01T21:00:00+00:00'})
 tt1.save!
 
 # Taco Toss 2
-tt2 = Event.create({:name => 'Taco Toss', :description => 'Friday happy hour featuring Orange Crushes and $1 tacos and hot dogs.', :url => 'http://www.ruddertowneusa.com/The-Lighthouse.html', :logo => 'lighthouse-logo.png', :event_start => '2011-07-08T16:00:00+00:00', :event_end => '2011-07-08T21:00:00+00:00'})
+tt2 = Event.create({:name => 'Taco Toss', :description => 'Friday happy hour featuring Orange Crushes and $1 tacos and hot dogs.', :url => 'http://www.ruddertowneusa.com/The-Lighthouse.html', :logo => 'tacotoss-logo.png', :event_start => '2011-07-08T16:00:00+00:00', :event_end => '2011-07-08T21:00:00+00:00'})
 
 tt2.features.build({:location => lh1, :promotion => djjj, :start_time => '2011-07-08T16:00:00+00:00', :end_time => '2011-07-08T21:00:00+00:00'})
 tt2.save!
 
 # Taco Toss 3
-tt3 = Event.create({:name => 'Taco Toss', :description => 'Friday happy hour featuring Orange Crushes and $1 tacos and hot dogs.', :url => 'http://www.ruddertowneusa.com/The-Lighthouse.html', :logo => 'lighthouse-logo.png', :event_start => '2011-07-15T16:00:00+00:00', :event_end => '2011-07-15T21:00:00+00:00'})
+tt3 = Event.create({:name => 'Taco Toss', :description => 'Friday happy hour featuring Orange Crushes and $1 tacos and hot dogs.', :url => 'http://www.ruddertowneusa.com/The-Lighthouse.html', :logo => 'tacotoss-logo.png', :event_start => '2011-07-15T16:00:00+00:00', :event_end => '2011-07-15T21:00:00+00:00'})
 
 tt3.features.build({:location => lh1, :promotion => djjj, :start_time => '2011-07-15T16:00:00+00:00', :end_time => '2011-07-15T21:00:00+00:00'})
 tt3.save!
 
 # Taco Toss 4
-tt4 = Event.create({:name => 'Taco Toss', :description => 'Friday happy hour featuring Orange Crushes and $1 tacos and hot dogs.', :url => 'http://www.ruddertowneusa.com/The-Lighthouse.html', :logo => 'lighthouse-logo.png', :event_start => '2011-07-22T16:00:00+00:00', :event_end => '2011-07-22T21:00:00+00:00'})
+tt4 = Event.create({:name => 'Taco Toss', :description => 'Friday happy hour featuring Orange Crushes and $1 tacos and hot dogs.', :url => 'http://www.ruddertowneusa.com/The-Lighthouse.html', :logo => 'tacotoss-logo.png', :event_start => '2011-07-22T16:00:00+00:00', :event_end => '2011-07-22T21:00:00+00:00'})
 
 tt4.features.build({:location => lh1, :promotion => djjj, :start_time => '2011-07-22T16:00:00+00:00', :end_time => '2011-07-22T21:00:00+00:00'})
 tt4.save!
@@ -153,31 +153,31 @@ tt5.features.build({:location => lh1, :promotion => djjj, :start_time => '2011-0
 tt5.save!
 
 # Rusty Rudder Saturday Night Concert 1
-scrr1 = Event.create({:description => 'Saturday Night Concert at the Rudder.', :url => 'http://www.deweybeachlife.com', :logo => 'rudder-logo.png', :event_start => '2011-07-02T21:00:00+00:00', :event_end => '2011-07-03T01:00:00+00:00'})
+scrr1 = Event.create({:name => "Rudder's Saturday Night Concert", :description => 'Saturday Night Concert at the Rudder.', :url => 'http://www.deweybeachlife.com', :event_start => '2011-07-02T21:00:00+00:00', :event_end => '2011-07-03T01:00:00+00:00'})
 
 scrr1.features.build({:location => rr1, :promotion => kn, :start_time => '2011-07-02T21:00:00+00:00', :end_time => '2011-07-03T01:00:00+00:00'})
 scrr1.save!
 
 # Rusty Rudder Saturday Night Concert 2
-scrr2 = Event.create({:name => '', :description => 'Saturday Night Concert at the Rudder.', :url => 'http://www.deweybeachlife.com', :logo => 'rudder-logo.png', :event_start => '2011-07-09T21:00:00+00:00', :event_end => '2011-07-10T01:00:00+00:00'})
+scrr2 = Event.create({:name => "Rudder's Saturday Night Concert", :description => 'Saturday Night Concert at the Rudder.', :url => 'http://www.deweybeachlife.com', :event_start => '2011-07-09T21:00:00+00:00', :event_end => '2011-07-10T01:00:00+00:00'})
 
 scrr2.features.build({:location => rr1, :promotion => kn, :start_time => '2011-07-09T21:00:00+00:00', :end_time => '2011-07-10T01:00:00+00:00'})
 scrr2.save!
 
 # Rusty Rudder Saturday Night Concert 3
-scrr3 = Event.create({:name => '', :description => 'Saturday Night Concert at the Rudder.', :url => 'http://www.deweybeachlife.com', :logo => 'rudder-logo.png', :event_start => '2011-07-16T21:00:00+00:00', :event_end => '2011-07-17T01:00:00+00:00'})
+scrr3 = Event.create({:name => "Rudder's Saturday Night Concert", :description => 'Saturday Night Concert at the Rudder.', :url => 'http://www.deweybeachlife.com', :event_start => '2011-07-16T21:00:00+00:00', :event_end => '2011-07-17T01:00:00+00:00'})
 
 scrr3.features.build({:location => rr1, :promotion => gg, :start_time => '2011-07-16T21:00:00+00:00', :end_time => '2011-07-17T01:00:00+00:00'})
 scrr3.save!
 
 # Rusty Rudder Saturday Night Concert 4
-scrr4 = Event.create({:name => '', :description => 'Saturday Night Concert at the Rudder.', :url => 'http://www.deweybeachlife.com', :logo => 'rudder-logo.png', :event_start => '2011-07-23T21:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00'})
+scrr4 = Event.create({:name => "Rudder's Saturday Night Concert", :description => 'Saturday Night Concert at the Rudder.', :url => 'http://www.deweybeachlife.com', :event_start => '2011-07-23T21:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00'})
 
 scrr4.features.build({:location => rr1, :promotion => sd, :start_time => '2011-07-23T21:00:00+00:00', :end_time => '2011-07-24T01:00:00+00:00'})
 scrr4.save!
 
 # Rusty Rudder Saturday Night Concert 5
-scrr5 = Event.create({:name => '', :description => 'Saturday Night Concert at the Rudder.', :url => 'http://www.deweybeachlife.com', :logo => 'rudder-logo.png', :event_start => '2011-07-30T21:00:00+00:00', :event_end => '2011-07-31T01:00:00+00:00'})
+scrr5 = Event.create({:name => "Rudder's Saturday Night Concert", :description => 'Saturday Night Concert at the Rudder.', :url => 'http://www.deweybeachlife.com', :event_start => '2011-07-30T21:00:00+00:00', :event_end => '2011-07-31T01:00:00+00:00'})
 
 scrr5.features.build({:location => rr1, :promotion => cr, :start_time => '2011-07-30T21:00:00+00:00', :end_time => '2011-07-31T01:00:00+00:00'})
 scrr5.save!

@@ -15,7 +15,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @venues = @event.features.group_by { |f| f.venue }
-    @future_events = Event.all.sort{ |a, b| a.event_start <=> b.event_start}
+    @future_events = Event.find(:all, :conditions => ['name = :name', {:name => @event.name}]).sort{ |a, b| a.event_start <=> b.event_start}
 
     respond_to do |format|
       format.html # show.html.erb
