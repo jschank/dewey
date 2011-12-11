@@ -19,7 +19,6 @@ end
 
 gem 'jquery-rails'
 gem 'rails-footnotes', '>= 3.7.5.rc4', :group => :development
-gem 'rails_best_practices', :group => :development
 
 # Use unicorn as the web server
 # gem 'unicorn'
