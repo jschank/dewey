@@ -1,25 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <div class="fred">
-	<%= image_tag image_path @venue.logo if @venue.logo %>
-	<%= @venue.name %>
-	<%= @venue.description %>
-	<%= @venue.address1 %>
-	<%= @venue.address2 if @venue.address2 %>
-	<%= @venue.city %>, <%= @venue.state %>  <%= @venue.zip_code %>
-	<%= @venue.phone %>
-	<%= link_to "On the web", @venue.url, :target => "_blank" %>
+    <%= image_tag image_path @venue.logo if @venue.logo %>
+    <%= @venue.name %>
+    <%= @venue.description %>
+    <%= @venue.address1 %>
+    <%= @venue.address2 if @venue.address2 %>
+    <%= @venue.city %>, <%= @venue.state %>  <%= @venue.zip_code %>
+    <%= @venue.phone %>
+    <%= link_to "On the web", @venue.url, :target => "_blank" %>
 </div>
 
 <h2>Upcoming Events at <%= @venue.name %></h2>
 
 <% @future_events_by_date.each do |start_date, events| %>
-	<h2><%= start_date.strftime("%A, %B %d, %Y") %></h2>
-	<div class="events">
-	<% events.each do |event| %>
-		<%= render 'upcoming_events', :event => event %>
-	<% end %>
-	</div>               
+    <h2><%= start_date.strftime("%A, %B %d, %Y") %></h2>
+    <div class="events">
+    <% events.each do |event| %>
+        <%= render 'upcoming_events', :event => event %>
+    <% end %>
+    </div>
 <% end %>
 
 

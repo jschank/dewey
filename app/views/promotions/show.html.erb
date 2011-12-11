@@ -1,21 +1,21 @@
 <p id="notice"><%= notice %></p>
 
 <div class="fred">
-	<%= image_tag image_path @promotion.logo if @promotion.logo %>
-	<%= @promotion.name %>
-	<%= @promotion.description %>
-	<%= link_to "On the web", @promotion.url, :target => "_blank" %>
+    <%= image_tag image_path @promotion.logo if @promotion.logo %>
+    <%= @promotion.name %>
+    <%= @promotion.description %>
+    <%= link_to "On the web", @promotion.url, :target => "_blank" %>
 </div>
 
 <h2>Upcoming Events for <%= @promotion.name %></h2>
 
 <div class="events">
-	<% @future_events_by_date.each do |start_date, events| %>
-		<% events.each do |event| %>
-			<%= render 'upcoming_events', :event => event %>
-		<% end %>
-	<% end %>
-</div>               
+    <% @future_events_by_date.each do |start_date, events| %>
+        <% events.each do |event| %>
+            <%= render 'upcoming_events', :event => event %>
+        <% end %>
+    <% end %>
+</div>
 
 <%= link_to 'Edit', edit_promotion_path(@promotion) %> |
 <%= link_to 'Back', promotions_path %>

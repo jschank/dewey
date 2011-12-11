@@ -1,11 +1,11 @@
 
 <% @events.keys.each do |start_date| %>
-	<h2><%= start_date.strftime("%A, %B %d, %Y") %></h2>
-	<div class="events">
-	<% @events[start_date].each do |event| %>
-		<%= render event %>
-	<% end %>
-	</div>               
+    <h2><%= start_date.strftime("%A, %B %d, %Y") %></h2>
+    <div class="events">
+    <% @events[start_date].each do |event| %>
+        <%= render event %>
+    <% end %>
+    </div>
 <% end %>
 
 

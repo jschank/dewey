@@ -14,6 +14,7 @@ module EventsHelper
     string == nil || string.strip.empty?
   end
   
+  # should be in the model as something like display_name
   def event_name(event)
     return event.features[0].promotion.name if is_empty(event.name)
     event.name
