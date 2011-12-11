@@ -6,11 +6,11 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
 
-# special_events	id	name	description	link	logo	created_at	updated_at	special_event_start	special_event_end						
-# events	id	name	description	link	logo	created_at	updated_at	venue_id	promotion_id	special_event_id	stage	event_start	event_end	is_all_day	
-# venues	id	name	description	link	logo	created_at	updated_at	address1	address2	city	state	zip	phone	gps_coordinates	hours
-# promotions	id	name	description	link	logo	created_at	updated_at	kind	related_promotion			
-# When running rake db:seed, the runs are additive, so dupes will be created. do a rake db:reset instead			
+# special_events  id  name  description link  logo  created_at  updated_at  special_event_start special_event_end
+# events  id  name  description link  logo  created_at  updated_at  venue_id  promotion_id  special_event_id  stage event_start event_end is_all_day
+# venues  id  name  description link  logo  created_at  updated_at  address1  address2  city  state zip phone gps_coordinates hours
+# promotions  id  name  description link  logo  created_at  updated_at  kind  related_promotion
+# When running rake db:seed, the runs are additive, so dupes will be created. do a rake db:reset instead
 
 
 # ***Venues***
@@ -182,9 +182,9 @@ scrr5 = Event.create({:name => "Rudder's Saturday Night Concert", :description =
 scrr5.features.build({:location => rr1, :promotion => cr, :start_time => '2011-07-30T21:00:00+00:00', :end_time => '2011-07-31T01:00:00+00:00'})
 scrr5.save!
 
-# 
+#
 # tr1 = Event.create({:name => 'Thursday Night At The Rudder', :description => 'Thursday night show featuring Love Seed Momma Jump', :url => 'http://www.deweybeachlife.com/', :venue => rr, :promotion => ls, :special_event_id => nil, :stage => '', :event_start => '2011-10-01T19:00:00+00:00', :event_end => '2011-10-01T21:00:00+00:00', :logo => 'logo'})
-# 
+#
 # rb1 = Event.create({:name => 'Running Of The Bull', :description => 'Getting Drunk and chasing 2 guys in a bull costume', :url => 'http://www.thestarboard.com/', :venue => sb, :promotion => nil, :special_event_id => nil, :stage => '', :event_start => '2011-10-01T19:00:00+00:00', :event_end => '2011-10-01T21:00:00+00:00', :logo => 'logo'})
 
 

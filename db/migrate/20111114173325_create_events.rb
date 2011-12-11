@@ -9,7 +9,7 @@ class CreateEvents < ActiveRecord::Migration
       t.datetime :event_end
       t.boolean :is_all_day
       t.boolean :is_special
-      
+
       t.timestamps
     end
   end

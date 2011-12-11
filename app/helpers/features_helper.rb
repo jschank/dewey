@@ -1,7 +1,7 @@
 module FeaturesHelper
 
     def event_format(datetime)
-      (datetime.min > 0) ? "%l:%M %p" : "%l %p"    
+      (datetime.min > 0) ? "%l:%M %p" : "%l %p"
     end
 
     def event_times(event)
@@ -18,7 +18,7 @@ module FeaturesHelper
       return event.features[0].promotion.name if is_empty(event.name)
       event.name
     end
-    
+
     def features(event)
       return [] if is_empty(event.name) && event.features.count < 2
       event.features
