@@ -1,7 +1,6 @@
-
 <% @dates.keys.each do |date| %>
+	<div class="boxIndex">
 	<h2><%= date.strftime("%A, %B %d, %Y") %></h2>
-	<div class="events">
 	<% @dates[date].each do |event| %>
 		<%= render 'features/feature_event', :event => event %>
 	<% end %>

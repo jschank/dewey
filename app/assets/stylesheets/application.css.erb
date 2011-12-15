@@ -5,20 +5,124 @@
  *= require_self
  *= require_tree .
 */
-body    {
+body   
+{
     margin: 0;
-    background: url(<%= asset_path 'bg-settings.png' %>) repeat;
+    background: url(<%= asset_path 'full-bg.png' %>) fixed left top;
 }
-h1 {
-    display: block;
-    width: 100%;
-    height: 44px;
-    background: url(<%= asset_path 'bg.png' %>) repeat-x center top;
-    color: #fff;
-    text-shadow: rgba(0, 0, 0, 0.6) 0px -1px 0px;
-    font-size: 20px;
-    text-align: center;
-    line-height: 44px;
-    margin: 0;
+h1 
+{
+	color: #fff;
+	font: bold 1.5em Helvetica, sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 10px 0 0 0;
+}
+h2	{
+	color: #fff;
+	font: bold 1.2em Helvetica, sans-serif;
+	margin: 0 0 5px 0;
+	padding: 5px;
+	text-align: center;
+	border-radius: 5px;
+	background: url(<%= asset_path 'black-40.png' %>) repeat left top;
 }
 
+#search
+{
+	background: url(<%= asset_path 'black-40.png' %>) repeat left top;
+	margin: 10px;
+	height: 44px;
+	text-align: center;	
+	border-radius: 5px;
+}
+.boxIndex, .boxSpecific
+{
+	background: url(<%= asset_path 'black-40.png' %>) repeat left top;
+	margin: 10px;
+	padding: 5px;
+	border-radius: 5px;	
+}
+.boxIndex a
+{
+	display: block;
+	border-bottom: 1px dashed #8c8c8c;
+	padding: 10px 7px 7px 100px;
+	min-height: 90px;
+	text-decoration: none;	
+}
+.boxIndex a:first-of-type
+{
+	border-top: 1px dashed #8c8c8c;
+}
+.boxIndex a:last-of-type
+{
+	border-bottom: none;
+}
+.boxIndex .event_name	
+{
+	margin: 0;
+	font: bold 1.2em Helvetica, sans-serif;
+	color: #000;
+	background: #fff;
+	/*background: url(<%= asset_path 'black-40.png' %>) repeat left top;*/
+	padding: .25em 1em;
+	border-radius: 12px;
+	text-align: left;
+	display: inline;
+}
+
+.boxIndex .event_feature	
+{
+	margin: .2em 0 ;
+	font: normal 1em Helvetica, sans-serif;
+	color: #fff;
+	margin-left: 1.2em;
+}
+
+.boxIndex .event_feature:first-of-type	
+{
+	margin-top: .5em;
+}
+
+.boxIndex .event_times	
+{
+	margin: .2em 0;
+	font: normal 1em Helvetica, sans-serif;
+	color: #8c8c8c;
+	margin-left: 1.2em;
+}
+.boxSpecific .event_name	
+{
+	color: #fff;
+	font: bold 1em Helvetica, sans-serif;
+	margin: 0 0 5px 0;
+	padding: 5px;
+	text-align: center;
+	background: url(black-40.png)
+	repeat left top;
+	border-radius: 5px;
+}
+.boxSpecific .event_venue	
+{
+	display: block;
+	border-top: 1px dashed #8c8c8c;
+	border-bottom: 1px dashed #8c8c8c;
+	background: url(<%= asset_path 'arrow.png' %>) no-repeat right center;
+	padding: 7px 7px 7px 7px;
+	text-decoration: none;
+	margin: 0 0 0 135px;
+	font: normal 1.2em Helvetica, sans-serif;
+	color: #fff;
+}
+
+.boxSpecific .event_feature	
+{
+	display: block;
+	border-bottom: 1px dashed #8c8c8c;
+	background: url(arrow.png) no-repeat right center;
+	padding: 7px 7px 7px 7px;
+	text-decoration: none; margin: 0 0 0 135px;
+	font: normal 1em Helvetica, sans-serif;
+	color: #fff;
+}

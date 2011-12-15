@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<div class="fred">
-    <%= image_tag image_path @event.logo if @event.logo %>
+<div class="boxSpecific">
+    <!--<%= image_tag image_path @event.logo if @event.logo %>-->
     <%= @event.name %>
     <%= @event.description %>
 
-    <p>Venue</p>
+    
     <% @venues.each do |venue, features| %>
         <%= link_to venue.name, venue_path(venue) %>
 
@@ -16,9 +16,9 @@
     <% end %>
 </div>
 
-<h2>Upcoming <%= @event.name.pluralize %></h2>
 
-<div class="events">
+<div class="boxIndex">
+<h2>Upcoming <%= @event.name.pluralize %></h2>
     <% @future_events.each do |event| %>
         <%= render 'upcoming_events', :event => event %>
     <% end %>

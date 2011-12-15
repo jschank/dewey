@@ -1,5 +1,5 @@
-<a href=<%= event_path(feature) %> style="background-image: url(<%= image_path event.logo %>);">
-<span class="event_name"><%= event_name(event) %></span>
+<a href=<%= event_path(feature) %> style="background: url(<%= image_path event.logo %>) no-repeat left center,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
+<span class="event_name"><%= event_name(event) %> fred</span>
 
 <% features(event).each do |feature| %>
 	<p class="event_feature"><%= feature.promotion.name %></p>
