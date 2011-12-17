@@ -3,9 +3,12 @@ class FeaturesController < ApplicationController
   # GET /features.json
   def index
     # @features = Feature.all
-    @features = Feature.all.sort{ |a, b| a.start_time <=> b.start_time}
-    @events = @features.group_by { |feature| feature.event }
-    @dates = @events.keys.group_by{ |event| event.event_start.to_date }
+    all_features = Feature.all.sort{ |a, b| a.promotion_start <=> b.promotion_start}
+    dates = all_features.group_by{ |f| f.event_start.to_date }.sort
+    @features = {}
+    dates.each do |date, feature_list|
+      @features[date] = feature_list.group_by{ |f| [f.event, f.event_start] }
+    end
 
     respond_to do |format|
       format.html # index.html.erb

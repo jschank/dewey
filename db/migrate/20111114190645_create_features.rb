@@ -4,6 +4,13 @@ class CreateFeatures < ActiveRecord::Migration
       t.references :location
       t.references :promotion
       t.references :event
+      t.integer :priority
+      
+      t.datetime :event_start
+      t.datetime :event_end
+      
+      t.datetime :promotion_start
+      t.datetime :promotion_end
 
       t.timestamps
     end

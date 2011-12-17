@@ -10,17 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111210190058) do
+ActiveRecord::Schema.define(:version => 20111114190645) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "url"
+    t.string   "website"
+    t.string   "facebook"
+    t.string   "twitter"
     t.string   "logo"
-    t.datetime "event_start"
-    t.datetime "event_end"
-    t.boolean  "is_all_day"
-    t.boolean  "is_special"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,11 +27,13 @@ ActiveRecord::Schema.define(:version => 20111210190058) do
     t.integer  "location_id"
     t.integer  "promotion_id"
     t.integer  "event_id"
+    t.integer  "priority"
+    t.datetime "event_start"
+    t.datetime "event_end"
+    t.datetime "promotion_start"
+    t.datetime "promotion_end"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "start_time"
-    t.datetime "end_time"
-    t.integer  "priority"
   end
 
   add_index "features", ["event_id"], :name => "index_features_on_event_id"
@@ -51,24 +51,28 @@ ActiveRecord::Schema.define(:version => 20111210190058) do
 
   create_table "promotions", :force => true do |t|
     t.string   "name"
-    t.string   "logo"
     t.text     "description"
-    t.string   "url"
+    t.string   "website"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "logo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "venues", :force => true do |t|
     t.string   "name"
-    t.string   "logo"
-    t.string   "url"
     t.text     "description"
-    t.string   "phone"
     t.string   "address1"
     t.string   "address2"
     t.string   "city"
     t.string   "state"
-    t.string   "zip_code"
+    t.string   "zip"
+    t.string   "phone"
+    t.string   "website"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "logo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
