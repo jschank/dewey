@@ -3,15 +3,12 @@
 <div class="boxSpecific">
     <h2>~ <%= @event.name.upcase %> ~<br /><%= @date.strftime("%A, %B %d, %Y at #{event_times(@current_features)}") %></h2>	
     <%= image_tag image_path @event.logo if @event.logo %>
-    <p><%= @event.description %></p>
+    <p class="event_description"><%= @event.description %></p>
     
-    <%= link_to "#{[@venue.name, @current_features[0].location.name].compact.join(' - ')}", venue_path(@venue) %>
-
-		<ol>
+    <%= link_to "#{[@venue.name, @current_features[0].location.name].compact.join(' - ')}", venue_path(@venue), :class => "event_venue" %>
 			<% @current_features.each do |feature| %>
-			<li><%= link_to feature.promotion.name, promotion_path(feature.promotion) %></li>
+			<%= link_to feature.promotion.name, promotion_path(feature.promotion), :class => "event_promotion" %>
 	        <% end %>
-		</ol>
 
 </div>
 
