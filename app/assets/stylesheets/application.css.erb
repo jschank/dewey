@@ -8,7 +8,7 @@
 body   
 {
     margin: 0;
-    background: url(<%= asset_path 'dewey-bg.png' %>) fixed no-repeat center center;
+    background: url(<%= asset_path 'pirelli.png' %>) fixed repeat left top;
 }
 h1 
 {
@@ -25,12 +25,12 @@ h2	{
 	padding: 5px;
 	text-align: center;
 	border-radius: 5px;
-	background: url(<%= asset_path 'black-o80.png' %>) repeat left top;
+	background: url(<%= asset_path 'black-40.png' %>) repeat left top;
 }
 
 #search
 {
-	background: url(<%= asset_path 'white-o90.png' %>) repeat left top;
+	background: url(<%= asset_path 'black-40.png' %>) repeat left top;
 	margin: 10px;
 	height: 44px;
 	text-align: center;	
@@ -38,7 +38,7 @@ h2	{
 }
 .boxIndex, .boxSpecific
 {
-	background: url(<%= asset_path 'white-o90.png' %>) repeat left top;
+	background: url(<%= asset_path 'black-40.png' %>) repeat left top;
 	margin: 10px;
 	padding: 5px;
 	border-radius: 5px;	
@@ -46,25 +46,17 @@ h2	{
 .boxIndex a
 {
 	display: block;
-	border-bottom: 1px dashed #8c8c8c;
+	border-top: 1px dashed #8c8c8c;
 	padding: 10px 7px 7px 100px;
 	min-height: 90px;
 	text-decoration: none;	
-}
-.boxIndex a:first-of-type
-{
-	border-top: 1px dashed #8c8c8c;
-}
-.boxIndex a:last-of-type
-{
-	border-bottom: none;
 }
 .boxIndex .event_name	
 {
 	margin: 0;
 	font: bold 1.2em Helvetica, sans-serif;
 	color: #fff;
-	background: url(<%= asset_path 'black-o80.png' %>) repeat left top;
+	background: url(<%= asset_path 'black-40.png' %>) repeat left top;
 	padding: .25em 1em;
 	border-radius: 12px;
 	text-align: left;
@@ -75,7 +67,7 @@ h2	{
 {
 	margin: .2em 0 ;
 	font: normal 1em Helvetica, sans-serif;
-	color: #000;
+	color: #fff;
 	margin-left: 1.2em;
 }
 
@@ -88,7 +80,7 @@ h2	{
 {
 	margin: .2em 0;
 	font: normal 1em Helvetica, sans-serif;
-	color: #000;
+	color: #fff;
 	margin-left: 1.2em;
 }
 .boxSpecific .event_name	
@@ -101,6 +93,13 @@ h2	{
 	background: url(black-40.png)
 	repeat left top;
 	border-radius: 5px;
+}
+.boxSpecific .event_description	
+{
+	padding: 7px 7px 7px 7px;
+	margin: 0 0 0 135px;
+	font: italic 1em Helvetica, sans-serif;
+	color: #fff;
 }
 .boxSpecific .event_venue	
 {
@@ -115,7 +114,7 @@ h2	{
 	color: #fff;
 }
 
-.boxSpecific .event_feature	
+.boxSpecific .event_promotion	
 {
 	display: block;
 	border-bottom: 1px dashed #8c8c8c;
