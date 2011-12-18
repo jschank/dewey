@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <div class="boxSpecific">
-    <%= image_tag image_path @event.logo if @event.logo %>
     <h2>~ <%= @event.name.upcase %> ~<br /><%= @date.strftime("%A, %B %d, %Y at #{event_times(@current_features)}") %></h2>	
+    <%= image_tag image_path @event.logo if @event.logo %>
     <p><%= @event.description %></p>
     
     <%= link_to "#{[@venue.name, @current_features[0].location.name].compact.join(' - ')}", venue_path(@venue) %>
