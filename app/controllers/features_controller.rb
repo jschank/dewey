@@ -4,7 +4,7 @@ class FeaturesController < ApplicationController
   def index
     # @features = Feature.all
     all_features = Feature.all.sort{ |a, b| a.promotion_start <=> b.promotion_start}
-    dates = all_features.group_by{ |f| f.event_start.to_date }.sort
+    dates = all_features.group_by{ |f| f.event_start.to_date }
     @features = {}
     dates.each do |date, feature_list|
       @features[date] = feature_list.group_by{ |f| [f.event, f.event_start] }

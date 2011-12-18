@@ -9,6 +9,8 @@ Dewey::Application.routes.draw do
   resources :events
 
   resources :venues
+  
+  match 'events/:id/:year/:month/:day/:hour/:min' => 'events#show', :as => :current_event
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
