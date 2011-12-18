@@ -3,7 +3,7 @@ class FeaturesController < ApplicationController
   # GET /features.json
   def index
     # @features = Feature.all
-    all_features = Feature.all.sort{ |a, b| a.promotion_start <=> b.promotion_start}
+    all_features = Feature.find(:all, :include => [:event, :venue, :promotion]).sort{ |a, b| a.promotion_start <=> b.promotion_start}
     dates = all_features.group_by{ |f| f.event_start.to_date }
     @features = {}
     dates.each do |date, feature_list|
