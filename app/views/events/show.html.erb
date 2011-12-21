@@ -1,29 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <div class="boxSpecific">
-    <h2>~ <%= @event.name.upcase %> ~<br /><%= @date.strftime("%A, %B %d, %Y at #{event_times(@current_features)}") %></h2>	
+    <h2>~ <%= @event.name.upcase %> ~<br /><%= date_and_times(@date, @current_features) %></h2>	
     <%= image_tag image_path @event.logo if @event.logo %>
     <p class="event_description"><%= @event.description %></p>
     
     <%= link_to "#{[@venue.name, @current_features[0].location.name].compact.join(' - ')}", venue_path(@venue), :class => "event_venue" %>
-			<% @current_features.each do |feature| %>
-			<%= link_to feature.promotion.name, promotion_path(feature.promotion), :class => "event_promotion" %>
-	        <% end %>
-
+	<% @current_features.each do |feature| %>
+		<%= link_to feature.promotion.name, promotion_path(feature.promotion), :class => "event_promotion" %>
+    <% end %>
 </div>
-
 
 <div class="boxIndex">
 <h2>Upcoming <%= @event.name.pluralize %></h2>
-    <%# @future_events.each do |event| %>
-		<a href=<%# event_path(event) %> style="padding-left:7px; background: url(<%# asset_path 'arrow.png' %>) no-repeat right center;">
-			<span class="event_name"><%# event.event_start.strftime("%A, %B %d, %Y")%></span>
-
-		<%# features(event).each do |feature| %>
-		    <p class="event_feature"><%# feature.name %></p>
-		<%# end %>
-		<p class="event_times"><%# event_times(event) %></p></a>
-    <%# end %>
+	<%= @future_features.each do |date, features| %>
+		<span class="event_name"><%= date_and_times(date, features) %></span>
+		<% features.each do |feature| %>
+			<%= link_to feature.promotion.name, promotion_path(feature.promotion), :class => "event_promotion" %>
+		<% end %>
+    <% end %>
 </div>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |

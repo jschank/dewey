@@ -17,7 +17,7 @@ class EventsController < ApplicationController
     @venue = @event.features[0].venue
     @date = Time.utc(params[:year].to_i, params[:month].to_i, params[:day].to_i, params[:hour], params[:min])
     @current_features = Feature.where("event_id = ? and event_start = ?", params[:id], @date).order("priority")
-    # @future_events = Event.find(:all, :conditions => ['name = :name', {:name => @event.name}]).sort{ |a, b| a.event_start <=> b.event_start}
+    @future_features = Feature.where("event_id = ? and event_start >= ?", params[:id], @date).order("promotion_start").group_by { |f| f.event_start.to_date }
 
     respond_to do |format|
       format.html # show.html.erb

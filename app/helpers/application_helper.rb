@@ -13,5 +13,8 @@ module ApplicationHelper
     end_time = (features[0].event_end) ? features[0].event_end.strftime(event_format(features[0].event_end)) : "?"
     "#{start_time} -#{end_time}".downcase
   end
-
+  
+  def date_and_times(date, features)
+    date.strftime("%A, %B %d, %Y at #{event_times(features)}")
+  end
 end
