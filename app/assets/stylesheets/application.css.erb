@@ -8,15 +8,18 @@
 body   
 {
     margin: 0;
-    background: url(<%= asset_path 'pirelli.png' %>) fixed repeat left top;
+    background: #e3e3e3 /*url(<%= asset_path 'pirelli.png' %>) fixed repeat left top*/;
 }
 h1 
 {
 	color: #fff;
-	font: bold 1.5em Helvetica, sans-serif;
+	background: url(<%= asset_path 'h1-bg.png' %>) repeat-x left top;
+	font: bold 3em Helvetica, sans-serif;
 	text-align: center;
 	text-transform: uppercase;
-	margin: 10px 0 0 0;
+	margin: 0 0 0 0;
+	padding: 20px 0 0 0;
+	height: 68px;
 }
 h2	{
 	color: #fff;
@@ -30,7 +33,6 @@ h2	{
 
 #search
 {
-	background: url(<%= asset_path 'black-40.png' %>) repeat left top;
 	margin: 10px;
 	height: 44px;
 	text-align: center;	
@@ -38,37 +40,36 @@ h2	{
 }
 .boxIndex, .boxSpecific
 {
-	background: url(<%= asset_path 'black-40.png' %>) repeat left top;
+	background: #fff;
 	margin: 10px;
 	padding: 5px;
+	background: #e6e6e6;
 	border-radius: 5px;	
 }
 .boxIndex a
 {
 	display: block;
-	border-top: 1px dashed #8c8c8c;
+	border-bottom: 1px solid #e6e6e6;
 	padding: 18px 10px 10px 120px;
 	min-height: 110px;
 	text-decoration: none;	
 }
+.boxIndex a:last-of-type
+{
+	border-bottom: none;
+}
 .boxIndex .event_name	
 {
 	margin: 0;
-	font: bold 1.2em Helvetica, sans-serif;
-	color: #fff;
-	background: url(<%= asset_path 'black-40.png' %>) repeat left top;
-	padding: .25em 1em;
-	border-radius: 12px;
+	font: bold 2em Helvetica, sans-serif;
+	color: #000;
 	text-align: left;
-	display: inline;
 }
 
 .boxIndex .event_feature	
 {
-	margin: .2em 0 ;
-	font: normal 1em Helvetica, sans-serif;
-	color: #fff;
-	margin-left: 1.2em;
+	font: normal 2em Helvetica, sans-serif;
+	color: #000;
 }
 
 .boxIndex .event_feature:first-of-type	
@@ -78,10 +79,8 @@ h2	{
 
 .boxIndex .event_times	
 {
-	margin: .2em 0;
-	font: normal 1em Helvetica, sans-serif;
-	color: #fff;
-	margin-left: 1.2em;
+	font: normal 2em Helvetica, sans-serif;
+	color: #999;
 }
 .boxSpecific .event_name	
 {
