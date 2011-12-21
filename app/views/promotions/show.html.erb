@@ -1,21 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<div class="fred">
+<div class="boxSpecific">
+    <h2>~ <%= @promotion.name %> ~</h2>	
     <%= image_tag image_path @promotion.logo if @promotion.logo %>
-    <%= @promotion.name %>
-    <%= @promotion.description %>
-    <%= link_to "On the web", @promotion.url, :target => "_blank" %>
+    <p class="event_description"><%= @promotion.description %></p>
+    <%= link_to "On the web", @promotion.website, :target => "_blank" %>
 </div>
 
-<h2>Upcoming Events for <%= @promotion.name %></h2>
 
-<div class="events">
-    <% @future_events_by_date.each do |start_date, events| %>
-        <% events.each do |event| %>
-            <%= render 'upcoming_events', :event => event %>
-        <% end %>
-    <% end %>
+<% @features.keys.sort.each do |date| %>
+	<div class="boxIndex">
+		<h2><%= date_and_times(date) %></h2>
+		
+		<% @features[date].each do | (event, event_start), features| %>
+			<a href=<%= current_event_path(event, features[0].event_start.year, features[0].event_start.month, features[0].event_start.day, features[0].event_start.hour, features[0].event_start.min) %> style="background: url(<%= venue_logo(features[0]) %>) no-repeat left 5px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
+				<h4 class="event_name"><%= event.name %></h4>
+			<% features.each do |feature| %>
+				<p class="event_feature"><%= feature.promotion.name %></p>
+			<% end %>
+			<p class="event_times"><%= event_times(features) %></p></a>
+		<% end %>
+	</div>
+
+<% end %>
+
 </div>
-
-<%= link_to 'Edit', edit_promotion_path(@promotion) %> |
-<%= link_to 'Back', promotions_path %>

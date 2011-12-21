@@ -17,4 +17,11 @@ module ApplicationHelper
   def date_and_times(date, features)
     date.strftime("%A, %B %d, %Y at #{event_times(features)}")
   end
+
+  def date_and_times(date, features = nil)
+    str = ""
+    str += date.strftime("%A, %B %d, %Y")
+    str += " at #{event_times(features)}" if features
+  end
+
 end

@@ -13,8 +13,16 @@ class PromotionsController < ApplicationController
   # GET /promotions/1
   # GET /promotions/1.json
   def show
-    @promotion = Promotion.find(params[:id])
-    @future_events_by_date = Event.find(:all).sort{ |a, b| a.event_start <=> b.event_start}.group_by{ |event| event.event_start.to_date }
+    @promotion = Promotion.find(params[:id], :include => [:events, :features])
+    future_features = []
+    @promotion.events.each do |event|
+      future_features += event.features
+    end 
+    dates = future_features.group_by{ |f| f.event_start.to_date }
+    @features = {}
+    dates.each do |date, feature_list|
+      @features[date] = feature_list.group_by{ |f| [f.event, f.event_start] }
+    end
 
     respond_to do |format|
       format.html # show.html.erb
