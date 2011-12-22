@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <div class="boxSpecific">
-    <h2>~ <%= @event.name.upcase %> ~<br /><%= date_and_times(@date, @current_features) %></h2>	
-    <%= image_tag image_path @event.logo if @event.logo %>
+    <div class="specificHeader" style="background: #f4f4f4 url(<%= venue_logo(@current_features[0]) %>) no-repeat 10px 10px">
+	<div class="event_name"><%= @event.name %></div>
+	<div class="event_times"><%= date_and_times(@date, @current_features) %></div>	
     <p class="event_description"><%= @event.description %></p>
+	</div>
     
     <%= link_to "#{[@venue.name, @current_features[0].location.name].compact.join(' - ')}", venue_path(@venue), :class => "event_venue" %>
 	<% @current_features.each do |feature| %>

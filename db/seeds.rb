@@ -199,7 +199,7 @@ tb1.features.build({:location => bc1, :promotion => tb, :promotion_start => '201
 tb1.features.build({:location => bc1, :promotion => as, :promotion_start => '2011-07-05T21:00:00+00:00', :promotion_end => '2011-07-05T21:40:00+00:00', :event_start => '2011-07-05T20:00:00+00:00', :event_end => '2011-07-06T01:00:00+00:00'}).save!
 
 # George Clinton
-tb1.features.build({:location => bc1, :promotion => gc, :promotion_start => '2011-07-23T21:00:00+00:00', :promotion_end => '2011-07-24T01:00:00+00:00', :event_start => '2011-07-23T20:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00'}).save!
+gc1.features.build({:location => bc1, :promotion => gc, :promotion_start => '2011-07-23T21:00:00+00:00', :promotion_end => '2011-07-24T01:00:00+00:00', :event_start => '2011-07-23T20:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00'}).save!
 
 
 
