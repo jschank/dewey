@@ -62,57 +62,76 @@ jg.save!
 # ***Promotions***
 
 # Bands
-gg = Promotion.create({:name => 'Mr. Greengenes', :description => 'Coverband from Philadelphia', :website => 'http://www.mrgreengenes.com/'})
-kn = Promotion.create({:name => 'Kristen And The Noise', :description => 'Coverband from Philadelphia', :website => 'http://www.kristenandthenoise.com/'})
-la = Promotion.create({:name => 'Liquid A', :description => 'Coverband from Philadelphia', :website => 'http://www.liquida.net/'})
-bs = Promotion.create({:name => 'Burnt Sienna', :description => 'Coverband from Philadelphia', :website => 'http://www.burntsiennaband.com/'})
-lsmj = Promotion.create({:name => 'Love Seed Momma Jump', :description => 'Coverband from Philadelphia', :website => 'http://www.loveseed.com/'})
-ggg = Promotion.create({:name => 'Go Go Gadjet', :description => 'Coverband from Philadelphia', :website => 'http://www.gogogadjet.com/'})
-tf = Promotion.create({:name => 'Laura Lea and Trip Fabulous', :description => 'Coverband', :website => 'http://www.trippfabulous.com/'})
-sd = Promotion.create({:name => 'Split Decision', :description => 'Coverband', :website => 'http://www.splitdecision.com/'})
-ek = Promotion.create({:name => 'Element K', :description => 'Coverband', :website => 'http://elementkband.com/'})
-tt = Promotion.create({:name => 'Table Ten', :description => 'Coverband', :website => 'http://www.friendsoftableten.com/'})
-ls = Promotion.create({:name => 'Lifespeed', :description => 'Coverband', :website => 'http://www.lifespeed.tv/'})
-_3am = Promotion.create({:name => '3 am', :description => 'Coverband', :website => 'http://www.idontknow.com/'})
-cr = Promotion.create({:name => 'Chorduroy', :description => 'Coverband', :website => 'http://www.chorduroyband.com/'})
+gg = Promotion.create({:name => 'Mr. Greengenes', :description => 'Coverband from Philadelphia', :website => 'http://www.mrgreengenes.com/'}).save!
+kn = Promotion.create({:name => 'Kristen And The Noise', :description => 'Coverband from Philadelphia', :website => 'http://www.kristenandthenoise.com/'}).save!
+la = Promotion.create({:name => 'Liquid A', :description => 'Coverband from Philadelphia', :website => 'http://www.liquida.net/'}).save!
+bs = Promotion.create({:name => 'Burnt Sienna', :description => 'Coverband from Philadelphia', :website => 'http://www.burntsiennaband.com/'}).save!
+lsmj = Promotion.create({:name => 'Love Seed Momma Jump', :description => 'Coverband from Philadelphia', :website => 'http://www.loveseed.com/'}).save!
+ggg = Promotion.create({:name => 'Go Go Gadjet', :description => 'Coverband from Philadelphia', :website => 'http://www.gogogadjet.com/'}).save!
+tf = Promotion.create({:name => 'Laura Lea and Trip Fabulous', :description => 'Coverband', :website => 'http://www.trippfabulous.com/'}).save!
+sd = Promotion.create({:name => 'Split Decision', :description => 'Coverband', :website => 'http://www.splitdecision.com/'}).save!
+ek = Promotion.create({:name => 'Element K', :description => 'Coverband', :website => 'http://elementkband.com/'}).save!
+tt = Promotion.create({:name => 'Table Ten', :description => 'Coverband', :website => 'http://www.friendsoftableten.com/'}).save!
+ls = Promotion.create({:name => 'Lifespeed', :description => 'Coverband', :website => 'http://www.lifespeed.tv/'}).save!
+_3am = Promotion.create({:name => '3 am', :description => 'Coverband', :website => 'http://www.idontknow.com/'}).save!
+cr = Promotion.create({:name => 'Chorduroy', :description => 'Coverband', :website => 'http://www.chorduroyband.com/'}).save!
+tb = Promotion.create({:name => 'The Bangles', :description => 'It was 30 years ago that guitarists Susanna Hoffs and Vicki Peterson and drummer Debbi Peterson formed the Bangles in a Brentwood, California, garage.', :website => 'http://www.thebangles.com/'}).save!
+as = Promotion.create({:name => 'April Smith And The Great Picture Show', :description => 'This Brooklyn musician turns out sultry updates ragtime and swing, pouring her rich voice over tight guitar strumming.', :website => 'http://www.aprilsmithmusic.com/'}).save!
+gc = Promotion.create({:name => 'George Clinton & Parliament Funkadelic', :description => 'Godfather of Funk.', :website => 'http://www.georgeclinton.com/'}).save!
 
 # DJs
-djs = Promotion.create({:name => 'DJ Smoky', :description => 'DJ', :website => 'http://smokythedj.com/'})
-djjj = Promotion.create({:name => 'DJ Jazzy Jeff', :description => 'Fresh Prince\'s Sidekick', :website => 'http://www.apple.com/'})
+djs = Promotion.create({:name => 'DJ Smoky', :description => 'DJ', :website => 'http://smokythedj.com/'}).save!
+djjj = Promotion.create({:name => 'DJ Jazzy Jeff', :description => 'Fresh Prince\'s Sidekick', :website => 'http://www.apple.com/'}).save!
+
+
 
 # ***Events***
 
-# Jam 1
-js1 = Event.create({:name => 'Jam Session', :description => 'Saturday Jam with three bands.', :website => 'http://www.deweybeachlife.com/'})
+# Jam Session
+js1 = Event.create({:name => 'Jam Session', :description => 'Saturday Jam with three bands.', :website => 'http://www.deweybeachlife.com/'}).save!
 
-js1.features.build({:location => bc1, :promotion => lsmj, :event_start => '2011-07-02T17:00:00+00:00', :event_end => '2011-07-03T01:00:00+00:00', :priority => 1, :promotion_start => '2011-07-02T17:00:00+00:00', :promotion_end => '2011-07-03T01:00:00+00:00'})
-js1.features.build({:location => bc1, :promotion => la, :event_start => '2011-07-02T17:00:00+00:00', :event_end => '2011-07-03T01:00:00+00:00', :priority => 2  , :promotion_start => '2011-07-02T17:00:00+00:00', :promotion_end => '2011-07-03T01:00:00+00:00'})
-js1.features.build({:location => bc1, :promotion => ggg, :event_start => '2011-07-02T17:00:00+00:00', :event_end => '2011-07-03T01:00:00+00:00', :priority => 3 , :promotion_start => '2011-07-02T17:00:00+00:00', :promotion_end => '2011-07-03T01:00:00+00:00'})
+# Taco Toss
+tt1 = Event.create({:name => 'Taco Toss', :description => 'Friday happy hour featuring Orange Crushes and $1 tacos and hot dogs.', :website => 'http://www.ruddertowneusa.com/The-Lighthouse.html', :logo => 'tacotoss-logo.png' }).save!
+
+# Rudder's Saturday Night Concert
+scrr1 = Event.create({:name => "Rudder's Saturday Night Concert", :description => 'Saturday Night Concert at the Rudder.', :website => 'http://www.deweybeachlife.com'}).save!
+
+# The Bangles
+tb1 = Event.create({:name => 'The Bangles', :description => 'It was 30 years ago that guitarists Susanna Hoffs and Vicki Peterson and drummer Debbi Peterson formed the Bangles in a Brentwood, California, garage.', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'}).save!
+
+# George Clinton
+tb1 = Event.create({:name => 'George Clinton & Parliament Funkadelic', :description => 'Godfather of Funk.', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'}).save!
+
+
+# ***Features***
+
+# Jam 1
+js1.features.build({:location => bc1, :promotion => lsmj, :event_start => '2011-07-02T17:00:00+00:00', :event_end => '2011-07-03T01:00:00+00:00', :priority => 1, :promotion_start => '2011-07-02T17:00:00+00:00', :promotion_end => '2011-07-03T01:00:00+00:00'}).save!
+js1.features.build({:location => bc1, :promotion => la, :event_start => '2011-07-02T17:00:00+00:00', :event_end => '2011-07-03T01:00:00+00:00', :priority => 2  , :promotion_start => '2011-07-02T17:00:00+00:00', :promotion_end => '2011-07-03T01:00:00+00:00'}).save!
+js1.features.build({:location => bc1, :promotion => ggg, :event_start => '2011-07-02T17:00:00+00:00', :event_end => '2011-07-03T01:00:00+00:00', :priority => 3 , :promotion_start => '2011-07-02T17:00:00+00:00', :promotion_end => '2011-07-03T01:00:00+00:00'}).save!
 
 # Jam 2
-js1.features.build({:location => bc1, :promotion => gg, :event_start => '2011-07-09T17:00:00+00:00', :event_end => '2011-07-10T01:00:00+00:00', :priority => 3, :promotion_start => '2011-07-09T17:00:00+00:00', :promotion_end => '2011-07-10T01:00:00+00:00'})
-js1.features.build({:location => bc1, :promotion => bs, :event_start => '2011-07-09T17:00:00+00:00', :event_end => '2011-07-10T01:00:00+00:00', :priority => 1, :promotion_start => '2011-07-09T17:00:00+00:00', :promotion_end => '2011-07-10T01:00:00+00:00'})
-js1.features.build({:location => bc1, :promotion => sd, :event_start => '2011-07-09T17:00:00+00:00', :event_end => '2011-07-10T01:00:00+00:00', :priority => 2, :promotion_start => '2011-07-09T17:00:00+00:00', :promotion_end => '2011-07-10T01:00:00+00:00'})
+js1.features.build({:location => bc1, :promotion => gg, :event_start => '2011-07-09T17:00:00+00:00', :event_end => '2011-07-10T01:00:00+00:00', :priority => 3, :promotion_start => '2011-07-09T17:00:00+00:00', :promotion_end => '2011-07-10T01:00:00+00:00'}).save!
+js1.features.build({:location => bc1, :promotion => bs, :event_start => '2011-07-09T17:00:00+00:00', :event_end => '2011-07-10T01:00:00+00:00', :priority => 1, :promotion_start => '2011-07-09T17:00:00+00:00', :promotion_end => '2011-07-10T01:00:00+00:00'}).save!
+js1.features.build({:location => bc1, :promotion => sd, :event_start => '2011-07-09T17:00:00+00:00', :event_end => '2011-07-10T01:00:00+00:00', :priority => 2, :promotion_start => '2011-07-09T17:00:00+00:00', :promotion_end => '2011-07-10T01:00:00+00:00'}).save!
 
 # Jam 3
-js1.features.build({:location => bc1, :promotion => la, :event_start => '2011-07-16T17:00:00+00:00', :event_end => '2011-07-17T01:00:00+00:00', :priority => 1, :promotion_start => '2011-07-16T17:00:00+00:00', :promotion_end => '2011-07-17T01:00:00+00:00'})
-js1.features.build({:location => bc1, :promotion => ek, :event_start => '2011-07-16T17:00:00+00:00', :event_end => '2011-07-17T01:00:00+00:00', :priority => 2, :promotion_start => '2011-07-16T17:00:00+00:00', :promotion_end => '2011-07-17T01:00:00+00:00'})
-js1.features.build({:location => bc1, :promotion => tt, :event_start => '2011-07-16T17:00:00+00:00', :event_end => '2011-07-17T01:00:00+00:00', :priority => 3, :promotion_start => '2011-07-16T17:00:00+00:00', :promotion_end => '2011-07-17T01:00:00+00:00'})
+js1.features.build({:location => bc1, :promotion => la, :event_start => '2011-07-16T17:00:00+00:00', :event_end => '2011-07-17T01:00:00+00:00', :priority => 1, :promotion_start => '2011-07-16T17:00:00+00:00', :promotion_end => '2011-07-17T01:00:00+00:00'}).save!
+js1.features.build({:location => bc1, :promotion => ek, :event_start => '2011-07-16T17:00:00+00:00', :event_end => '2011-07-17T01:00:00+00:00', :priority => 2, :promotion_start => '2011-07-16T17:00:00+00:00', :promotion_end => '2011-07-17T01:00:00+00:00'}).save!
+js1.features.build({:location => bc1, :promotion => tt, :event_start => '2011-07-16T17:00:00+00:00', :event_end => '2011-07-17T01:00:00+00:00', :priority => 3, :promotion_start => '2011-07-16T17:00:00+00:00', :promotion_end => '2011-07-17T01:00:00+00:00'}).save!
 
 # Jam 4
-js1.features.build({:location => bc1, :promotion => _3am, :event_start => '2011-07-23T17:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00', :priority => 1, :promotion_start => '2011-07-23T17:00:00+00:00', :promotion_end => '2011-07-24T01:00:00+00:00'})
-js1.features.build({:location => bc1, :promotion => ls, :event_start => '2011-07-23T17:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00',   :priority => 2, :promotion_start => '2011-07-23T17:00:00+00:00', :promotion_end => '2011-07-24T01:00:00+00:00'})
-js1.features.build({:location => bc1, :promotion => la, :event_start => '2011-07-23T17:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00',   :priority => 3, :promotion_start => '2011-07-23T17:00:00+00:00', :promotion_end => '2011-07-24T01:00:00+00:00'})
+js1.features.build({:location => bc1, :promotion => _3am, :event_start => '2011-07-23T17:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00', :priority => 1, :promotion_start => '2011-07-23T17:00:00+00:00', :promotion_end => '2011-07-24T01:00:00+00:00'}).save!
+js1.features.build({:location => bc1, :promotion => ls, :event_start => '2011-07-23T17:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00',   :priority => 2, :promotion_start => '2011-07-23T17:00:00+00:00', :promotion_end => '2011-07-24T01:00:00+00:00'}).save!
+js1.features.build({:location => bc1, :promotion => la, :event_start => '2011-07-23T17:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00',   :priority => 3, :promotion_start => '2011-07-23T17:00:00+00:00', :promotion_end => '2011-07-24T01:00:00+00:00'}).save!
 
 # Jam 5
-js1.features.build({:location => bc1, :promotion => kn, :event_start => '2011-07-30T17:00:00+00:00', :event_end => '2011-07-31T01:00:00+00:00',  :priority => 1, :promotion_start => '2011-07-30T17:00:00+00:00', :promotion_end => '2011-07-31T01:00:00+00:00'})
-js1.features.build({:location => bc1, :promotion => ggg, :event_start => '2011-07-30T17:00:00+00:00', :event_end => '2011-07-31T01:00:00+00:00', :priority => 2, :promotion_start => '2011-07-30T17:00:00+00:00', :promotion_end => '2011-07-31T01:00:00+00:00'})
-js1.features.build({:location => bc1, :promotion => la, :event_start => '2011-07-30T17:00:00+00:00', :event_end => '2011-07-31T01:00:00+00:00',  :priority => 3, :promotion_start => '2011-07-30T17:00:00+00:00', :promotion_end => '2011-07-31T01:00:00+00:00'})
+js1.features.build({:location => bc1, :promotion => kn, :event_start => '2011-07-30T17:00:00+00:00', :event_end => '2011-07-31T01:00:00+00:00',  :priority => 1, :promotion_start => '2011-07-30T17:00:00+00:00', :promotion_end => '2011-07-31T01:00:00+00:00'}).save!
+js1.features.build({:location => bc1, :promotion => ggg, :event_start => '2011-07-30T17:00:00+00:00', :event_end => '2011-07-31T01:00:00+00:00', :priority => 2, :promotion_start => '2011-07-30T17:00:00+00:00', :promotion_end => '2011-07-31T01:00:00+00:00'}).save!
+js1.features.build({:location => bc1, :promotion => la, :event_start => '2011-07-30T17:00:00+00:00', :event_end => '2011-07-31T01:00:00+00:00',  :priority => 3, :promotion_start => '2011-07-30T17:00:00+00:00', :promotion_end => '2011-07-31T01:00:00+00:00'}).save!
 js1.save!
 
 # Taco Toss 1
-tt1 = Event.create({:name => 'Taco Toss', :description => 'Friday happy hour featuring Orange Crushes and $1 tacos and hot dogs.', :website => 'http://www.ruddertowneusa.com/The-Lighthouse.html', :logo => 'tacotoss-logo.png' })
-
 tt1.features.build({:location => lh1, :promotion => djjj, :promotion_start => '2011-07-01T16:00:00+00:00', :promotion_end => '2011-07-01T21:00:00+00:00', :event_start => '2011-07-01T16:00:00+00:00', :event_end => '2011-07-01T21:00:00+00:00'}).save!
 
 # Taco Toss 2
@@ -128,8 +147,6 @@ tt1.features.build({:location => lh1, :promotion => djjj, :promotion_start => '2
 tt1.features.build({:location => lh1, :promotion => djjj, :promotion_start => '2011-07-29T16:00:00+00:00', :promotion_end => '2011-07-29T21:00:00+00:00', :event_start => '2011-07-29T16:00:00+00:00', :event_end => '2011-07-29T21:00:00+00:00'}).save!
 
 # Rusty Rudder Saturday Night Concert 1
-scrr1 = Event.create({:name => "Rudder's Saturday Night Concert", :description => 'Saturday Night Concert at the Rudder.', :website => 'http://www.deweybeachlife.com'})
-
 scrr1.features.build({:location => rr1, :promotion => kn, :promotion_start => '2011-07-02T21:00:00+00:00', :promotion_end => '2011-07-03T01:00:00+00:00', :event_start => '2011-07-02T21:00:00+00:00', :event_end => '2011-07-03T01:00:00+00:00'}).save!
 
 # Rusty Rudder Saturday Night Concert 2
@@ -143,6 +160,16 @@ scrr1.features.build({:location => rr1, :promotion => sd, :promotion_start => '2
 
 # Rusty Rudder Saturday Night Concert 5
 scrr1.features.build({:location => rr1, :promotion => cr, :promotion_start => '2011-07-30T21:00:00+00:00', :promotion_end => '2011-07-31T01:00:00+00:00', :event_start => '2011-07-30T21:00:00+00:00', :event_end => '2011-07-31T01:00:00+00:00'}).save!
+
+# The Bangles
+tb1.features.build({:location => bc1, :promotion => tb, :promotion_start => '2011-07-05T22:00:00+00:00', :promotion_end => '2011-07-06T01:00:00+00:00', :event_start => '2011-07-05T20:00:00+00:00', :event_end => '2011-07-06T01:00:00+00:00'}).save!
+tb1.features.build({:location => bc1, :promotion => as, :promotion_start => '2011-07-05T21:00:00+00:00', :promotion_end => '2011-07-05T21:40:00+00:00', :event_start => '2011-07-05T20:00:00+00:00', :event_end => '2011-07-06T01:00:00+00:00'}).save!
+
+# George Clinton
+tb1.features.build({:location => bc1, :promotion => gc, :promotion_start => '2011-07-23T21:00:00+00:00', :promotion_end => '2011-07-24T01:00:00+00:00', :event_start => '2011-07-23T20:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00'}).save!
+
+
+
 
 #
 # tr1 = Event.create({:name => 'Thursday Night At The Rudder', :description => 'Thursday night show featuring Love Seed Momma Jump', :website => 'http://www.deweybeachlife.com/', :venue => rr, :promotion => ls, :special_event_id => nil, :stage => '', :event_start => '2011-10-01T19:00:00+00:00', :event_end => '2011-10-01T21:00:00+00:00', :logo => 'logo'})
