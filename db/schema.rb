@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111114190645) do
+ActiveRecord::Schema.define(:version => 20111222171811) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -25,20 +25,16 @@ ActiveRecord::Schema.define(:version => 20111114190645) do
 
   create_table "features", :force => true do |t|
     t.integer  "location_id"
-    t.integer  "promotion_id"
-    t.integer  "event_id"
+    t.integer  "performance_id"
+    t.integer  "occurrence_id"
     t.integer  "priority"
-    t.datetime "event_start"
-    t.datetime "event_end"
-    t.datetime "promotion_start"
-    t.datetime "promotion_end"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "features", ["event_id"], :name => "index_features_on_event_id"
   add_index "features", ["location_id"], :name => "index_features_on_location_id"
-  add_index "features", ["promotion_id"], :name => "index_features_on_promotion_id"
+  add_index "features", ["occurrence_id"], :name => "index_features_on_occurrence_id"
+  add_index "features", ["performance_id"], :name => "index_features_on_performance_id"
 
   create_table "locations", :force => true do |t|
     t.integer  "venue_id"
@@ -48,6 +44,26 @@ ActiveRecord::Schema.define(:version => 20111114190645) do
   end
 
   add_index "locations", ["venue_id"], :name => "index_locations_on_venue_id"
+
+  create_table "occurrences", :force => true do |t|
+    t.datetime "event_start"
+    t.datetime "event_end"
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "occurrences", ["event_id"], :name => "index_occurrences_on_event_id"
+
+  create_table "performances", :force => true do |t|
+    t.datetime "promotion_start"
+    t.datetime "promotion_end"
+    t.integer  "promotion_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "performances", ["promotion_id"], :name => "index_performances_on_promotion_id"
 
   create_table "promotions", :force => true do |t|
     t.string   "name"

@@ -83,8 +83,8 @@ sd.save!
 ek = Promotion.create({:name => 'Element K', :description => 'Coverband', :website => 'http://elementkband.com/'})
 ek.save!
 
-tt = Promotion.create({:name => 'Table Ten', :description => 'Coverband', :website => 'http://www.friendsoftableten.com/'})
-tt.save!
+t10 = Promotion.create({:name => 'Table Ten', :description => 'Coverband', :website => 'http://www.friendsoftableten.com/'})
+t10.save!
 
 ls = Promotion.create({:name => 'Lifespeed', :description => 'Coverband', :website => 'http://www.lifespeed.tv/'})
 ls.save!
@@ -111,98 +111,254 @@ djs.save!
 djjj = Promotion.create({:name => 'DJ Jazzy Jeff', :description => 'Fresh Prince\'s Sidekick', :website => 'http://www.apple.com/'})
 djjj.save!
 
+the_bangles = Promotion.create({:name => 'The Bangles', :description => 'It was 30 years ago that guitarists Susanna Hoffs and Vicki Peterson and drummer Debbi Peterson formed the Bangles in a Brentwood, California, garage.', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
+the_bangles.save!
 
+george_clinton = Promotion.create({:name => 'George Clinton & Parliament Funkadelic', :description => 'Godfather of Funk.', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
 
 # ***Events***
 
 # Jam Session
-js1 = Event.create({:name => 'Jam Session', :description => 'Saturday Jam with three bands.', :website => 'http://www.deweybeachlife.com/'})
-js1.save!
+js = Event.create({:name => 'Jam Session', :description => 'Saturday Jam with three bands.', :website => 'http://www.deweybeachlife.com/'})
+js.save!
 
 # Taco Toss
-tt1 = Event.create({:name => 'Taco Toss', :description => 'Friday happy hour featuring Orange Crushes and $1 tacos and hot dogs.', :website => 'http://www.ruddertowneusa.com/The-Lighthouse.html', :logo => 'tacotoss-logo.png' })
-tt1.save!
+tt = Event.create({:name => 'Taco Toss', :description => 'Friday happy hour featuring Orange Crushes and $1 tacos and hot dogs.', :website => 'http://www.ruddertowneusa.com/The-Lighthouse.html', :logo => 'tacotoss-logo.png' })
+tt.save!
 
 # Rudder's Saturday Night Concert
-scrr1 = Event.create({:name => "Rudder's Saturday Night Concert", :description => 'Saturday Night Concert at the Rudder.', :website => 'http://www.deweybeachlife.com'})
-scrr1.save!
+scrr = Event.create({:name => "Rudder's Saturday Night Concert", :description => 'Saturday Night Concert at the Rudder.', :website => 'http://www.deweybeachlife.com'})
+scrr.save!
 
 # The Bangles
-tb1 = Event.create({:name => 'The Bangles', :description => 'It was 30 years ago that guitarists Susanna Hoffs and Vicki Peterson and drummer Debbi Peterson formed the Bangles in a Brentwood, California, garage.', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
+tb_concert = Event.create({:name => 'The Bangles in Concert', :description => 'a night with the bangles', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
+tb_concert.save!
+
+# George Clinton
+gc_concert = Event.create({:name => 'George Clinton & Parliament Funkadelic Concert', :description => 'Up for the down stroke', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
+gc_concert.save!
+
+
+# ***Occurrences***
+
+# Jam 1
+js1 = js.occurrences.build({:event_start => '2011-07-02T17:00:00+00:00', :event_end => '2011-07-03T01:00:00+00:00'})
+js1.save!
+
+# Jam 2
+js2 = js.occurrences.build({:event_start => '2011-07-09T17:00:00+00:00', :event_end => '2011-07-10T01:00:00+00:00'})
+js2.save!
+
+# Jam 3
+js3 = js.occurrences.build({:event_start => '2011-07-16T17:00:00+00:00', :event_end => '2011-07-17T01:00:00+00:00'})
+js3.save!
+
+# Jam 4
+js4 = js.occurrences.build({:event_start => '2011-07-23T17:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00'})
+js4.save!
+
+# Jam 5
+js5 = js.occurrences.build({:event_start => '2011-07-30T17:00:00+00:00', :event_end => '2011-07-31T01:00:00+00:00'})
+js5.save!
+
+# Taco Toss 1
+tt1 = tt.occurrences.build({:event_start => '2011-07-01T16:00:00+00:00', :event_end => '2011-07-01T21:00:00+00:00'})
+tt1.save!
+
+# Taco Toss 2
+tt2 = tt.occurrences.build({:event_start => '2011-07-08T16:00:00+00:00', :event_end => '2011-07-08T21:00:00+00:00'})
+tt2.save!
+
+# Taco Toss 3
+tt3 = tt.occurrences.build({:event_start => '2011-07-15T16:00:00+00:00', :event_end => '2011-07-15T21:00:00+00:00'})
+tt3.save!
+
+# Taco Toss 4
+tt4 = tt.occurrences.build({:event_start => '2011-07-22T16:00:00+00:00', :event_end => '2011-07-22T21:00:00+00:00'})
+tt4.save!
+
+# Taco Toss 5
+tt5 = tt.occurrences.build({:event_start => '2011-07-29T16:00:00+00:00', :event_end => '2011-07-29T21:00:00+00:00'})
+tt5.save!
+
+# Rusty Rudder Saturday Night Concert 1
+scrr1 = scrr.occurrences.build({:event_start => '2011-07-02T21:00:00+00:00', :event_end => '2011-07-03T01:00:00+00:00'})
+scrr1.save!
+
+# Rusty Rudder Saturday Night Concert 2
+scrr2 = scrr.occurrences.build({:event_start => '2011-07-09T21:00:00+00:00', :event_end => '2011-07-10T01:00:00+00:00'})
+scrr2.save!
+
+# Rusty Rudder Saturday Night Concert 3
+scrr3 = scrr.occurrences.build({:event_start => '2011-07-16T21:00:00+00:00', :event_end => '2011-07-17T01:00:00+00:00'})
+scrr3.save!
+
+# Rusty Rudder Saturday Night Concert 4
+scrr4 = scrr.occurrences.build({:event_start => '2011-07-23T21:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00'})
+scrr4.save!
+
+# Rusty Rudder Saturday Night Concert 5
+scrr5 = scrr.occurrences.build({:event_start => '2011-07-30T21:00:00+00:00', :event_end => '2011-07-31T01:00:00+00:00'})
+scrr5.save!
+
+# The Bangles
+tb1 = tb_concert.occurrences.build({:event_start => '2011-07-05T20:00:00+00:00', :event_end => '2011-07-06T01:00:00+00:00'})
 tb1.save!
 
 # George Clinton
-gc1 = Event.create({:name => 'George Clinton & Parliament Funkadelic', :description => 'Godfather of Funk.', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
+gc1 = gc_concert.occurrences.build({:event_start => '2011-07-23T20:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00'})
 gc1.save!
 
+
+# ***Performances***
+lsmj1 = lsmj.performances.build({:promotion_start => '2011-07-02T17:00:00+00:00', :promotion_end => '2011-07-03T01:00:00+00:00'})
+lsmj1.save!
+
+la1 = la.performances.build({:promotion_start => '2011-07-02T17:00:00+00:00', :promotion_end => '2011-07-03T01:00:00+00:00'})
+la1.save!
+
+la2 = la.performances.build({:promotion_start => '2011-07-16T17:00:00+00:00', :promotion_end => '2011-07-17T01:00:00+00:00'})
+la2.save!
+
+la3 = la.performances.build({:promotion_start => '2011-07-23T17:00:00+00:00', :promotion_end => '2011-07-24T01:00:00+00:00'})
+la3.save!
+
+la4 = la.performances.build({:promotion_start => '2011-07-30T17:00:00+00:00', :promotion_end => '2011-07-31T01:00:00+00:00'})
+la4.save!
+
+ggg1 = ggg.performances.build({:promotion_start => '2011-07-02T17:00:00+00:00', :promotion_end => '2011-07-03T01:00:00+00:00'})
+ggg1.save!
+
+ggg2 = ggg.performances.build({:promotion_start => '2011-07-30T17:00:00+00:00', :promotion_end => '2011-07-31T01:00:00+00:00'})
+ggg2.save!
+
+gg1 = gg.performances.build({:promotion_start => '2011-07-09T17:00:00+00:00', :promotion_end => '2011-07-10T01:00:00+00:00'})
+gg1.save!
+
+gg2 = gg.performances.build({:promotion_start => '2011-07-16T21:00:00+00:00', :promotion_end => '2011-07-17T01:00:00+00:00'})
+gg2.save!
+
+bs1 = bs.performances.build({:promotion_start => '2011-07-09T17:00:00+00:00', :promotion_end => '2011-07-10T01:00:00+00:00'})
+bs1.save!
+
+sd1 = sd.performances.build({:promotion_start => '2011-07-09T17:00:00+00:00', :promotion_end => '2011-07-10T01:00:00+00:00'})
+sd1.save!
+
+ek1 = ek.performances.build({:promotion_start => '2011-07-16T17:00:00+00:00', :promotion_end => '2011-07-17T01:00:00+00:00'})
+ek1.save!
+
+t10_1 = t10.performances.build({:promotion_start => '2011-07-16T17:00:00+00:00', :promotion_end => '2011-07-17T01:00:00+00:00'})
+t10_1.save!
+
+_3am1 = _3am.performances.build({:promotion_start => '2011-07-23T17:00:00+00:00', :promotion_end => '2011-07-24T01:00:00+00:00'})
+_3am1.save!
+
+ls1 = ls.performances.build({:promotion_start => '2011-07-23T17:00:00+00:00', :promotion_end => '2011-07-24T01:00:00+00:00'})
+ls1.save!
+
+kn1 = kn.performances.build({:promotion_start => '2011-07-30T17:00:00+00:00', :promotion_end => '2011-07-31T01:00:00+00:00'})
+kn1.save!
+
+kn2 = kn.performances.build({:promotion_start => '2011-07-02T21:00:00+00:00', :promotion_end => '2011-07-03T01:00:00+00:00'})
+kn2.save!
+
+kn3 = kn.performances.build({:promotion_start => '2011-07-09T21:00:00+00:00', :promotion_end => '2011-07-10T01:00:00+00:00'})
+kn3.save!
+
+djjj1 = djjj.performances.build({:promotion_start => '2011-07-01T16:00:00+00:00', :promotion_end => '2011-07-01T21:00:00+00:00'})
+djjj1.save!
+
+djjj2 = djjj.performances.build({:promotion_start => '2011-07-08T16:00:00+00:00', :promotion_end => '2011-07-08T21:00:00+00:00'})
+djjj2.save!
+
+djjj3 = djjj.performances.build({:promotion_start => '2011-07-15T16:00:00+00:00', :promotion_end => '2011-07-15T21:00:00+00:00'})
+djjj3.save!
+
+djjj4 = djjj.performances.build({:promotion_start => '2011-07-22T16:00:00+00:00', :promotion_end => '2011-07-22T21:00:00+00:00'})
+djjj4.save!
+
+djjj5 = djjj.performances.build({:promotion_start => '2011-07-29T16:00:00+00:00', :promotion_end => '2011-07-29T21:00:00+00:00'})
+djjj5.save!
+
+sd1 = sd.performances.build({:promotion_start => '2011-07-23T21:00:00+00:00', :promotion_end => '2011-07-24T01:00:00+00:00'})
+sd1.save!
+
+cr1 = cr.performances.build({:promotion_start => '2011-07-30T21:00:00+00:00', :promotion_end => '2011-07-31T01:00:00+00:00'})
+cr1.save!
+
+tb_perf = the_bangles.performances.build({:promotion_start => '2011-07-05T22:00:00+00:00', :promotion_end => '2011-07-06T01:00:00+00:00'})
+tb_perf.save!
+
+as1 = as.performances.build({:promotion_start => '2011-07-05T21:00:00+00:00', :promotion_end => '2011-07-05T21:40:00+00:00'})
+as1.save!
+
+gc_perf = george_clinton.performances.build({:promotion_start => '2011-07-23T21:00:00+00:00', :promotion_end => '2011-07-24T01:00:00+00:00'})
+gc_perf.save!
 
 # ***Features***
 
 # Jam 1
-js1.features.build({:location => bc1, :promotion => lsmj, :event_start => '2011-07-02T17:00:00+00:00', :event_end => '2011-07-03T01:00:00+00:00', :priority => 1, :promotion_start => '2011-07-02T17:00:00+00:00', :promotion_end => '2011-07-03T01:00:00+00:00'}).save!
-js1.features.build({:location => bc1, :promotion => la, :event_start => '2011-07-02T17:00:00+00:00', :event_end => '2011-07-03T01:00:00+00:00', :priority => 2  , :promotion_start => '2011-07-02T17:00:00+00:00', :promotion_end => '2011-07-03T01:00:00+00:00'}).save!
-js1.features.build({:location => bc1, :promotion => ggg, :event_start => '2011-07-02T17:00:00+00:00', :event_end => '2011-07-03T01:00:00+00:00', :priority => 3 , :promotion_start => '2011-07-02T17:00:00+00:00', :promotion_end => '2011-07-03T01:00:00+00:00'}).save!
+js1.features.build({:location => bc1, :performance => lsmj, :priority => 1}).save!
+js1.features.build({:location => bc1, :performance => la1,  :priority => 2}).save!
+js1.features.build({:location => bc1, :performance => ggg1, :priority => 3}).save!
 
 # Jam 2
-js1.features.build({:location => bc1, :promotion => gg, :event_start => '2011-07-09T17:00:00+00:00', :event_end => '2011-07-10T01:00:00+00:00', :priority => 3, :promotion_start => '2011-07-09T17:00:00+00:00', :promotion_end => '2011-07-10T01:00:00+00:00'}).save!
-js1.features.build({:location => bc1, :promotion => bs, :event_start => '2011-07-09T17:00:00+00:00', :event_end => '2011-07-10T01:00:00+00:00', :priority => 1, :promotion_start => '2011-07-09T17:00:00+00:00', :promotion_end => '2011-07-10T01:00:00+00:00'}).save!
-js1.features.build({:location => bc1, :promotion => sd, :event_start => '2011-07-09T17:00:00+00:00', :event_end => '2011-07-10T01:00:00+00:00', :priority => 2, :promotion_start => '2011-07-09T17:00:00+00:00', :promotion_end => '2011-07-10T01:00:00+00:00'}).save!
+js2.features.build({:location => bc1, :performance => gg1, :priority => 3}).save!
+js2.features.build({:location => bc1, :performance => bs1, :priority => 1}).save!
+js2.features.build({:location => bc1, :performance => sd1, :priority => 2}).save!
 
 # Jam 3
-js1.features.build({:location => bc1, :promotion => la, :event_start => '2011-07-16T17:00:00+00:00', :event_end => '2011-07-17T01:00:00+00:00', :priority => 1, :promotion_start => '2011-07-16T17:00:00+00:00', :promotion_end => '2011-07-17T01:00:00+00:00'}).save!
-js1.features.build({:location => bc1, :promotion => ek, :event_start => '2011-07-16T17:00:00+00:00', :event_end => '2011-07-17T01:00:00+00:00', :priority => 2, :promotion_start => '2011-07-16T17:00:00+00:00', :promotion_end => '2011-07-17T01:00:00+00:00'}).save!
-js1.features.build({:location => bc1, :promotion => tt, :event_start => '2011-07-16T17:00:00+00:00', :event_end => '2011-07-17T01:00:00+00:00', :priority => 3, :promotion_start => '2011-07-16T17:00:00+00:00', :promotion_end => '2011-07-17T01:00:00+00:00'}).save!
+js3.features.build({:location => bc1, :performance => la2,   :priority => 1}).save!
+js3.features.build({:location => bc1, :performance => ek1,   :priority => 2}).save!
+js3.features.build({:location => bc1, :performance => t10_1, :priority => 3}).save!
 
 # Jam 4
-js1.features.build({:location => bc1, :promotion => _3am, :event_start => '2011-07-23T17:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00', :priority => 1, :promotion_start => '2011-07-23T17:00:00+00:00', :promotion_end => '2011-07-24T01:00:00+00:00'}).save!
-js1.features.build({:location => bc1, :promotion => ls, :event_start => '2011-07-23T17:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00',   :priority => 2, :promotion_start => '2011-07-23T17:00:00+00:00', :promotion_end => '2011-07-24T01:00:00+00:00'}).save!
-js1.features.build({:location => bc1, :promotion => la, :event_start => '2011-07-23T17:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00',   :priority => 3, :promotion_start => '2011-07-23T17:00:00+00:00', :promotion_end => '2011-07-24T01:00:00+00:00'}).save!
+js4.features.build({:location => bc1, :performance => _3am1, :priority => 1}).save!
+js4.features.build({:location => bc1, :performance => ls1,   :priority => 2}).save!
+js4.features.build({:location => bc1, :performance => la3,   :priority => 3}).save!
 
 # Jam 5
-js1.features.build({:location => bc1, :promotion => kn, :event_start => '2011-07-30T17:00:00+00:00', :event_end => '2011-07-31T01:00:00+00:00',  :priority => 1, :promotion_start => '2011-07-30T17:00:00+00:00', :promotion_end => '2011-07-31T01:00:00+00:00'}).save!
-js1.features.build({:location => bc1, :promotion => ggg, :event_start => '2011-07-30T17:00:00+00:00', :event_end => '2011-07-31T01:00:00+00:00', :priority => 2, :promotion_start => '2011-07-30T17:00:00+00:00', :promotion_end => '2011-07-31T01:00:00+00:00'}).save!
-js1.features.build({:location => bc1, :promotion => la, :event_start => '2011-07-30T17:00:00+00:00', :event_end => '2011-07-31T01:00:00+00:00',  :priority => 3, :promotion_start => '2011-07-30T17:00:00+00:00', :promotion_end => '2011-07-31T01:00:00+00:00'}).save!
-js1.save!
+js5.features.build({:location => bc1, :performance => kn1,  :priority => 1}).save!
+js5.features.build({:location => bc1, :performance => ggg2, :priority => 2}).save!
+js5.features.build({:location => bc1, :performance => la4,  :priority => 3}).save!
+js5.save!
 
 # Taco Toss 1
-tt1.features.build({:location => lh1, :promotion => djjj, :promotion_start => '2011-07-01T16:00:00+00:00', :promotion_end => '2011-07-01T21:00:00+00:00', :event_start => '2011-07-01T16:00:00+00:00', :event_end => '2011-07-01T21:00:00+00:00'}).save!
+tt1.features.build({:location => lh1, :performance => djjj1}).save!
 
 # Taco Toss 2
-tt1.features.build({:location => lh1, :promotion => djjj, :promotion_start => '2011-07-08T16:00:00+00:00', :promotion_end => '2011-07-08T21:00:00+00:00', :event_start => '2011-07-08T16:00:00+00:00', :event_end => '2011-07-08T21:00:00+00:00'}).save!
+tt2.features.build({:location => lh1, :performance => djjj2}).save!
 
 # Taco Toss 3
-tt1.features.build({:location => lh1, :promotion => djjj, :promotion_start => '2011-07-15T16:00:00+00:00', :promotion_end => '2011-07-15T21:00:00+00:00', :event_start => '2011-07-15T16:00:00+00:00', :event_end => '2011-07-15T21:00:00+00:00'}).save!
+tt3.features.build({:location => lh1, :performance => djjj3}).save!
 
 # Taco Toss 4
-tt1.features.build({:location => lh1, :promotion => djjj, :promotion_start => '2011-07-22T16:00:00+00:00', :promotion_end => '2011-07-22T21:00:00+00:00', :event_start => '2011-07-22T16:00:00+00:00', :event_end => '2011-07-22T21:00:00+00:00'}).save!
+tt4.features.build({:location => lh1, :performance => djjj4}).save!
 
 # Taco Toss 5
-tt1.features.build({:location => lh1, :promotion => djjj, :promotion_start => '2011-07-29T16:00:00+00:00', :promotion_end => '2011-07-29T21:00:00+00:00', :event_start => '2011-07-29T16:00:00+00:00', :event_end => '2011-07-29T21:00:00+00:00'}).save!
+tt5.features.build({:location => lh1, :performance => djjj5}).save!
 
 # Rusty Rudder Saturday Night Concert 1
-scrr1.features.build({:location => rr1, :promotion => kn, :promotion_start => '2011-07-02T21:00:00+00:00', :promotion_end => '2011-07-03T01:00:00+00:00', :event_start => '2011-07-02T21:00:00+00:00', :event_end => '2011-07-03T01:00:00+00:00'}).save!
+scrr1.features.build({:location => rr1, :performance => kn2}).save!
 
 # Rusty Rudder Saturday Night Concert 2
-scrr1.features.build({:location => rr1, :promotion => kn, :promotion_start => '2011-07-09T21:00:00+00:00', :promotion_end => '2011-07-10T01:00:00+00:00', :event_start => '2011-07-09T21:00:00+00:00', :event_end => '2011-07-10T01:00:00+00:00'}).save!
+scrr2.features.build({:location => rr1, :performance => kn3}).save!
 
 # Rusty Rudder Saturday Night Concert 3
-scrr1.features.build({:location => rr1, :promotion => gg, :promotion_start => '2011-07-16T21:00:00+00:00', :promotion_end => '2011-07-17T01:00:00+00:00', :event_start => '2011-07-16T21:00:00+00:00', :event_end => '2011-07-17T01:00:00+00:00'}).save!
+scrr3.features.build({:location => rr1, :performance => gg2}).save!
 
 # Rusty Rudder Saturday Night Concert 4
-scrr1.features.build({:location => rr1, :promotion => sd, :promotion_start => '2011-07-23T21:00:00+00:00', :promotion_end => '2011-07-24T01:00:00+00:00', :event_start => '2011-07-23T21:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00'}).save!
+scrr4.features.build({:location => rr1, :performance => sd1}).save!
 
 # Rusty Rudder Saturday Night Concert 5
-scrr1.features.build({:location => rr1, :promotion => cr, :promotion_start => '2011-07-30T21:00:00+00:00', :promotion_end => '2011-07-31T01:00:00+00:00', :event_start => '2011-07-30T21:00:00+00:00', :event_end => '2011-07-31T01:00:00+00:00'}).save!
+scrr5.features.build({:location => rr1, :performance => cr1}).save!
 
 # The Bangles
-tb1.features.build({:location => bc1, :promotion => tb, :promotion_start => '2011-07-05T22:00:00+00:00', :promotion_end => '2011-07-06T01:00:00+00:00', :event_start => '2011-07-05T20:00:00+00:00', :event_end => '2011-07-06T01:00:00+00:00'}).save!
-tb1.features.build({:location => bc1, :promotion => as, :promotion_start => '2011-07-05T21:00:00+00:00', :promotion_end => '2011-07-05T21:40:00+00:00', :event_start => '2011-07-05T20:00:00+00:00', :event_end => '2011-07-06T01:00:00+00:00'}).save!
+tb1.features.build({:location => bc1, :performance => tb_perf}).save!
+tb1.features.build({:location => bc1, :performance => as1}).save!
 
 # George Clinton
-gc1.features.build({:location => bc1, :promotion => gc, :promotion_start => '2011-07-23T21:00:00+00:00', :promotion_end => '2011-07-24T01:00:00+00:00', :event_start => '2011-07-23T20:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00'}).save!
-
-
-
+gc1.features.build({:location => bc1, :performance => gc_perf}).save!
 
 #
 # tr1 = Event.create({:name => 'Thursday Night At The Rudder', :description => 'Thursday night show featuring Love Seed Momma Jump', :website => 'http://www.deweybeachlife.com/', :venue => rr, :promotion => ls, :special_event_id => nil, :stage => '', :event_start => '2011-10-01T19:00:00+00:00', :event_end => '2011-10-01T21:00:00+00:00', :logo => 'logo'})
