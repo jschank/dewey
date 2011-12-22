@@ -14,7 +14,6 @@ class VenuesController < ApplicationController
   # GET /venues/1.json
   def show
     @venue = Venue.find(params[:id])
-    @future_events_by_date = Event.find(:all).sort{ |a, b| a.event_start <=> b.event_start}.group_by{ |event| event.event_start.to_date }
 
     respond_to do |format|
       format.html # show.html.erb

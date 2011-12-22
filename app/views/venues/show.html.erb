@@ -1,18 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<div class="fred">
+<div class="boxSpecific">
     <%= image_tag image_path @venue.logo if @venue.logo %>
-    <%= @venue.name %>
-    <%= @venue.description %>
-    <%= @venue.address1 %>
-    <%= @venue.address2 if @venue.address2 %>
-    <%= @venue.city %>, <%= @venue.state %>  <%= @venue.zip_code %>
-    <%= @venue.phone %>
-    <%= link_to "On the web", @venue.url, :target => "_blank" %>
+    <h2><%= @venue.name %></h2>
+    <p><%= @venue.description %></p>
+    <p><%= @venue.address1 %><br/>
+    <%= @venue.address2 if @venue.address2 %><br/>
+    <%= @venue.city %>, <%= @venue.state %>  <%= @venue.zip %></p>
+    <p>Phone: <%= @venue.phone %></p>
+    <%= link_to "On the web", @venue.website, :target => "_blank" %>
 </div>
 
+<div class="boxIndex">
 <h2>Upcoming Events at <%= @venue.name %></h2>
-
+<% if false %>
 <% @future_events_by_date.each do |start_date, events| %>
     <h2><%= start_date.strftime("%A, %B %d, %Y") %></h2>
     <div class="events">
@@ -21,5 +22,7 @@
     <% end %>
     </div>
 <% end %>
+<% end %>
+</div>
 
 
