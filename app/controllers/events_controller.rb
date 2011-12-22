@@ -2,7 +2,8 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all.sort{ |a, b| a.event_start <=> b.event_start}.group_by { |event| event.event_start.to_date }
+    occurrences = Occurrence.find(:all, :include => [:event, :venues, :features, :performances, :promotions ])
+    @occurrences_by_date = occurrences.sort{ |a, b| a.event_start <=> b.event_start}.group_by { |event| event.event_start.to_date }
 
     respond_to do |format|
       format.html # index.html.erb

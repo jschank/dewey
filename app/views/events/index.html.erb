@@ -1,11 +1,15 @@
-
-<% @events.keys.each do |start_date| %>
-    <h2><%= start_date.strftime("%A, %B %d, %Y") %></h2>
-    <div class="events">
-    <% @events[start_date].each do |event| %>
-        <%= render event %>
-    <% end %>
-    </div>
+<% @occurrences_by_date.each do |start_date, occurrences| %>
+	<div class="boxIndex">
+	<h2><%= date_and_times(start_date) %></h2>
+	<% occurrences.each do |occurrence| %>
+	<a href=<%= current_event_path(occurrence.event, occurrence.event_start.year, occurrence.event_start.month, occurrence.event_start.day, occurrence.event_start.hour, occurrence.event_start.min) %> style="background: url(<%= venue_logo(occurrence) %>) no-repeat 10px 10px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
+			<h4 class="event_name"><%= occurrence.event.name %></h4>
+			<% occurrence.promotions.each do |promotion| %>
+				<p class="event_feature"><%= promotion.name %></p>
+			<% end %>
+			<p class="event_times"><%= occurrence_times(occurrence) %></p></a>
+		<% end %>
+	</div>
 <% end %>
 
 

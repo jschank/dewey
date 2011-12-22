@@ -4,24 +4,21 @@ module ApplicationHelper
     event.features[0].venue.logo
   end
 
-  def event_format(datetime)
+  def time_format(datetime)
     (datetime.min > 0) ? "%l:%M %p" : "%l %p"
   end
 
-  def event_times(features)
-    start_time = (features[0].event_start) ? features[0].event_start.strftime(event_format(features[0].event_start)) : "?"
-    end_time = (features[0].event_end) ? features[0].event_end.strftime(event_format(features[0].event_end)) : "?"
+  def occurrence_times(occurrence)
+    start_time = (occurrence.event_start) ? occurrence.event_start.strftime(time_format(occurrence.event_start)) : "?"
+    end_time   = (occurrence.event_end)   ? occurrence.event_end.strftime(time_format(occurrence.event_end)) : "?"
     "#{start_time} -#{end_time}".downcase
   end
   
-  def date_and_times(date, features)
-    date.strftime("%A, %B %d, %Y at #{event_times(features)}")
-  end
-
-  def date_and_times(date, features = nil)
+  def date_and_times(date, occurrence = nil)
     str = ""
     str += date.strftime("%A, %B %d, %Y")
-    str += " at #{event_times(features)}" if features
+    str += " at #{occurrence_times(occurrence)}" if occurrence
+    str
   end
 
 end

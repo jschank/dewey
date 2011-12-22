@@ -1,10 +1,13 @@
 module EventsHelper
 
+  def venue_logo(occurrence)
+     asset_path (occurrence.locations[0].venue.logo || "")
+  end  
+
   def is_empty(string)
     string == nil || string.strip.empty?
   end
 
-  # should be in the model as something like display_name
   def event_name(event)
     return event.features[0].promotion.name if is_empty(event.name)
     event.name
