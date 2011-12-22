@@ -298,7 +298,7 @@ gc_perf.save!
 # ***Features***
 
 # Jam 1
-js1.features.build({:location => bc1, :performance => lsmj, :priority => 1}).save!
+js1.features.build({:location => bc1, :performance => lsmj1, :priority => 1}).save!
 js1.features.build({:location => bc1, :performance => la1,  :priority => 2}).save!
 js1.features.build({:location => bc1, :performance => ggg1, :priority => 3}).save!
 
