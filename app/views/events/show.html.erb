@@ -1,16 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <div class="boxSpecific">
-    <div class="specificHeader" style="background: #f4f4f4 url(<%= venue_logo(@current_features[0]) %>) no-repeat 10px 10px">
+    <div class="specificHeader" style="background: #f4f4f4 url(<%= logo_for(@event, @occurrence) %>) no-repeat 10px 10px">
 	<div class="event_name"><%= @event.name %></div>
-	<div class="event_times"><%= date_and_times(@date, @current_features) %></div>	
+	<div class="event_times"><%= occurrence_times(@occurrence) %></div>	
     <p class="event_description"><%= @event.description %></p>
 	</div>
     
-    <%= link_to "#{[@venue.name, @current_features[0].location.name].compact.join(' - ')}", venue_path(@venue), :class => "event_venue" %>
-	<% @current_features.each do |feature| %>
-		<%= link_to feature.promotion.name, promotion_path(feature.promotion), :class => "event_promotion" %>
-    <% end %>
+	<% if @occurrence %>
+	<% @occurrence.venues.uniq.each do |venue| %>
+			<%= link_to venue.name, venue_path(venue), :class => "event_venue" %>
+		<% end %>
+
+		<% @occurrence.promotions.each do |promotion| %>
+			<%= link_to promotion.name, promotion_path(promotion), :class => "event_promotion" %>
+	    <% end %>
+	<% end %>
+
 	<div class="webLinks">
 	<a href="#" class="webAnchor webSite"></a>
 	<a href="#" class="webAnchor facebook"></a>
@@ -18,15 +24,17 @@
 	</div>
 	</div>
 
-<div class="boxIndex">
 <h2>Upcoming <%= @event.name.pluralize %></h2>
-	<%= @future_features.each do |date, features| %>
-		<span class="event_name"><%= date_and_times(date, features) %></span>
-		<% features.each do |feature| %>
-			<%= link_to feature.promotion.name, promotion_path(feature.promotion), :class => "event_promotion" %>
-		<% end %>
-    <% end %>
-</div>
+<% @future_occurrences.each do |date, occurrences| %>
+<div class="boxIndex">
+	<% occurrences.each do |occurrence| %>
+		<span class="event_name"><%= date_and_times(date, occurrence) %></span>
+			<% occurrence.promotions.each do |promotion| %>
+				<%= link_to promotion.name, promotion_path(promotion), :class => "event_promotion" %>
+			<% end %>
+	    <% end %>
+	</div>
+<% end %>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

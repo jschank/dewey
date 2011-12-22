@@ -14,11 +14,9 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @occurrence = Occurrence.find(params[:occurrence_id]) if params[:occurrence_id]
     @event = Event.find(params[:id])
-    @venue = @event.features[0].venue
-    @date = Time.utc(params[:year].to_i, params[:month].to_i, params[:day].to_i, params[:hour], params[:min])
-    @current_features = Feature.where("event_id = ? and event_start = ?", params[:id], @date).order("priority")
-    @future_features = Feature.where("event_id = ? and event_start >= ?", params[:id], @date).order("promotion_start").group_by { |f| f.event_start.to_date }
+    @future_occurrences = Occurrence.where("event_id = ? and event_start >= ?", params[:id], DateTime.civil(2011, 01, 01)).group_by { |occurrence| occurrence.event_start }
 
     respond_to do |format|
       format.html # show.html.erb

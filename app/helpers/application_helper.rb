@@ -9,6 +9,7 @@ module ApplicationHelper
   end
 
   def occurrence_times(occurrence)
+    return "" unless occurrence
     start_time = (occurrence.event_start) ? occurrence.event_start.strftime(time_format(occurrence.event_start)) : "?"
     end_time   = (occurrence.event_end)   ? occurrence.event_end.strftime(time_format(occurrence.event_end)) : "?"
     "#{start_time} -#{end_time}".downcase
