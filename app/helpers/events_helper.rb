@@ -1,7 +1,7 @@
 module EventsHelper
 
   def logo_for(event, occurrence)
-    logo = occurrence.locations[0].try(:venue).try(:logo) || event.try(:logo) || ""
+    logo = occurrence.try(:locations).try(:at, 0).try(:venue).try(:logo) || event.try(:logo) || ""
     asset_path (logo)     
   end  
 
