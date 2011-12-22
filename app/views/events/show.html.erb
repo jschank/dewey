@@ -24,17 +24,17 @@
 	</div>
 	</div>
 
+<div class="boxIndex">
 <h2>Upcoming <%= @event.name.pluralize %></h2>
 <% @future_occurrences.each do |date, occurrences| %>
-<div class="boxIndex">
 	<% occurrences.each do |occurrence| %>
 		<span class="event_name"><%= date_and_times(date, occurrence) %></span>
 			<% occurrence.promotions.each do |promotion| %>
 				<%= link_to promotion.name, promotion_path(promotion), :class => "event_promotion" %>
 			<% end %>
 	    <% end %>
-	</div>
 <% end %>
+	</div>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
