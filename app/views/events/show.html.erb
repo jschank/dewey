@@ -28,12 +28,13 @@
 <h2>Upcoming <%= @event.name.pluralize %></h2>
 <% @future_occurrences.each do |date, occurrences| %>
 	<% occurrences.each do |occurrence| %>
+	<a href="#" style="background: url(<%= logo_for(occurrence.event, occurrence) %>) no-repeat 10px 10px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
 		<span class="event_name"><%= date_and_times(date, occurrence) %></span>
-			<% occurrence.promotions.each do |promotion| %>
-				<%= link_to promotion.name, promotion_path(promotion), :class => "event_promotion" %>
-			<% end %>
+		<% occurrence.promotions.each do |promotion| %>
+			<p class="event_feature"><%= promotion.name %></p>
+		<% end %>
 	    <% end %>
-<% end %>
+<% end %></a>
 	</div>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
