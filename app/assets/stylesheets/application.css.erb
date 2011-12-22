@@ -14,12 +14,12 @@ h1
 {
 	color: #fff;
 	background: url(<%= asset_path 'h1-bg.png' %>) repeat-x left top;
-	font: bold 3em Helvetica, sans-serif;
+	font: bold 1.5em Helvetica, sans-serif;
 	text-align: center;
 	text-transform: uppercase;
 	margin: 0 0 0 0;
-	padding: 20px 0 0 0;
-	height: 68px;
+	padding: 10px 0 0 0;
+	height: 44px;
 }
 #search
 {
@@ -31,7 +31,7 @@ h1
 .boxIndex, .boxSpecific
 {
 	background: #fff;
-	margin: 20px;
+	margin: 10px;
 	padding: 0;
 	border: 2px solid #b8b8b8;
 	border-radius: 5px;	
@@ -39,7 +39,7 @@ h1
 }
 .boxIndex h2	{
 	color: #000;
-	font: bold 2em Helvetica, sans-serif;
+	font: bold 1em Helvetica, sans-serif;
 	margin: 0 0 0 0;
 	padding: 5px;
 	text-align: center;
@@ -51,30 +51,30 @@ h1
 .boxIndex a
 {
 	display: block;
-	border-top: 1px solid #e6e6e6;
-	padding: 10px 10px 10px 120px;
-	min-height: 110px;
+	border-top: 2px solid #e6e6e6;
+	padding: 10px 10px 10px 70px;
+	min-height: 60px;
 	text-decoration: none;	
 }
 
 .boxIndex .event_name, .boxSpecific .event_name	
 {
 	margin: 0;
-	font: bold 2em Helvetica, sans-serif;
+	font: bold 1em Helvetica, sans-serif;
 	color: #000;
 	text-align: left;
 }
 
 .boxIndex .event_feature	
 {
-	font: normal 2em Helvetica, sans-serif;
+	font: normal 1em Helvetica, sans-serif;
 	color: #000;
 	margin: 0;
 }
 
 .boxIndex .event_times
 {
-	font: normal 2em Helvetica, sans-serif;
+	font: normal 1em Helvetica, sans-serif;
 	color: #999;
 	margin: 0;
 }
@@ -82,17 +82,17 @@ h1
 
 .boxSpecific .specificHeader	{
 	margin: 0 0 0 0;
-	padding: 10px 10px 10px 120px;
+	padding: 10px 10px 10px 70px;
 	text-align: left;
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
 	background: #f4f4f4;
-	min-height: 100px;
+	min-height: 50px;
 }
 
 .boxSpecific .event_times
 {
-	font: normal 2em Helvetica, sans-serif;
+	font: normal 1em Helvetica, sans-serif;
 	color: #000;
 	margin: 0;
 }
@@ -101,46 +101,66 @@ h1
 {
 	padding: 0;
 	margin: 0;
-	font: italic 1.5em Helvetica, sans-serif;
+	font: italic .8em Helvetica, sans-serif;
 	color: #999;
 }
 
 .boxSpecific .event_venue	
 {
 	display: block;
-	border-top: 1px solid #e6e6e6;
+	border-top: 2px solid #e6e6e6;
 	background: url(<%= asset_path 'arrow.png' %>) no-repeat right center;
 	padding: 10px;
 	text-decoration: none;
 	margin: 0;
-	font: normal 2em Helvetica, sans-serif;
+	font: normal 1em Helvetica, sans-serif;
 	color: #000;
 }
 
 .boxSpecific .event_promotion	
 {
 	display: block;
-	border-top: 1px solid #e6e6e6;
+	border-top: 2px solid #e6e6e6;
 	background: url(arrow.png) no-repeat right center;
 	padding: 10px;
 	text-decoration: none; margin: 0;
-	font: normal 2em Helvetica, sans-serif;
+	font: normal 1em Helvetica, sans-serif;
 	color: #000;
 }
 
-
-
-
-/*.boxSpecific .event_name	
+.boxSpecific .webLinks	
 {
-	color: #000;
-	font: bold 1em Helvetica, sans-serif;
-	margin: 0 0 5px 0;
-	padding: 5px;
-	text-align: center;
-	background: url(black-40.png)
-	repeat left top;
-	border-radius: 5px;
-}*/
+	height: 60px;
+	margin: 0;
+	padding: 0;
+	background: #f4f4f4;
+	border-top: 2px solid #e6e6e6;
+}
 
+.webLinks .webAnchor
+{
+	display: block;
+	float: left;
+	border-right: 2px solid #e6e6e6;
+	height: 60px;
+	width: 33%;
+	margin: 0;
+	padding: 0;
+}
+
+
+.webLinks .webSite
+{
+	background: url(<%= asset_path 'web-logo-sm.png' %>) no-repeat center center;
+}
+.webLinks .facebook
+{
+	background: url(<%= asset_path 'facebook-logo-sm.png' %>) no-repeat center center;
+}
+.webLinks .twitter
+{
+	background: url(<%= asset_path 'twitter-logo-sm.png' %>) no-repeat center center;
+	border-right: none;
+}
+	
 

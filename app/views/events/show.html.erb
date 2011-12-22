@@ -11,7 +11,12 @@
 	<% @current_features.each do |feature| %>
 		<%= link_to feature.promotion.name, promotion_path(feature.promotion), :class => "event_promotion" %>
     <% end %>
-</div>
+	<div class="webLinks">
+	<a href="#" class="webAnchor webSite"></a>
+	<a href="#" class="webAnchor facebook"></a>
+	<a href="#" class="webAnchor twitter"></a>
+	</div>
+	</div>
 
 <div class="boxIndex">
 <h2>Upcoming <%= @event.name.pluralize %></h2>
