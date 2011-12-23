@@ -178,6 +178,7 @@ Change Log
 
 To Do
 =====
-* Populate seeds.rb with basic data
 * use classy_enum to capture kinds of promotions: drink specials, band, etc.
-
+* Convert features to a has\_and\_belongs\_to\_many join table. It will be occurrences\_performances
+* Performances will have one location, location will have many performances.
+* Venues will have many performances through location.
