@@ -10,7 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111222171811) do
+ActiveRecord::Schema.define(:version => 20111223193705) do
+
+  create_table "acts", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "website"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "hometown"
+    t.string   "logo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -22,19 +34,6 @@ ActiveRecord::Schema.define(:version => 20111222171811) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "features", :force => true do |t|
-    t.integer  "location_id"
-    t.integer  "performance_id"
-    t.integer  "occurrence_id"
-    t.integer  "priority"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "features", ["location_id"], :name => "index_features_on_location_id"
-  add_index "features", ["occurrence_id"], :name => "index_features_on_occurrence_id"
-  add_index "features", ["performance_id"], :name => "index_features_on_performance_id"
 
   create_table "locations", :force => true do |t|
     t.integer  "venue_id"
@@ -56,25 +55,19 @@ ActiveRecord::Schema.define(:version => 20111222171811) do
   add_index "occurrences", ["event_id"], :name => "index_occurrences_on_event_id"
 
   create_table "performances", :force => true do |t|
+    t.integer  "act_id"
+    t.integer  "occurrence_id"
+    t.integer  "location_id"
     t.datetime "promotion_start"
     t.datetime "promotion_end"
-    t.integer  "promotion_id"
+    t.integer  "priority"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "performances", ["promotion_id"], :name => "index_performances_on_promotion_id"
-
-  create_table "promotions", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.string   "website"
-    t.string   "facebook"
-    t.string   "twitter"
-    t.string   "logo"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  add_index "performances", ["act_id"], :name => "index_performances_on_act_id"
+  add_index "performances", ["location_id"], :name => "index_performances_on_location_id"
+  add_index "performances", ["occurrence_id"], :name => "index_performances_on_occurrence_id"
 
   create_table "venues", :force => true do |t|
     t.string   "name"

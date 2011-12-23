@@ -1,8 +1,9 @@
 class Venue < ActiveRecord::Base
   has_many :locations
-  has_many :features, :through => :locations, :source => :venue
-  # has_many :performances, :through => :features
-  # has_many :promotions, :through => :performances
-  # has_many :occurrences, :through => :features
-  # has_many :events, :through => :occurrences
+  has_many :performances, :through => :locations
+  
+  has_many :acts, :through => :performances
+
+  has_many :occurrences, :through => :performances
+  has_many :events, :through => :occurrences
 end
