@@ -17,24 +17,24 @@
 
 # Bottle and Cork
 bc = Venue.create!({:name => 'Bottle and Cork', :description => 'The Bottle & Cork is a live music club established in 1936.', :website => 'http://www.deweybeachlife.com/', :address1 => '1807 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-7272', :logo => 'cork-logo.png'})
-bc1 = bc.locations.build()
+bc1 = bc.locations.build({:name => "default"})
 bca = bc.locations.build({:name => "Stage A"})
 bcb = bc.locations.build({:name => "Stage B"})
 bc.save!
 
 # Northbeach
 nb = Venue.create({:name => 'Northbeach', :description => 'Northbeach offers casual indoor and outdoor dining overlooking Rehoboth Bay. Northbeach is open mid-May through Labor Day. Join us for great food, frozen drinks and beautiful sunsets.', :website => 'http://www.deweybeachlife.com/', :address1 => '125 McKinley Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-226-8673'})
-nb1 = nb.locations.build()
+nb1 = nb.locations.build({:name => "default"})
 nb.save!
 
 # Lighthouse
 lh = Venue.create({:name => 'Lighthouse', :description => 'Tall tower, bright light', :website => 'http://www.deweybeachlife.com/', :address1 => '2112 Shiny Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-555-1212', :logo => 'lighthouse-logo.png'})
-lh1 = lh.locations.build()
+lh1 = lh.locations.build({:name => "default"})
 lh.save!
 
 # Rusty Rudder
 rr = Venue.create({:name => 'Rusty Rudder', :description => 'The Rudder is now open daily.  Join us for our famous all u can eat Land and Sea Buffet served Friday and Saturdays at 4:30.We have live entertainment weekly.', :website => 'http://www.deweybeachlife.com/', :address1 => '113 Dickinson Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-3888', :logo => 'rudder-logo.png' })
-rr1 = rr.locations.build()
+rr1 = rr.locations.build({:name => "default"})
 rra = rr.locations.build({:name => "Stage A"})
 rrb = rr.locations.build({:name => "Stage B"})
 rrc = rr.locations.build({:name => "Stage C"})
@@ -43,14 +43,14 @@ rr.save!
 
 # Starboard
 sb = Venue.create({:name => 'The Starboard', :description => 'John thinks it is too crowded.', :website => 'http://www.thestarboard.com/', :address1 => '2009 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-4600'})
-sb1 = sb.locations.build()
+sb1 = sb.locations.build({:name => "default"})
 sba = sb.locations.build({:name => "Main Stage"})
 sbb = sb.locations.build({:name => "Deck Stage"})
 sb.save!
 
 # Jimmy's Grille
 jg = Venue.create({:name => "Jimmy's Grille", :description => 'Outdoor Bar and Grille.', :website => 'http://www.deweybeachlife.com/', :address1 => 'Highway One and Bellevue Street', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-4600'})
-jg1 = jg.locations.build()
+jg1 = jg.locations.build({:name => "default"})
 jg.save!
 
 # ***Promotions***
