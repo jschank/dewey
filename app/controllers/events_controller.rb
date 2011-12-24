@@ -15,7 +15,7 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @occurrence = Occurrence.find(params[:occurrence_id], :include => [:event, :performances, :acts, :locations, :venues ]) if params[:occurrence_id]
-    @event = @occurrence.event || Event.find(params[:id])
+    @event = @occurrence.try(:event) || Event.find(params[:id])
     @future_occurrences = Occurrence.where("event_id = ? and event_start >= ?", params[:id], DateTime.civil(2011, 01, 01)).
       includes(:event, :performances, :acts, :locations, :venues).
       group_by { |occurrence| occurrence.event_start }

@@ -4,5 +4,5 @@ class Occurrence < ActiveRecord::Base
   has_many :acts, :through => :performances
   
   has_many :locations, :through => :performances
-  has_many :venues, :through => :locations
+  has_many :venues, :through => :locations, :uniq => true
 end

@@ -119,23 +119,23 @@ george_clinton = Act.create({:name => 'George Clinton & Parliament Funkadelic', 
 # ***Events***
 
 # Jam Session
-js = Event.create({:name => 'Jam Session', :description => 'Saturday Jam with three bands.', :website => 'http://www.deweybeachlife.com/'})
+js = Event.create({:logo => 'cork-logo.png', :name => 'Jam Session', :description => 'Saturday Jam with three bands.', :website => 'http://www.deweybeachlife.com/'})
 js.save!
 
 # Taco Toss
-tt = Event.create({:name => 'Taco Toss', :description => 'Friday happy hour featuring Orange Crushes and $1 tacos and hot dogs.', :website => 'http://www.ruddertowneusa.com/The-Lighthouse.html', :logo => 'tacotoss-logo.png' })
+tt = Event.create({:logo => 'rudder-logo.png', :name => 'Taco Toss', :description => 'Friday happy hour featuring Orange Crushes and $1 tacos and hot dogs.', :website => 'http://www.ruddertowneusa.com/The-Lighthouse.html', :logo => 'tacotoss-logo.png' })
 tt.save!
 
 # Rudder's Saturday Night Concert
-scrr = Event.create({:name => "Rudder's Saturday Night Concert", :description => 'Saturday Night Concert at the Rudder.', :website => 'http://www.deweybeachlife.com'})
+scrr = Event.create({:logo => 'rudder-logo.png', :name => "Rudder's Saturday Night Concert", :description => 'Saturday Night Concert at the Rudder.', :website => 'http://www.deweybeachlife.com'})
 scrr.save!
 
 # The Bangles
-tb_concert = Event.create({:name => 'The Bangles in Concert', :description => 'a night with the bangles', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
+tb_concert = Event.create({:logo => 'cork-logo.png', :name => 'The Bangles in Concert', :description => 'a night with the bangles', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
 tb_concert.save!
 
 # George Clinton
-gc_concert = Event.create({:name => 'George Clinton & Parliament Funkadelic Concert', :description => 'Up for the down stroke', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
+gc_concert = Event.create({:logo => 'cork-logo.png', :name => 'George Clinton & Parliament Funkadelic Concert', :description => 'Up for the down stroke', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
 gc_concert.save!
 
 
