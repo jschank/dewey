@@ -1,0 +1,17 @@
+<% @occurrences_by_date.each do |start_date, occurrences| %>
+	<div class="boxIndex">
+	<h2><%= date_and_times(start_date) %></h2>
+	<% occurrences.each do |occurrence| %>
+	<a href=<%= current_event_path(occurrence.event, occurrence) %> style="background: url(<%= logo_for(occurrence.event, :small) %>) no-repeat 10px 10px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
+		<h4 class="event_name"><%= occurrence.event.name %></h4>
+		<% occurrence.acts.each do |act| %>
+			<p class="event_feature"><%= act.name %></p>
+		<% end %>
+		<p class="event_times"><%= occurrence_times(occurrence) %></p></a>
+	<% end %>
+	</div>
+<% end %>
+
+<br />
+
+<%= link_to 'New Event', new_event_path %>
