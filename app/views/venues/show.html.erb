@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="boxSpecific">
-    <%= image_tag image_path @venue.logo if @venue.logo %>
+    <div class="specificHeader" style="background: #f4f4f4 url(<%= logo_for(@venue, :large) %>) no-repeat 10px 10px">
     <h2><%= @venue.name %></h2>
     <p><%= @venue.description %></p>
     <p><%= @venue.address1 %><br/>
@@ -9,20 +9,21 @@
     <%= @venue.city %>, <%= @venue.state %>  <%= @venue.zip %></p>
     <p>Phone: <%= @venue.phone %></p>
     <%= link_to "On the web", @venue.website, :target => "_blank" %>
+    </div>
 </div>
 
 <div class="boxIndex">
 <h2>Upcoming Events at <%= @venue.name %></h2>
-<% if false %>
-<% @future_events_by_date.each do |start_date, events| %>
-    <h2><%= start_date.strftime("%A, %B %d, %Y") %></h2>
-    <div class="events">
-    <% events.each do |event| %>
-        <%= render 'upcoming_events', :event => event %>
+<% @future_occurrences.each do |date, occurrences| %>
+	<% occurrences.each do |occurrence| %>
+	<a href=<%= current_event_path(occurrence.event, occurrence) %> style="background: url(<%= logo_for(occurrence.venues[0], :small) %>) no-repeat 10px 10px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
+		<span class="event_name"><%= date_and_times(date, occurrence) %></span>
+		<% occurrence.acts.each do |act| %>
+		<p class="event_feature"><%= act.name %></p>
+		<% end %>
     <% end %>
-    </div>
-<% end %>
-<% end %>
+<% end %></a>
 </div>
+
 
 

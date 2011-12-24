@@ -4,6 +4,6 @@ class Venue < ActiveRecord::Base
   
   has_many :acts, :through => :performances
 
-  has_many :occurrences, :through => :performances
+  has_many :occurrences, :through => :performances, :uniq => true
   has_many :events, :through => :occurrences
 end

@@ -13,8 +13,10 @@ class VenuesController < ApplicationController
   # GET /venues/1
   # GET /venues/1.json
   def show
-    @venue = Venue.find(params[:id])  
-    # @future_occurrences = @venue.occurrences.where {|o| o.event_start >= DateTime.civil(2011, 01, 01)}.group_by { |occurrence| occurrence.event_start.to_date }
+    @venue = Venue.find(params[:id])
+    @future_occurrences = @venue.occurrences.where("event_start >= ?", DateTime.civil(2011, 01, 01)).
+      includes(:locations, :performances, :acts).
+      group_by { |occurrence| occurrence.event_start }
 
     respond_to do |format|
       format.html # show.html.erb
