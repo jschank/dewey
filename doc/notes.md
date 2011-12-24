@@ -38,7 +38,7 @@ add any number of events that reference it.
 
 ---
 
-### Promotion (who/what)
+### Acts (who/what)
 a promotion is a thing that happens.
 For example: Taco Toss, Drink Special, A Band... etc.
 
@@ -50,15 +50,16 @@ For example: Taco Toss, Drink Special, A Band... etc.
 * URL
 
 #### Todo:
-* Add a "kind" field using [classy_enum](https://github.com/beerlington/classy_enum)
 * Add "related promotions" using a [self-join association](http://edgeguides.rubyonrails.org/association_basics.html#self-joins)
+* Populate the hometown field
+* Add a new field for sort order 
 
 #### Reasoning
 > the thought is that a promotion also doesn't change much. or may recur frequently. For example, a specific Band may appear in more than one bar over the summer, or may appear at a venue more than once. Similarly, some promotions occur every weekend. The promotion itself doesn't change but the time and/or place does.
 
 ---
 
-### Event/Calendar/Schedule (When)
+### Event (When)
 A calendar, or schedule, relates an event to a venue, at a particular time (or series of times)
 For example: (some band) at (some venue) from (some date-time) to (some date-time)
 
@@ -70,8 +71,6 @@ For example: (some band) at (some venue) from (some date-time) to (some date-tim
 * Logo
 * Event_Start
 * Event_End
-* Is\_All\_Day
-* Is\_Special
 
 #### Todo:
 * Add "related events" using a [self-join association](http://edgeguides.rubyonrails.org/association_basics.html#self-joins)
@@ -82,7 +81,7 @@ So an Event is a specific single occurrence of a Promotion at a Venue
 
 ---
 
-### Features
+### Performances
 
 **Fields**
 
@@ -178,7 +177,3 @@ Change Log
 
 To Do
 =====
-* use classy_enum to capture kinds of promotions: drink specials, band, etc.
-* Convert features to a has\_and\_belongs\_to\_many join table. It will be occurrences\_performances
-* Performances will have one location, location will have many performances.
-* Venues will have many performances through location.
