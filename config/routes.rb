@@ -59,7 +59,7 @@ Dewey::Application.routes.draw do
   #     resources :products
   #   end
 
-  root :to => 'events#index'
+  root :to => 'events#upcoming'
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
