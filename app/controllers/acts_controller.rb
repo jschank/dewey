@@ -13,7 +13,7 @@ class ActsController < ApplicationController
   # GET /acts/1
   # GET /acts/1.json
   def show
-    @act = Act.find(params[:id])
+    @act = Act.find(params[:id], :include => [:performances, :occurrences, :events, :locations, :venues])
 
     respond_to do |format|
       format.html # show.html.erb

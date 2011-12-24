@@ -7,9 +7,9 @@
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
 
 # special_events  id  name  description link  logo  created_at  updated_at  special_event_start special_event_end
-# events  id  name  description link  logo  created_at  updated_at  venue_id  promotion_id  special_event_id  stage event_start event_end is_all_day
+# events  id  name  description link  logo  created_at  updated_at  venue_id  performance_id  special_event_id  stage event_start event_end is_all_day
 # venues  id  name  description link  logo  created_at  updated_at  address1  address2  city  state zip phone gps_coordinates hours
-# promotions  id  name  description link  logo  created_at  updated_at  kind  related_promotion
+# performances  id  name  description link  logo  created_at  updated_at  kind  related_performance
 # When running rake db:seed, the runs are additive, so dupes will be created. do a rake db:reset instead
 
 
@@ -213,67 +213,67 @@ gc1.save!
 # ***Performances***
 
 # Jam 1
-js1.performances.build({:location => bc1, :act => lsmj, :priority => 1, :promotion_start => '2011-07-02T17:00:00+00:00', :promotion_end => '2011-07-03T01:00:00+00:00'}).save!
-js1.performances.build({:location => bc1, :act => la,   :priority => 2, :promotion_start => '2011-07-02T17:00:00+00:00', :promotion_end => '2011-07-03T01:00:00+00:00'}).save!
-js1.performances.build({:location => bc1, :act => ggg,  :priority => 1, :promotion_start => '2011-07-02T17:00:00+00:00', :promotion_end => '2011-07-03T01:00:00+00:00'}).save!
+js1.performances.build({:location => bc1, :act => lsmj, :priority => 1, :performance_start => '2011-07-02T17:00:00+00:00', :performance_end => '2011-07-03T01:00:00+00:00'}).save!
+js1.performances.build({:location => bc1, :act => la,   :priority => 2, :performance_start => '2011-07-02T17:00:00+00:00', :performance_end => '2011-07-03T01:00:00+00:00'}).save!
+js1.performances.build({:location => bc1, :act => ggg,  :priority => 1, :performance_start => '2011-07-02T17:00:00+00:00', :performance_end => '2011-07-03T01:00:00+00:00'}).save!
 
 # Jam 2
-js2.performances.build({:location => bc1, :act => gg, :priority => 3, :promotion_start => '2011-07-09T17:00:00+00:00', :promotion_end => '2011-07-10T01:00:00+00:00'}).save!
-js2.performances.build({:location => bc1, :act => bs, :priority => 1, :promotion_start => '2011-07-09T17:00:00+00:00', :promotion_end => '2011-07-10T01:00:00+00:00'}).save!
-js2.performances.build({:location => bc1, :act => sd, :priority => 2, :promotion_start => '2011-07-09T17:00:00+00:00', :promotion_end => '2011-07-10T01:00:00+00:00'}).save!
+js2.performances.build({:location => bc1, :act => gg, :priority => 3, :performance_start => '2011-07-09T17:00:00+00:00', :performance_end => '2011-07-10T01:00:00+00:00'}).save!
+js2.performances.build({:location => bc1, :act => bs, :priority => 1, :performance_start => '2011-07-09T17:00:00+00:00', :performance_end => '2011-07-10T01:00:00+00:00'}).save!
+js2.performances.build({:location => bc1, :act => sd, :priority => 2, :performance_start => '2011-07-09T17:00:00+00:00', :performance_end => '2011-07-10T01:00:00+00:00'}).save!
 
 # Jam 3
-js3.performances.build({:location => bc1, :act => la,  :priority => 1, :promotion_start => '2011-07-16T17:00:00+00:00', :promotion_end => '2011-07-17T01:00:00+00:00'}).save!
-js3.performances.build({:location => bc1, :act => ek,  :priority => 2, :promotion_start => '2011-07-16T17:00:00+00:00', :promotion_end => '2011-07-17T01:00:00+00:00'}).save!
-js3.performances.build({:location => bc1, :act => t10, :priority => 3, :promotion_start => '2011-07-16T17:00:00+00:00', :promotion_end => '2011-07-17T01:00:00+00:00'}).save!
+js3.performances.build({:location => bc1, :act => la,  :priority => 1, :performance_start => '2011-07-16T17:00:00+00:00', :performance_end => '2011-07-17T01:00:00+00:00'}).save!
+js3.performances.build({:location => bc1, :act => ek,  :priority => 2, :performance_start => '2011-07-16T17:00:00+00:00', :performance_end => '2011-07-17T01:00:00+00:00'}).save!
+js3.performances.build({:location => bc1, :act => t10, :priority => 3, :performance_start => '2011-07-16T17:00:00+00:00', :performance_end => '2011-07-17T01:00:00+00:00'}).save!
 
 # Jam 4
-js4.performances.build({:location => bc1, :act => _3am, :priority => 1, :promotion_start => '2011-07-23T17:00:00+00:00', :promotion_end => '2011-07-24T01:00:00+00:00'}).save!
-js4.performances.build({:location => bc1, :act => ls,   :priority => 2, :promotion_start => '2011-07-23T17:00:00+00:00', :promotion_end => '2011-07-24T01:00:00+00:00'}).save!
-js4.performances.build({:location => bc1, :act => la,   :priority => 3, :promotion_start => '2011-07-23T17:00:00+00:00', :promotion_end => '2011-07-24T01:00:00+00:00'}).save!
+js4.performances.build({:location => bc1, :act => _3am, :priority => 1, :performance_start => '2011-07-23T17:00:00+00:00', :performance_end => '2011-07-24T01:00:00+00:00'}).save!
+js4.performances.build({:location => bc1, :act => ls,   :priority => 2, :performance_start => '2011-07-23T17:00:00+00:00', :performance_end => '2011-07-24T01:00:00+00:00'}).save!
+js4.performances.build({:location => bc1, :act => la,   :priority => 3, :performance_start => '2011-07-23T17:00:00+00:00', :performance_end => '2011-07-24T01:00:00+00:00'}).save!
 
 # Jam 5
-js5.performances.build({:location => bc1, :act => kn,  :priority => 1, :promotion_start => '2011-07-30T17:00:00+00:00', :promotion_end => '2011-07-31T01:00:00+00:00'}).save!
-js5.performances.build({:location => bc1, :act => ggg, :priority => 2, :promotion_start => '2011-07-30T17:00:00+00:00', :promotion_end => '2011-07-31T01:00:00+00:00'}).save!
-js5.performances.build({:location => bc1, :act => la,  :priority => 3, :promotion_start => '2011-07-30T17:00:00+00:00', :promotion_end => '2011-07-31T01:00:00+00:00'}).save!
+js5.performances.build({:location => bc1, :act => kn,  :priority => 1, :performance_start => '2011-07-30T17:00:00+00:00', :performance_end => '2011-07-31T01:00:00+00:00'}).save!
+js5.performances.build({:location => bc1, :act => ggg, :priority => 2, :performance_start => '2011-07-30T17:00:00+00:00', :performance_end => '2011-07-31T01:00:00+00:00'}).save!
+js5.performances.build({:location => bc1, :act => la,  :priority => 3, :performance_start => '2011-07-30T17:00:00+00:00', :performance_end => '2011-07-31T01:00:00+00:00'}).save!
 
 # Taco Toss 1
-tt1.performances.build({:location => lh1, :act => djjj, :promotion_start => '2011-07-01T16:00:00+00:00', :promotion_end => '2011-07-01T21:00:00+00:00' }).save!
+tt1.performances.build({:location => lh1, :act => djjj, :performance_start => '2011-07-01T16:00:00+00:00', :performance_end => '2011-07-01T21:00:00+00:00' }).save!
 
 # Taco Toss 2
-tt2.performances.build({:location => lh1, :act => djjj, :promotion_start => '2011-07-08T16:00:00+00:00', :promotion_end => '2011-07-08T21:00:00+00:00' }).save!
+tt2.performances.build({:location => lh1, :act => djjj, :performance_start => '2011-07-08T16:00:00+00:00', :performance_end => '2011-07-08T21:00:00+00:00' }).save!
 
 # Taco Toss 3
-tt3.performances.build({:location => lh1, :act => djjj, :promotion_start => '2011-07-15T16:00:00+00:00', :promotion_end => '2011-07-15T21:00:00+00:00' }).save!
+tt3.performances.build({:location => lh1, :act => djjj, :performance_start => '2011-07-15T16:00:00+00:00', :performance_end => '2011-07-15T21:00:00+00:00' }).save!
 
 # Taco Toss 4
-tt4.performances.build({:location => lh1, :act => djjj, :promotion_start => '2011-07-22T16:00:00+00:00', :promotion_end => '2011-07-22T21:00:00+00:00' }).save!
+tt4.performances.build({:location => lh1, :act => djjj, :performance_start => '2011-07-22T16:00:00+00:00', :performance_end => '2011-07-22T21:00:00+00:00' }).save!
 
 # Taco Toss 5
-tt5.performances.build({:location => lh1, :act => djjj, :promotion_start => '2011-07-29T16:00:00+00:00', :promotion_end => '2011-07-29T21:00:00+00:00' }).save!
+tt5.performances.build({:location => lh1, :act => djjj, :performance_start => '2011-07-29T16:00:00+00:00', :performance_end => '2011-07-29T21:00:00+00:00' }).save!
 
 
 # Rusty Rudder Saturday Night Concert 1
-scrr1.performances.build({:location => rr1, :act => kn, :promotion_start => '2011-07-02T21:00:00+00:00', :promotion_end => '2011-07-03T01:00:00+00:00' }).save!
+scrr1.performances.build({:location => rr1, :act => kn, :performance_start => '2011-07-02T21:00:00+00:00', :performance_end => '2011-07-03T01:00:00+00:00' }).save!
 
 # Rusty Rudder Saturday Night Concert 2
-scrr2.performances.build({:location => rr1, :act => kn, :promotion_start => '2011-07-09T21:00:00+00:00', :promotion_end => '2011-07-10T01:00:00+00:00' }).save!
+scrr2.performances.build({:location => rr1, :act => kn, :performance_start => '2011-07-09T21:00:00+00:00', :performance_end => '2011-07-10T01:00:00+00:00' }).save!
 
 # Rusty Rudder Saturday Night Concert 3
-scrr3.performances.build({:location => rr1, :act => gg, :promotion_start => '2011-07-16T21:00:00+00:00', :promotion_end => '2011-07-17T01:00:00+00:00' }).save!
+scrr3.performances.build({:location => rr1, :act => gg, :performance_start => '2011-07-16T21:00:00+00:00', :performance_end => '2011-07-17T01:00:00+00:00' }).save!
 
 # Rusty Rudder Saturday Night Concert 4
-scrr4.performances.build({:location => rr1, :act => sd, :promotion_start => '2011-07-23T21:00:00+00:00', :promotion_end => '2011-07-24T01:00:00+00:00' }).save!
+scrr4.performances.build({:location => rr1, :act => sd, :performance_start => '2011-07-23T21:00:00+00:00', :performance_end => '2011-07-24T01:00:00+00:00' }).save!
 
 # Rusty Rudder Saturday Night Concert 5
-scrr5.performances.build({:location => rr1, :act => cr, :promotion_start => '2011-07-30T21:00:00+00:00', :promotion_end => '2011-07-31T01:00:00+00:00' }).save!
+scrr5.performances.build({:location => rr1, :act => cr, :performance_start => '2011-07-30T21:00:00+00:00', :performance_end => '2011-07-31T01:00:00+00:00' }).save!
 
 # The Bangles
-tb1.performances.build({:location => bc1, :act => the_bangles, :promotion_start => '2011-07-05T22:00:00+00:00', :promotion_end => '2011-07-06T01:00:00+00:00' }).save!
-tb1.performances.build({:location => bc1, :act => as,          :promotion_start => '2011-07-05T21:00:00+00:00', :promotion_end => '2011-07-05T21:40:00+00:00' }).save!
+tb1.performances.build({:location => bc1, :act => the_bangles, :performance_start => '2011-07-05T22:00:00+00:00', :performance_end => '2011-07-06T01:00:00+00:00' }).save!
+tb1.performances.build({:location => bc1, :act => as,          :performance_start => '2011-07-05T21:00:00+00:00', :performance_end => '2011-07-05T21:40:00+00:00' }).save!
 
 # George Clinton
-gc1.performances.build({:location => bc1, :act => george_clinton, :promotion_start => '2011-07-23T21:00:00+00:00', :promotion_end => '2011-07-24T01:00:00+00:00' }).save!
+gc1.performances.build({:location => bc1, :act => george_clinton, :performance_start => '2011-07-23T21:00:00+00:00', :performance_end => '2011-07-24T01:00:00+00:00' }).save!
 
 
 

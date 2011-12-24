@@ -6,8 +6,6 @@ Dewey::Application.routes.draw do
 
   resources :locations
 
-  resources :promotions
-
   resources :events
 
   resources :venues

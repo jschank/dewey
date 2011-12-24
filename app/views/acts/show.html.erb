@@ -1,9 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @act.name %>
-</p>
+<div class="boxSpecific">
+    <h2>~ <%= @act.name %> ~</h2>	
+    <%= image_tag image_path @act.logo if @act.logo %>
+    <p class="event_description"><%= @act.description %></p>
+    <%= link_to "On the web", @act.website, :target => "_blank" %>
+</div>
+
+
+<% if false %>
+<% @features.keys.sort.each do |date| %>
+	<div class="boxIndex">
+		<h2><%= date_and_times(date) %></h2>
+		
+		<% @features[date].each do | (event, event_start), features| %>
+			<a href=<%= current_event_path(event, features[0].event_start.year, features[0].event_start.month, features[0].event_start.day, features[0].event_start.hour, features[0].event_start.min) %> style="background: url(<%= venue_logo(features[0]) %>) no-repeat left 5px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
+				<h4 class="event_name"><%= event.name %></h4>
+			<% features.each do |feature| %>
+				<p class="event_feature"><%= feature.act.name %></p>
+			<% end %>
+			<p class="event_times"><%= event_times(features) %></p></a>
+		<% end %>
+	</div>
+
+<% end %>
+
+</div>
+<% end %>
 
 
 <%= link_to 'Edit', edit_act_path(@act) %> |

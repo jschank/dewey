@@ -5,8 +5,8 @@ class CreatePerformances < ActiveRecord::Migration
       t.references :occurrence
       t.references :location
 
-      t.datetime :promotion_start
-      t.datetime :promotion_end
+      t.datetime :performance_start
+      t.datetime :performance_end
       t.integer :priority
 
       t.timestamps

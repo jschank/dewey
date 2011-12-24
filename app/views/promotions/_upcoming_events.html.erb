@@ -1,7 +1,0 @@
-<a href=<%= event_path(event) %> style="padding-left:7px;">
-<span class="event_name"><%= event.event_start.strftime("%A, %B %d, %Y")%></span>
-
-<% features(event).each do |feature| %>
-    <p class="event_feature"><%= feature.promotion.name %></p>
-<% end %>
-<p class="event_times"><%= event_times(event) %></p></a>
