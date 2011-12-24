@@ -6,4 +6,6 @@ class Venue < ActiveRecord::Base
 
   has_many :occurrences, :through => :performances, :uniq => true
   has_many :events, :through => :occurrences
+
+  default_scope :order => 'name ASC'
 end

@@ -1,41 +1,13 @@
-<h1>Listing venues</h1>
+<p id="notice"><%= notice %></p>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Logo</th>
-    <th>Url</th>
-    <th>Description</th>
-    <th>Phone</th>
-    <th>Address1</th>
-    <th>Address2</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Zip code</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @venues.each do |venue| %>
-  <tr>
-    <td><%= venue.name %></td>
-    <td><%= venue.logo %></td>
-    <td><%= venue.url %></td>
-    <td><%= venue.description %></td>
-    <td><%= venue.phone %></td>
-    <td><%= venue.address1 %></td>
-    <td><%= venue.address2 %></td>
-    <td><%= venue.city %></td>
-    <td><%= venue.state %></td>
-    <td><%= venue.zip_code %></td>
-    <td><%= link_to 'Show', venue %></td>
-    <td><%= link_to 'Edit', edit_venue_path(venue) %></td>
-    <td><%= link_to 'Destroy', venue, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
+<div class="boxIndex">
+<h2>Venues</h2>
+	<% @venues.group_by{ |v| v.name.chars.first }.each do |letter, venues| %>
+		<h3><%= letter %></h3>
+		<% venues.each do |venue| %>
+		<%= link_to venue.name, venue_path(venue) %>
+		<% end %>
+	<% end %>
+</div>
 
 <%= link_to 'New Venue', new_venue_path %>

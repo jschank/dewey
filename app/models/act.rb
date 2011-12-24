@@ -5,4 +5,6 @@ class Act < ActiveRecord::Base
   
   has_many :locations, :through => :performances
   has_many :venues, :through => :locations
+  
+  default_scope :order => 'name ASC'
 end
