@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20111223193705) do
     t.integer  "location_id"
     t.datetime "performance_start"
     t.datetime "performance_end"
-    t.integer  "priority"
+    t.integer  "priority",          :default => 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end

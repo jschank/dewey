@@ -16,11 +16,14 @@
 <h2>Upcoming Events at <%= @venue.name %></h2>
 <% @future_occurrences.each do |date, occurrences| %>
 	<% occurrences.each do |occurrence| %>
-	<a href=<%= current_event_path(occurrence.event, occurrence) %> style="background: url(<%= logo_for(occurrence.venues[0], :small) %>) no-repeat 10px 10px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
-		<span class="event_name"><%= date_and_times(date, occurrence) %></span>
-		<% occurrence.acts.each do |act| %>
-		<p class="event_feature"><%= act.name %></p>
+	<a href=<%= current_event_path(occurrence.event, occurrence) %> style="background: url(<%= logo_for(occurrence.event, :small) %>) no-repeat 10px 10px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
+		<h4 class="event_name"><%= occurrence.event.name %></h4>
+		<% occurrence.performances.each do |performance| %>
+		<% if (performance.priority || 0) > 0 %>
+				<p class="event_feature"><%= performance.act.name %></p>
+			<% end %>
 		<% end %>
+		<span class="event_times"><%= date_and_times(date, occurrence) %></span>
     <% end %>
 <% end %></a>
 </div>

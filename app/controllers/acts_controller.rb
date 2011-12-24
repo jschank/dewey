@@ -14,6 +14,9 @@ class ActsController < ApplicationController
   # GET /acts/1.json
   def show
     @act = Act.find(params[:id], :include => [:performances, :occurrences, :events, :locations, :venues])
+    @future_occurrences = @act.occurrences.where("event_start >= ?", DateTime.civil(2011, 01, 01)).
+      includes([:locations, :performances, :venues]).
+      group_by { |occurrence| occurrence.event_start }
 
     respond_to do |format|
       format.html # show.html.erb

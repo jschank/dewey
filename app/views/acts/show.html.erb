@@ -1,32 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <div class="boxSpecific">
-    <h2>~ <%= @act.name %> ~</h2>	
-    <%= image_tag image_path @act.logo if @act.logo %>
+    <div class="specificHeader" style="background: #f4f4f4 url(<%= logo_for(@act, :large) %>) no-repeat 10px 10px">
+	<%= content_tag :h2, @act.name %>	
     <p class="event_description"><%= @act.description %></p>
     <%= link_to "On the web", @act.website, :target => "_blank" %>
-</div>
-
-
-<% if false %>
-<% @features.keys.sort.each do |date| %>
-	<div class="boxIndex">
-		<h2><%= date_and_times(date) %></h2>
-		
-		<% @features[date].each do | (event, event_start), features| %>
-			<a href=<%= current_event_path(event, features[0].event_start.year, features[0].event_start.month, features[0].event_start.day, features[0].event_start.hour, features[0].event_start.min) %> style="background: url(<%= venue_logo(features[0]) %>) no-repeat left 5px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
-				<h4 class="event_name"><%= event.name %></h4>
-			<% features.each do |feature| %>
-				<p class="event_feature"><%= feature.act.name %></p>
-			<% end %>
-			<p class="event_times"><%= event_times(features) %></p></a>
-		<% end %>
 	</div>
-
-<% end %>
-
 </div>
-<% end %>
+
+<div class="boxIndex">
+	<h2>Upcoming events for <%= @act.name %></h2>
+<% @future_occurrences.each do |date, occurrences| %>
+	<% occurrences.each do |occurrence| %>
+	<a href=<%= current_event_path(occurrence.event, occurrence) %> style="background: url(<%= logo_for(occurrence.event, :small) %>) no-repeat 10px 10px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
+		<h4 class="event_name"><%= occurrence.event.name %></h4>
+		<% occurrence.performances.each do |performance| %>
+		<% if (performance.priority || 0) > 0 %>
+				<p class="event_feature"><%= performance.act.name %></p>
+			<% end %>
+		<% end %>
+		<span class="event_times"><%= date_and_times(date, occurrence) %></span>
+    <% end %>
+<% end %></a>
+</div>
 
 
 <%= link_to 'Edit', edit_act_path(@act) %> |

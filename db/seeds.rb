@@ -68,7 +68,7 @@ la.save!
 bs = Act.create({:name => 'Burnt Sienna', :description => 'Coverband from Philadelphia', :website => 'http://www.burntsiennaband.com/'})
 bs.save!
 
-lsmj = Act.create({:name => 'Love Seed Momma Jump', :description => 'Coverband from Philadelphia', :website => 'http://www.loveseed.com/'})
+lsmj = Act.create({:name => 'Love Seed Momma Jump', :logo => 'loveseed-logo.png', :description => 'Coverband from Philadelphia', :website => 'http://www.loveseed.com/'})
 lsmj.save!
 
 ggg = Act.create({:name => 'Go Go Gadjet', :description => 'Coverband from Philadelphia', :website => 'http://www.gogogadjet.com/'})
@@ -119,7 +119,7 @@ george_clinton = Act.create({:name => 'George Clinton & Parliament Funkadelic', 
 # ***Events***
 
 # Jam Session
-js = Event.create({:logo => 'cork-logo.png', :name => 'Jam Session', :description => 'Saturday Jam with three bands.', :website => 'http://www.deweybeachlife.com/'})
+js = Event.create({:logo => 'jam-logo.png', :name => 'Jam Session', :description => 'Saturday Jam with three bands.', :website => 'http://www.deweybeachlife.com/'})
 js.save!
 
 # Taco Toss
@@ -269,11 +269,11 @@ scrr4.performances.build({:location => rr1, :act => sd, :performance_start => '2
 scrr5.performances.build({:location => rr1, :act => cr, :performance_start => '2011-07-30T21:00:00+00:00', :performance_end => '2011-07-31T01:00:00+00:00' }).save!
 
 # The Bangles
-tb1.performances.build({:location => bc1, :act => the_bangles, :performance_start => '2011-07-05T22:00:00+00:00', :performance_end => '2011-07-06T01:00:00+00:00' }).save!
-tb1.performances.build({:location => bc1, :act => as,          :performance_start => '2011-07-05T21:00:00+00:00', :performance_end => '2011-07-05T21:40:00+00:00' }).save!
+tb1.performances.build({:location => bc1, :act => the_bangles, :priority => 0, :performance_start => '2011-07-05T22:00:00+00:00', :performance_end => '2011-07-06T01:00:00+00:00' }).save!
+tb1.performances.build({:location => bc1, :act => as,          :priority => 1, :performance_start => '2011-07-05T21:00:00+00:00', :performance_end => '2011-07-05T21:40:00+00:00' }).save!
 
 # George Clinton
-gc1.performances.build({:location => bc1, :act => george_clinton, :performance_start => '2011-07-23T21:00:00+00:00', :performance_end => '2011-07-24T01:00:00+00:00' }).save!
+gc1.performances.build({:location => bc1, :act => george_clinton, :priority => 0, :performance_start => '2011-07-23T21:00:00+00:00', :performance_end => '2011-07-24T01:00:00+00:00' }).save!
 
 
 

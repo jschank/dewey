@@ -7,7 +7,7 @@ class CreatePerformances < ActiveRecord::Migration
 
       t.datetime :performance_start
       t.datetime :performance_end
-      t.integer :priority
+      t.integer :priority, :default => 1
 
       t.timestamps
     end
