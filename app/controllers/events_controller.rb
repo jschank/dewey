@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    occurrences = Occurrence.find(:all, :include => [:event, :venues, :features, :performances, :promotions ])
+    occurrences = Occurrence.find(:all, :include => [:event, :venues, :performances, :acts, :locations, :venues ])
     @occurrences_by_date = occurrences.sort{ |a, b| a.event_start <=> b.event_start}.group_by { |event| event.event_start.to_date }
 
     respond_to do |format|
@@ -14,9 +14,11 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    @occurrence = Occurrence.find(params[:occurrence_id]) if params[:occurrence_id]
-    @event = Event.find(params[:id])
-    @future_occurrences = Occurrence.where("event_id = ? and event_start >= ?", params[:id], DateTime.civil(2011, 01, 01)).group_by { |occurrence| occurrence.event_start }
+    @occurrence = Occurrence.find(params[:occurrence_id], :include => [:event, :performances, :acts, :locations, :venues ]) if params[:occurrence_id]
+    @event = @occurrence.event || Event.find(params[:id])
+    @future_occurrences = Occurrence.where("event_id = ? and event_start >= ?", params[:id], DateTime.civil(2011, 01, 01)).
+      includes(:event, :performances, :acts, :locations, :venues).
+      group_by { |occurrence| occurrence.event_start }
 
     respond_to do |format|
       format.html # show.html.erb

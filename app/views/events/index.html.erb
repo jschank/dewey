@@ -4,8 +4,8 @@
 	<% occurrences.each do |occurrence| %>
 	<a href=<%= current_event_path(occurrence.event, occurrence) %> style="background: url(<%= logo_for(occurrence.event, occurrence) %>) no-repeat 10px 10px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
 		<h4 class="event_name"><%= occurrence.event.name %></h4>
-		<% occurrence.promotions.each do |promotion| %>
-			<p class="event_feature"><%= promotion.name %></p>
+		<% occurrence.acts.each do |act| %>
+			<p class="event_feature"><%= act.name %></p>
 		<% end %>
 		<p class="event_times"><%= occurrence_times(occurrence) %></p></a>
 	<% end %>
