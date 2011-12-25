@@ -2,6 +2,30 @@ require 'pathname'
 
 module ApplicationHelper
 
+  def admin_area(&block)
+    content_for :admin do      
+      content_tag(:div, :class => 'admin', &block)
+    end
+  end
+  
+  def specific_area(&block)
+    content_for :specific do      
+      content_tag(:div, :class => 'boxSpecific', &block)
+    end
+  end
+
+  def index_area(&block)
+    content_for :index do      
+      content_tag(:div, :class => 'boxIndex', &block)
+    end
+  end
+
+  def upcoming_area(&block)
+    content_for :upcoming do      
+      content_tag(:div, :class => 'boxIndex', &block)
+    end
+  end
+
   def logo_for(thing, size)
     filename = thing.try(:logo)
     return unless filename

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div class="boxIndex">
+<% index_area do %>
 <h2>Events</h2>
 	<% @events.group_by{ |e| e.name.chars.first }.each do |letter, events| %>
 		<h3><%= letter %></h3>
@@ -8,6 +8,8 @@
 		<%= link_to event.name, event_path(event) %>
 		<% end %>
 	<% end %>
-</div>
+<% end %>
 
-<%= link_to 'New Event', new_event_path %>
+<% admin_area do %>
+	<%= link_to 'New Event', new_event_path %>
+<% end %>

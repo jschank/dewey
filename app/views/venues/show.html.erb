@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div class="boxSpecific">
+<% specific_area do %>
     <div class="specificHeader" style="background: #f4f4f4 url(<%= logo_for(@venue, :large) %>) no-repeat 10px 10px">
     <h2><%= @venue.name %></h2>
     <p><%= @venue.description %></p>
@@ -10,10 +10,11 @@
     <p>Phone: <%= @venue.phone %></p>
     <%= link_to "On the web", @venue.website, :target => "_blank" %>
     </div>
-</div>
+<% end %>
 
-<%= render :partial => "shared/upcoming_occurrences", :locals => { :title => "Upcoming Events at #{@venue.name}", :occurrences => @future_occurrences } %>
-
+<% upcoming_area do %>
+	<%= render :partial => "shared/upcoming_occurrences", :locals => { :title => "Upcoming Events at #{@venue.name}", :occurrences => @future_occurrences } %>
+<% end %>
 
 
 

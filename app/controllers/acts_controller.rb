@@ -5,7 +5,7 @@ class ActsController < ApplicationController
     @acts = Act.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { render :layout => 'application_index' }# index.html.erb
       format.json { render :json => @acts }
     end
   end

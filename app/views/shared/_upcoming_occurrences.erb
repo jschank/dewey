@@ -1,15 +1,18 @@
-<div class="boxIndex">
-	<h2><%= title %></h2>
-	<% occurrences.group_by{ |o| o.event_start}.each do |date, occurrences_for_date | %>
-		<% occurrences_for_date.each do |occurrence| %>
-		<a href=<%= current_event_path(occurrence.event, occurrence) %> style="background: url(<%= logo_for(occurrence.event, :small) %>) no-repeat 10px 10px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
-			<h4 class="event_name"><%= occurrence.event.name %></h4>
-			<% occurrence.performances.each do |performance| %>
-				<% if performance.priority > 0 %>
-				<p class="event_feature"><%= performance.act.name %></p>
-				<% end %>
+<h2><%= title %></h2>
+<% occurrences.group_by{ |o| o.event_start}.each do |date, occurrences_for_date | %>
+<div class="event_day">
+	<% occurrences_for_date.each do |occurrence| %>
+	<div class="event">
+	<a href=<%= current_event_path(occurrence.event, occurrence) %> style="background: url(<%= logo_for(occurrence.event, :small) %>) no-repeat 10px 10px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
+		<h4 class="event_name"><%= occurrence.event.name %></h4>
+		<% occurrence.performances.each do |performance| %>
+			<% if performance.priority > 0 %>
+			<p class="event_feature"><%= performance.act.name %></p>
 			<% end %>
-			<span class="event_times"><%= date_and_times(date, occurrence) %></span>
-	    <% end %>
-	<% end %></a>
+		<% end %>
+		<span class="event_times"><%= date_and_times(date, occurrence) %></span>
+	</a>
+	</div>
+    <% end %>
 </div>
+<% end %>

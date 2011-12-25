@@ -1,14 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<div class="boxSpecific">
+<% specific_area do %>
     <div class="specificHeader" style="background: #f4f4f4 url(<%= logo_for(@act, :large) %>) no-repeat 10px 10px">
 	<%= content_tag :h2, @act.name %>	
     <p class="event_description"><%= @act.description %></p>
     <%= link_to "On the web", @act.website, :target => "_blank" %>
 	</div>
-</div>
+<% end %>
 
-<%= render :partial => "shared/upcoming_occurrences", :locals => { :title => "Upcoming Events for #{@act.name}", :occurrences => @future_occurrences } %>
+<% upcoming_area do %>
+	<%= render :partial => "shared/upcoming_occurrences", :locals => { :title => "Upcoming Events for #{@act.name}", :occurrences => @future_occurrences } %>
+<% end %>
 
-<%= link_to 'Edit', edit_act_path(@act) %> |
-<%= link_to 'Back', acts_path %>
+<% admin_area do %>
+	<%= link_to 'Edit', edit_act_path(@act) %> |
+	<%= link_to 'Back', acts_path %>
+<% end %>
