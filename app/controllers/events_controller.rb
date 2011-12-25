@@ -12,8 +12,7 @@ class EventsController < ApplicationController
   end
 
   def upcoming
-    occurrences = Occurrence.find(:all, :include => [:event, :venues, :performances, :acts, :locations, :venues ])
-    @occurrences_by_date = occurrences.sort{ |a, b| a.event_start <=> b.event_start}.group_by { |event| event.event_start.to_date }
+    @future_occurrences = Occurrence.future_occurrences(DateTime.civil(2011, 01, 01))
 
     respond_to do |format|
       format.html # upcoming_events.html.erb
@@ -26,8 +25,7 @@ class EventsController < ApplicationController
   def show
     @occurrence = Occurrence.find(params[:occurrence_id], :include => [:event, :performances, :acts, :locations, :venues ]) if params[:occurrence_id]
     @event = @occurrence.try(:event) || Event.find(params[:id])
-    @future_occurrences = Occurrence.where("event_id = ? and event_start >= ?", params[:id], DateTime.civil(2011, 01, 01)).
-      includes(:event, :performances, :acts, :locations, :venues)
+    @future_occurrences = Occurrence.future_occurrences(DateTime.civil(2011, 01, 01)).scoped( :conditions => { :event_id => @event } )
 
     respond_to do |format|
       format.html # show.html.erb

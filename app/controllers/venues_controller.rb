@@ -14,8 +14,7 @@ class VenuesController < ApplicationController
   # GET /venues/1.json
   def show
     @venue = Venue.find(params[:id])
-    @future_occurrences = @venue.occurrences.where("event_start >= ?", DateTime.civil(2011, 01, 01)).
-      includes(:locations, :performances, :acts)
+    @future_occurrences = Occurrence.future_occurrences(DateTime.civil(2011, 01, 01)).scoped( :conditions => { :performances => {:location_id => @venue.locations} } )
 
     respond_to do |format|
       format.html # show.html.erb

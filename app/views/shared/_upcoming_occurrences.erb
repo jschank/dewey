@@ -6,7 +6,7 @@
 			<h4 class="event_name"><%= occurrence.event.name %></h4>
 			<% occurrence.performances.each do |performance| %>
 				<% if performance.priority > 0 %>
-					<p class="event_feature"><%= performance.act.name %></p>
+				<p class="event_feature"><%= performance.act.name %></p>
 				<% end %>
 			<% end %>
 			<span class="event_times"><%= date_and_times(date, occurrence) %></span>

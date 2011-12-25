@@ -1,4 +1,4 @@
-<% @occurrences_by_date.each do |start_date, occurrences| %>
+<% @future_occurrences.group_by{|o| o.event_start.to_date}.each do |start_date, occurrences| %>
 	<div class="boxIndex">
 	<h2><%= date_and_times(start_date) %></h2>
 	<% occurrences.each do |occurrence| %>
