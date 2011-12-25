@@ -12,21 +12,9 @@
     </div>
 </div>
 
-<div class="boxIndex">
-<h2>Upcoming Events at <%= @venue.name %></h2>
-<% @future_occurrences.each do |date, occurrences| %>
-	<% occurrences.each do |occurrence| %>
-	<a href=<%= current_event_path(occurrence.event, occurrence) %> style="background: url(<%= logo_for(occurrence.event, :small) %>) no-repeat 10px 10px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
-		<h4 class="event_name"><%= occurrence.event.name %></h4>
-		<% occurrence.performances.each do |performance| %>
-		<% if (performance.priority || 0) > 0 %>
-				<p class="event_feature"><%= performance.act.name %></p>
-			<% end %>
-		<% end %>
-		<span class="event_times"><%= date_and_times(date, occurrence) %></span>
-    <% end %>
-<% end %></a>
-</div>
+<%= render :partial => "shared/upcoming_occurrences", :locals => { :title => "Upcoming Events at #{@venue.name}", :occurrences => @future_occurrences } %>
+
+
 
 
 

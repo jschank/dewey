@@ -15,8 +15,7 @@ class VenuesController < ApplicationController
   def show
     @venue = Venue.find(params[:id])
     @future_occurrences = @venue.occurrences.where("event_start >= ?", DateTime.civil(2011, 01, 01)).
-      includes(:locations, :performances, :acts).
-      group_by { |occurrence| occurrence.event_start }
+      includes(:locations, :performances, :acts)
 
     respond_to do |format|
       format.html # show.html.erb
