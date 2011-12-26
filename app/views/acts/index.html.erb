@@ -6,7 +6,9 @@
 		<h2><%= letter %></h2>
 		<% acts.each do |act| %>
 		<a href=<%= act_path(act) %> style="background: url(<%= logo_for(act, :small) %>) no-repeat 10px 10px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
-			<h3 style="padding-top: 20px;"><%= act.name %></h3>
+			<h3 style="padding-top: 20px;"><%= act.name %>
+			<% if act.formerly %><br/><i>Formerly: <%= act.formerly %></i><%end%>
+			</h3>
 		</a>
 		<% end %>
 	<% end %>

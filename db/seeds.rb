@@ -92,7 +92,7 @@ t10.save!
 ls = Act.create({:logo => 'lifespeed-logo.png', :name => 'Lifespeed', :description => 'Coverband from New Jersey', :website => 'http://www.lifespeed.tv/'})
 ls.save!
 
-_3am = Act.create({:logo => '3am-logo.png', :name => '3 am (formerly Full Effect)', :description => 'Coverband', :website => 'http://www.idontknow.com/'})
+_3am = Act.create({:logo => '3am-logo.png', :name => '3 am', :formerly => 'Full Effect', :description => 'Coverband', :website => 'http://www.idontknow.com/'})
 _3am.save!
 
 cr = Act.create({:logo => 'chorduroy-logo.png', :name => 'Chorduroy', :description => 'Coverband', :website => 'http://www.chorduroyband.com/'})
