@@ -2,14 +2,18 @@
 
 <% specific_area do %>
     <div class="specificHeader" style="background: #f4f4f4 url(<%= logo_for(@venue, :large) %>) no-repeat 10px 10px">
-    <h2><%= @venue.name %></h2>
-    <p><%= @venue.description %></p>
+    <h3><%= @venue.name %></h3>
+    <p class="description"><%= @venue.description %></p>
     <p><%= @venue.address1 %><br/>
     <%= @venue.address2 if @venue.address2 %><br/>
     <%= @venue.city %>, <%= @venue.state %>  <%= @venue.zip %></p>
     <p>Phone: <%= @venue.phone %></p>
-    <%= link_to "On the web", @venue.website, :target => "_blank" %>
     </div>
+	<div class="webLinks">
+	<%= link_to "", @venue.website, :target => "_blank", :class => "webAnchor webSite" %>
+	<%= link_to "", @venue.facebook, :target => "_blank", :class => "webAnchor facebook" %>
+	<%= link_to "", @venue.twitter, :target => "_blank", :class => "webAnchor twitter" %>
+	</div>
 <% end %>
 
 <% upcoming_area do %>

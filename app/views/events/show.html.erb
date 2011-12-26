@@ -2,30 +2,31 @@
 
 <% specific_area do %>
 <div class="specificHeader" style="background: #f4f4f4 url(<%= logo_for(@event, :large) %>) no-repeat 10px 10px">
-<div class="event_name"><%= @event.name %></div>
+<h3><%= @event.name %></h3>
+<p class="description"><%= @event.description %></p>
 <% if @occurrence %>
-	<div class="event_times"><%= date_and_times(@occurrence.event_start) %></div>	
-	<div class="event_times"><%= occurrence_times(@occurrence) %></div>	
+	<p><%= date_and_times(@occurrence.event_start) %></p>	
+	<p class="times"><%= occurrence_times(@occurrence) %></p>	
 <% end %>
-<p class="event_description"><%= @event.description %></p>
 </div>
     
 <% if @occurrence %>
 	<% @occurrence.venues.each do |venue| %>
-		<%= link_to venue.name, venue_path(venue), :class => "event_venue" %>
+		<%= link_to venue.name, venue_path(venue), :class => "venue_box" %>
 	<% end %>
 
 	<% @occurrence.performances.each do |performance| %>
-	<a class="act_box" href=<%= act_path(performance.act) %> style="background: url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
-		<div class="event_act"><%= performance.act.name %></div>
-		<div class="event_times"><%= performance_times(performance) %></div></a>
+	<a class="act_box" href=<%= act_path(performance.act) %>>
+		<p><%= performance.act.name %></p>
+		<p class="times"><%= performance_times(performance) %></p>
+	</a>
     <% end %>
 <% end %>
 
 <div class="webLinks">
-<a href="#" class="webAnchor webSite"></a>
-<a href="#" class="webAnchor facebook"></a>
-<a href="#" class="webAnchor twitter"></a>
+<%= link_to "", @event.website, :target => "_blank", :class => "webAnchor webSite" %>
+<%= link_to "", @event.facebook, :target => "_blank", :class => "webAnchor facebook" %>
+<%= link_to "", @event.twitter, :target => "_blank", :class => "webAnchor twitter" %>
 </div>
 <% end %>
 

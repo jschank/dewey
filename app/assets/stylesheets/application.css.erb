@@ -5,11 +5,23 @@
  *= require_self
  *= require_tree .
 */
+
 body   
 {
     margin: 0;
 	background: #e2e2e2;
 }
+
+.boxIndex, .boxSpecific
+{
+	background: #fff;
+	margin: 10px;
+	padding: 0;
+	border: 2px solid #7f7f7f;
+	border-radius: 5px;	
+	box-shadow: 0px 0px 10px #bbb;
+}
+
 h1 
 {
 	color: #fff;
@@ -21,6 +33,7 @@ h1
 	padding: 10px 0 0 0;
 	height: 44px;
 }
+
 #search
 {
 	margin: 10px;
@@ -29,17 +42,17 @@ h1
 	border-radius: 5px;
 }
 
-.boxIndex h2	{
-	color: #000;
+h2	{
+	color: #fff;
 	font: bold 1em Helvetica, sans-serif;
 	margin: 0 0 0 0;
 	padding: 5px;
 	text-align: center;
-	border-top: 2px solid #b8b8b8;
-	background: #f4f4f4;s
+	background: #7f7f7f;
 }
-.boxIndex h2:first-of-type	{
-	border-top: none;
+
+h2:first-of-type
+{
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
 }
@@ -47,11 +60,12 @@ h1
 .boxIndex a
 {
 	display: block;
-	border-top: 2px solid #b8b8b8;
-	padding: 10px 10px 10px 80px;
+	border-top: 2px solid #7f7f7f;
+	padding: 10px 10px 10px 70px;
 	min-height: 60px;
 	text-decoration: none;	
 }
+
 h3
 {
 	margin: 0;
@@ -67,60 +81,33 @@ p
 	margin: 0;
 }
 
-p.times
+.times
 {
 	font: normal 1em Helvetica, sans-serif;
 	color: #999;
 	margin: 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-.boxIndex, .boxSpecific
-{
-	background: #fff;
-	margin: 10px;
-	padding: 0;
-	border: 2px solid #b8b8b8;
-	border-radius: 5px;	
-	box-shadow: 0px 0px 10px #bbb;
-}
-
-
-.boxIndex .event_name, .boxSpecific .event_name	
+.description	
 {
 	margin: 0;
-	font: bold 1em Helvetica, sans-serif;
-	color: #000;
-	text-align: left;
-}
-
-.boxIndex .event_feature	
-{
-	font: normal 1em Helvetica, sans-serif;
-	color: #000;
-	margin: 0;
-}
-
-.boxIndex .event_times
-{
-	font: normal 1em Helvetica, sans-serif;
+	font: italic .8em Helvetica, sans-serif;
 	color: #999;
-	margin: 0;
 }
 
+a.act_box, a.venue_box	
+{
+	display: block;
+	border-top: 2px solid #7f7f7f;
+	background: url(<%= asset_path 'arrow.png' %>) no-repeat right center;
+	padding: 10px;
+	text-decoration: none;
+	margin: 0;
+	font: normal 1em Helvetica, sans-serif;
+	color: #000;
+}
 
-.boxSpecific .specificHeader	{
+.specificHeader	{
 	margin: 0 0 0 0;
 	padding: 10px 10px 10px 120px;
 	text-align: left;
@@ -130,66 +117,27 @@ p.times
 	min-height: 100px;
 }
 
-.boxSpecific .event_times
-{
-	font: normal 1em Helvetica, sans-serif;
-	color: #000;
-	margin: 0;
-}
-
-.boxSpecific .event_description	
-{
-	margin: 0;
-	font: italic .8em Helvetica, sans-serif;
-	color: #999;
-}
-
-.boxSpecific .event_venue	
-{
-	display: block;
-	border-top: 2px solid #e6e6e6;
-	background: url(<%= asset_path 'arrow.png' %>) no-repeat right center;
-	padding: 10px;
-	text-decoration: none;
-	margin: 0;
-	font: normal 1em Helvetica, sans-serif;
-	color: #000;
-}
-
-.boxSpecific a.act_box
-{
-	display: block;
-	border-top: 2px solid #e6e6e6;
-	padding: 10px;
-	text-decoration: none;	
-}
-
-.boxSpecific .event_act	
-{
-	font: normal 1em Helvetica, sans-serif;
-	color: #000;
-}
-
-.boxSpecific .webLinks	
+.webLinks	
 {
 	height: 60px;
 	margin: 0;
 	padding: 0;
 	background: #f4f4f4;
-	border-top: 2px solid #e6e6e6;
+	border-top: 2px solid #7f7f7f;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
 }
 
 .webLinks .webAnchor
 {
 	display: block;
 	float: left;
-	border-right: 2px solid #e6e6e6;
+	border-right: 2px solid #7f7f7f;
 	height: 60px;
 	width: 33%;
 	margin: 0;
 	padding: 0;
 }
-
 
 .webLinks .webSite
 {
@@ -204,5 +152,3 @@ p.times
 	background: url(<%= asset_path 'twitter-logo-sm.png' %>) no-repeat center center;
 	border-right: none;
 }
-	
-
