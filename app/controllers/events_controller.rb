@@ -13,6 +13,7 @@ class EventsController < ApplicationController
 
   def upcoming
     @future_occurrences = Occurrence.future_occurrences(DateTime.civil(2011, 01, 01))
+    @happening_now = Occurrence.in_progress(DateTime.civil(2011, 07, 02, 22, 0, 0))
 
     respond_to do |format|
       format.html # upcoming_events.html.erb

@@ -12,4 +12,8 @@ class Occurrence < ActiveRecord::Base
       includes(:event, :performances, :acts, :locations, :venues).where("event_start >= ?", date)
   end
 
+  def self.in_progress(date)
+      includes(:event, :performances, :acts, :locations, :venues).where("event_start <= ? AND ? < event_end", date, date)
+  end
+
 end

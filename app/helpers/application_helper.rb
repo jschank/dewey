@@ -20,6 +20,12 @@ module ApplicationHelper
     end
   end
 
+  def in_progress_area(&block)
+    content_for :in_progress do      
+      content_tag(:div, :class => 'boxIndex', &block)
+    end
+  end
+
   def upcoming_area(&block)
     content_for :upcoming do      
       content_tag(:div, :class => 'boxIndex', &block)
