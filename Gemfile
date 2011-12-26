@@ -20,6 +20,10 @@ end
 gem 'jquery-rails'
 gem 'rails-footnotes', '>= 3.7.5.rc4', :group => :development
 
+group :test, :development do
+  gem 'rspec-rails'
+end
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
