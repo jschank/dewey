@@ -50,8 +50,7 @@ module ApplicationHelper
     first, *rest = canonical_name.split
     return canonical_name unless ARTICLES.include?(first)
     rest.join(' ')
-  end
-  
+  end  
 
   def time_format(datetime)
     (datetime.min > 0) ? "%l:%M %p" : "%l %p"
