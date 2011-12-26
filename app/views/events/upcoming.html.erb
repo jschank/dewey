@@ -3,9 +3,9 @@
 	<% @happening_now.each do |occurrence| %>
 		<div class="event">
 		<a href=<%= current_event_path(occurrence.event, occurrence) %> style="background: url(<%= logo_for(occurrence.event, :small) %>) no-repeat 10px 10px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
-			<h4 class="name"><%= occurrence.event.name %></h4>
+			<h3 class="name"><%= occurrence.event.name %></h3>
 			<% occurrence.acts.each do |act| %>
-				<p class="act"><%= act.name %></p>
+				<p><%= act.name %></p>
 			<% end %>
 			<p class="times"><%= occurrence_times(occurrence) %></p></a>
 		</div>
@@ -14,19 +14,19 @@
 
 <% upcoming_area do %>
 	<% @future_occurrences.group_by{|o| o.event_start.to_date}.each do |start_date, occurrences| %>
-	<div class="event_day">
+	<!--<div class="event_day">-->
 		<h2><%= date_and_times(start_date) %></h2>
 		<% occurrences.each do |occurrence| %>
-		<div class="event">
+		<!--<div class="event">-->
 		<a href=<%= current_event_path(occurrence.event, occurrence) %> style="background: url(<%= logo_for(occurrence.event, :small) %>) no-repeat 10px 10px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
-			<h4 class="name"><%= occurrence.event.name %></h4>
+			<h3 class="name"><%= occurrence.event.name %></h3>
 			<% occurrence.acts.each do |act| %>
-				<p class="act"><%= act.name %></p>
+				<p><%= act.name %></p>
 			<% end %>
 			<p class="times"><%= occurrence_times(occurrence) %></p></a>
-		</div>
+		<!--</div>-->
 		<% end %>
-		</div>
+		<!--</div>-->
 	<% end %>
 <% end %>
 
