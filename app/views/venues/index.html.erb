@@ -5,7 +5,9 @@
 	<% @venues.group_by{ |v| sortable_name(v.name).chars.first }.each do |letter, venues| %>
 		<h3><%= letter %></h3>
 		<% venues.each do |venue| %>
-		<%= link_to venue.name, venue_path(venue) %>
+		<a href=<%= venue_path(venue) %> style="background: url(<%= logo_for(venue, :small) %>) no-repeat 10px 10px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
+			<h3 class="event_name"><%= venue.name %></h3>
+		</a>
 		<% end %>
 	<% end %>
 <% end %>

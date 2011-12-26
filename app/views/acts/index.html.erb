@@ -5,7 +5,9 @@
 	<% @acts.group_by{ |a| sortable_name(a.name).chars.first }.each do |letter, acts| %>
 		<h3><%= letter %></h3>
 		<% acts.each do |act| %>
-			<%= link_to act.name, act_path(act) %>
+		<a href=<%= act_path(act) %> style="background: url(<%= logo_for(act, :small) %>) no-repeat 10px 10px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
+			<h3 class="event_name"><%= act.name %></h3>
+		</a>
 		<% end %>
 	<% end %>
 <% end %>
