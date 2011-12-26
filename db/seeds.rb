@@ -62,6 +62,9 @@ gg.save!
 kn = Act.create({:logo => 'kristennoise-logo.png', :name => 'Kristen And The Noise', :description => 'Coverband from Philadelphia', :website => 'http://www.kristenandthenoise.com/'})
 kn.save!
 
+kj = Act.create({:logo => 'kristenjoe-logo.png', :name => 'Kristen & Joe', :description => 'Accoustic music from Kristen & Joe', :website => 'http://www.kristenandthenoise.com/'})
+kn.save!
+
 la = Act.create({:logo => 'liquida-logo.png', :name => 'Liquid A', :description => 'Coverband from Philadelphia', :website => 'http://www.liquida.net/'})
 la.save!
 
@@ -74,7 +77,7 @@ lsmj.save!
 ggg = Act.create({:logo => 'gogogadjet-logo.png', :name => 'Go Go Gadjet', :description => 'Coverband from Philadelphia', :website => 'http://www.gogogadjet.com/'})
 ggg.save!
 
-tf = Act.create({:name => 'Laura Lea and Trip Fabulous', :description => 'Coverband', :website => 'http://www.trippfabulous.com/'})
+tf = Act.create({:logo => 'lauralea-logo.png', :name => 'Laura Lea and Trip Fabulous', :description => 'Coverband', :website => 'http://www.trippfabulous.com/'})
 tf.save!
 
 sd = Act.create({:logo => 'splitdecision-logo.png', :name => 'Split Decision', :description => 'Coverband', :website => 'http://www.splitdecision.com/'})
