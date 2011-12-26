@@ -56,65 +56,65 @@ jg.save!
 # ***Acts***
 
 # Bands
-gg = Act.create({:name => 'Mr. Greengenes', :description => 'Coverband from Philadelphia', :website => 'http://www.mrgreengenes.com/'})
+gg = Act.create({:logo => 'greengenes-logo.png', :name => 'Mr. Greengenes', :description => 'Coverband from Philadelphia', :website => 'http://www.mrgreengenes.com/'})
 gg.save!
 
-kn = Act.create({:name => 'Kristen And The Noise', :description => 'Coverband from Philadelphia', :website => 'http://www.kristenandthenoise.com/'})
+kn = Act.create({:logo => 'kristennoise-logo.png', :name => 'Kristen And The Noise', :description => 'Coverband from Philadelphia', :website => 'http://www.kristenandthenoise.com/'})
 kn.save!
 
-la = Act.create({:name => 'Liquid A', :description => 'Coverband from Philadelphia', :website => 'http://www.liquida.net/'})
+la = Act.create({:logo => 'liquida-logo.png', :name => 'Liquid A', :description => 'Coverband from Philadelphia', :website => 'http://www.liquida.net/'})
 la.save!
 
-bs = Act.create({:name => 'Burnt Sienna', :description => 'Coverband from Philadelphia', :website => 'http://www.burntsiennaband.com/'})
+bs = Act.create({:logo => 'burntsienna-logo.png', :name => 'Burnt Sienna', :description => 'Coverband from Philadelphia', :website => 'http://www.burntsiennaband.com/'})
 bs.save!
 
-lsmj = Act.create({:name => 'Love Seed Momma Jump', :logo => 'loveseed-logo.png', :description => 'Coverband from Philadelphia', :website => 'http://www.loveseed.com/'})
+lsmj = Act.create({:logo => 'loveseed-logo.png', :name => 'Love Seed Momma Jump', :logo => 'loveseed-logo.png', :description => 'Coverband from Philadelphia', :website => 'http://www.loveseed.com/'})
 lsmj.save!
 
-ggg = Act.create({:name => 'Go Go Gadjet', :description => 'Coverband from Philadelphia', :website => 'http://www.gogogadjet.com/'})
+ggg = Act.create({:logo => 'gogogadjet-logo.png', :name => 'Go Go Gadjet', :description => 'Coverband from Philadelphia', :website => 'http://www.gogogadjet.com/'})
 ggg.save!
 
 tf = Act.create({:name => 'Laura Lea and Trip Fabulous', :description => 'Coverband', :website => 'http://www.trippfabulous.com/'})
 tf.save!
 
-sd = Act.create({:name => 'Split Decision', :description => 'Coverband', :website => 'http://www.splitdecision.com/'})
+sd = Act.create({:logo => 'splitdecision-logo.png', :name => 'Split Decision', :description => 'Coverband', :website => 'http://www.splitdecision.com/'})
 sd.save!
 
-ek = Act.create({:name => 'Element K', :description => 'Coverband', :website => 'http://elementkband.com/'})
+ek = Act.create({:logo => 'elementk-logo.png', :name => 'Element K', :description => 'Coverband', :website => 'http://elementkband.com/'})
 ek.save!
 
-t10 = Act.create({:name => 'Table Ten', :description => 'Coverband', :website => 'http://www.friendsoftableten.com/'})
+t10 = Act.create({:logo => 'tableten-logo.png', :name => 'Table Ten', :description => 'Coverband', :website => 'http://www.friendsoftableten.com/'})
 t10.save!
 
-ls = Act.create({:name => 'Lifespeed', :description => 'Coverband', :website => 'http://www.lifespeed.tv/'})
+ls = Act.create({:logo => 'lifespeed-logo.png', :name => 'Lifespeed', :description => 'Coverband from New Jersey', :website => 'http://www.lifespeed.tv/'})
 ls.save!
 
-_3am = Act.create({:name => '3 am', :description => 'Coverband', :website => 'http://www.idontknow.com/'})
+_3am = Act.create({:logo => '3am-logo.png', :name => '3 am (formerly Full Effect)', :description => 'Coverband', :website => 'http://www.idontknow.com/'})
 _3am.save!
 
-cr = Act.create({:name => 'Chorduroy', :description => 'Coverband', :website => 'http://www.chorduroyband.com/'})
+cr = Act.create({:logo => 'chorduroy-logo.png', :name => 'Chorduroy', :description => 'Coverband', :website => 'http://www.chorduroyband.com/'})
 cr.save!
 
-tb = Act.create({:name => 'The Bangles', :description => 'It was 30 years ago that guitarists Susanna Hoffs and Vicki Peterson and drummer Debbi Peterson formed the Bangles in a Brentwood, California, garage.', :website => 'http://www.thebangles.com/'})
+tb = Act.create({:logo => 'bangles-logo.png', :name => 'The Bangles', :description => 'It was 30 years ago that guitarists Susanna Hoffs and Vicki Peterson and drummer Debbi Peterson formed the Bangles in a Brentwood, California, garage.', :website => 'http://www.thebangles.com/'})
 tb.save!
 
-as = Act.create({:name => 'April Smith And The Great Picture Show', :description => 'This Brooklyn musician turns out sultry updates ragtime and swing, pouring her rich voice over tight guitar strumming.', :website => 'http://www.aprilsmithmusic.com/'})
+as = Act.create({:logo => 'aprilsmith-logo.png', :name => 'April Smith And The Great Picture Show', :description => 'This Brooklyn musician turns out sultry updates ragtime and swing, pouring her rich voice over tight guitar strumming.', :website => 'http://www.aprilsmithmusic.com/'})
 as.save!
 
-gc = Act.create({:name => 'George Clinton & Parliament Funkadelic', :description => 'Godfather of Funk.', :website => 'http://www.georgeclinton.com/'})
+gc = Act.create({:logo => 'georgeclinton-logo.png', :name => 'George Clinton & Parliament Funkadelic', :description => 'Godfather of Funk.', :website => 'http://www.georgeclinton.com/'})
 gc.save!
 
 # DJs
-djs = Act.create({:name => 'DJ Smoky', :description => 'DJ', :website => 'http://smokythedj.com/'})
+djs = Act.create({:logo => 'djjazzyjeff-logo.png', :name => 'DJ Smoky', :description => 'DJ', :website => 'http://smokythedj.com/'})
 djs.save!
 
-djjj = Act.create({:name => 'DJ Jazzy Jeff', :description => 'Fresh Prince\'s Sidekick', :website => 'http://www.apple.com/'})
+djjj = Act.create({:logo => 'djsmoky-logo.png', :name => 'DJ Jazzy Jeff', :description => 'Fresh Prince\'s Sidekick', :website => 'http://www.apple.com/'})
 djjj.save!
 
-the_bangles = Act.create({:name => 'The Bangles', :description => 'It was 30 years ago that guitarists Susanna Hoffs and Vicki Peterson and drummer Debbi Peterson formed the Bangles in a Brentwood, California, garage.', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
-the_bangles.save!
+#the_bangles = Act.create({:name => 'The Bangles', :description => 'It was 30 years ago that guitarists Susanna Hoffs and Vicki Peterson and drummer Debbi Peterson formed the Bangles in a Brentwood, California, garage.', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
+#the_bangles.save!
 
-george_clinton = Act.create({:name => 'George Clinton & Parliament Funkadelic', :description => 'Godfather of Funk.', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
+#george_clinton = Act.create({:name => 'George Clinton & Parliament Funkadelic', :description => 'Godfather of Funk.', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
 
 # ***Events***
 
@@ -269,11 +269,11 @@ scrr4.performances.build({:location => rr1, :act => sd, :performance_start => '2
 scrr5.performances.build({:location => rr1, :act => cr, :performance_start => '2011-07-30T21:00:00+00:00', :performance_end => '2011-07-31T01:00:00+00:00' }).save!
 
 # The Bangles
-tb1.performances.build({:location => bc1, :act => the_bangles, :priority => 0, :performance_start => '2011-07-05T22:00:00+00:00', :performance_end => '2011-07-06T01:00:00+00:00' }).save!
+tb1.performances.build({:location => bc1, :act => tb, :priority => 0, :performance_start => '2011-07-05T22:00:00+00:00', :performance_end => '2011-07-06T01:00:00+00:00' }).save!
 tb1.performances.build({:location => bc1, :act => as,          :priority => 1, :performance_start => '2011-07-05T21:00:00+00:00', :performance_end => '2011-07-05T21:40:00+00:00' }).save!
 
 # George Clinton
-gc1.performances.build({:location => bc1, :act => george_clinton, :priority => 0, :performance_start => '2011-07-23T21:00:00+00:00', :performance_end => '2011-07-24T01:00:00+00:00' }).save!
+gc1.performances.build({:location => bc1, :act => gc, :priority => 0, :performance_start => '2011-07-23T21:00:00+00:00', :performance_end => '2011-07-24T01:00:00+00:00' }).save!
 
 
 
