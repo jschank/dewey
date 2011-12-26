@@ -3,9 +3,11 @@
 <% index_area do %>
 <h2>Acts</h2>
 	<% @acts.group_by{ |a| sortable_name(a.name).chars.first }.each do |letter, acts| %>
-		<h3><%= letter %></h3>
+		<h2><%= letter %></h2>
 		<% acts.each do |act| %>
-			<%= link_to act.name, act_path(act) %>
+		<a href=<%= act_path(act) %> style="background: url(<%= logo_for(act, :small) %>) no-repeat 10px 10px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
+			<h3 style="padding-top: 20px;"><%= act.name %></h3>
+		</a>	
 		<% end %>
 	<% end %>
 <% end %>
