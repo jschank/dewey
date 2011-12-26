@@ -2,6 +2,8 @@ require 'pathname'
 
 module ApplicationHelper
 
+  ARTICLES = %W[A AN THE]
+
   def admin_area(&block)
     content_for :admin do      
       content_tag(:div, :class => 'admin', &block)
@@ -42,6 +44,14 @@ module ApplicationHelper
     filename = basename + ext
     image_path(filename)    
   end
+  
+  def sortable_name(name)
+    canonical_name = name.upcase
+    first, *rest = canonical_name.split
+    return canonical_name unless ARTICLES.include?(first)
+    rest.join(' ')
+  end
+  
 
   def time_format(datetime)
     (datetime.min > 0) ? "%l:%M %p" : "%l %p"
