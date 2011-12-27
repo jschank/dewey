@@ -22,7 +22,7 @@
 <h2>Upcoming Events at <%= @venue.name %></h2>
 	<% @future_occurrences.group_by{ |o| o.event_start}.each do |date, occurrences_for_date | %>
 		<% occurrences_for_date.each do |occurrence| %>
-		<a href=<%= current_event_path(occurrence.event, occurrence) %> style="background: url(<%= logo_for(occurrence.event, :small) %>) no-repeat 10px 10px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
+		<%= link_to current_event_path(occurrence.event, occurrence), {:style => "background: url(#{logo_for(occurrence.event, :small)}) no-repeat 10px 10px, url(#{asset_path 'arrow.png'}) no-repeat right center;"} do %>
 			<h4><%= occurrence.event.name %></h4>
 			<% occurrence.performances.each do |performance| %>
 				<% if performance.priority > 0 %>
@@ -30,7 +30,7 @@
 				<% end %>
 			<% end %>
 			<p class="times"><%= date_and_times(date, occurrence) %></p>
-		</a>
+		<% end %>
 	    <% end %>
 	<% end %>
 <% end %>

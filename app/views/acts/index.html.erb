@@ -5,11 +5,12 @@
 	<% @acts.group_by{ |a| sortable_name(a.name).chars.first }.each do |letter, acts| %>
 		<h3><%= letter %></h3>
 		<% acts.each do |act| %>
-		<a href=<%= act_path(act) %> style="background: url(<%= logo_for(act, :small) %>) no-repeat 10px 10px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
-			<h4 style="padding-top: 20px;"><%= act.name %>
-			<% if act.formerly %><i style="color: #999;">(Formerly: <%= act.formerly %>)</i><%end%>
-			</h3>
-		</a>
+			<%= link_to act_path(act), {:style => "background: url(#{logo_for(act, :small)}) no-repeat 10px 10px,  url(#{asset_path 'arrow.png'}) no-repeat right center;"} do %>
+			<%= content_tag :h4, :style => "padding-top: 20px;" do %>
+				<%= act.name %>
+				<% if act.formerly %><i style="color: #999;">(Formerly: <%= act.formerly %>)</i><%end%>
+				<% end %>
+			<% end %>
 		<% end %>
 	<% end %>
 <% end %>
