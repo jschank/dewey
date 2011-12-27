@@ -32,7 +32,7 @@ h1
 	margin: 0 0 0 0;
 	padding: 10px 0 0 0;
 	height: 44px;
-	text-shadow: -1px -1px #000;
+	text-shadow: 0 -1px #000;
 }
 
 #search
@@ -50,6 +50,7 @@ h2	{
 	padding: 5px;
 	text-align: center;
 	background: #7f7f7f;
+	text-shadow: 0 1px #000;
 }
 
 h2:first-of-type
@@ -63,7 +64,7 @@ h2:first-of-type
 	display: block;
 	border-top: 1px solid #7f7f7f;
 	border-bottom: 1px solid #7f7f7f;
-	padding: 10px 10px 10px 70px;
+	padding: 10px 30px 10px 70px;
 	min-height: 50px;
 	text-decoration: none;	
 }
@@ -72,12 +73,12 @@ h3
 {
 	background: url(<%= asset_path 'h3-bg.png' %>) repeat-x left top;
 	margin: 0;
-	padding: 4px 0 0 10px;
+	padding: 3px 0 0 10px;
 	font: bold 1em Helvetica, sans-serif;
 	color: #fff;
 	text-align: left;
-	text-shadow: 1px 1px #000;
-	height: 18px;
+	text-shadow: 0 1px #000;
+	height: 19px;
 }
 
 h4
@@ -126,44 +127,32 @@ a.act_box, a.venue_box
 	margin: 0 0 0 0;
 	padding: 10px 10px 10px 120px;
 	text-align: left;
-	border-top-left-radius: 3px;
-	border-top-right-radius: 3px;
+	border-radius: 3px;
+	border-radius: 3px;
 	background: #f4f4f4;
 	min-height: 100px;
+	overflow: auto;
 }
 
-.webLinks	
-{
-	height: 60px;
-	margin: 0;
-	padding: 0;
-	background: #f4f4f4;
-	border-top: 2px solid #7f7f7f;
-	border-bottom-left-radius: 3px;
-	border-bottom-right-radius: 3px;
-}
-
-.webLinks .webAnchor
+.webAnchor
 {
 	display: block;
 	float: left;
-	border-right: 2px solid #7f7f7f;
-	height: 60px;
-	width: 33%;
-	margin: 0;
-	padding: 0;
+	height: 32px;
+	width: 32px;
+	margin: 7px 7px 0 0;
 }
 
-.webLinks .webSite
+.webSite
 {
 	background: url(<%= asset_path 'web-logo-sm.png' %>) no-repeat center center;
 }
-.webLinks .facebook
+.facebook
 {
 	background: url(<%= asset_path 'facebook-logo-sm.png' %>) no-repeat center center;
 }
-.webLinks .twitter
+.twitter
 {
 	background: url(<%= asset_path 'twitter-logo-sm.png' %>) no-repeat center center;
-	border-right: none;
+	margin-right: none;
 }

@@ -6,7 +6,7 @@
 		<h3><%= letter %></h3>
 		<% events.each do |event| %>
 		<%= link_to event_path(event), {:style => "background: url(#{logo_for(event, :small)}) no-repeat 10px 10px, url(#{asset_path 'arrow.png'}) no-repeat right center;"} do %>
-			<h4 style="padding-top: 20px;"><%= event.name %></h4>
+			<h4 style="padding-top: 17px;"><%= event.name %></h4>
 		<% end %>
 		<% end %>
 	<% end %>

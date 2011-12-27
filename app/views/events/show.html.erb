@@ -8,6 +8,10 @@
 	<p><%= date_and_times(@occurrence.event_start) %></p>	
 	<p class="times"><%= occurrence_times(@occurrence) %></p>	
 <% end %>
+<%= link_to "", @event.website, :target => "_blank", :class => "webAnchor webSite" %>
+<%= link_to "", @event.facebook, :target => "_blank", :class => "webAnchor facebook" %>
+<%= link_to "", @event.twitter, :target => "_blank", :class => "webAnchor twitter" %>
+
 </div>
     
 <% if @occurrence %>
@@ -25,11 +29,6 @@
     <% end %>
 <% end %>
 
-<div class="webLinks">
-<%= link_to "", @event.website, :target => "_blank", :class => "webAnchor webSite" %>
-<%= link_to "", @event.facebook, :target => "_blank", :class => "webAnchor facebook" %>
-<%= link_to "", @event.twitter, :target => "_blank", :class => "webAnchor twitter" %>
-</div>
 <% end %>
 
 <% upcoming_area do %>

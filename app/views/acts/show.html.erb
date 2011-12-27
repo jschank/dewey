@@ -4,8 +4,6 @@
     <div class="specificHeader" style="background: #f4f4f4 url(<%= logo_for(@act, :large) %>) no-repeat 10px 10px">
 	<%= content_tag :h4, @act.name %>	
     <p class="description"><%= @act.description %></p>
-	</div>
-	<div class="webLinks">
 	<%= link_to "", @act.website, :target => "_blank", :class => "webAnchor webSite" %>
 	<%= link_to "", @act.facebook, :target => "_blank", :class => "webAnchor facebook" %>
 	<%= link_to "", @act.twitter, :target => "_blank", :class => "webAnchor twitter" %>

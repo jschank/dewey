@@ -6,7 +6,7 @@
 		<h3><%= letter %></h3>
 		<% venues.each do |venue| %>
 		<%= link_to venue_path(venue), {:style => "background: url(#{logo_for(venue, :small)}) no-repeat 10px 10px, url(#{asset_path 'arrow.png'}) no-repeat right center;"} do %>
-			<h4 style="padding-top: 20px;"><%= venue.name %></h4>
+			<h4 style="padding-top: 17px;"><%= venue.name %></h4>
 		<% end %>
 		<% end %>
 	<% end %>

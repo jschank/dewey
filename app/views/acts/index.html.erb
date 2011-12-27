@@ -6,7 +6,7 @@
 		<h3><%= letter %></h3>
 		<% acts.each do |act| %>
 			<%= link_to act_path(act), {:style => "background: url(#{logo_for(act, :small)}) no-repeat 10px 10px,  url(#{asset_path 'arrow.png'}) no-repeat right center;"} do %>
-			<%= content_tag :h4, :style => "padding-top: 20px;" do %>
+			<%= content_tag :h4, :style => "padding-top: 17px;" do %>
 				<%= act.name %>
 				<% if act.formerly %><i style="color: #999;">(Formerly: <%= act.formerly %>)</i><%end%>
 				<% end %>
