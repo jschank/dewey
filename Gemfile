@@ -22,6 +22,7 @@ gem 'rails-footnotes', '>= 3.7.5.rc4', :group => :development
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'ZenTest'
 end
 
 # Use unicorn as the web server
