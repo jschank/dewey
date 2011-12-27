@@ -12,14 +12,16 @@
     
 <% if @occurrence %>
 	<% @occurrence.venues.each do |venue| %>
-		<%= link_to venue.name, venue_path(venue), :class => "venue_box" %>
+	<%= link_to venue_path(venue), {:class => "venue_box", :style => "background: url(#{logo_for(venue, :small)}) no-repeat 10px 10px,  url(#{asset_path 'arrow.png'}) no-repeat right center;"} do %>
+		<%= venue.name %>
+	<% end %>
 	<% end %>
 
 	<% @occurrence.performances.each do |performance| %>
-	<a class="act_box" href=<%= act_path(performance.act) %>>
+	<%= link_to act_path(performance.act), {:class => "act_box", :style => "background: url(#{logo_for(performance.act, :small)}) no-repeat 10px 10px,  url(#{asset_path 'arrow.png'}) no-repeat right center;"} do %>
 		<p><%= performance.act.name %></p>
 		<p class="times"><%= performance_times(performance) %></p>
-	</a>
+	<% end %>
     <% end %>
 <% end %>
 
@@ -34,14 +36,14 @@
 	<h2>Upcoming <%= @event.name.pluralize %></h2>
 	<% @future_occurrences.group_by{ |o| o.event_start}.each do |date, occurrences_for_date | %>
 		<% occurrences_for_date.each do |occurrence| %>
-		<a href=<%= current_event_path(occurrence.event, occurrence) %> style="background: url(<%= logo_for(occurrence.venues[0], :small) %>) no-repeat 10px 10px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
+		<%= link_to current_event_path(occurrence.event, occurrence), {:style => "background: url(#{logo_for(occurrence.venues[0], :small)}) no-repeat 10px 10px,  url(#{asset_path 'arrow.png'}) no-repeat right center;"} do %>
 			<h4><%= date_and_times(date, occurrence) %></h4>
 			<% occurrence.performances.each do |performance| %>
 				<% if performance.priority > 0 %>
 				<p><%= performance.act.name %></p>
 				<% end %>
 			<% end %>
-		</a>
+		<% end %>
 	    <% end %>
 	<% end %>
 <% end %>
