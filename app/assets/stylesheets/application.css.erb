@@ -32,6 +32,7 @@ h1
 	margin: 0 0 0 0;
 	padding: 10px 0 0 0;
 	height: 44px;
+	text-shadow: -1px -1px #000;
 }
 
 #search
@@ -60,13 +61,26 @@ h2:first-of-type
 .boxIndex a
 {
 	display: block;
-	border-top: 2px solid #7f7f7f;
+	border-top: 1px solid #7f7f7f;
+	border-bottom: 1px solid #7f7f7f;
 	padding: 10px 10px 10px 70px;
 	min-height: 50px;
 	text-decoration: none;	
 }
 
 h3
+{
+	background: url(<%= asset_path 'h3-bg.png' %>) repeat-x left top;
+	margin: 0;
+	padding: 4px 0 0 10px;
+	font: bold 1em Helvetica, sans-serif;
+	color: #fff;
+	text-align: left;
+	text-shadow: 1px 1px #000;
+	height: 18px;
+}
+
+h4
 {
 	margin: 0;
 	font: bold 1em Helvetica, sans-serif;

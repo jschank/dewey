@@ -3,10 +3,10 @@
 <% index_area do %>
 <h2>Events</h2>
 	<% @events.group_by{ |e| e.name.chars.first }.each do |letter, events| %>
-		<h2><%= letter %></h2>
+		<h3><%= letter %></h3>
 		<% events.each do |event| %>
 		<a href=<%= event_path(event) %> style="background: url(<%= logo_for(event, :small) %>) no-repeat 10px 10px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
-			<h3 style="padding-top: 20px;"><%= event.name %></h3>
+			<h4 style="padding-top: 20px;"><%= event.name %></h4>
 		</a>
 		<% end %>
 	<% end %>

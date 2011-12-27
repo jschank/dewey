@@ -2,7 +2,7 @@
 
 <% specific_area do %>
 <div class="specificHeader" style="background: #f4f4f4 url(<%= logo_for(@event, :large) %>) no-repeat 10px 10px">
-<h3><%= @event.name %></h3>
+<h4><%= @event.name %></h4>
 <p class="description"><%= @event.description %></p>
 <% if @occurrence %>
 	<p><%= date_and_times(@occurrence.event_start) %></p>	
@@ -35,7 +35,7 @@
 	<% @future_occurrences.group_by{ |o| o.event_start}.each do |date, occurrences_for_date | %>
 		<% occurrences_for_date.each do |occurrence| %>
 		<a href=<%= current_event_path(occurrence.event, occurrence) %> style="background: url(<%= logo_for(occurrence.venues[0], :small) %>) no-repeat 10px 10px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
-			<h3 class="event_name"><%= date_and_times(date, occurrence) %></h3>
+			<h4><%= date_and_times(date, occurrence) %></h4>
 			<% occurrence.performances.each do |performance| %>
 				<% if performance.priority > 0 %>
 				<p><%= performance.act.name %></p>

@@ -23,7 +23,7 @@ bcb = bc.locations.build({:name => "Stage B"})
 bc.save!
 
 # Northbeach
-nb = Venue.create({:name => 'Northbeach', :description => 'Northbeach offers casual indoor and outdoor dining overlooking Rehoboth Bay. Northbeach is open mid-May through Labor Day. Join us for great food, frozen drinks and beautiful sunsets.', :website => 'http://www.deweybeachlife.com/', :address1 => '125 McKinley Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-226-8673'})
+nb = Venue.create({:name => 'Northbeach', :description => 'Northbeach offers casual indoor and outdoor dining overlooking Rehoboth Bay. Northbeach is open mid-May through Labor Day. Join us for great food, frozen drinks and beautiful sunsets.', :website => 'http://www.deweybeachlife.com/', :address1 => '125 McKinley Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-226-8673', :logo => 'northbeach-logo.png'})
 nb1 = nb.locations.build({:name => "default"})
 nb.save!
 
@@ -42,14 +42,14 @@ rrd = rr.locations.build({:name => "Stage D"})
 rr.save!
 
 # Starboard
-sb = Venue.create({:name => 'The Starboard', :description => 'John thinks it is too crowded.', :website => 'http://www.thestarboard.com/', :address1 => '2009 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-4600'})
+sb = Venue.create({:name => 'The Starboard', :description => 'John thinks it is too crowded.', :website => 'http://www.thestarboard.com/', :address1 => '2009 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-4600', :logo => 'starboard-logo.png'})
 sb1 = sb.locations.build({:name => "default"})
 sba = sb.locations.build({:name => "Main Stage"})
 sbb = sb.locations.build({:name => "Deck Stage"})
 sb.save!
 
 # Jimmy's Grille
-jg = Venue.create({:name => "Jimmy's Grille", :description => 'Outdoor Bar and Grille.', :website => 'http://www.deweybeachlife.com/', :address1 => 'Highway One and Bellevue Street', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-4600'})
+jg = Venue.create({:name => "Jimmy's Grille", :description => 'Outdoor Bar and Grille.', :website => 'http://www.deweybeachlife.com/', :address1 => 'Highway One and Bellevue Street', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-4600', :logo => 'jimmys-logo.png'})
 jg1 = jg.locations.build({:name => "default"})
 jg.save!
 
@@ -71,7 +71,7 @@ la.save!
 bs = Act.create({:logo => 'burntsienna-logo.png', :name => 'Burnt Sienna', :description => 'Coverband from Philadelphia', :website => 'http://www.burntsiennaband.com/'})
 bs.save!
 
-lsmj = Act.create({:logo => 'loveseed-logo.png', :name => 'Love Seed Momma Jump', :logo => 'loveseed-logo.png', :description => 'Coverband from Philadelphia', :website => 'http://www.loveseed.com/'})
+lsmj = Act.create({:logo => 'loveseed-logo.png', :name => 'Love Seed Momma Jump', :logo => 'loveseed-logo.png', :description => 'Coverband from Dewey Beach, DE', :website => 'http://www.loveseed.com/'})
 lsmj.save!
 
 ggg = Act.create({:logo => 'gogogadjet-logo.png', :name => 'Go Go Gadjet', :description => 'Coverband from Philadelphia', :website => 'http://www.gogogadjet.com/'})
@@ -129,11 +129,11 @@ scrr = Event.create({:logo => 'rudder-logo.png', :name => "Rudder's Saturday Nig
 scrr.save!
 
 # The Bangles
-tb_concert = Event.create({:logo => 'cork-logo.png', :name => 'The Bangles in Concert', :description => 'a night with the bangles', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
+tb_concert = Event.create({:logo => 'bangles-logo.png', :name => 'The Bangles in Concert', :description => 'a night with the bangles', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
 tb_concert.save!
 
 # George Clinton
-gc_concert = Event.create({:logo => 'cork-logo.png', :name => 'George Clinton & Parliament Funkadelic Concert', :description => 'Up for the down stroke', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
+gc_concert = Event.create({:logo => 'georgeclinton-logo.png', :name => 'George Clinton & Parliament Funkadelic Concert', :description => 'Up for the down stroke', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
 gc_concert.save!
 
 
@@ -268,7 +268,7 @@ scrr5.performances.build({:location => rr1, :act => cr, :performance_start => '2
 
 # The Bangles
 tb1.performances.build({:location => bc1, :act => tb, :priority => 0, :performance_start => '2011-07-05T22:00:00+00:00', :performance_end => '2011-07-06T01:00:00+00:00' }).save!
-tb1.performances.build({:location => bc1, :act => as,          :priority => 1, :performance_start => '2011-07-05T21:00:00+00:00', :performance_end => '2011-07-05T21:40:00+00:00' }).save!
+tb1.performances.build({:location => bc1, :act => as, :priority => 1, :performance_start => '2011-07-05T21:00:00+00:00', :performance_end => '2011-07-05T21:40:00+00:00' }).save!
 
 # George Clinton
 gc1.performances.build({:location => bc1, :act => gc, :priority => 0, :performance_start => '2011-07-23T21:00:00+00:00', :performance_end => '2011-07-24T01:00:00+00:00' }).save!
