@@ -262,7 +262,7 @@ gc1 = gc_concert.occurrences.build({:event_start => '2011-07-23T20:00:00+00:00',
 gc1.save!
 
 #Dewey Beach Music Conference 2011 Occurrence
-dbmc2011 = js.occurrences.build({:event_start => '2011-09-22T21:40:00+00:00', :event_end => '2011-09-25T01:00:00+00:00'})
+dbmc2011 = dbmc.occurrences.build({:event_start => '2011-09-22T21:40:00+00:00', :event_end => '2011-09-25T01:00:00+00:00'})
 dbmc2011.save!
 
 
