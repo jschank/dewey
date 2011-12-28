@@ -22,7 +22,12 @@ gem 'rails-footnotes', '>= 3.7.5.rc4', :group => :development
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'autotest-rails'
   gem 'ZenTest'
+end
+
+group :test do
+  gem "factory_girl_rails", "~> 1.2"
 end
 
 # Use unicorn as the web server

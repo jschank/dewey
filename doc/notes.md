@@ -92,10 +92,24 @@ So an Event is a specific single occurrence of a Promotion at a Venue
 * End_Time
 
 #### Todo:
-* Add a priority - Priority 0 is a special case, which means we should not list the item as a separate feature but use the item as the event.
+p = Performance.joins(:occurrence).where("occurrences.event_start > ?", DateTime.civil(2011, 7, 7))
+note: the above will join with occurrences and allow us to find all performances after a particular date.
+we could then group those by occurrence,
+>> o = Occurrence.find(18)
+  Occurrence Load (0.3ms)  SELECT "occurrences".* FROM "occurrences" WHERE "occurrences"."id" = ? ORDER BY event_start ASC LIMIT 1  [["id", 18]]
+=> #<Occurrence id: 18, event_start: "2011-09-22 21:40:00", event_end: "2011-09-25 01:00:00", event_id: 6, created_at: "2011-12-28 03:23:05", updated_at: "2011-12-28 03:23:05">
+>> r = o.event_start.to_date..o.event_end.to_date
+=> Thu, 22 Sep 2011..Sun, 25 Sep 2011
+>> r.count
+=> 4
+
+I think we might want: All performances, group them by day. Then within the day group them by occurrence. Then within the occurrence, group them by venue.
+a performance start and ends with the performance start and end, Unless they are missing, in which case the peformance starts and ends as its event does.
 
 #### Reasoning
 > Gimme a reason for a feature
+
+
 
 ---
 
