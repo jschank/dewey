@@ -49,5 +49,21 @@ describe "routing" do
     end
 
   end
+  
+  context "unroutable" do
+    
+    it "does not expose a list of occurrences" do
+      { :get => "/occurrences" }.should_not be_routable
+    end
+
+    it "does not expose a list of performances" do
+      { :get => "/performances" }.should_not be_routable
+    end
+
+    it "does not expose a list of locations" do
+      { :get => "/locations" }.should_not be_routable
+    end
+    
+  end
 
 end

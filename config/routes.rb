@@ -2,8 +2,6 @@ Dewey::Application.routes.draw do
 
   resources :acts
 
-  resources :locations
-
   resources :events
 
   resources :venues
