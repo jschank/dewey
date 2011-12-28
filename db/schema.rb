@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111226201843) do
+ActiveRecord::Schema.define(:version => 20111228210928) do
 
   create_table "acts", :force => true do |t|
     t.string   "name"
@@ -83,6 +83,14 @@ ActiveRecord::Schema.define(:version => 20111226201843) do
     t.string   "facebook"
     t.string   "twitter"
     t.string   "logo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "weblocations", :force => true do |t|
+    t.string   "name"
+    t.string   "tagline"
+    t.string   "icon"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

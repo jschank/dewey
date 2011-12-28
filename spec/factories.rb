@@ -28,6 +28,12 @@ Factory.define :performance do |f|
   f.priority            1  
 end
 
+Factory.define :weblocation do |f|
+  f.name        'Facebook'
+  f.tagline     'join us on'
+  f.icon        'facebook-icon.png'
+end
+
 Factory.define :venue do |f|
   f.name        'Bottle & Cork'
   f.description 'The Bottle & Cork is a live music club established in 1936.'
