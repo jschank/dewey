@@ -14,11 +14,11 @@
 
 # *** Actual Seeds ***
 fb      = Weblocation.create!({:name => "Facebook", :tagline => "join us on",     :icon => "facebook-logo.png"})
-www     = Weblocation.create!({:name => "Web",      :tagline => "join us on the", :icon => "web-logo.png"})
-ms      = Weblocation.create!({:name => "MySpace",  :tagline => "join us on",     :icon => "myspace-logo.png"})
 itunes  = Weblocation.create!({:name => "iTunes",   :tagline => "look for us on", :icon => "itunes-logo.png"})
-youtube = Weblocation.create!({:name => "YouTube",  :tagline => "watch us on",    :icon => "youtube-logo.png"})
+ms      = Weblocation.create!({:name => "MySpace",  :tagline => "join us on",     :icon => "myspace-logo.png"})
 twit    = Weblocation.create!({:name => "Twitter",  :tagline => "follow us on",   :icon => "twitter-logo.png"})
+www     = Weblocation.create!({:name => "Web",      :tagline => "join us on the", :icon => "web-logo.png"})
+youtube = Weblocation.create!({:name => "YouTube",  :tagline => "watch us on",    :icon => "youtube-logo.png"})
 
 # ***Venues***
 
