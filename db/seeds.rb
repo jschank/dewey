@@ -54,17 +54,17 @@ jg1 = jg.locations.build({:name => "default"})
 jg.save!
 
 #McShea's
-ms = Venue.create({:name => "McShea's", :description => 'Irish Pub.', :website => 'http://www.deweybeachlife.com/', :address1 => '1705 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-9430', :logo => 'mcsheas-logo.png'})
+ms = Venue.create({:name => "McShea's", :description => 'Irish Pub.', :website => 'http://www.deweybeach.com/mcsheas/', :address1 => '1705 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-9430', :logo => 'mcsheas-logo.png'})
 ms1 = jg.locations.build({:name => "default"})
 ms.save!
 
 #Woody's East Coast Grille
-wg = Venue.create({:name => "Woody's East Coast Grille", :description => 'Surf Bar and Grille.', :website => 'http://www.deweybeachlife.com/', :address1 => '1904 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '', :logo => 'woodys-logo.png'})
+wg = Venue.create({:name => "Woody's East Coast Grille", :description => 'Surf Bar and Grille.', :website => 'http://www.deweybeachbar.com/', :address1 => '1904 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '', :logo => 'woodys-logo.png'})
 wg1 = jg.locations.build({:name => "default"})
 wg.save!
 
 #Gary's Dewey Beach Grille
-gdbg = Venue.create({:name => "Gary's Dewey Beach Grille", :description => 'Bar and Grille', :website => 'http://www.deweybeachlife.com/', :address1 => '2000 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-8519', :logo => 'garys-logo.png'})
+gdbg = Venue.create({:name => "Gary's Dewey Beach Grill", :description => 'Bar and Grille', :website => 'http://www.garysdeweybeachgrill.com/', :address1 => '2000 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-8519', :logo => 'garys-logo.png'})
 gdbg1 = jg.locations.build({:name => "default"})
 gdbg.save!
 
