@@ -2,8 +2,6 @@ Dewey::Application.routes.draw do
 
   resources :acts
 
-  resources :features
-
   resources :locations
 
   resources :events
