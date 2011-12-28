@@ -124,34 +124,34 @@ as.save!
 gc = Act.create({:logo => 'georgeclinton-logo.png', :name => 'George Clinton & Parliament Funkadelic', :description => 'Godfather of Funk.', :website => 'http://www.georgeclinton.com/'})
 gc.save!
 
-LauraMarie = Act.create({:logo => '-logo.png', :name => 'Laura Marie', :hometown => 'San Antonio, TX', :website => ''})
+LauraMarie = Act.create({:logo => 'LauraMarie-logo.png', :name => 'Laura Marie', :hometown => 'San Antonio, TX', :website => 'http://lauramariemusic.com'})
 LauraMarie.save!
 
-Liat = Act.create({:logo => '-logo.png', :name => 'Liat', :hometown => 'Voorhees, NJ', :website => ''})
+Liat = Act.create({:logo => 'Liat-logo.png', :name => 'Liat', :hometown => 'Voorhees, NJ', :website => 'http://www.reverbnation.com/liatsmusic'})
 Liat.save!
 
-LizBethRose = Act.create({:logo => '-logo.png', :name => 'LizBeth Rose', :hometown => 'Philadelphia, PA', :website => ''})
+LizBethRose = Act.create({:logo => 'LizBethRose-logo.png', :name => 'LizBeth Rose', :hometown => 'Philadelphia, PA', :website => 'http://www.myspace.com/lizbethrosemusic'})
 LizBethRose.save!
 
-LoriCitro = Act.create({:logo => '-logo.png', :name => 'Lori Citro', :hometown => 'Newark, DE', :website => ''})
+LoriCitro = Act.create({:logo => 'LoriCitro-logo.png', :name => 'Lori Citro', :hometown => 'Newark, DE', :website => 'http://www.reverbnation.com/loricitro'})
 LoriCitro.save!
 
-LoveViaDanceMachine = Act.create({:logo => '-logo.png', :name => 'Love Via Dance Machine', :hometown => 'Boston, MA', :website => ''})
+LoveViaDanceMachine = Act.create({:logo => 'LoveViaDanceMachine-logo.png', :name => 'Love Via Dance Machine', :hometown => 'Boston, MA', :website => 'http://www.myspace.com/loveviadancemachine'})
 LoveViaDanceMachine.save!
 
-Lovebettie = Act.create({:logo => '-logo.png', :name => 'Lovebettie', :hometown => 'Pittsburgh, PA', :website => ''})
+Lovebettie = Act.create({:logo => 'Lovebettie-logo.png', :name => 'Lovebettie', :hometown => 'Pittsburgh, PA', :website => 'http://www.lovebettie.com/'})
 Lovebettie.save!
 
-lowercaseblues = Act.create({:logo => '-logo.png', :name => 'lower case blues', :hometown => 'Rehoboth Beach, DE', :website => ''})
+lowercaseblues = Act.create({:logo => 'lowercaseblues-logo.png', :name => 'lower case blues', :hometown => 'Rehoboth Beach, DE', :website => 'http://www.lowercaseblues.net/'})
 lowercaseblues.save!
 
-Luciar = Act.create({:logo => '-logo.png', :name => 'Luciar', :hometown => 'Brooklyn, NY', :website => ''})
+Luciar = Act.create({:logo => 'Luciar-logo.png', :name => 'Luciar', :hometown => 'Brooklyn, NY', :website => 'http://www.luciar.com/'})
 Luciar.save!
 
-LuckyDub = Act.create({:logo => '-logo.png', :name => 'Lucky Dub', :hometown => 'Washington, DC', :website => ''})
+LuckyDub = Act.create({:logo => 'LuckyDub-logo.png', :name => 'Lucky Dub', :hometown => 'Washington, DC', :website => 'http://luckydub.com/'})
 LuckyDub.save!
 
-ZakSmithBand = Act.create({:logo => '-logo.png', :name => 'Zak Smith Band', :hometown => 'New York, NY', :website => ''})
+ZakSmithBand = Act.create({:logo => 'ZakSmithBand-logo.png', :name => 'Zak Smith Band', :hometown => 'New York, NY', :website => 'http://www.zaksmithband.com/'})
 ZakSmithBand.save!
 
 
