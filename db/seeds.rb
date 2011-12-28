@@ -53,6 +53,23 @@ jg = Venue.create({:name => "Jimmy's Grille", :description => 'Outdoor Bar and G
 jg1 = jg.locations.build({:name => "default"})
 jg.save!
 
+#McShea's
+ms = Venue.create({:name => "McShea's", :description => 'Irish Pub.', :website => 'http://www.deweybeachlife.com/', :address1 => '1705 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-9430', :logo => 'mcsheas-logo.png'})
+ms1 = jg.locations.build({:name => "default"})
+ms.save!
+
+#Woody's East Coast Grille
+wg = Venue.create({:name => "Woody's East Coast Grille", :description => 'Surf Bar and Grille.', :website => 'http://www.deweybeachlife.com/', :address1 => '1904 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '', :logo => 'woodys-logo.png'})
+wg1 = jg.locations.build({:name => "default"})
+wg.save!
+
+#Gary's Dewey Beach Grille
+gdbg = Venue.create({:name => "Gary's Dewey Beach Grille", :description => 'Bar and Grille', :website => 'http://www.deweybeachlife.com/', :address1 => '2000 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-8519', :logo => 'garys-logo.png'})
+gdbg1 = jg.locations.build({:name => "default"})
+gdbg.save!
+
+
+
 # ***Acts***
 
 # Bands
@@ -107,12 +124,45 @@ as.save!
 gc = Act.create({:logo => 'georgeclinton-logo.png', :name => 'George Clinton & Parliament Funkadelic', :description => 'Godfather of Funk.', :website => 'http://www.georgeclinton.com/'})
 gc.save!
 
+LauraMarie = Act.create({:logo => '-logo.png', :name => 'Laura Marie', :hometown => 'San Antonio, TX', :website => ''})
+LauraMarie.save!
+
+Liat = Act.create({:logo => '-logo.png', :name => 'Liat', :hometown => 'Voorhees, NJ', :website => ''})
+Liat.save!
+
+LizBethRose = Act.create({:logo => '-logo.png', :name => 'LizBeth Rose', :hometown => 'Philadelphia, PA', :website => ''})
+LizBethRose.save!
+
+LoriCitro = Act.create({:logo => '-logo.png', :name => 'Lori Citro', :hometown => 'Newark, DE', :website => ''})
+LoriCitro.save!
+
+LoveViaDanceMachine = Act.create({:logo => '-logo.png', :name => 'Love Via Dance Machine', :hometown => 'Boston, MA', :website => ''})
+LoveViaDanceMachine.save!
+
+Lovebettie = Act.create({:logo => '-logo.png', :name => 'Lovebettie', :hometown => 'Pittsburgh, PA', :website => ''})
+Lovebettie.save!
+
+lowercaseblues = Act.create({:logo => '-logo.png', :name => 'lower case blues', :hometown => 'Rehoboth Beach, DE', :website => ''})
+lowercaseblues.save!
+
+Luciar = Act.create({:logo => '-logo.png', :name => 'Luciar', :hometown => 'Brooklyn, NY', :website => ''})
+Luciar.save!
+
+LuckyDub = Act.create({:logo => '-logo.png', :name => 'Lucky Dub', :hometown => 'Washington, DC', :website => ''})
+LuckyDub.save!
+
+ZakSmithBand = Act.create({:logo => '-logo.png', :name => 'Zak Smith Band', :hometown => 'New York, NY', :website => ''})
+ZakSmithBand.save!
+
+
 # DJs
 djs = Act.create({:logo => 'djjazzyjeff-logo.png', :name => 'DJ Smoky', :description => 'DJ', :website => 'http://smokythedj.com/'})
 djs.save!
 
 djjj = Act.create({:logo => 'djsmoky-logo.png', :name => 'DJ Jazzy Jeff', :description => 'Fresh Prince\'s Sidekick', :website => 'http://www.apple.com/'})
 djjj.save!
+
+
 
 # ***Events***
 
@@ -135,6 +185,10 @@ tb_concert.save!
 # George Clinton
 gc_concert = Event.create({:logo => 'georgeclinton-logo.png', :name => 'George Clinton & Parliament Funkadelic Concert', :description => 'Up for the down stroke', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
 gc_concert.save!
+
+#Dewey Beach Music Conference
+dbmc = Event.create({:logo => 'dbmc-logo.png', :name => 'Dewey Beach Music Conference', :description => 'DBMC may not be the biggest music conference in the northeast, but it has garnered more than its fair share of critical acclaim, rave reviews and enthusiastic return participants. This is due in no small part to the consistent quality of talent and its location.', :website => 'http://www.deweybeachfest.com/dbmc/'})
+dbmc.save!
 
 
 # ***Occurrences***
@@ -207,6 +261,10 @@ tb1.save!
 gc1 = gc_concert.occurrences.build({:event_start => '2011-07-23T20:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00'})
 gc1.save!
 
+#Dewey Beach Music Conference 2011 Occurrence
+dbmc2011 = js.occurrences.build({:event_start => '2011-09-22T21:40:00+00:00', :event_end => '2011-09-25T01:00:00+00:00'})
+dbmc2011.save!
+
 
 # ***Performances***
 
@@ -273,6 +331,17 @@ tb1.performances.build({:location => bc1, :act => as, :priority => 1, :performan
 # George Clinton
 gc1.performances.build({:location => bc1, :act => gc, :priority => 0, :performance_start => '2011-07-23T21:00:00+00:00', :performance_end => '2011-07-24T01:00:00+00:00' }).save!
 
+# Dewey Beach Music Conference
+dbmc2011.performances.build({:location => ms1, :act => LauraMarie, :performance_start => '2011-09-23T21:30:00+00:00', :performance_end => '2011-09-23T22:00:00+00:00'}).save!
+dbmc2011.performances.build({:location => wg1, :act => Liat, :performance_start => '2011-09-24T21:00:00+00:00', :performance_end => '2011-09-24T22:00:00+00:00'}).save!
+dbmc2011.performances.build({:location => jg1, :act => LizBethRose, :performance_start => '2011-09-24T20:00:00+00:00', :performance_end => '2011-09-24T11:00:00+00:00'}).save!
+dbmc2011.performances.build({:location => gdbg1, :act => LoriCitro, :performance_start => '2011-09-24T22:00:00+00:00', :performance_end => '2011-09-24T22:30:00+00:00'}).save!
+dbmc2011.performances.build({:location => rrc, :act => LoveViaDanceMachine, :performance_start => '2011-09-23T21:00:00+00:00', :performance_end => '2011-09-23T21:40:00+00:00'}).save!
+dbmc2011.performances.build({:location => rrb, :act => Lovebettie, :performance_start => '2011-09-24T22:20:00+00:00', :performance_end => '2011-09-24T23:00:00+00:00'}).save!
+dbmc2011.performances.build({:location => rrd, :act => lowercaseblues, :performance_start => '2011-09-23T00:20:00+00:00', :performance_end => '2011-09-23T01:00:00+00:00'}).save!
+dbmc2011.performances.build({:location => ms1, :act => Luciar, :performance_start => '2011-09-23T21:00:00+00:00', :performance_end => '2011-09-23T21:30:00+00:00'}).save!
+dbmc2011.performances.build({:location => bca, :act => LuckyDub, :performance_start => '2011-09-24T23:00:00+00:00', :performance_end => '2011-09-24T23:40:00+00:00'}).save!
+dbmc2011.performances.build({:location => bcb, :act => ZakSmithBand, :performance_start => '2011-09-24T21:00:00+00:00', :performance_end => '2011-09-24T21:40:00+00:00'}).save!
 
 
 
