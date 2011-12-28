@@ -10,6 +10,7 @@ Factory.define :event do |f|
 end
 
 Factory.define :location do |f|
+  f.association   :venue
   f.name          'Default'
 end
 
