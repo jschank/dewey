@@ -21,12 +21,12 @@
 				<% performances_for_venue.group_by { |p| p.location}.each do |location, performances_for_location| %>
 					<%= link_to current_event_path(occurrence.event, occurrence), :style => "background: url( #{logo_for(venue, :small)}) no-repeat 10px 10px,  url( #{asset_path 'arrow.png'} ) no-repeat right center;" do %>
 						<h4><%= occurrence.event.name %></h4>
-						<% performances_for_location.each_with_index do |performance, index| %>
+						<% performances_for_location.sort{|a, b| a.performance_start <=> b.performance_start}.each_with_index do |performance, index| %>
 							<%if performance.event.is_special %>
 							<% if index == 0 %><p><%= performance.location.name %></p><% end %>
 								<p><%= performance.act.name %> <%= performance_times(performance) %></p>							
 							<% else %>
-								<p><%= performance.act.name %></p>
+								<% if performance.priority > 0 %><p><%= performance.act.name %></p><% end %>
 							<% end %>
 						<% end %>
 						<% if occurrence.event.is_special == false %>
