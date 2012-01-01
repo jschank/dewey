@@ -17,12 +17,24 @@
 <% @future_performances.group_by{|p| p.performance_start.to_date}.sort.each do |start_date, performances_for_date| %>
 		<h2><%= date_and_times(start_date) %></h2>
 		<% performances_for_date.group_by {|p| p.occurrence}.each do |occurrence, performances_for_occurrence| %>
-			<a href=<%= current_event_path(occurrence.event, occurrence) %> style="background: url(<%= logo_for(occurrence.venues[0], :small) %>) no-repeat 10px 10px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
-			<h4><%= occurrence.event.name %></h4>
-			<% performances_for_occurrence.each do |performance| %>
-				<p><%= performance.act.name %></p>
+			<% performances_for_occurrence.group_by {|p| p.venue}.each do |venue, performances_for_venue| %>
+				<% performances_for_venue.group_by { |p| p.location}.each do |location, performances_for_location| %>
+					<%= link_to current_event_path(occurrence.event, occurrence), :style => "background: url( #{logo_for(venue, :small)}) no-repeat 10px 10px,  url( #{asset_path 'arrow.png'} ) no-repeat right center;" do %>
+						<h4><%= occurrence.event.name %></h4>
+						<% performances_for_location.each_with_index do |performance, index| %>
+							<%if performance.event.is_special %>
+							<% if index == 0 %><p><%= performance.location.name %></p><% end %>
+								<p><%= performance.act.name %> <%= performance_times(performance) %></p>							
+							<% else %>
+								<p><%= performance.act.name %></p>
+							<% end %>
+						<% end %>
+						<% if occurrence.event.is_special == false %>
+							<p class="times"><%= occurrence_times(occurrence) %></p>
+						<% end %>
+					<% end %>
+				<% end %>
 			<% end %>
-			<p class="times"><%= occurrence_times(occurrence) %></p></a>
 		<% end %>
 	<% end %>
 <% end %>
