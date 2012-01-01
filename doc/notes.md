@@ -73,7 +73,6 @@ For example: (some band) at (some venue) from (some date-time) to (some date-tim
 * Event_End
 
 #### Todo:
-* Add "related events" using a [self-join association](http://edgeguides.rubyonrails.org/association_basics.html#self-joins)
 
 #### Reasoning
 > the thought is that an event is the binder that ties together a Promotion and a Venue, and fixes them in time. 
@@ -91,7 +90,7 @@ So an Event is a specific single occurrence of a Promotion at a Venue
 * Start_Time
 * End_Time
 
-#### Todo:
+#### Notes:
 p = Performance.joins(:occurrence).where("occurrences.event_start > ?", DateTime.civil(2011, 7, 7))
 note: the above will join with occurrences and allow us to find all performances after a particular date.
 we could then group those by occurrence,

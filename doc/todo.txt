@@ -1,0 +1,1 @@
+TODO Add "related events" using a [self-join association](http://edgeguides.rubyonrails.org/association_basics.html#self-joins)
