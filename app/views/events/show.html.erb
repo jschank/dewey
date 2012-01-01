@@ -15,12 +15,14 @@
 </div>
     
 <% if @occurrence %>
+	<%= content_tag :h3, pluralize(@occurrence.venues.count, "Venue") %>
 	<% @occurrence.venues.each do |venue| %>
 	<%= link_to venue_path(venue), {:class => "venue_box", :style => "background: url(#{logo_for(venue, :small)}) no-repeat 10px 10px,  url(#{asset_path 'arrow.png'}) no-repeat right center;"} do %>
 		<%= venue.name %>
 	<% end %>
 	<% end %>
 
+	<%= content_tag :h3, pluralize(@occurrence.performances.count, "Performance") %>
 	<% @occurrence.performances.each do |performance| %>
 	<%= link_to act_path(performance.act), {:class => "act_box", :style => "background: url(#{logo_for(performance.act, :small)}) no-repeat 10px 10px,  url(#{asset_path 'arrow.png'}) no-repeat right center;"} do %>
 		<p><%= performance.act.name %></p>

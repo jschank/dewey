@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111228210928) do
+ActiveRecord::Schema.define(:version => 20120101172527) do
 
   create_table "acts", :force => true do |t|
     t.string   "name"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20111228210928) do
     t.string   "logo"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_special",  :default => false
   end
 
   create_table "locations", :force => true do |t|

@@ -198,7 +198,7 @@ gc_concert = Event.create({:logo => 'georgeclinton-logo.png', :name => 'George C
 gc_concert.save!
 
 #Dewey Beach Music Conference
-dbmc = Event.create({:logo => 'dbmc-logo.png', :name => 'Dewey Beach Music Conference', :description => 'DBMC may not be the biggest music conference in the northeast, but it has garnered more than its fair share of critical acclaim, rave reviews and enthusiastic return participants. This is due in no small part to the consistent quality of talent and its location.', :website => 'http://www.deweybeachfest.com/dbmc/'})
+dbmc = Event.create({:is_special => true, :logo => 'dbmc-logo.png', :name => 'Dewey Beach Music Conference', :description => 'DBMC may not be the biggest music conference in the northeast, but it has garnered more than its fair share of critical acclaim, rave reviews and enthusiastic return participants. This is due in no small part to the consistent quality of talent and its location.', :website => 'http://www.deweybeachfest.com/dbmc/'})
 dbmc.save!
 
 
@@ -282,7 +282,7 @@ dbmc2011.save!
 # Jam 1
 js1.performances.build({:location => bc1, :act => lsmj, :priority => 1, :performance_start => '2011-07-02T17:00:00+00:00', :performance_end => '2011-07-03T01:00:00+00:00'}).save!
 js1.performances.build({:location => bc1, :act => la,   :priority => 2, :performance_start => '2011-07-02T17:00:00+00:00', :performance_end => '2011-07-03T01:00:00+00:00'}).save!
-js1.performances.build({:location => bc1, :act => ggg,  :priority => 1, :performance_start => '2011-07-02T17:00:00+00:00', :performance_end => '2011-07-03T01:00:00+00:00'}).save!
+js1.performances.build({:location => bc1, :act => ggg,  :priority => 3, :performance_start => '2011-07-02T17:00:00+00:00', :performance_end => '2011-07-03T01:00:00+00:00'}).save!
 
 # Jam 2
 js2.performances.build({:location => bc1, :act => gg, :priority => 3, :performance_start => '2011-07-09T17:00:00+00:00', :performance_end => '2011-07-10T01:00:00+00:00'}).save!

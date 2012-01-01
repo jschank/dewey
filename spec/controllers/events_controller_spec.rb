@@ -49,10 +49,10 @@ describe EventsController do
   describe "GET upcoming" do
     
     before(:each) do
-      @event = Factory(:event)
-      @o1 = Factory.create(:occurrence, :event_start => DateTime.civil(2011, 07, 02, 20, 0), :event_end => DateTime.civil(2011, 07, 04, 1, 0), :event => @event)
-      @o2 = Factory.create(:occurrence, :event_start => DateTime.civil(2011, 07, 03), :event_end => DateTime.civil(2011, 07, 04), :event => @event)
-      @o3 = Factory.create(:occurrence, :event_start => DateTime.civil(2011, 07, 10), :event_end => DateTime.civil(2011, 07, 11), :event => @event)
+      @occurrence = Factory(:occurrence)      
+      @p1 = Factory.create(:performance, :performance_start => DateTime.civil(2011, 07, 02, 20, 0), :performance_end => DateTime.civil(2011, 07, 04, 1, 0), :occurrence => @occurrence)
+      @p2 = Factory.create(:performance, :performance_start => DateTime.civil(2011, 07, 03), :performance_end => DateTime.civil(2011, 07, 04), :occurrence => @occurrence)
+      @p3 = Factory.create(:performance, :performance_start => DateTime.civil(2011, 07, 10), :performance_end => DateTime.civil(2011, 07, 11), :occurrence => @occurrence)
     end
     
     it "gets the upcoming view" do
@@ -62,12 +62,12 @@ describe EventsController do
     
     it "assigns @future_occurrences" do
       get :upcoming
-      assigns(:future_occurrences).should eq([@o1, @o2, @o3])
+      assigns(:future_performances).should eq([@p1, @p2, @p3])
     end    
 
     it "assigns @happening_now" do
       get :upcoming
-      assigns(:happening_now).should eq([@o1])
+      assigns(:happening_now).should eq([@p1])
     end    
   end
 

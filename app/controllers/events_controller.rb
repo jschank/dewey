@@ -12,9 +12,9 @@ class EventsController < ApplicationController
   end
 
   def upcoming
-    @future_occurrences = Occurrence.future_occurrences(DateTime.civil(2011, 01, 01))
-    @happening_now = Occurrence.in_progress(DateTime.civil(2011, 07, 02, 22, 0, 0))
-
+    @future_performances = Performance.future_performances(DateTime.civil(2011, 01, 01))
+    @happening_now = Performance.in_progress(DateTime.civil(2011, 07, 02, 22, 0, 0))
+    
     respond_to do |format|
       format.html # upcoming_events.html.erb
       format.json { render :json => @events }
