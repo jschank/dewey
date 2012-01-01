@@ -1,1 +1,13 @@
-TODO Add "related events" using a [self-join association](http://edgeguides.rubyonrails.org/association_basics.html#self-joins)
+* Add Join table for Weblocations so that Acts/Venues/Events can have a set of URLs to weblocations
+* Add "related events" using a [self-join association](http://edgeguides.rubyonrails.org/association_basics.html#self-joins)
+* Add related acts to the acts table
+* Description fields should store and render in markdown.
+* Add back button at the top left of the page
+* Add Edit|Add buttons to the top right of the page
+* Upcoming events should display next two weeks. And a link to show more (shows another two weeks each time)
+* Implement search ability.
+* Specific area, logo should be a float image not a background image.
+* Time is wrong for the Dewey Beach Music Conference, On the venue page.
+* Acts and Venues Index pages, Should have a class or ID for each item, which can be be hidden/shown via javascript
+* Long strings should be rendered with ... instead of wrapping.
+
