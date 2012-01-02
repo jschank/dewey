@@ -24,7 +24,8 @@
 						<% performances_for_location.sort{|a, b| a.performance_start <=> b.performance_start}.each_with_index do |performance, index| %>
 							<%if performance.event.is_special %>
 							<% if index == 0 %><h5><%= performance.location.name %></h5><% end %>
-								<p><%= performance.act.name %> <%= performance_times(performance) %></p>							
+								<p><%= performance.act.name %></p>
+								<p class="times"><%= performance_times(performance) %></p>							
 							<% else %>
 								<% if performance.priority > 0 %><p><%= performance.act.name %></p><% end %>
 							<% end %>
