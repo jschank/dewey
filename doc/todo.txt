@@ -10,4 +10,5 @@
 * Time is wrong for the Dewey Beach Music Conference, On the venue page.
 * Acts and Venues Index pages, Should have a class or ID for each item, which can be be hidden/shown via javascript
 * Long strings should be rendered with ... instead of wrapping.
+* A field should be added to the occurrences table for cover charge or price or whatever.  
 
