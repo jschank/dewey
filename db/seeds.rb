@@ -167,10 +167,10 @@ ZakSmithBand.save!
 
 
 # DJs
-djs = Act.create({:logo => 'djjazzyjeff-logo.png', :name => 'DJ Smoky', :description => 'DJ', :website => 'http://smokythedj.com/'})
+djs = Act.create({:logo => 'djsmoky-logo.png', :name => 'DJ Smoky', :description => 'DJ', :website => 'http://smokythedj.com/'})
 djs.save!
 
-djjj = Act.create({:logo => 'djsmoky-logo.png', :name => 'DJ Jazzy Jeff', :description => 'Fresh Prince\'s Sidekick', :website => 'http://www.apple.com/'})
+djjj = Act.create({:logo => 'djjazzyjeff-logo.png', :name => 'DJ Jazzy Jeff', :description => 'Fresh Prince\'s Sidekick', :website => 'http://www.apple.com/'})
 djjj.save!
 
 
@@ -190,11 +190,11 @@ scrr = Event.create({:logo => 'rudder-logo.png', :name => "Rudder's Saturday Nig
 scrr.save!
 
 # The Bangles
-tb_concert = Event.create({:logo => 'bangles-logo.png', :name => 'The Bangles in Concert', :description => 'a night with the bangles', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
+tb_concert = Event.create({:logo => 'bangles-logo.png', :name => 'The Bangles', :description => 'a night with the bangles', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
 tb_concert.save!
 
 # George Clinton
-gc_concert = Event.create({:logo => 'georgeclinton-logo.png', :name => 'George Clinton & Parliament Funkadelic Concert', :description => 'Up for the down stroke', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
+gc_concert = Event.create({:logo => 'georgeclinton-logo.png', :name => 'George Clinton & Parliament Funkadelic', :description => 'Up for the down stroke', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
 gc_concert.save!
 
 #Dewey Beach Music Conference
@@ -285,9 +285,9 @@ js1.performances.build({:location => bc1, :act => la,   :priority => 2, :perform
 js1.performances.build({:location => bc1, :act => ggg,  :priority => 3, :performance_start => '2011-07-02T17:00:00+00:00', :performance_end => '2011-07-03T01:00:00+00:00'}).save!
 
 # Jam 2
-js2.performances.build({:location => bc1, :act => gg, :priority => 3, :performance_start => '2011-07-09T17:00:00+00:00', :performance_end => '2011-07-10T01:00:00+00:00'}).save!
-js2.performances.build({:location => bc1, :act => bs, :priority => 1, :performance_start => '2011-07-09T17:00:00+00:00', :performance_end => '2011-07-10T01:00:00+00:00'}).save!
-js2.performances.build({:location => bc1, :act => sd, :priority => 2, :performance_start => '2011-07-09T17:00:00+00:00', :performance_end => '2011-07-10T01:00:00+00:00'}).save!
+js2.performances.build({:location => bc1, :act => gg, :priority => 1, :performance_start => '2011-07-09T17:00:00+00:00', :performance_end => '2011-07-10T01:00:00+00:00'}).save!
+js2.performances.build({:location => bc1, :act => bs, :priority => 2, :performance_start => '2011-07-09T17:00:00+00:00', :performance_end => '2011-07-10T01:00:00+00:00'}).save!
+js2.performances.build({:location => bc1, :act => sd, :priority => 3, :performance_start => '2011-07-09T17:00:00+00:00', :performance_end => '2011-07-10T01:00:00+00:00'}).save!
 
 # Jam 3
 js3.performances.build({:location => bc1, :act => la,  :priority => 1, :performance_start => '2011-07-16T17:00:00+00:00', :performance_end => '2011-07-17T01:00:00+00:00'}).save!
