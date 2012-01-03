@@ -2,7 +2,7 @@
 	<h2>Happening now (7/2/2011 @ 10pm)</h2>
 	<% @happening_now.group_by{|p| p.occurrence}.each do |occurrence, performances| %>
 		<div class="event">
-			<a href=<%= current_event_path(occurrence.event, occurrence) %> style="background: url(<%= logo_for(occurrence.venues[0], :small) %>) no-repeat 10px 10px,  url(<%= asset_path 'arrow.png' %>) no-repeat right center;">
+			<a href=<%= current_event_path(occurrence.event, occurrence) %> style="background-image: url(<%= logo_for(occurrence.venues[0], :small) %>),  url(<%= asset_path 'arrow.png' %>);">
 			<h4><%= occurrence.event.name %></h4>
 			<% occurrence.acts.each do |act| %>
 				<p><%= act.name %></p>
@@ -19,7 +19,7 @@
 		<% performances_for_date.group_by {|p| p.occurrence}.each do |occurrence, performances_for_occurrence| %>
 			<% performances_for_occurrence.group_by {|p| p.venue}.each do |venue, performances_for_venue| %>
 				<% performances_for_venue.group_by { |p| p.location}.each do |location, performances_for_location| %>
-					<%= link_to current_event_path(occurrence.event, occurrence), :style => "background: url( #{logo_for(venue, :small)}) no-repeat 10px 10px,  url( #{asset_path 'arrow.png'} ) no-repeat right center;" do %>
+					<%= link_to current_event_path(occurrence.event, occurrence), :style => "background-image: url( #{logo_for(venue, :small)}),  url( #{asset_path 'arrow.png'} );" do %>
 						<h4><%= occurrence.event.name %></h4>
 						<% performances_for_location.sort{|a, b| a.performance_start <=> b.performance_start}.each_with_index do |performance, index| %>
 							<%if performance.event.is_special %>
