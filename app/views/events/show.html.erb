@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <% specific_area do %>
-<div class="specificHeader" style="background: #e2e2e2 url(<%= logo_for(@event, :large) %>) no-repeat 10px 10px">
+<div class="specificHeader">
+<img src="<%= logo_for(@event, :large) %>" style="-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(226,226,226,0.2))); margin: 0 10px 50px 0; float: left;" />
 <h4><%= @event.name %></h4>
 <p class="description"><%= @event.description %></p>
 <% if @occurrence %>

@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <% specific_area do %>
-    <div class="specificHeader" style="background: #f4f4f4 url(<%= logo_for(@venue, :large) %>) no-repeat 10px 10px">
+    <div class="specificHeader">
+	<img src="<%= logo_for(@venue, :large) %>" style="-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(226,226,226,0.2))); margin: 0 10px 50px 0; float: left;" />
     <h4><%= @venue.name %></h4>
     <p class="description"><%= @venue.description %></p>
     <p><%= @venue.address1 %><br/>

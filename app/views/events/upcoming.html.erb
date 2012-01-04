@@ -1,14 +1,12 @@
 <% in_progress_area do %>
 	<h2>Happening now (7/2/2011 @ 10pm)</h2>
 	<% @happening_now.group_by{|p| p.occurrence}.each do |occurrence, performances| %>
-		<div class="event">
 			<a href=<%= current_event_path(occurrence.event, occurrence) %> style="background-image: url(<%= logo_for(occurrence.venues[0], :small) %>),  url(<%= asset_path 'arrow.png' %>);">
 			<h4><%= occurrence.event.name %></h4>
 			<% occurrence.acts.each do |act| %>
 				<p><%= act.name %></p>
 			<% end %>
 			<p class="times"><%= occurrence_times(occurrence) %></p></a>
-		</div>
 	
 	<% end %>
 <% end %>
