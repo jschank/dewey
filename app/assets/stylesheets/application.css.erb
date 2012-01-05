@@ -184,3 +184,26 @@ a.act_box, a.venue_box
 	text-align: center;
 }
 
+a.act_index, a.venue_index, a.event_index
+{
+	display: block;
+	border-top: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+	padding: 0 30px 0 60px;
+	min-height: 50px;
+	text-decoration: none;
+	background-color: #000;
+	background-position: left top, right center;
+	background-repeat: no-repeat, no-repeat;
+}
+
+a.act_index:nth-of-type(odd), a.venue_index:nth-of-type(odd), a.event_index:nth-of-type(odd)
+{
+	background-color: #cbcccf;
+}
+
+a.act_index:nth-of-type(even), a.venue_index:nth-of-type(even), a.event_index:nth-of-type(even)
+{
+	background-color: #dddee0;
+}
+
