@@ -15,7 +15,7 @@
 	<h2>Upcoming Events for <%= @act.name %></h2>
 	<% @future_performances.group_by{ |p| p.performance_start.to_date}.each do |date, performances_for_date | %>
 	<% performances_for_date.each do |performance| %>
-			<%= link_to current_event_path(performance.event, performance.occurrence), {:style => "background: url(#{logo_for(performance.occurrence.venues[0], :small)}) no-repeat 10px 10px, url(#{asset_path 'arrow.png'}) no-repeat right center;"} do %>
+			<%= link_to current_event_path(performance.event, performance.occurrence), {:style => "background-image: url(#{logo_for(performance.occurrence.venues[0], :small)}), url(#{asset_path 'arrow.png'});"} do %>
 			<h4><%= performance.occurrence.event.name %></h4>
 				<% performance.occurrence.performances.each do |perf| %>
 				<% if perf.priority > 0 %>
