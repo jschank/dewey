@@ -87,20 +87,19 @@ h5
 	display: block;
 	border-top: 1px solid #e6e6e6;
 	border-bottom: 1px solid #e6e6e6;
-	padding: 10px 30px 10px 70px;
+	padding: .25em 30px .3em 60px;
 	min-height: 50px;
 	text-decoration: none;
-	background-color: #000;
-	background-position: 10px 10px, right center;
+	background-position: left top, right center;
 	background-repeat: no-repeat, no-repeat;
 }
 
-.boxIndex a:nth-of-type(odd)
+.boxIndex a:nth-of-type(odd), a.act_box:nth-of-type(odd), a.venue_box:nth-of-type(odd)
 {
 	background-color: #cbcccf;
 }
 
-.boxIndex a:nth-of-type(even)
+.boxIndex a:nth-of-type(even), a.act_box:nth-of-type(even), a.venue_box:nth-of-type(even)
 {
 	background-color: #dddee0;
 }
@@ -134,14 +133,16 @@ a .times:last-of-type
 a.act_box, a.venue_box	
 {
 	display: block;
-	border-top: 2px solid #7f7f7f;
-	background: url(<%= asset_path 'arrow.png' %>) no-repeat right center;
-	padding: 10px 10px 10px 70px;
-	min-height: 50px;
+	border-top: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+	padding: 5px 30px 5px 60px;
+	min-height: 40px;
 	text-decoration: none;
 	margin: 0;
 	font: normal 1em Helvetica, sans-serif;
 	color: #000;
+	background-position: left top, right center;
+	background-repeat: no-repeat, no-repeat;
 }
 
 .specificHeader	{
