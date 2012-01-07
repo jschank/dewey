@@ -4,7 +4,8 @@
     <div class="specificHeader">
 	<img src="<%= logo_for(@act, :large) %>" style="-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(226,226,226,0.2))); margin: 0 10px 50px 0; float: left;" />
 	<%= content_tag :h4, @act.name %>	
-    <p class="description"><%= @act.description %></p>
+	<%= display_hometown(@act) %>
+	<div class="description"><%= @act.description.try(:html_safe) %></div>
 	<%= link_to "", @act.website, :target => "_blank", :class => "webAnchor webSite" %>
 	<%= link_to "", @act.facebook, :target => "_blank", :class => "webAnchor facebook" %>
 	<%= link_to "", @act.twitter, :target => "_blank", :class => "webAnchor twitter" %>

@@ -28,6 +28,7 @@
 	<% @occurrence.performances.each do |performance| %>
 	<%= link_to act_path(performance.act), {:class => "act_box", :style => "background-image: url(#{logo_for(performance.act, :small)}),  url(#{asset_path 'arrow.png'});"} do %>
 		<p><%= performance.act.name %></p>
+		<p class="dates"><%= performance.performance_start.to_date.to_s(:long) %></p>
 		<p class="times"><%= performance_times(performance) %></p>
 	<% end %>
     <% end %>

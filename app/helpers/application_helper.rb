@@ -45,6 +45,10 @@ module ApplicationHelper
     image_path(filename)    
   end
   
+  # def markdown(content)
+  #   BlueCloth.new(content).to_html
+  # end
+  
   def sortable_name(name)
     canonical_name = name.upcase
     first, *rest = canonical_name.split

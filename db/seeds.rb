@@ -146,11 +146,23 @@ LoriCitro.save!
 LoveViaDanceMachine = Act.create({:logo => 'LoveViaDanceMachine-logo.png', :name => 'Love Via Dance Machine', :hometown => 'Boston, MA', :website => 'http://www.myspace.com/loveviadancemachine'})
 LoveViaDanceMachine.save!
 
-Lovebettie = Act.create({:logo => 'Lovebettie-logo.png', :name => 'Lovebettie', :description => 'Named “Pittsburgh’s Hottest Band” by Microsoft Windows, the Pittsburgh based pioneers of “Swagger Rock” attract fans from all walks of life with their neo-soul, rock-pop mash up. This genre-bending refreshing new take on modern rock has landed the band an onslaught of mass media exposure, major radio circulation, and a resounding buzz within the music industry.
+lovebettie_description = <<EOD
+<p>Named “Pittsburgh’s Hottest Band” by Microsoft Windows, the Pittsburgh based pioneers of “Swagger Rock” attract fans from all walks 
+of life with their neo-soul, rock-pop mash up. This genre-bending refreshing new take on modern rock has landed the band an onslaught 
+of mass media exposure, major radio circulation, and a resounding buzz within the music industry.</p>
 
-Having toured a majority of East coast and Midwest states, Lovebettie’s persistent drive and tireless work ethic has helped them evolve from a local favorite to a national success story. They have shared the stage with multitudes of national acts including: Lifehouse, Fuel, Semi Precious Weapons, Everclear, Guster, The Last Goodnight, and many more. In 2010 they performed The Official Lady Gaga Afterparty for her Monsters Ball Tour. They were personally selected by Jon Bon Jovi as one of three bands to contend for a tour opening spot, and released two music videos for airing consideration on MTV, VH1, and Fuse.
+<p>Having toured a majority of East coast and Midwest states, Lovebettie’s persistent drive and tireless work ethic has helped them evolve 
+from a local favorite to a national success story. They have shared the stage with multitudes of national acts including: Lifehouse, Fuel, 
+Semi Precious Weapons, Everclear, Guster, The Last Goodnight, and many more. In 2010 they performed The Official Lady Gaga Afterparty for 
+her Monsters Ball Tour. They were personally selected by Jon Bon Jovi as one of three bands to contend for a tour opening spot, and released 
+two music videos for airing consideration on MTV, VH1, and Fuse.</p>
 
-Recently, in 2011, Lovebettie released their new EP, engineered, produced, and mixed by notorious producer Jim Wirt (Incubus, Fiona Apple, Hoobastank) and already finished a 24 day headlining US tour from Boston to Austin. They performed 7 showcases during this year’s esteemed annual South by Southwest festival, and are gearing up for another full US tour for the Spring of 2012.', :hometown => 'Pittsburgh, PA', :website => 'http://www.lovebettie.com/'})
+<p>Recently, in 2011, Lovebettie released their new EP, engineered, produced, and mixed by notorious producer Jim Wirt (Incubus, Fiona Apple, Hoobastank) 
+and already finished a 24 day headlining US tour from Boston to Austin. They performed 7 showcases during this year’s esteemed annual South by Southwest 
+festival, and are gearing up for another full US tour for the Spring of 2012.'</p>
+EOD
+
+Lovebettie = Act.create({:logo => 'Lovebettie-logo.png', :name => 'Lovebettie', :description => lovebettie_description, :hometown => 'Pittsburgh, PA', :website => 'http://www.lovebettie.com/'})
 Lovebettie.save!
 
 lowercaseblues = Act.create({:logo => 'lowercaseblues-logo.png', :name => 'lower case blues', :hometown => 'Rehoboth Beach, DE', :website => 'http://www.lowercaseblues.net/'})
