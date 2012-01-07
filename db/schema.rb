@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120101172527) do
+ActiveRecord::Schema.define(:version => 20120107210653) do
 
   create_table "acts", :force => true do |t|
     t.string   "name"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20120101172527) do
     t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "cover_charge"
   end
 
   add_index "occurrences", ["event_id"], :name => "index_occurrences_on_event_id"

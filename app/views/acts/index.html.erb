@@ -5,7 +5,7 @@
 	<% @acts.group_by{ |a| sortable_name(a.name).chars.first }.each do |letter, acts| %>
 		<h3><%= letter %></h3>
 		<% acts.each do |act| %>
-			<%= link_to event_path(act), :style => "background-image: url(#{logo_for(act, :small)}), url(#{asset_path 'arrow.png'});", :class => "act_index" do %>
+		<%= link_to act_path(act), :style => "background-image: url(#{logo_for(act, :small)}), url(#{asset_path 'arrow.png'});", :class => "#{cycle('even', 'odd')} act_index" do %>
 			<h4 style="padding-top: 15px; height: 15pt; overflow: none;"><%= act.name %> <% if act.formerly %><i style="color: #8a8a8a;"> - Formerly: <%= act.formerly %></i><%end%></h4>
 			<% end %>
 		<% end %>

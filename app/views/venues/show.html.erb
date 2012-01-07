@@ -28,7 +28,9 @@
 				<p><%= performance.act.name %></p>
 				<% end %>
 			<% end %>
-			<p class="times"><%= date_and_times(date, occurrence) %></p>
+			<%= display_cover_charge(occurrence) %>
+			<p class="dates"><%= date.to_date.to_s(:long) %></p>
+			<p class="times"><%= occurrence_times(occurrence) %></p>
 		<% end %>
 	    <% end %>
 	<% end %>

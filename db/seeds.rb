@@ -24,24 +24,24 @@ youtube = Weblocation.create!({:name => "YouTube",  :tagline => "watch us on",  
 
 # Bottle and Cork
 bc = Venue.create!({:name => 'Bottle & Cork', :description => 'The Bottle & Cork is a live music club established in 1936.', :website => 'http://www.deweybeachlife.com/', :address1 => '1807 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-7272', :logo => 'cork-logo.png'})
-bc1 = bc.locations.build({:name => "default"})
+bc1 = bc.locations.build()
 bca = bc.locations.build({:name => "Stage A"})
 bcb = bc.locations.build({:name => "Stage B"})
 bc.save!
 
 # Northbeach
 nb = Venue.create({:name => 'Northbeach', :description => 'Northbeach offers casual indoor and outdoor dining overlooking Rehoboth Bay. Northbeach is open mid-May through Labor Day. Join us for great food, frozen drinks and beautiful sunsets.', :website => 'http://www.deweybeachlife.com/', :address1 => '125 McKinley Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-226-8673', :logo => 'northbeach-logo.png'})
-nb1 = nb.locations.build({:name => "default"})
+nb1 = nb.locations.build()
 nb.save!
 
 # Lighthouse
 lh = Venue.create({:name => 'Lighthouse', :description => 'Tall tower, bright light', :website => 'http://www.deweybeachlife.com/', :address1 => '2112 Shiny Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-555-1212', :logo => 'lighthouse-logo.png'})
-lh1 = lh.locations.build({:name => "default"})
+lh1 = lh.locations.build()
 lh.save!
 
 # Rusty Rudder
 rr = Venue.create({:name => 'Rusty Rudder', :description => 'The Rudder is now open daily.  Join us for our famous all u can eat Land and Sea Buffet served Friday and Saturdays at 4:30.We have live entertainment weekly.', :website => 'http://www.deweybeachlife.com/', :address1 => '113 Dickinson Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-3888', :logo => 'rudder-logo.png' })
-rr1 = rr.locations.build({:name => "default"})
+rr1 = rr.locations.build()
 rra = rr.locations.build({:name => "Stage A"})
 rrb = rr.locations.build({:name => "Stage B"})
 rrc = rr.locations.build({:name => "Stage C"})
@@ -50,29 +50,29 @@ rr.save!
 
 # Starboard
 sb = Venue.create({:name => 'The Starboard', :description => 'John thinks it is too crowded.', :website => 'http://www.thestarboard.com/', :address1 => '2009 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-4600', :logo => 'starboard-logo.png'})
-sb1 = sb.locations.build({:name => "default"})
+sb1 = sb.locations.build()
 sba = sb.locations.build({:name => "Main Stage"})
 sbb = sb.locations.build({:name => "Deck Stage"})
 sb.save!
 
 # Jimmy's Grille
 jg = Venue.create({:name => "Jimmy's Grille", :description => 'Outdoor Bar and Grille.', :website => 'http://www.deweybeachlife.com/', :address1 => 'Highway One and Bellevue Street', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-4600', :logo => 'jimmys-logo.png'})
-jg1 = jg.locations.build({:name => "default"})
+jg1 = jg.locations.build()
 jg.save!
 
 #McShea's
 ms = Venue.create({:name => "McShea's", :description => 'Irish Pub.', :website => 'http://www.deweybeach.com/mcsheas/', :address1 => '1705 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-9430', :logo => 'mcsheas-logo.png'})
-ms1 = ms.locations.build({:name => "default"})
+ms1 = ms.locations.build()
 ms.save!
 
 #Woody's East Coast Grille
 wg = Venue.create({:name => "Woody's East Coast Grille", :description => 'Surf Bar and Grille.', :website => 'http://www.deweybeachbar.com/', :address1 => '1904 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '', :logo => 'woodys-logo.png'})
-wg1 = wg.locations.build({:name => "default"})
+wg1 = wg.locations.build()
 wg.save!
 
 #Gary's Dewey Beach Grille
 gdbg = Venue.create({:name => "Gary's Dewey Beach Grill", :description => 'Bar and Grille', :website => 'http://www.garysdeweybeachgrill.com/', :address1 => '2000 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-8519', :logo => 'garys-logo.png'})
-gdbg1 = gdbg.locations.build({:name => "default"})
+gdbg1 = gdbg.locations.build()
 gdbg.save!
 
 
@@ -269,11 +269,11 @@ scrr5 = scrr.occurrences.build({:event_start => '2011-07-30T21:00:00+00:00', :ev
 scrr5.save!
 
 # The Bangles
-tb1 = tb_concert.occurrences.build({:event_start => '2011-07-05T20:00:00+00:00', :event_end => '2011-07-06T01:00:00+00:00'})
+tb1 = tb_concert.occurrences.build({:cover_charge => '15.99', :event_start => '2011-07-05T20:00:00+00:00', :event_end => '2011-07-06T01:00:00+00:00'})
 tb1.save!
 
 # George Clinton
-gc1 = gc_concert.occurrences.build({:event_start => '2011-07-23T20:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00'})
+gc1 = gc_concert.occurrences.build({:cover_charge => '25.00', :event_start => '2011-07-23T20:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00'})
 gc1.save!
 
 #Dewey Beach Music Conference 2011 Occurrence

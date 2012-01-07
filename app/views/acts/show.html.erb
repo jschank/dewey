@@ -22,7 +22,8 @@
 				<p><%= perf.act.name %></p>
 					<% end %>
 				<% end %>
-				<p class="times"><%= date_and_times(date, performance.occurrence) %></p>
+				<p class="dates"><%= date.to_date.to_s(:long) %></p>
+				<p class="times"><%= occurrence_times(performance.occurrence) %></p>
 			<% end %>
 	    <% end %>
 	<% end %>
