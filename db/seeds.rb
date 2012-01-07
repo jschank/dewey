@@ -182,7 +182,7 @@ js = Event.create({:logo => 'jam-logo.png', :name => 'Jam Session', :description
 js.save!
 
 # Taco Toss
-tt = Event.create({:logo => 'rudder-logo.png', :name => 'Taco Toss', :description => 'Friday happy hour featuring Orange Crushes and $1 tacos and hot dogs.', :website => 'http://www.ruddertowneusa.com/The-Lighthouse.html', :logo => 'tacotoss-logo.png' })
+tt = Event.create({:logo => 'tacotoss-logo.png', :name => 'Taco Toss', :description => 'Friday happy hour featuring Orange Crushes and $1 tacos and hot dogs.', :website => 'http://www.ruddertowneusa.com/The-Lighthouse.html' })
 tt.save!
 
 # Rudder's Saturday Night Concert
@@ -200,6 +200,10 @@ gc_concert.save!
 #Dewey Beach Music Conference
 dbmc = Event.create({:is_special => true, :logo => 'dbmc-logo.png', :name => 'Dewey Beach Music Conference', :description => 'DBMC may not be the biggest music conference in the northeast, but it has garnered more than its fair share of critical acclaim, rave reviews and enthusiastic return participants. This is due in no small part to the consistent quality of talent and its location.', :website => 'http://www.deweybeachfest.com/dbmc/'})
 dbmc.save!
+
+# DJ Smoky
+djse = Event.create({:logo => 'djsmoky-logo.png', :name => 'DJ Smoky', :description => 'Smoky spins some shit on his iPod.', :website => 'http://www.thestarboard.com/' })
+djse.save!
 
 
 # ***Occurrences***
@@ -275,6 +279,27 @@ gc1.save!
 #Dewey Beach Music Conference 2011 Occurrence
 dbmc2011 = dbmc.occurrences.build({:event_start => '2011-09-22T21:40:00+00:00', :event_end => '2011-09-25T01:00:00+00:00'})
 dbmc2011.save!
+
+# DJ Smoky 1
+djse1 = djse.occurrences.build({:event_start => '2011-07-01T21:00:00+00:00', :event_end => '2011-07-02T01:00:00+00:00'})
+djse1.save!
+
+# DJ Smoky 2
+djse2 = djse.occurrences.build({:event_start => '2011-07-08T21:00:00+00:00', :event_end => '2011-07-09T01:00:00+00:00'})
+djse2.save!
+
+# DJ Smoky 3
+djse3 = djse.occurrences.build({:event_start => '2011-07-15T21:00:00+00:00', :event_end => '2011-07-16T01:00:00+00:00'})
+djse3.save!
+
+# DJ Smoky 4
+djse4 = djse.occurrences.build({:event_start => '2011-07-22T21:00:00+00:00', :event_end => '2011-07-23T01:00:00+00:00'})
+djse4.save!
+
+# DJ Smoky 5
+djse5 = djse.occurrences.build({:event_start => '2011-07-29T21:00:00+00:00', :event_end => '2011-07-30T01:00:00+00:00'})
+djse5.save!
+
 
 
 # ***Performances***
@@ -353,6 +378,22 @@ dbmc2011.performances.build({:location => rrd, :act => lowercaseblues, :performa
 dbmc2011.performances.build({:location => ms1, :act => Luciar, :performance_start => '2011-09-23T21:00:00+00:00', :performance_end => '2011-09-23T21:30:00+00:00'}).save!
 dbmc2011.performances.build({:location => bca, :act => LuckyDub, :performance_start => '2011-09-24T23:00:00+00:00', :performance_end => '2011-09-24T23:40:00+00:00'}).save!
 dbmc2011.performances.build({:location => bcb, :act => ZakSmithBand, :performance_start => '2011-09-24T21:00:00+00:00', :performance_end => '2011-09-24T21:40:00+00:00'}).save!
+
+# DJ Smoky 1
+djse1.performances.build({:location => sb1, :act => djs, :performance_start => '2011-07-01T21:00:00+00:00', :performance_end => '2011-07-02T01:00:00+00:00', :priority => 0 }).save!
+
+# DJ Smoky 2
+djse2.performances.build({:location => sb1, :act => djs, :performance_start => '2011-07-08T21:00:00+00:00', :performance_end => '2011-07-09T01:00:00+00:00', :priority => 0 }).save!
+
+# DJ Smoky 3
+djse3.performances.build({:location => sb1, :act => djs, :performance_start => '2011-07-15T21:00:00+00:00', :performance_end => '2011-07-16T01:00:00+00:00', :priority => 0 }).save!
+
+# DJ Smoky 4
+djse4.performances.build({:location => sb1, :act => djs, :performance_start => '2011-07-22T21:00:00+00:00', :performance_end => '2011-07-23T01:00:00+00:00', :priority => 0 }).save!
+
+# DJ Smoky 5
+djse5.performances.build({:location => sb1, :act => djs, :performance_start => '2011-07-29T21:00:00+00:00', :performance_end => '2011-07-30T01:00:00+00:00', :priority => 0 }).save!
+
 
 
 
