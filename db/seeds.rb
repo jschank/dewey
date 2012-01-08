@@ -23,24 +23,25 @@ youtube = Weblocation.create!({:name => "YouTube",  :tagline => "watch us on",  
 # ***Venues***
 
 # Bottle and Cork
-bc = Venue.create!({:name => 'Bottle & Cork', :description => 'The Bottle & Cork is a live music club established in 1936.', :website => 'http://www.deweybeachlife.com/', :address1 => '1807 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-7272', :logo => 'cork-logo.png'})
+bc = Venue.create!({:name => 'Bottle & Cork', :description => 'The Bottle & Cork is a live music club established in 1936.', :address1 => '1807 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-7272', :logo => 'cork-logo.png'})
 bc1 = bc.locations.build()
 bca = bc.locations.build({:name => "Stage A"})
 bcb = bc.locations.build({:name => "Stage B"})
+bc.links.build( {:weblocation => www, :url => "http://www.deweybeachlife.com/ent_bc.html"})
 bc.save!
 
 # Northbeach
-nb = Venue.create({:name => 'Northbeach', :description => 'Northbeach offers casual indoor and outdoor dining overlooking Rehoboth Bay. Northbeach is open mid-May through Labor Day. Join us for great food, frozen drinks and beautiful sunsets.', :website => 'http://www.deweybeachlife.com/', :address1 => '125 McKinley Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-226-8673', :logo => 'northbeach-logo.png'})
+nb = Venue.create({:name => 'Northbeach', :description => 'Northbeach offers casual indoor and outdoor dining overlooking Rehoboth Bay. Northbeach is open mid-May through Labor Day. Join us for great food, frozen drinks and beautiful sunsets.', :address1 => '125 McKinley Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-226-8673', :logo => 'northbeach-logo.png'})
 nb1 = nb.locations.build()
 nb.save!
 
 # Lighthouse
-lh = Venue.create({:name => 'Lighthouse', :description => 'Tall tower, bright light', :website => 'http://www.deweybeachlife.com/', :address1 => '2112 Shiny Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-555-1212', :logo => 'lighthouse-logo.png'})
+lh = Venue.create({:name => 'Lighthouse', :description => 'Tall tower, bright light', :address1 => '2112 Shiny Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-555-1212', :logo => 'lighthouse-logo.png'})
 lh1 = lh.locations.build()
 lh.save!
 
 # Rusty Rudder
-rr = Venue.create({:name => 'Rusty Rudder', :description => 'The Rudder is now open daily.  Join us for our famous all u can eat Land and Sea Buffet served Friday and Saturdays at 4:30.We have live entertainment weekly.', :website => 'http://www.deweybeachlife.com/', :address1 => '113 Dickinson Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-3888', :logo => 'rudder-logo.png' })
+rr = Venue.create({:name => 'Rusty Rudder', :description => 'The Rudder is now open daily.  Join us for our famous all u can eat Land and Sea Buffet served Friday and Saturdays at 4:30.We have live entertainment weekly.', :address1 => '113 Dickinson Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-3888', :logo => 'rudder-logo.png' })
 rr1 = rr.locations.build()
 rra = rr.locations.build({:name => "Stage A"})
 rrb = rr.locations.build({:name => "Stage B"})
@@ -49,30 +50,34 @@ rrd = rr.locations.build({:name => "Stage D"})
 rr.save!
 
 # Starboard
-sb = Venue.create({:name => 'The Starboard', :description => 'John thinks it is too crowded.', :website => 'http://www.thestarboard.com/', :address1 => '2009 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-4600', :logo => 'starboard-logo.png'})
+sb = Venue.create({:name => 'The Starboard', :description => 'John thinks it is too crowded.', :address1 => '2009 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-4600', :logo => 'starboard-logo.png'})
 sb1 = sb.locations.build()
 sba = sb.locations.build({:name => "Main Stage"})
 sbb = sb.locations.build({:name => "Deck Stage"})
+sb.links.build({:weblocation => www, :url => "http://www.thestarboard.com/"})
 sb.save!
 
 # Jimmy's Grille
-jg = Venue.create({:name => "Jimmy's Grille", :description => 'Outdoor Bar and Grille.', :website => 'http://www.deweybeachlife.com/', :address1 => 'Highway One and Bellevue Street', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-4600', :logo => 'jimmys-logo.png'})
+jg = Venue.create({:name => "Jimmy's Grille", :description => 'Outdoor Bar and Grille.', :address1 => 'Highway One and Bellevue Street', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-4600', :logo => 'jimmys-logo.png'})
 jg1 = jg.locations.build()
 jg.save!
 
 #McShea's
-ms = Venue.create({:name => "McShea's", :description => 'Irish Pub.', :website => 'http://www.deweybeach.com/mcsheas/', :address1 => '1705 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-9430', :logo => 'mcsheas-logo.png'})
+ms = Venue.create({:name => "McShea's", :description => 'Irish Pub.', :address1 => '1705 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-9430', :logo => 'mcsheas-logo.png'})
 ms1 = ms.locations.build()
+ms.links.build({:weblocation => www, :url => "http://www.deweybeach.com/mcsheas/"})
 ms.save!
 
 #Woody's East Coast Grille
-wg = Venue.create({:name => "Woody's East Coast Grille", :description => 'Surf Bar and Grille.', :website => 'http://www.deweybeachbar.com/', :address1 => '1904 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '', :logo => 'woodys-logo.png'})
+wg = Venue.create({:name => "Woody's East Coast Grille", :description => 'Surf Bar and Grille.', :address1 => '1904 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '', :logo => 'woodys-logo.png'})
 wg1 = wg.locations.build()
+wg.links.build({:weblocation => www, :url => 'http://www.deweybeachbar.com/'})
 wg.save!
 
 #Gary's Dewey Beach Grille
-gdbg = Venue.create({:name => "Gary's Dewey Beach Grill", :description => 'Bar and Grille', :website => 'http://www.garysdeweybeachgrill.com/', :address1 => '2000 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-8519', :logo => 'garys-logo.png'})
+gdbg = Venue.create({:name => "Gary's Dewey Beach Grill", :description => 'Bar and Grille', :address1 => '2000 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-8519', :logo => 'garys-logo.png'})
 gdbg1 = gdbg.locations.build()
+gdbg.links.build({:weblocation => www, :url => 'http://www.garysdeweybeachgrill.com/' })
 gdbg.save!
 
 
@@ -80,71 +85,93 @@ gdbg.save!
 # ***Acts***
 
 # Bands
-gg = Act.create({:logo => 'greengenes-logo.png', :name => 'Mr. Greengenes', :description => 'Coverband from Philadelphia', :website => 'http://www.mrgreengenes.com/'})
+gg = Act.create({:logo => 'greengenes-logo.png', :name => 'Mr. Greengenes', :description => 'Coverband from Philadelphia'})
+gg.links.build({:weblocation => www, :url => 'http://www.mrgreengenes.com/'})
 gg.save!
 
-kn = Act.create({:logo => 'kristennoise-logo.png', :name => 'Kristen And The Noise', :description => 'Coverband from Philadelphia', :website => 'http://www.kristenandthenoise.com/'})
+kn = Act.create({:logo => 'kristennoise-logo.png', :name => 'Kristen And The Noise', :description => 'Coverband from Philadelphia'})
+kn.links.build({:weblocation => www, :url => "http://www.kristenandthenoise.com/"})
 kn.save!
 
-kj = Act.create({:logo => 'kristenjoe-logo.png', :name => 'Kristen & Joe', :description => 'Accoustic music from Kristen & Joe', :website => 'http://www.kristenandthenoise.com/'})
+kj = Act.create({:logo => 'kristenjoe-logo.png', :name => 'Kristen & Joe', :description => 'Accoustic music from Kristen & Joe'})
+kj.links.build({:weblocation => www, :url => 'http://www.kristenandthenoise.com/'})
 kn.save!
 
-la = Act.create({:logo => 'liquida-logo.png', :name => 'Liquid A', :description => 'Coverband from Philadelphia', :website => 'http://www.liquida.net/'})
+la = Act.create({:logo => 'liquida-logo.png', :name => 'Liquid A', :description => 'Coverband from Philadelphia'})
+la.links.build({:weblocation => www, :url => 'http://www.liquida.net/'})
 la.save!
 
-bs = Act.create({:logo => 'burntsienna-logo.png', :name => 'Burnt Sienna', :description => 'Coverband from Philadelphia', :website => 'http://www.burntsiennaband.com/'})
+bs = Act.create({:logo => 'burntsienna-logo.png', :name => 'Burnt Sienna', :description => 'Coverband from Philadelphia'})
+bs.links.build({:weblocation => www, :url => 'http://www.burntsiennaband.com/'})
 bs.save!
 
-lsmj = Act.create({:logo => 'loveseed-logo.png', :name => 'Love Seed Momma Jump', :logo => 'loveseed-logo.png', :description => 'Coverband from Dewey Beach, DE', :website => 'http://www.loveseed.com/'})
+lsmj = Act.create({:logo => 'loveseed-logo.png', :name => 'Love Seed Momma Jump', :logo => 'loveseed-logo.png', :description => 'Coverband from Dewey Beach, DE'})
+lsmj.links.build({:weblocation => www, :url => 'http://www.loveseed.com/'})
 lsmj.save!
 
-ggg = Act.create({:logo => 'gogogadjet-logo.png', :name => 'Go Go Gadjet', :description => 'Coverband from Philadelphia', :website => 'http://www.gogogadjet.com/'})
+ggg = Act.create({:logo => 'gogogadjet-logo.png', :name => 'Go Go Gadjet', :description => 'Coverband from Philadelphia'})
+ggg.links.build({:weblocation => www, :url => 'http://www.gogogadjet.com/'})
 ggg.save!
 
-tf = Act.create({:logo => 'lauralea-logo.png', :name => 'Laura Lea and Trip Fabulous', :description => 'Coverband', :website => 'http://www.trippfabulous.com/'})
+tf = Act.create({:logo => 'lauralea-logo.png', :name => 'Laura Lea and Trip Fabulous', :description => 'Coverband'})
+tf.links.build({:weblocation => www, :url => 'http://www.trippfabulous.com/'})
 tf.save!
 
-sd = Act.create({:logo => 'splitdecision-logo.png', :name => 'Split Decision', :description => 'Coverband', :website => 'http://www.splitdecision.com/'})
+sd = Act.create({:logo => 'splitdecision-logo.png', :name => 'Split Decision', :description => 'Coverband'})
+sd.links.build({:weblocation => www, :url => 'http://www.splitdecision.com/'})
 sd.save!
 
-ek = Act.create({:logo => 'elementk-logo.png', :name => 'Element K', :description => 'Coverband', :website => 'http://elementkband.com/'})
+ek = Act.create({:logo => 'elementk-logo.png', :name => 'Element K', :description => 'Coverband'})
+ek.links.build({:weblocation => www, :url => 'http://elementkband.com/'})
 ek.save!
 
-t10 = Act.create({:logo => 'tableten-logo.png', :name => 'Table Ten', :description => 'Coverband', :website => 'http://www.friendsoftableten.com/'})
+t10 = Act.create({:logo => 'tableten-logo.png', :name => 'Table Ten', :description => 'Coverband'})
+t10.links.build({:weblocation => www, :url => 'http://www.friendsoftableten.com/'})
 t10.save!
 
-ls = Act.create({:logo => 'lifespeed-logo.png', :name => 'Lifespeed', :description => 'Coverband from New Jersey', :website => 'http://www.lifespeed.tv/'})
+ls = Act.create({:logo => 'lifespeed-logo.png', :name => 'Lifespeed', :description => 'Coverband from New Jersey'})
+ls.links.build({:weblocation => www, :url => 'http://www.lifespeed.tv/'})
 ls.save!
 
-_3am = Act.create({:logo => '3am-logo.png', :name => '3 am', :formerly => 'Full Effect', :description => 'Coverband', :website => 'http://www.idontknow.com/'})
+_3am = Act.create({:logo => '3am-logo.png', :name => '3 am', :formerly => 'Full Effect', :description => 'Coverband'})
+_3am.links.build({:weblocation => www, :url => 'http://www.idontknow.com/'})
 _3am.save!
 
-cr = Act.create({:logo => 'chorduroy-logo.png', :name => 'Chorduroy', :description => 'Coverband', :website => 'http://www.chorduroyband.com/'})
+cr = Act.create({:logo => 'chorduroy-logo.png', :name => 'Chorduroy', :description => 'Coverband'})
+cr.links.build({:weblocation => www, :url => 'http://www.chorduroyband.com/'})
 cr.save!
 
-tb = Act.create({:logo => 'bangles-logo.png', :name => 'The Bangles', :description => 'It was 30 years ago that guitarists Susanna Hoffs and Vicki Peterson and drummer Debbi Peterson formed the Bangles in a Brentwood, California, garage.', :website => 'http://www.thebangles.com/'})
+tb = Act.create({:logo => 'bangles-logo.png', :name => 'The Bangles', :description => 'It was 30 years ago that guitarists Susanna Hoffs and Vicki Peterson and drummer Debbi Peterson formed the Bangles in a Brentwood, California, garage.'})
+tb.links.build({:weblocation => www, :url => 'http://www.thebangles.com/'})
 tb.save!
 
-as = Act.create({:logo => 'aprilsmith-logo.png', :name => 'April Smith And The Great Picture Show', :description => 'This Brooklyn musician turns out sultry updates ragtime and swing, pouring her rich voice over tight guitar strumming.', :website => 'http://www.aprilsmithmusic.com/'})
+as = Act.create({:logo => 'aprilsmith-logo.png', :name => 'April Smith And The Great Picture Show', :description => 'This Brooklyn musician turns out sultry updates ragtime and swing, pouring her rich voice over tight guitar strumming.'})
+as.links.build({:weblocation => www, :url => 'http://www.aprilsmithmusic.com/'})
 as.save!
 
-gc = Act.create({:logo => 'georgeclinton-logo.png', :name => 'George Clinton & Parliament Funkadelic', :description => 'Godfather of Funk.', :website => 'http://www.georgeclinton.com/'})
+gc = Act.create({:logo => 'georgeclinton-logo.png', :name => 'George Clinton & Parliament Funkadelic', :description => 'Godfather of Funk.'})
+gc.links.build({:weblocation => www, :url => 'http://www.georgeclinton.com/'})
 gc.save!
 
-LauraMarie = Act.create({:logo => 'LauraMarie-logo.png', :name => 'Laura Marie', :hometown => 'San Antonio, TX', :website => 'http://lauramariemusic.com'})
-LauraMarie.save!
+lauraMarie = Act.create({:logo => 'LauraMarie-logo.png', :name => 'Laura Marie', :hometown => 'San Antonio, TX'})
+lauraMarie.links.build({:weblocation => www, :url => 'http://lauramariemusic.com'})
+lauraMarie.save!
 
-Liat = Act.create({:logo => 'Liat-logo.png', :name => 'Liat', :hometown => 'Voorhees, NJ', :website => 'http://www.reverbnation.com/liatsmusic'})
-Liat.save!
+liat = Act.create({:logo => 'Liat-logo.png', :name => 'Liat', :hometown => 'Voorhees, NJ'})
+liat.links.build({:weblocation => www, :url => 'http://www.reverbnation.com/liatsmusic'})
+liat.save!
 
-LizBethRose = Act.create({:logo => 'LizBethRose-logo.png', :name => 'LizBeth Rose', :hometown => 'Philadelphia, PA', :website => 'http://www.myspace.com/lizbethrosemusic'})
-LizBethRose.save!
+lizBethRose = Act.create({:logo => 'LizBethRose-logo.png', :name => 'LizBeth Rose', :hometown => 'Philadelphia, PA'})
+lizBethRose.links.build({:weblocation => www, :url => 'http://www.myspace.com/lizbethrosemusic'})
+lizBethRose.save!
 
-LoriCitro = Act.create({:logo => 'LoriCitro-logo.png', :name => 'Lori Citro', :hometown => 'Newark, DE', :website => 'http://www.reverbnation.com/loricitro'})
-LoriCitro.save!
+loriCitro = Act.create({:logo => 'LoriCitro-logo.png', :name => 'Lori Citro', :hometown => 'Newark, DE'})
+loriCitro.links.build({:weblocation => www, :url => 'http://www.reverbnation.com/loricitro'})
+loriCitro.save!
 
-LoveViaDanceMachine = Act.create({:logo => 'LoveViaDanceMachine-logo.png', :name => 'Love Via Dance Machine', :hometown => 'Boston, MA', :website => 'http://www.myspace.com/loveviadancemachine'})
-LoveViaDanceMachine.save!
+loveViaDanceMachine = Act.create({:logo => 'LoveViaDanceMachine-logo.png', :name => 'Love Via Dance Machine', :hometown => 'Boston, MA'})
+loveViaDanceMachine.links.build({:weblocation => www, :url => 'http://www.myspace.com/loveviadancemachine'})
+loveViaDanceMachine.save!
 
 lovebettie_description = <<EOD
 Named *“Pittsburgh’s Hottest Band”*[1], the Pittsburgh based pioneers of ["Swagger Rock":http://www.urbandictionary.com/define.php?term=Swagger%20Rock] attract fans from all walks of life with their neo-soul, rock-pop mash up. This genre-bending refreshing new take on modern rock has landed the band an onslaught of mass media exposure, major radio circulation, and a resounding buzz within the music industry.
@@ -156,27 +183,33 @@ Recently, in 2011, Lovebettie released their new EP, engineered, produced, and m
 fn1. "Microsoft Windows"
 EOD
 
-Lovebettie = Act.create({:logo => 'Lovebettie-logo.png', :name => 'Lovebettie', :description => lovebettie_description, :hometown => 'Pittsburgh, PA', :website => 'http://www.lovebettie.com/'})
-Lovebettie.save!
+lovebettie = Act.create({:logo => 'Lovebettie-logo.png', :name => 'Lovebettie', :description => lovebettie_description, :hometown => 'Pittsburgh, PA'})
+lovebettie.links.build({:weblocation => www, :url => 'http://www.lovebettie.com/'})
+lovebettie.save!
 
-lowercaseblues = Act.create({:logo => 'lowercaseblues-logo.png', :name => 'lower case blues', :hometown => 'Rehoboth Beach, DE', :website => 'http://www.lowercaseblues.net/'})
+lowercaseblues = Act.create({:logo => 'lowercaseblues-logo.png', :name => 'lower case blues', :hometown => 'Rehoboth Beach, DE'})
+lowercaseblues.links.build({:weblocation => www, :url => 'http://www.lowercaseblues.net/'})
 lowercaseblues.save!
 
-Luciar = Act.create({:logo => 'Luciar-logo.png', :name => 'Luciar', :hometown => 'Brooklyn, NY', :website => 'http://www.luciar.com/'})
-Luciar.save!
+luciar = Act.create({:logo => 'Luciar-logo.png', :name => 'Luciar', :hometown => 'Brooklyn, NY'})
+luciar.links.build({:weblocation => www, :url => 'http://www.luciar.com/'})
+luciar.save!
 
-LuckyDub = Act.create({:logo => 'LuckyDub-logo.png', :name => 'Lucky Dub', :hometown => 'Washington, DC', :website => 'http://luckydub.com/'})
-LuckyDub.save!
+luckyDub = Act.create({:logo => 'LuckyDub-logo.png', :name => 'Lucky Dub', :hometown => 'Washington, DC'})
+luckyDub.links.build({:weblocation => www, :url => 'http://luckydub.com/'})
+luckyDub.save!
 
-ZakSmithBand = Act.create({:logo => 'ZakSmithBand-logo.png', :name => 'Zak Smith Band', :hometown => 'New York, NY', :website => 'http://www.zaksmithband.com/'})
-ZakSmithBand.save!
+zakSmithBand = Act.create({:logo => 'ZakSmithBand-logo.png', :name => 'Zak Smith Band', :hometown => 'New York, NY'})
+zakSmithBand.links.build({:weblocation => www, :url => 'http://www.zaksmithband.com/'})
+zakSmithBand.save!
 
 
 # DJs
-djs = Act.create({:logo => 'djsmoky-logo.png', :name => 'DJ Smoky', :description => 'DJ', :website => 'http://smokythedj.com/'})
+djs = Act.create({:logo => 'djsmoky-logo.png', :name => 'DJ Smoky', :description => 'DJ'})
+djs.links.build({:weblocation => www, :url => 'http://smokythedj.com/'})
 djs.save!
 
-djjj = Act.create({:logo => 'djjazzyjeff-logo.png', :name => 'DJ Jazzy Jeff', :description => 'Fresh Prince\'s Sidekick', :website => 'http://www.apple.com/'})
+djjj = Act.create({:logo => 'djjazzyjeff-logo.png', :name => 'DJ Jazzy Jeff', :description => 'Fresh Prince\'s Sidekick'})
 djjj.save!
 
 
@@ -184,35 +217,43 @@ djjj.save!
 # ***Events***
 
 # Jam Session
-js = Event.create({:logo => 'jam-logo.png', :name => 'Jam Session', :description => 'Saturday Jam with three bands.', :website => 'http://www.deweybeachlife.com/'})
+js = Event.create({:logo => 'jam-logo.png', :name => 'Jam Session', :description => 'Saturday Jam with three bands.'})
+js.links.build({:weblocation => www, :url => 'http://www.deweybeachlife.com/'})
 js.save!
 
 # Taco Toss
-tt = Event.create({:logo => 'tacotoss-logo.png', :name => 'Taco Toss', :description => 'Friday happy hour featuring Orange Crushes and $1 tacos and hot dogs.', :website => 'http://www.ruddertowneusa.com/The-Lighthouse.html' })
+tt = Event.create({:logo => 'tacotoss-logo.png', :name => 'Taco Toss', :description => 'Friday happy hour featuring Orange Crushes and $1 tacos and hot dogs.'})
+tt.links.build({:weblocation => www, :url => 'http://www.ruddertowneusa.com/The-Lighthouse.html' })
 tt.save!
 
 # Rudder's Saturday Night Concert
-scrr = Event.create({:logo => 'rudder-logo.png', :name => "Rudder's Saturday Night Concert", :description => 'Saturday Night Concert at the Rudder.', :website => 'http://www.deweybeachlife.com'})
+scrr = Event.create({:logo => 'rudder-logo.png', :name => "Rudder's Saturday Night Concert", :description => 'Saturday Night Concert at the Rudder.'})
+scrr.links.build({:weblocation => www, :url => 'http://www.deweybeachlife.com'})
 scrr.save!
 
 # The Bangles
-tb_concert = Event.create({:logo => 'bangles-logo.png', :name => 'The Bangles', :description => 'a night with the bangles', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
+tb_concert = Event.create({:logo => 'bangles-logo.png', :name => 'The Bangles', :description => 'a night with the bangles'})
+tb_concert.links.build({:weblocation => www, :url => 'http://www.deweybeachfest.com/dbcf_cork.html'})
 tb_concert.save!
 
 # George Clinton
-gc_concert = Event.create({:logo => 'georgeclinton-logo.png', :name => 'George Clinton & Parliament Funkadelic', :description => 'Up for the down stroke', :website => 'http://www.deweybeachfest.com/dbcf_cork.html'})
+gc_concert = Event.create({:logo => 'georgeclinton-logo.png', :name => 'George Clinton & Parliament Funkadelic', :description => 'Up for the down stroke'})
+gc_concert.links.build({:weblocation => www, :url => 'http://www.deweybeachfest.com/dbcf_cork.html'})
 gc_concert.save!
 
 #Dewey Beach Music Conference
-dbmc = Event.create({:is_special => true, :logo => 'dbmc-logo.png', :name => 'Dewey Beach Music Conference', :description => 'DBMC may not be the biggest music conference in the northeast, but it has garnered more than its fair share of critical acclaim, rave reviews and enthusiastic return participants. This is due in no small part to the consistent quality of talent and its location.', :website => 'http://www.deweybeachfest.com/dbmc/'})
+dbmc = Event.create({:is_special => true, :logo => 'dbmc-logo.png', :name => 'Dewey Beach Music Conference', :description => 'DBMC may not be the biggest music conference in the northeast, but it has garnered more than its fair share of critical acclaim, rave reviews and enthusiastic return participants. This is due in no small part to the consistent quality of talent and its location.'})
+dbmc.links.build({:weblocation => www, :url => 'http://www.deweybeachfest.com/dbmc/' })
 dbmc.save!
 
 # DJ Smoky
-djse = Event.create({:logo => 'djsmoky-logo.png', :name => 'DJ Smoky', :description => 'Smoky spins some shit on his iPod.', :website => 'http://www.thestarboard.com/' })
+djse = Event.create({:logo => 'djsmoky-logo.png', :name => 'DJ Smoky', :description => 'Smoky spins some shit on his iPod.'})
+djse.links.build({:weblocation => www, :url => 'http://www.thestarboard.com/' })
 djse.save!
 
 # Running Of The Bull
-rotb = Event.create({:logo => 'runningbull-logo.png', :name => 'Running Of The Bull', :description => 'Drunk people chase 2 guys in a bull costume.', :website => 'http://therunningofthebull.com/' })
+rotb = Event.create({:logo => 'runningbull-logo.png', :name => 'Running Of The Bull', :description => 'Drunk people chase 2 guys in a bull costume.' })
+rotb.links.build({:weblocation => www, :url => 'http://therunningofthebull.com/'})
 rotb.save!
 
 
@@ -383,16 +424,16 @@ tb1.performances.build({:location => bc1, :act => as, :priority => 1, :performan
 gc1.performances.build({:location => bc1, :act => gc, :priority => 0, :performance_start => '2011-07-23T21:00:00+00:00', :performance_end => '2011-07-24T01:00:00+00:00' }).save!
 
 # Dewey Beach Music Conference
-dbmc2011.performances.build({:location => ms1, :act => LauraMarie, :performance_start => '2011-09-23T21:30:00+00:00', :performance_end => '2011-09-23T22:00:00+00:00'}).save!
-dbmc2011.performances.build({:location => wg1, :act => Liat, :performance_start => '2011-09-24T21:00:00+00:00', :performance_end => '2011-09-24T22:00:00+00:00'}).save!
-dbmc2011.performances.build({:location => jg1, :act => LizBethRose, :performance_start => '2011-09-24T20:00:00+00:00', :performance_end => '2011-09-24T11:00:00+00:00'}).save!
-dbmc2011.performances.build({:location => gdbg1, :act => LoriCitro, :performance_start => '2011-09-24T22:00:00+00:00', :performance_end => '2011-09-24T22:30:00+00:00'}).save!
-dbmc2011.performances.build({:location => rrc, :act => LoveViaDanceMachine, :performance_start => '2011-09-23T21:00:00+00:00', :performance_end => '2011-09-23T21:40:00+00:00'}).save!
-dbmc2011.performances.build({:location => rrb, :act => Lovebettie, :performance_start => '2011-09-24T22:20:00+00:00', :performance_end => '2011-09-24T23:00:00+00:00'}).save!
+dbmc2011.performances.build({:location => ms1, :act => lauraMarie, :performance_start => '2011-09-23T21:30:00+00:00', :performance_end => '2011-09-23T22:00:00+00:00'}).save!
+dbmc2011.performances.build({:location => wg1, :act => liat, :performance_start => '2011-09-24T21:00:00+00:00', :performance_end => '2011-09-24T22:00:00+00:00'}).save!
+dbmc2011.performances.build({:location => jg1, :act => lizBethRose, :performance_start => '2011-09-24T20:00:00+00:00', :performance_end => '2011-09-24T11:00:00+00:00'}).save!
+dbmc2011.performances.build({:location => gdbg1, :act => loriCitro, :performance_start => '2011-09-24T22:00:00+00:00', :performance_end => '2011-09-24T22:30:00+00:00'}).save!
+dbmc2011.performances.build({:location => rrc, :act => loveViaDanceMachine, :performance_start => '2011-09-23T21:00:00+00:00', :performance_end => '2011-09-23T21:40:00+00:00'}).save!
+dbmc2011.performances.build({:location => rrb, :act => lovebettie, :performance_start => '2011-09-24T22:20:00+00:00', :performance_end => '2011-09-24T23:00:00+00:00'}).save!
 dbmc2011.performances.build({:location => rrd, :act => lowercaseblues, :performance_start => '2011-09-23T00:20:00+00:00', :performance_end => '2011-09-23T01:00:00+00:00'}).save!
-dbmc2011.performances.build({:location => ms1, :act => Luciar, :performance_start => '2011-09-23T21:00:00+00:00', :performance_end => '2011-09-23T21:30:00+00:00'}).save!
-dbmc2011.performances.build({:location => bca, :act => LuckyDub, :performance_start => '2011-09-24T23:00:00+00:00', :performance_end => '2011-09-24T23:40:00+00:00'}).save!
-dbmc2011.performances.build({:location => bcb, :act => ZakSmithBand, :performance_start => '2011-09-24T21:00:00+00:00', :performance_end => '2011-09-24T21:40:00+00:00'}).save!
+dbmc2011.performances.build({:location => ms1, :act => luciar, :performance_start => '2011-09-23T21:00:00+00:00', :performance_end => '2011-09-23T21:30:00+00:00'}).save!
+dbmc2011.performances.build({:location => bca, :act => luckyDub, :performance_start => '2011-09-24T23:00:00+00:00', :performance_end => '2011-09-24T23:40:00+00:00'}).save!
+dbmc2011.performances.build({:location => bcb, :act => zakSmithBand, :performance_start => '2011-09-24T21:00:00+00:00', :performance_end => '2011-09-24T21:40:00+00:00'}).save!
 
 # DJ Smoky 1
 djse1.performances.build({:location => sb1, :act => djs, :performance_start => '2011-07-01T21:00:00+00:00', :performance_end => '2011-07-02T01:00:00+00:00', :priority => 0 }).save!

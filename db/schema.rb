@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120107210653) do
+ActiveRecord::Schema.define(:version => 20120108200859) do
 
   create_table "acts", :force => true do |t|
     t.string   "name"
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(:version => 20120107210653) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "is_special",  :default => false
+  end
+
+  create_table "links", :force => true do |t|
+    t.integer  "linkable_id"
+    t.string   "linkable_type"
+    t.integer  "weblocation_id"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "locations", :force => true do |t|
@@ -81,9 +90,6 @@ ActiveRecord::Schema.define(:version => 20120107210653) do
     t.string   "state"
     t.string   "zip"
     t.string   "phone"
-    t.string   "website"
-    t.string   "facebook"
-    t.string   "twitter"
     t.string   "logo"
     t.datetime "created_at"
     t.datetime "updated_at"

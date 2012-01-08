@@ -27,6 +27,8 @@ group :test, :development do
   gem 'autotest-rails'
   gem 'ZenTest'
   gem 'syntax'
+  gem 'hirb'
+  gem 'wirble'
 end
 
 group :test do

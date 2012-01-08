@@ -33,6 +33,13 @@ module ApplicationHelper
       content_tag(:div, :class => 'boxIndex', &block)
     end
   end
+  
+  def make_link(link)
+    # link_to [link.tag_line, link.name].join(' '), link.url, :target => "_blank"
+    # <%= link_to link.tagline + " ", @venue.website, :target => "_blank", :class => "webAnchor webSite" %>
+    # <%= link_to "", @venue.facebook, :target => "_blank", :class => "webAnchor facebook" %>
+    # <%= link_to "", @venue.twitter, :target => "_blank", :class => "webAnchor twitter" %>
+  end
 
   def logo_for(thing, size)
     filename = thing.try(:logo)

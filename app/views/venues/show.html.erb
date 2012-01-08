@@ -11,9 +11,9 @@
 	<% end %>
     <%= @venue.city %>, <%= @venue.state %>  <%= @venue.zip %></p>
     <p>Phone: <%= @venue.phone %></p>
-	<%= link_to "", @venue.website, :target => "_blank", :class => "webAnchor webSite" %>
-	<%= link_to "", @venue.facebook, :target => "_blank", :class => "webAnchor facebook" %>
-	<%= link_to "", @venue.twitter, :target => "_blank", :class => "webAnchor twitter" %>
+	<% @venue.links.each do |link| %>
+		<%= make_link(link) %>
+	<% end %>
     </div>
 <% end %>
 
