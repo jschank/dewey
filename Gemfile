@@ -26,6 +26,7 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'autotest-rails'
   gem 'ZenTest'
+  gem 'syntax'
 end
 
 group :test do

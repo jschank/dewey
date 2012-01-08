@@ -15,6 +15,7 @@ Factory.define :location do |f|
 end
 
 Factory.define :occurrence do |f|
+  f.cover_charge  9.99
   f.event_start   DateTime.civil(2011, 07, 02, 17, 0)
   f.event_end     DateTime.civil(2011, 07, 03, 01, 0)  
 end

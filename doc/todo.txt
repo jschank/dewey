@@ -1,6 +1,5 @@
 Next Meeting: 1/14
 * Add Join table for Weblocations so that Acts/Venues/Events can have a set of URLs to weblocations
-* Description fields should store and render in markdown.
 
 Meeting: 1/21
 * Add "related events" using a [self-join association](http://edgeguides.rubyonrails.org/association_basics.html#self-joins)

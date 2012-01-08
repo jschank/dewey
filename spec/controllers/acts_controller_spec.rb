@@ -32,7 +32,7 @@ describe ActsController do
       p3 = Factory.create(:performance, :performance_start => DateTime.civil(2011, 07, 10), :performance_end => DateTime.civil(2011, 07, 11), :occurrence => o3, :act => act )
       get :show, :id => 1
       assigns(:act).should eq(act)
-      assigns(:future_occurrences).should eq([o2, o3])
+      assigns(:future_performances).should eq([p2, p3])
     end    
   end
 

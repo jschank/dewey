@@ -3,14 +3,14 @@ require "spec_helper"
 describe ApplicationHelper do
 
   context "formatting times" do
-    it "drops minutes when lacking minutes" do
+    it "drops minutes when lacking minutes" do      
       datetime = DateTime.civil(2012, 2, 27, 18, 0)
-      helper.time_format(datetime).should eq("%-I %p")
+      helper.time_format(datetime).should eq("6 PM")
     end
 
     it "includes time when it has minutes" do
       datetime = DateTime.civil(2012, 2, 27, 18, 30)
-      helper.time_format(datetime).should eq("%-I:%M %p")
+      helper.time_format(datetime).should eq("6:30 PM")
     end
     
 

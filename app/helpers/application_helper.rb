@@ -53,7 +53,7 @@ module ApplicationHelper
   end  
 
   def time_format(datetime)
-    (datetime.min > 0) ? datetime.time.to_s(:reduced) : datetime.time.to_s(:hour_only)
+    (datetime.min > 0) ? datetime.to_s(:reduced) : datetime.to_s(:hour_only)
   end
 
   def occurrence_times(occurrence)
