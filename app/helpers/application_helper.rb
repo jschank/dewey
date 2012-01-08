@@ -35,7 +35,10 @@ module ApplicationHelper
   end
   
   def make_link(link)
-    # link_to [link.tag_line, link.name].join(' '), link.url, :target => "_blank"
+    content_tag(:div, :class => "webAnchor") do
+      link_to image_tag(image_path(link.weblocation.icon), :alt => [link.weblocation.tagline, link.weblocation.name].join(' ')), link.url, :target => "_blank"
+    end
+    # [link.weblocation.tagline, link.weblocation.name].join(' ')
     # <%= link_to link.tagline + " ", @venue.website, :target => "_blank", :class => "webAnchor webSite" %>
     # <%= link_to "", @venue.facebook, :target => "_blank", :class => "webAnchor facebook" %>
     # <%= link_to "", @venue.twitter, :target => "_blank", :class => "webAnchor twitter" %>
