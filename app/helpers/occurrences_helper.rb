@@ -1,6 +1,6 @@
 require 'pathname'
 
-module OccurrenceHelper
+module OccurrencesHelper
 
   def display_cover_charge(occurrence)
     if (occurrence.cover_charge)
