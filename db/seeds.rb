@@ -211,6 +211,10 @@ dbmc.save!
 djse = Event.create({:logo => 'djsmoky-logo.png', :name => 'DJ Smoky', :description => 'Smoky spins some shit on his iPod.', :website => 'http://www.thestarboard.com/' })
 djse.save!
 
+# Running Of The Bull
+rotb = Event.create({:logo => 'runningbull-logo.png', :name => 'Running Of The Bull', :description => 'Drunk people chase 2 guys in a bull costume.', :website => 'http://therunningofthebull.com/' })
+rotb.save!
+
 
 # ***Occurrences***
 
@@ -306,6 +310,11 @@ djse4.save!
 djse5 = djse.occurrences.build({:event_start => '2011-07-29T21:00:00+00:00', :event_end => '2011-07-30T01:00:00+00:00'})
 djse5.save!
 
+# Running of the Bull 2011
+rotb2011 = rotb.occurrences.build({:event_start => '2011-07-09T11:00:00+00:00', :event_end => '2011-07-09T15:00:00+00:00'})
+rotb2011.save!
+
+
 
 
 # ***Performances***
@@ -400,6 +409,11 @@ djse4.performances.build({:location => sb1, :act => djs, :performance_start => '
 # DJ Smoky 5
 djse5.performances.build({:location => sb1, :act => djs, :performance_start => '2011-07-29T21:00:00+00:00', :performance_end => '2011-07-30T01:00:00+00:00', :priority => 0 }).save!
 
+# DJ Smoky Running of the Bull 2011
+rotb2011.performances.build({:location => sb1, :act => djs, :performance_start => '2011-07-09T11:00:00+00:00', :performance_end => '2011-07-09T15:00:00+00:00', :priority => 2 }).save!
+
+# Laura Lea Running of the Bull 2011
+rotb2011.performances.build({:location => sb1, :act => tf, :performance_start => '2011-07-09T11:00:00+00:00', :performance_end => '2011-07-09T15:00:00+00:00', :priority => 1 }).save!
 
 
 
