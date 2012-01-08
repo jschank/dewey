@@ -38,10 +38,6 @@ module ApplicationHelper
     content_tag(:div, :class => "webAnchor") do
       link_to image_tag(image_path(link.weblocation.icon), :alt => [link.weblocation.tagline, link.weblocation.name].join(' ')), link.url, :target => "_blank"
     end
-    # [link.weblocation.tagline, link.weblocation.name].join(' ')
-    # <%= link_to link.tagline + " ", @venue.website, :target => "_blank", :class => "webAnchor webSite" %>
-    # <%= link_to "", @venue.facebook, :target => "_blank", :class => "webAnchor facebook" %>
-    # <%= link_to "", @venue.twitter, :target => "_blank", :class => "webAnchor twitter" %>
   end
 
   def logo_for(thing, size)
