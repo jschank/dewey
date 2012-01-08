@@ -2,7 +2,7 @@
 
 <% specific_area do %>
     <div class="specificHeader">
-	<img src="<%= logo_for(@act, :large) %>" style="-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(226,226,226,0.2))); margin: 0 10px 50px 0; float: left;" />
+	<img src="<%= logo_for(@act, :large) %>" class="large" />
 	<%= content_tag :h4, @act.name %>	
 	<%= display_hometown(@act) %>
 	<div class="description"><%= textilize(@act.description) %></div>
@@ -16,7 +16,9 @@
 	<h2>Upcoming Events for <%= @act.name %></h2>
 	<% @future_performances.group_by{ |p| p.performance_start.to_date}.each do |date, performances_for_date | %>
 	<% performances_for_date.each do |performance| %>
-			<%= link_to current_event_path(performance.event, performance.occurrence), {:style => "background-image: url(#{logo_for(performance.occurrence.venues[0], :small)}), url(#{asset_path 'arrow.png'});"} do %>
+			<%= link_to current_event_path(performance.event, performance.occurrence), :class => "link_box" do %>
+			<img src="<%= logo_for(performance.occurrence.venues[0], :large) %>" class="small" />
+			<div class="info">
 			<h4><%= performance.occurrence.event.name %></h4>
 				<% performance.occurrence.performances.each do |perf| %>
 				<% if perf.priority > 0 %>
@@ -25,6 +27,7 @@
 				<% end %>
 				<p class="dates"><%= date.to_date.to_s(:long) %></p>
 				<p class="times"><%= occurrence_times(performance.occurrence) %></p>
+				</div>
 			<% end %>
 	    <% end %>
 	<% end %>

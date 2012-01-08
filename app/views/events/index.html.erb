@@ -5,8 +5,9 @@
 	<% @events.group_by{ |e| e.name.chars.first }.each do |letter, events| %>
 		<h3><%= letter %></h3>
 		<% events.each do |event| %>
-		<%= link_to event_path(event), :style => "background-image: url(#{logo_for(event, :small)}), url(#{asset_path 'arrow.png'});", :class => "event_index" do %>
-			<h4 style="padding-top: 15px; height: 15pt; overflow: none;"><%= event.name %></h4>
+		<%= link_to event_path(event), :class => "link_box" do %>
+			<img src="<%= logo_for(event, :large) %>" class="small" />
+			<h4 class="oneline"><%= event.name %></h4>
 		<% end %>
 		<% end %>
 	<% end %>
