@@ -205,7 +205,9 @@ zakSmithBand.save!
 
 
 # DJs
-djs = Act.create({:logo => 'djsmoky-logo.png', :name => 'DJ Smoky', :description => 'DJ'})
+djs = Act.create({:logo => 'djsmoky-logo.png', :name => 'SmokyTheWhore', :description => 'Smoky is the best DJ in Dewey Beach every summer, with that silky smooth voice and camera that takes amazing candid photos. Outside of Dewey, he will work any gig...weddings, memorials, Klan rallies disguised as weddings, etc! He will even wear a Redskins jersey to a gig even though he is a DIEHARD Steelers fan...his excuse "Dan Snyder writes the check, I wear his jersey!" He will play any type of music for the right price...Celine Dion may cost you a little more, but he will play it! ABBA? You betcha!!!! His "Man Card" has been pulled on multiple occassions, his "Black Card" was pulled when he played "Sweet Home Alabama"
+
+We love SmokyTheWhore!'})
 djs.links.build({:weblocation => www, :url => 'http://smokythedj.com/'})
 djs.save!
 
