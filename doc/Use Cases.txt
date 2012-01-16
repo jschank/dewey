@@ -1,0 +1,29 @@
+Dew It App Use Cases
+
+Main Index page:
+
+Sorted by date and within date by event (non special events).
+Display-a: Venue Logo, Event Name, Act name(s), event start time, event end time, price (if applicable)
+
+Sorted by date and within date by event and within event by location (special events).
+Display-a: Venue Logo, Event Name, location, Act name(s), performance start time, performance end time, price (if applicable).
+
+Event Page:
+
+Display (head - non-special): Event Logo, event name, event description, event start date, event start time, event end time, event weblinks.
+Display (head - special): Event Logo, event name, event description, event start date, event end date, event start time, event end time, event weblinks.
+Display-a (venue): Venue header with venue count. Venue logo, venue name.
+Display-a (performances): Performance header with performance count. Act logo, act name, performance start date (if different than event start date), performance start time (if different from event start time), performance end time (if different from event end time).
+Display-a (upcoming event - not event of page - non special): Upcoming event header. Venue logo, event start date, act name(s), event start time, event end time.
+Display-a (upcoming event - not event of page - special): Upcoming event header. Venue logo, event start date, event end date, act name(s), event start time, event end time.
+
+Venue Page:
+
+Display (head): Venue logo, Venue Name, venue description, venue address, venue phone #, venue weblinks.
+Display-a (upcoming events at venue): Upcoming events at venue header. Event logo, event name, act names, event date, event time, event price.
+
+Act Page:
+
+Display (head): Act logo, Act name, act hometown, act description, act weblinks.
+Display-a (upcoming events for act - non special): Venue logo, event name, act name(s), event start date, event start time, event end time.
+Display-a (upcoming events for act - special): Venue logo, event name, act for page name, performance start date, performance start time, performance end time.
