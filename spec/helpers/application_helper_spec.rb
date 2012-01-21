@@ -149,16 +149,6 @@ describe ApplicationHelper do
       helper.logo_for(@thing, nil).should eq("/assets/my_logo.png")
     end
 
-    it "returns asset path of small logo when size is :small" do
-      @thing.stub(:logo) {"my_logo.png"}
-      helper.logo_for(@thing, :small).should eq("/assets/my_logo-sm.png")
-    end
-
-    it "returns asset path of large logo when size is :large" do
-      @thing.stub(:logo) {"my_logo.png"}
-      helper.logo_for(@thing, :large).should eq("/assets/my_logo-lg.png")
-    end
-
     it "returns asset path without size when the size is something not known" do
       @thing.stub(:logo) {"my_logo.png"}
       helper.logo_for(@thing, :humongous).should eq("/assets/my_logo.png")

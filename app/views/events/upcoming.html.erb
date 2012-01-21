@@ -2,7 +2,7 @@
 	<h2>Happening now (7/2/2011 @ 10pm)</h2>
 	<% @happening_now.group_by{|p| p.occurrence}.each do |occurrence, performances| %>
 		<%= link_to current_event_path(occurrence.event, occurrence), :class => "link_box" do %>
-			<img src="<%= logo_for(occurrence.venues[0], :large) %>" class="small" />
+			<img src="<%= logo_for(occurrence.venues[0]) %>" class="small" />
 			<div class="info">
 			<h4><%= occurrence.event.name %></h4>
 			<% occurrence.acts.each do |act| %>
@@ -21,7 +21,7 @@
 			<% performances_for_occurrence.group_by {|p| p.venue}.each do |venue, performances_for_venue| %>
 				<% performances_for_venue.group_by { |p| p.location}.each do |location, performances_for_location| %>
 					<%= link_to current_event_path(occurrence.event, occurrence), :class => "link_box" do %>
-					<img src="<%= logo_for(venue, :large) %>" class="small" />
+					<img src="<%= logo_for(venue) %>" class="small" />
 						<div class="info">
 						<h4><%= occurrence.event.name %></h4>
 						<% performances_for_location.sort{|a, b| a.performance_start <=> b.performance_start}.each_with_index do |performance, index| %>

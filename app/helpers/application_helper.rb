@@ -35,19 +35,12 @@ module ApplicationHelper
   end
   
   def make_link(link)
-    content_tag(:div, :class => "webAnchor") do
-      link_to image_tag(image_path(link.weblocation.icon), :alt => [link.weblocation.tagline, link.weblocation.name].join(' ')), link.url, :target => "_blank"
-    end
+    link_to image_tag(image_path(link.weblocation.icon), :class => "webAnchor", :alt => [link.weblocation.tagline, link.weblocation.name].join(' ')), link.url, :target => "_blank"
   end
 
-  def logo_for(thing, size)
+  def logo_for(thing)
     filename = thing.try(:logo)
     return unless filename
-    ext = File.extname(filename)
-    basename = File.basename(filename, ext)
-    basename += "-sm" if size == :small
-    basename += "-lg" if size == :large
-    filename = basename + ext
     image_path(filename)    
   end
   

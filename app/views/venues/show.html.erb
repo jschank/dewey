@@ -2,7 +2,7 @@
 
 <% specific_area do %>
     <div class="specificHeader">
-	<img src="<%= logo_for(@venue, :large) %>" style="-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(226,226,226,0.2))); margin: 0 10px 50px 0; float: left;" />
+	<img src="<%= logo_for(@venue) %>" style="-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(226,226,226,0.2))); margin: 0 10px 50px 0; float: left;" />
     <h4><%= @venue.name %></h4>
 	<div class="description"><%= textilize(@venue.description) %></div>
     <p><%= @venue.address1 %><br/>
@@ -22,7 +22,7 @@
 	<% @future_occurrences.group_by{ |o| o.event_start}.each do |date, occurrences_for_date | %>
 		<% occurrences_for_date.each do |occurrence| %>
 		<%= link_to current_event_path(occurrence.event, occurrence), :class => "link_box" do %>
-			<img src="<%= logo_for(occurrence.event, :large) %>" class="small" />
+			<img src="<%= logo_for(occurrence.event) %>" class="small" />
 			<div class="info">
 			<h4><%= occurrence.event.name %></h4>
 			<% occurrence.performances.each do |performance| %>

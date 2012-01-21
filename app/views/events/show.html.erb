@@ -2,7 +2,7 @@
 
 <% specific_area do %>
 <div class="specificHeader">
-<img src="<%= logo_for(@event, :large) %>" class="large" />
+<img src="<%= logo_for(@event) %>" class="large" />
 <h4><%= @event.name %></h4>
 <div class="description"><%= textilize(@event.description) %></div>
 <% if @occurrence %>
@@ -10,17 +10,16 @@
 	<p><%= date_and_times(@occurrence.event_start) %></p>	
 	<p class="times"><%= occurrence_times(@occurrence) %></p>	
 <% end %>
-<%= link_to "", @event.website, :target => "_blank", :class => "webAnchor webSite" %>
-<%= link_to "", @event.facebook, :target => "_blank", :class => "webAnchor facebook" %>
-<%= link_to "", @event.twitter, :target => "_blank", :class => "webAnchor twitter" %>
-
+<% @event.links.each do |link| %>
+	<%= make_link(link) %>
+<% end %>
 </div>
     
 <% if @occurrence %>
 	<%= content_tag :h3, pluralize(@occurrence.venues.count, "Venue") %>
 	<% @occurrence.venues.each do |venue| %>
 	<%= link_to venue_path(venue), :class => "link_box" do %>
-		<img src="<%= logo_for(venue, :large) %>" class="small" />
+		<img src="<%= logo_for(venue) %>" class="small" />
 		<h4 class="oneline"><%= venue.name %></h4>
 	<% end %>
 	<% end %>
@@ -28,7 +27,7 @@
 	<%= content_tag :h3, pluralize(@occurrence.performances.count, "Performance") %>
 	<% @occurrence.performances.each do |performance| %>
 	<%= link_to act_path(performance.act), :class => "link_box" do %>
-		<img src="<%= logo_for(performance.act, :large) %>" class="small" />
+		<img src="<%= logo_for(performance.act) %>" class="small" />
 		<div class="info">
 		<h4><%= performance.act.name %></h4>
 		<p class="dates"><%= performance.performance_start.to_date.to_s(:long) %></p>
@@ -45,7 +44,7 @@
 	<% @future_occurrences.group_by{ |o| o.event_start}.each do |date, occurrences_for_date | %>
 		<% occurrences_for_date.each do |occurrence| %>
 		<%= link_to current_event_path(occurrence.event, occurrence), :class => "link_box" do %>
-		<img src="<%= logo_for(occurrence.venues[0], :large) %>" class="small" />
+		<img src="<%= logo_for(occurrence.venues[0]) %>" class="small" />
 		<div class="info">
 		<h4><%= date_and_times(date, occurrence) %></h4>
 			<% occurrence.performances.each do |performance| %>

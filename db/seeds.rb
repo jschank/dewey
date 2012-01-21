@@ -13,12 +13,12 @@
 # When running rake db:seed, the runs are additive, so dupes will be created. do a rake db:reset instead
 
 # *** Actual Seeds ***
-fb      = Weblocation.create!({:name => "Facebook", :tagline => "join us on",     :icon => "facebook-logo.png"})
-itunes  = Weblocation.create!({:name => "iTunes",   :tagline => "look for us on", :icon => "itunes-logo.png"})
-ms      = Weblocation.create!({:name => "MySpace",  :tagline => "join us on",     :icon => "myspace-logo.png"})
-twit    = Weblocation.create!({:name => "Twitter",  :tagline => "follow us on",   :icon => "twitter-logo.png"})
-www     = Weblocation.create!({:name => "Web",      :tagline => "join us on the", :icon => "web-logo.png"})
-youtube = Weblocation.create!({:name => "YouTube",  :tagline => "watch us on",    :icon => "youtube-logo.png"})
+facebook = Weblocation.create!({:name => "Facebook", :tagline => "join us on",     :icon => "facebook-logo.png"})
+itunes   = Weblocation.create!({:name => "iTunes",   :tagline => "look for us on", :icon => "itunes-logo.png"})
+myspace  = Weblocation.create!({:name => "MySpace",  :tagline => "join us on",     :icon => "myspace-logo.png"})
+twit     = Weblocation.create!({:name => "Twitter",  :tagline => "follow us on",   :icon => "twitter-logo.png"})
+www      = Weblocation.create!({:name => "Web",      :tagline => "join us on the", :icon => "web-logo.png"})
+youtube  = Weblocation.create!({:name => "YouTube",  :tagline => "watch us on",    :icon => "youtube-logo.png"})
 
 # ***Venues***
 
@@ -33,11 +33,13 @@ bc.save!
 # Northbeach
 nb = Venue.create({:name => 'Northbeach', :description => 'Northbeach offers casual indoor and outdoor dining overlooking Rehoboth Bay. Northbeach is open mid-May through Labor Day. Join us for great food, frozen drinks and beautiful sunsets.', :address1 => '125 McKinley Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-226-8673', :logo => 'northbeach-logo.png'})
 nb1 = nb.locations.build()
+nb.links.build( {:weblocation => www, :url => "http://www.deweybeachlife.com/dning_nb.html"})
 nb.save!
 
 # Lighthouse
 lh = Venue.create({:name => 'Lighthouse', :description => 'Tall tower, bright light', :address1 => '2112 Shiny Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-555-1212', :logo => 'lighthouse-logo.png'})
 lh1 = lh.locations.build()
+lh.links.build( {:weblocation => www, :url => "http://www.ruddertowneusa.com/The-Lighthouse.html"})
 lh.save!
 
 # Rusty Rudder
@@ -47,6 +49,7 @@ rra = rr.locations.build({:name => "Stage A"})
 rrb = rr.locations.build({:name => "Stage B"})
 rrc = rr.locations.build({:name => "Stage C"})
 rrd = rr.locations.build({:name => "Stage D"})
+rr.links.build( {:weblocation => www, :url => "http://www.deweybeachlife.com/dning_rr.html"})
 rr.save!
 
 # Starboard
@@ -54,24 +57,25 @@ sb = Venue.create({:name => 'The Starboard', :description => 'John thinks it is 
 sb1 = sb.locations.build()
 sba = sb.locations.build({:name => "Main Stage"})
 sbb = sb.locations.build({:name => "Deck Stage"})
-sb.links.build({:weblocation => www, :url => "http://www.thestarboard.com/"})
+sb.links.build( {:weblocation => www, :url => "http://www.thestarboard.com/"})
 sb.save!
 
 # Jimmy's Grille
 jg = Venue.create({:name => "Jimmy's Grille", :description => 'Outdoor Bar and Grille.', :address1 => 'Highway One and Bellevue Street', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-4600', :logo => 'jimmys-logo.png'})
 jg1 = jg.locations.build()
+jg.links.build( {:weblocation => www, :url => "http://www.deweybeachlife.com/dning_jimmys_db.html"})
 jg.save!
 
 #McShea's
 ms = Venue.create({:name => "McShea's", :description => 'Irish Pub.', :address1 => '1705 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-9430', :logo => 'mcsheas-logo.png'})
 ms1 = ms.locations.build()
-ms.links.build({:weblocation => www, :url => "http://www.deweybeach.com/mcsheas/"})
+ms.links.build( {:weblocation => www, :url => "http://www.deweybeach.com/mcsheas/"})
 ms.save!
 
 #Woody's East Coast Grille
 wg = Venue.create({:name => "Woody's East Coast Grille", :description => 'Surf Bar and Grille.', :address1 => '1904 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '', :logo => 'woodys-logo.png'})
 wg1 = wg.locations.build()
-wg.links.build({:weblocation => www, :url => 'http://www.deweybeachbar.com/'})
+wg.links.build( {:weblocation => www, :url => "http://www.deweybeachbar.com/"})
 wg.save!
 
 #Gary's Dewey Beach Grille
@@ -87,6 +91,8 @@ gdbg.save!
 # Bands
 gg = Act.create({:logo => 'greengenes-logo.png', :name => 'Mr. Greengenes', :description => 'Coverband from Philadelphia'})
 gg.links.build({:weblocation => www, :url => 'http://www.mrgreengenes.com/'})
+gg.links.build({:weblocation => facebook, :url => 'http://www.facebook.com/pages/Mr-Greengenes/119075867831'})
+gg.links.build({:weblocation => myspace, :url => 'http://www.myspace.com/mrgg'})
 gg.save!
 
 kn = Act.create({:logo => 'kristennoise-logo.png', :name => 'Kristen And The Noise', :description => 'Coverband from Philadelphia'})
@@ -119,6 +125,8 @@ tf.save!
 
 sd = Act.create({:logo => 'splitdecision-logo.png', :name => 'Split Decision', :description => 'Coverband'})
 sd.links.build({:weblocation => www, :url => 'http://www.splitdecision.com/'})
+sd.links.build({:weblocation => facebook, :url => 'http://www.facebook.com/splitdecisionphilly'})
+sd.links.build({:weblocation => twit, :url => 'http://twitter.com/#!/Splitdphilly'})
 sd.save!
 
 ek = Act.create({:logo => 'elementk-logo.png', :name => 'Element K', :description => 'Coverband'})
@@ -155,6 +163,9 @@ gc.save!
 
 lauraMarie = Act.create({:logo => 'LauraMarie-logo.png', :name => 'Laura Marie', :hometown => 'San Antonio, TX'})
 lauraMarie.links.build({:weblocation => www, :url => 'http://lauramariemusic.com'})
+lauraMarie.links.build({:weblocation => twit, :url => 'http://www.twitter.com/lauramariemusic'})
+lauraMarie.links.build({:weblocation => itunes, :url => 'http://lauramariemusic.visibli.com/47bef819655118d3/?web=ebbd64&dst=http%3A//itunes.apple.com/us/artist/laura-marie/id266036410'})
+lauraMarie.links.build({:weblocation => youtube, :url => 'http://www.youtube.com/lalaontube'})
 lauraMarie.save!
 
 liat = Act.create({:logo => 'Liat-logo.png', :name => 'Liat', :hometown => 'Voorhees, NJ'})
@@ -185,6 +196,11 @@ EOD
 
 lovebettie = Act.create({:logo => 'Lovebettie-logo.png', :name => 'Lovebettie', :description => lovebettie_description, :hometown => 'Pittsburgh, PA'})
 lovebettie.links.build({:weblocation => www, :url => 'http://www.lovebettie.com/'})
+lovebettie.links.build({:weblocation => twit, :url => 'http://www.twitter.com/lovebettie'})
+lovebettie.links.build({:weblocation => myspace, :url => 'http://www.myspace.com/lovebettie'})
+lovebettie.links.build({:weblocation => facebook, :url => 'http://www.facebook.com/lovebettie'})
+lovebettie.links.build({:weblocation => itunes, :url => 'http://www.itunes.com/lovebettie'})
+lovebettie.links.build({:weblocation => youtube, :url => 'http://www.youtube.com/lovebettie'})
 lovebettie.save!
 
 lowercaseblues = Act.create({:logo => 'lowercaseblues-logo.png', :name => 'lower case blues', :hometown => 'Rehoboth Beach, DE'})
@@ -436,6 +452,7 @@ dbmc2011.performances.build({:location => rrd, :act => lowercaseblues, :performa
 dbmc2011.performances.build({:location => ms1, :act => luciar, :performance_start => '2011-09-23T21:00:00+00:00', :performance_end => '2011-09-23T21:30:00+00:00'}).save!
 dbmc2011.performances.build({:location => bca, :act => luckyDub, :performance_start => '2011-09-24T23:00:00+00:00', :performance_end => '2011-09-24T23:40:00+00:00'}).save!
 dbmc2011.performances.build({:location => bcb, :act => zakSmithBand, :performance_start => '2011-09-24T21:00:00+00:00', :performance_end => '2011-09-24T21:40:00+00:00'}).save!
+dbmc2011.performances.build({:location => jg1, :act => liat, :performance_start => '2011-09-23T21:00:00+00:00', :performance_end => '2011-09-23T22:00:00+00:00'}).save!
 
 # DJ Smoky 1
 djse1.performances.build({:location => sb1, :act => djs, :performance_start => '2011-07-01T21:00:00+00:00', :performance_end => '2011-07-02T01:00:00+00:00', :priority => 0 }).save!
