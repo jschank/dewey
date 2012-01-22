@@ -13,13 +13,15 @@ Later:
 Issues:
 Event Show Page Issues:
 
+We want special events(only) to include the venue and location for each performance in the performance list.
+
 Act Show page Issues:
 
 1) This could be an issue on all show pages.  We need a character limit to the description area.  When the limit is reached it will cut off the description with a … and then have a link that says show more.  Clicking the show more link expands the description area and shows the entire description which now ends with a show less link that would close the description back up and restore the default state.
 
-2) Under Upcoming Events for an act we need to either eliminate the display of all acts or probably better all acts except the act on the page for special events since they can have a crapload of acts.
-
 Venue Show Page Issues:
 
 1) Under the upcoming events at that venue section for a special event it lists all the bands playing at that venue for that special event, but there is only one date and time.  For this I would eliminate the acts displayed and make the date and time the occurrence start and end time.  Might need to show the date for both start and end since it would be multi-day.  We can play with the display until we like it.
+
+2) On the upcoming events, for special events ONLY we should remove the list of acts from the event block. And add for any event over 24 hours, include start and stop dates and times. Add the time to the end of the date string. Thursday, September 22, 2011, 9:40p
 
