@@ -15,25 +15,13 @@
 <% upcoming_area do %>
 	<h2>Upcoming Events for <%= @act.name %></h2>
 	<% @future_performances.group_by{ |p| p.performance_start.to_date}.each do |date, performances_for_date | %>
-	<% performances_for_date.each do |performance| %>
-			<%= link_to current_event_path(performance.event, performance.occurrence), :class => "link_box" do %>
-			<img src="<%= logo_for(performance.occurrence.venues[0]) %>" class="small" />
-			<div class="info">
-			<h4><%= performance.occurrence.event.name %></h4>
-				<% performance.occurrence.performances.each do |perf| %>
-				<% if perf.priority > 0 %>
-				<p><%= perf.act.name %></p>
-					<% end %>
-				<% end %>
-				<p class="dates"><%= date.to_date.to_s(:long) %></p>
-				<p class="times"><%= occurrence_times(performance.occurrence) %></p>
-				</div>
-			<% end %>
+		<% performances_for_date.each do |performance| %>
+			<%= render :partial => "acts/special_event", :locals => { :performance => performance } if performance.occurrence.event.is_special %>
+			<%= render :partial => "acts/regular_event", :locals => { :performance => performance } unless performance.occurrence.event.is_special %>
 	    <% end %>
 	<% end %>
 <% end %>
 
 <% admin_area do %>
-	<%= link_to 'Edit', edit_act_path(@act) %> |
-	<%= link_to 'Back', acts_path %>
+	<%= link_to 'Edit', edit_act_path(@act) %>
 <% end %>

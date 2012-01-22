@@ -453,6 +453,7 @@ dbmc2011.performances.build({:location => ms1, :act => luciar, :performance_star
 dbmc2011.performances.build({:location => bca, :act => luckyDub, :performance_start => '2011-09-24T23:00:00+00:00', :performance_end => '2011-09-24T23:40:00+00:00'}).save!
 dbmc2011.performances.build({:location => bcb, :act => zakSmithBand, :performance_start => '2011-09-24T21:00:00+00:00', :performance_end => '2011-09-24T21:40:00+00:00'}).save!
 dbmc2011.performances.build({:location => jg1, :act => liat, :performance_start => '2011-09-23T21:00:00+00:00', :performance_end => '2011-09-23T22:00:00+00:00'}).save!
+dbmc2011.performances.build({:location => bcb, :act => gg, :performance_start => '2011-09-23T21:00:00+00:00', :performance_end => '2011-09-23T22:00:00+00:00'}).save!
 
 # DJ Smoky 1
 djse1.performances.build({:location => sb1, :act => djs, :performance_start => '2011-07-01T21:00:00+00:00', :performance_end => '2011-07-02T01:00:00+00:00', :priority => 0 }).save!
