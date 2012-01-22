@@ -1,6 +1,3 @@
-Next Meeting: 1/14
-* Add Join table for Weblocations so that Acts/Venues/Events can have a set of URLs to weblocations
-
 Meeting: 1/21
 * Add "related events" using a [self-join association](http://edgeguides.rubyonrails.org/association_basics.html#self-joins)
 * Add related acts to the acts table
@@ -15,10 +12,6 @@ Later:
 
 Issues:
 Event Show Page Issues:
-
-1) Upcoming Jam Sessions (or whatever): Date and time should be split into 2 lines
-
-2) The event occurrence that you are on should not show up under upcoming events.
 
 Act Show page Issues:
 

@@ -26,7 +26,8 @@ class EventsController < ApplicationController
   def show
     @occurrence = Occurrence.find(params[:occurrence_id], :include => [:event, :performances, :acts, :locations, :venues ]) if params[:occurrence_id]
     @event = @occurrence.try(:event) || Event.find(params[:id])
-    @future_occurrences = Occurrence.future_occurrences(DateTime.civil(2011, 01, 01)).scoped( :conditions => { :event_id => @event } )
+    upcoming = Occurrence.future_occurrences(DateTime.civil(2011, 01, 01)).scoped( :conditions => { :event_id => @event } )
+    @future_occurrences = upcoming.delete_if { |occurrence| occurrence == @occurrence }
 
     respond_to do |format|
       format.html # show.html.erb
