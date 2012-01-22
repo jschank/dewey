@@ -1,29 +1,68 @@
-Dew It App Use Cases
+iDewIt App Use Cases
 
 Main Index page:
 
-Sorted by date and within date by event (non special events).
-Display-a: Venue Logo, Event Name, Act name(s), event start time, event end time, price (if applicable)
+Event Date
 
-Sorted by date and within date by event and within event by location (special events).
-Display-a: Venue Logo, Event Name, location, Act name(s), performance start time, performance end time, price (if applicable).
+**Regular Events**
+Sorted by date and within date by event.
+Display-a: Venue Logo, Event Name, Act name(s), event start time, event end time, event price.
+
+**Special Events**
+Sorted by date and within date by event and within event by location.
+Display-a: Venue Logo, Event Name, location, Act name(s), performance start time, performance end time, event price.
 
 Event Page:
 
-Display (head - non-special): Event Logo, event name, event description, event start date, event start time, event end time, event weblinks.
-Display (head - special): Event Logo, event name, event description, event start date, event end date, event start time, event end time, event weblinks.
-Display-a (venue): Venue header with venue count. Venue logo, venue name.
-Display-a (performances): Performance header with performance count. Act logo, act name, performance start date (if different than event start date), performance start time (if different from event start time), performance end time (if different from event end time).
-Display-a (upcoming event - not event of page - non special): Upcoming event header. Venue logo, event start date, act name(s), event start time, event end time.
-Display-a (upcoming event - not event of page - special): Upcoming event header. Venue logo, event start date, event end date, act name(s), event start time, event end time.
+**Regular Events Head Area**
+Display: Event Logo, event name, event description, event start date, event start time, event end time, event price, event weblinks.
+
+**Special Events Head Area**
+Display: Event Logo, event name, event description, event start date, Event start time, event end date, event end time, event price, event weblinks.
+
+Venue header with venue count (i.e. 3 Venues, 1 Venue, etc.)
+
+Display-a: Venue logo, venue name.
+
+Performance header with performance count (i.e. 3 Performances, 1 Performance, etc.)
+
+**Regular Events**
+Display-a: Act logo, act name, performance start date (if different than event start date), performance start time (if different from event start time), performance end time (if different from event end time).
+
+**Special Events**
+Display-a: Act logo, act name, venue name, location name, performance start date (if different than event start date), performance start time (if different from event start time), performance end time (if different from event end time).
+
+Upcoming event header
+
+**Regular Events**
+Display-a: Venue logo, event start date, act name(s), event start time, event end time, event price.
+
+**Special Events**
+Display-a: Event logo, event start date, event start time, event end date, event end time, event price.
 
 Venue Page:
 
-Display (head): Venue logo, Venue Name, venue description, venue address, venue phone #, venue weblinks.
-Display-a (upcoming events at venue): Upcoming events at venue header. Event logo, event name, act names, event date, event time, event price.
+**Head Area**
+Display: Venue logo, Venue Name, venue description, venue address, venue phone #, venue weblinks.
+
+Upcoming event header
+
+**Regular Events**
+Display-a: Event logo, event name, act name(s), event start date, event start time, event end time, event price.
+
+**Special Events**
+Display-a: Event logo, event name, event start date, event start time, event end date, event end time, event price.
 
 Act Page:
 
-Display (head): Act logo, Act name, act hometown, act description, act weblinks.
-Display-a (upcoming events for act - non special): Venue logo, event name, act name(s), event start date, event start time, event end time.
-Display-a (upcoming events for act - special): Venue logo, event name, act for page name, performance start date, performance start time, performance end time.
+**Head Area**
+Display: Act logo, Act name, act hometown, act description, act weblinks.
+
+Upcoming event header
+
+**Regular Events**
+Display-a: Venue logo, event name, act name(s), event start date, event start time, event end time, event price.
+
+**Special Events**
+Display-a: Venue logo, event name, act for page name, performance start date, performance start time, performance end time, event price.
+

@@ -11,6 +11,11 @@ Later:
 
 
 Issues:
+
+Main Page:
+
+Remove space between time and am or pm and remove m from am and pm so it displays as a or p.
+
 Event Show Page Issues:
 
 We want special events(only) to include the venue and location for each performance in the performance list.
@@ -18,6 +23,8 @@ We want special events(only) to include the venue and location for each performa
 Act Show page Issues:
 
 1) This could be an issue on all show pages.  We need a character limit to the description area.  When the limit is reached it will cut off the description with a … and then have a link that says show more.  Clicking the show more link expands the description area and shows the entire description which now ends with a show less link that would close the description back up and restore the default state.
+
+2) Need cover charge added to upcoming events both regular and special events.
 
 Venue Show Page Issues:
 

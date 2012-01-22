@@ -5,9 +5,9 @@
 <h4><%= @event.name %></h4>
 <div class="description"><%= textilize(@event.description) %></div>
 <% if @occurrence %>
-	<%= display_cover_charge(@occurrence) %>
-	<p><%= date_and_times(@occurrence.event_start) %></p>	
+	<p class="dates"><%= date_and_times(@occurrence.event_start) %></p>	
 	<p class="times"><%= occurrence_times(@occurrence) %></p>	
+	<%= display_cover_charge(@occurrence) %>
 <% end %>
 <% @event.links.each do |link| %>
 	<%= make_link(link) %>

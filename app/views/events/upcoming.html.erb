@@ -33,10 +33,10 @@
 								<% if performance.priority > 0 %><p><%= performance.act.name %></p><% end %>
 							<% end %>
 						<% end %>
-						<%= display_cover_charge(occurrence) %>
 						<% if occurrence.event.is_special == false %>
 							<p class="times"><%= occurrence_times(occurrence) %></p>
 						<% end %>
+						<%= display_cover_charge(occurrence) %>
 						</div>
 					<% end %>
 				<% end %>

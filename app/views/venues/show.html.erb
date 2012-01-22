@@ -30,9 +30,9 @@
 				<p><%= performance.act.name %></p>
 				<% end %>
 			<% end %>
-			<%= display_cover_charge(occurrence) %>
 			<p class="dates"><%= date.to_date.to_s(:long) %></p>
 			<p class="times"><%= occurrence_times(occurrence) %></p>
+			<%= display_cover_charge(occurrence) %>
 			</div>
 		<% end %>
 	    <% end %>
