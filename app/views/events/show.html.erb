@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-
 <% specific_area do %>
 <div class="specificHeader">
 <img src="<%= logo_for(@event) %>" class="large" />
@@ -62,5 +61,7 @@
 <% end %>
 
 <% admin_area do %>
-	<%= link_to 'Edit', edit_event_path(@event) %>
+	<%= link_to edit_event_path(@event) do %>
+		<img src="<%= asset_path 'edit-button.png' %>" style="position: absolute; top: 7px; right: 10px;">
+	<% end %>
 <% end %>
