@@ -13,7 +13,7 @@ class EventsController < ApplicationController
 
   def upcoming
     @future_performances = Performance.future_performances(DateTime.civil(2011, 01, 01))
-    @happening_now = Performance.in_progress(DateTime.civil(2011, 07, 02, 22, 0, 0))
+    # @happening_now = Performance.in_progress(DateTime.civil(2011, 07, 02, 22, 0, 0))
     
     respond_to do |format|
       format.html # upcoming_events.html.erb
