@@ -16,6 +16,12 @@ Main Page:
 
 Remove space between time and am or pm and remove m from am and pm so it displays as a or p.
 
+If we can't get truncation to work on long lines (...), can we get them to wrap?
+
+Find out how we can access or use location services on the iPhone.
+
+Find out how to hide the google search in the browser on iPhone. Or maybe use it, to search our site instead of the web.
+
 Event Show Page Issues:
 
 We want special events(only) to include the venue and location for each performance in the performance list.
