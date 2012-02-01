@@ -10,6 +10,9 @@ Later:
 * Long strings should be rendered with ... instead of wrapping.
 
 
+Events do not need all the different weblinks they should be linkable.
+Venues should be linkable too.
+
 Issues:
 
 Main Page:
@@ -38,3 +41,14 @@ Venue Show Page Issues:
 
 2) On the upcoming events, for special events ONLY we should remove the list of acts from the event block. And add for any event over 24 hours, include start and stop dates and times. Add the time to the end of the date string. Thursday, September 22, 2011, 9:40p
 
+What if:
+
+What if we had a concept of scheduleable, and acts were schedulable. As are other things like drink specials.
+
+The schedulable table would have the start and stop times, and it would have a link to a location, and an event
+
+Events become just place holders for names and descriptions.
+
+Finally, the schedulable table could have a list of sponsors
+
+A "special" event is just any event that lasts more than 24 hours, or which has too many performances, for some value of "too many"
