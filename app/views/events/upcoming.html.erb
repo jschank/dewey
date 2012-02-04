@@ -16,7 +16,9 @@
 <% end %>
 <% end %>
 
+
 <% upcoming_area do %>
+<h1>Mike's update</h1>
 <% @future_performances.group_by{|p| p.performance_start.to_date}.sort.each do |start_date, performances_for_date| %>
 		<h2><%= date_and_times(start_date) %></h2>
 		<% performances_for_date.group_by {|p| p.occurrence}.each do |occurrence, performances_for_occurrence| %>
