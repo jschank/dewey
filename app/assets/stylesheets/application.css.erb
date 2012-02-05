@@ -93,8 +93,8 @@ h5
 
 .info
 {
-	padding: .3em 0;
-	float: left;	
+	padding: 3px 0px 3px 65px;
+	width: auto;
 }
 
 a.link_box
@@ -102,11 +102,11 @@ a.link_box
 	display: block;
 	border-bottom: 1px solid #949494;
 	padding: 0 30px 0 0;
-	min-height: 60px;
 	text-decoration: none;
 	background-image: url( <%= asset_path 'arrow.png' %> );
 	background-position: right center;
 	background-repeat: no-repeat;
+	position: relative;
 	overflow: auto;
 }
 
@@ -210,7 +210,8 @@ img.large
 margin: 0 10px 50px 0;
 float: left;
 height: 100px;
-width: 100px;	
+width: 100px;
+border: none;	
 }
 
 img.small
@@ -218,6 +219,7 @@ img.small
 margin: 0 5px 0 0;
 float: left;
 height: 60px;
-width: 60px;	
+width: 60px;
+border: none;
 }
 
