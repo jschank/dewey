@@ -5,24 +5,13 @@
 		<img src="<%= logo_for(@act) %>" class="large" />
 	<%= content_tag :h4, @act.name %>	
 	<%= display_hometown(@act) %>
-	<div class="description"><%= textilize(@act.description) %></div>
+	<div class="description" id="collapsable">
+		<%= textilize(@act.description) %>
+	</div>
 	<% @act.links.each do |link| %>
 		<%= make_link(link) %>
 	<% end %>
-	</div>
-	
-<div style="margin: 15px 0pt; text-align: center;">
- <div id="jTruncate_example1" style="border: 1px solid rgb(204, 204, 204); padding: 10px; margin-left: auto; margin-right: auto; width: 320px; background-color: rgb(239, 239, 209); text-align: left;">
-  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam fringilla, purus a ultrices blandit,
-  odio ante scelerisque neque, vitae imperdiet odio velit ac nisl. Sed tortor metus, placerat condimentum,
-  feugiat in, feugiat adipiscing, mi. Donec pulvinar sem vitae leo. Vestibulum eget lectus et ligula hendrerit
-  pharetra. Sed porta justo ac nisl. Aliquam nisi erat, pellentesque sed, sagittis eu, fringilla sit amet,
-  dolor. Nam ac mi. Pellentesque pede purus, mattis aliquet, semper nec, cursus a, orci. Duis bibendum nibh
-  ac massa. Integer eu tortor. Aenean convallis quam at nunc. Nunc mollis tincidunt nisi. Suspendisse mauris
-  odio, iaculis ut, feugiat vitae, ultrices in, tortor. Quisque at elit. In hac habitasse platea dictumst.
- </div>
-</div>
-
+	</div>	
 <% end %>
 
 <% upcoming_area do %>

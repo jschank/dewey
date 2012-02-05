@@ -1,6 +1,5 @@
 (function($){
 	$.fn.jTruncate = function(options) {
-	   
 		var defaults = {
 			length: 300,
 			minTrail: 20,
