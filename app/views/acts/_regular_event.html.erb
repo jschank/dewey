@@ -7,5 +7,6 @@
 	<% end %>
 	<p class="dates"><%= performance.occurrence.event_start.to_date.to_s(:long) %></p>
 	<p class="times"><%= occurrence_times(performance.occurrence) %></p>
+	<%= display_cover_charge(performance.occurrence) %>	
 </div>
 <% end %>

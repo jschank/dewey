@@ -5,7 +5,7 @@ require File.expand_path('../application', __FILE__)
 Dewey::Application.initialize!
 
 Date::DATE_FORMATS.merge!(
-  :long => '%A, %B %-d, %Y'
+  :long => '%a, %B %-d'
 )
-Time::DATE_FORMATS[:reduced] = "%-I:%M %p"  
-Time::DATE_FORMATS[:hour_only] = "%-I %p"  
+Time::DATE_FORMATS[:reduced] = "%-I:%M%p"  
+Time::DATE_FORMATS[:hour_only] = "%-I%p"  

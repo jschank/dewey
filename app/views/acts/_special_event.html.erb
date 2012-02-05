@@ -5,5 +5,6 @@
 		<%= content_tag :p, performance.act.name %>
 		<p class="dates"><%= performance.performance_start.to_date.to_s(:long) %></p>
 		<p class="times"><%= performance_times(performance) %></p>
+		<%= display_cover_charge(performance.occurrence) %>	
 	</div>
 <% end %>

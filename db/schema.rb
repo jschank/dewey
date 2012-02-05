@@ -11,14 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120108200859) do
+ActiveRecord::Schema.define(:version => 20120204212558) do
 
   create_table "acts", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "website"
-    t.string   "facebook"
-    t.string   "twitter"
     t.string   "hometown"
     t.string   "logo"
     t.datetime "created_at"
@@ -29,9 +26,6 @@ ActiveRecord::Schema.define(:version => 20120108200859) do
   create_table "events", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "website"
-    t.string   "facebook"
-    t.string   "twitter"
     t.string   "logo"
     t.datetime "created_at"
     t.datetime "updated_at"
