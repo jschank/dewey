@@ -11,6 +11,7 @@
 	<% end %>
     <%= @venue.city %>, <%= @venue.state %>  <%= @venue.zip %></p>
     <p>Phone: <%= @venue.phone %></p>
+	<p class="visit">Visit us:</p>
 	<% @venue.links.each do |link| %>
 		<%= make_link(link) %>
 	<% end %>

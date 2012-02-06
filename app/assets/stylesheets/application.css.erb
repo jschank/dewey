@@ -45,6 +45,7 @@ h2	{
 	background: url(<%= asset_path 'h2-bg.png' %>) repeat-x left top;
 	height: 20px;
 	text-shadow: 0 1px 2px #000;
+	overflow: none;
 }
 
 h3
@@ -58,6 +59,7 @@ h3
 	text-align: left;
 	text-shadow: 0 1px #000;
 	height: 19px;
+	overflow: none;
 }
 
 h4
@@ -155,6 +157,13 @@ p
 	color: #8a8a8a;
 }
 
+.visit
+{
+	font: bold 10pt Helvetica, sans-serif;
+	color: #000;
+	margin-top: 1em;
+}
+
 .description p	
 {
 	margin: 1em;
@@ -199,27 +208,30 @@ p
 .copyright
 {
 	font: normal 11pt Helvetica, sans-serif;
-	color: #8a8a8a;
-	margin: .5em 0 0 0;
+	color: #949494;
+	margin: .5em 0;
 	text-align: center;
 }
 
 img.large
 {
--webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(238,238,238,0.2)));
-margin: 0 10px 50px 0;
-float: left;
-height: 100px;
-width: 100px;
-border: none;	
+	-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(238,238,238,0.2)));
+	margin: 0 10px 50px 0;
+	float: left;
+	height: 100px;
+	width: 100px;
+	border: none;	
 }
 
 img.small
 {
-margin: 0 5px 0 0;
-float: left;
-height: 60px;
-width: 60px;
-border: none;
+	margin: 0 5px 0 0;
+	float: left;
+	height: 60px;
+	width: 60px;
+	border-right: 1px solid #949494;
+	border-bottom: 1px solid #949494;
+	border-left: none;
+	border-top: none;
 }
 

@@ -8,6 +8,7 @@
 	<div class="description" id="collapsable">
 		<%= textilize(@act.description) %>
 	</div>
+	<p class="visit">Visit us:</p>
 	<% @act.links.each do |link| %>
 		<%= make_link(link) %>
 	<% end %>

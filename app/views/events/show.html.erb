@@ -9,6 +9,7 @@
 	<p class="times"><%= occurrence_times(@occurrence) %></p>	
 	<%= display_cover_charge(@occurrence) %>
 <% end %>
+<p class="visit">Visit us:</p>
 <% @event.links.each do |link| %>
 	<%= make_link(link) %>
 <% end %>
