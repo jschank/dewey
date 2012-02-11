@@ -1,7 +1,6 @@
 Factory.define :act do |f|
 	f.name          'Rush'
 	f.description   'Only the greatest band, ever.'
-  f.website       'http://www.rush.com'
 end
 
 Factory.define :event do |f|

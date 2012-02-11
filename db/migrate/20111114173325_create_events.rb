@@ -2,13 +2,9 @@ class CreateEvents < ActiveRecord::Migration
   def change
     create_table :events do |t|
       t.string :name
-      t.text :description
-
-      t.string :website
-      t.string :facebook
-      t.string :twitter
-      
+      t.text :description      
       t.string :logo
+      t.boolean :is_special, :default => false
 
       t.timestamps
     end

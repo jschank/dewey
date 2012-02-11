@@ -4,6 +4,7 @@ class CreateOccurrences < ActiveRecord::Migration
       t.datetime :event_start
       t.datetime :event_end
       t.references :event
+      t.float :cover_charge
 
       t.timestamps
     end

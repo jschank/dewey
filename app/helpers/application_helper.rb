@@ -57,17 +57,17 @@ module ApplicationHelper
 
   def occurrence_times(occurrence)
     return "" unless occurrence
-    start_time = (occurrence.event_start) ? time_format(occurrence.event_start) : "?"
-    end_time   = (occurrence.event_end)   ? time_format(occurrence.event_end) : "?"
-    "#{start_time.chop} - #{end_time.chop}".downcase
+    start_time = (occurrence.event_start) ? time_format(occurrence.event_start).chop : "?"
+    end_time   = (occurrence.event_end)   ? time_format(occurrence.event_end).chop : "?"
+    "#{start_time} - #{end_time}".downcase
   end
   
   def performance_times(performance)
     return "" unless performance
-    start_time = (performance.performance_start) ? time_format(performance.performance_start) : "?"
+    start_time = (performance.performance_start) ? time_format(performance.performance_start).chop : "?"
     # end_time   = (performance.performance_end)   ? time_format(performance.performance_end) : "?"
     # "#{start_time.chop} - #{end_time.chop}".downcase
-    "#{start_time.chop}".downcase
+    "#{start_time}".downcase
   end
   
   def date_and_times(date, occurrence = nil)

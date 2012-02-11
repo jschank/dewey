@@ -5,12 +5,12 @@ describe ApplicationHelper do
   context "formatting times" do
     it "drops minutes when lacking minutes" do      
       datetime = DateTime.civil(2012, 2, 27, 18, 0)
-      helper.time_format(datetime).should eq("6 PM")
+      helper.time_format(datetime).should eq("6PM")
     end
 
     it "includes time when it has minutes" do
       datetime = DateTime.civil(2012, 2, 27, 18, 30)
-      helper.time_format(datetime).should eq("6:30 PM")
+      helper.time_format(datetime).should eq("6:30PM")
     end
     
 
@@ -29,25 +29,25 @@ describe ApplicationHelper do
       it "shows '?' when start is not available" do
         @occurrence.stub(:event_start) {DateTime.civil(2012, 02, 27, 9, 0)}
         @occurrence.stub(:event_end) {nil}
-        helper.occurrence_times(@occurrence).should eq("9 am - ?")
+        helper.occurrence_times(@occurrence).should eq("9a - ?")
       end
 
       it "shows '?' when end is not available" do
         @occurrence.stub(:event_start) {nil}
         @occurrence.stub(:event_end) {DateTime.civil(2012, 02, 27, 17, 0)}
-        helper.occurrence_times(@occurrence).should eq("? - 5 pm")
+        helper.occurrence_times(@occurrence).should eq("? - 5p")
       end
 
       it "shows times when both start and end is available" do
         @occurrence.stub(:event_start) {DateTime.civil(2012, 02, 27, 9, 0)}
         @occurrence.stub(:event_end) {DateTime.civil(2012, 02, 27, 17, 0)}
-        helper.occurrence_times(@occurrence).should eq("9 am - 5 pm")
+        helper.occurrence_times(@occurrence).should eq("9a - 5p")
       end
 
       it "shows minutes when both start and end is available" do
         @occurrence.stub(:event_start) {DateTime.civil(2012, 02, 27, 9, 30)}
         @occurrence.stub(:event_end) {DateTime.civil(2012, 02, 27, 17, 45)}
-        helper.occurrence_times(@occurrence).should eq("9:30 am - 5:45 pm")
+        helper.occurrence_times(@occurrence).should eq("9:30a - 5:45p")
       end
     end
 
@@ -60,31 +60,31 @@ describe ApplicationHelper do
       it "shows two '?' when both start and end is not available" do
         @performance.stub(:performance_start) {nil}
         @performance.stub(:performance_end) {nil}
-        helper.performance_times(@performance).should eq("? - ?")
+        helper.performance_times(@performance).should eq("?")
       end
 
       it "shows '?' when start is not available" do
         @performance.stub(:performance_start) {DateTime.civil(2012, 02, 27, 9, 0)}
         @performance.stub(:performance_end) {nil}
-        helper.performance_times(@performance).should eq("9 am - ?")
+        helper.performance_times(@performance).should eq("9a")
       end
 
       it "shows '?' when end is not available" do
         @performance.stub(:performance_start) {nil}
         @performance.stub(:performance_end) {DateTime.civil(2012, 02, 27, 17, 0)}
-        helper.performance_times(@performance).should eq("? - 5 pm")
+        helper.performance_times(@performance).should eq("?")
       end
 
       it "shows times when both start and end is available" do
         @performance.stub(:performance_start) {DateTime.civil(2012, 02, 27, 9, 0)}
         @performance.stub(:performance_end) {DateTime.civil(2012, 02, 27, 17, 0)}
-        helper.performance_times(@performance).should eq("9 am - 5 pm")
+        helper.performance_times(@performance).should eq("9a")
       end
 
       it "shows minutes when both start and end is available" do
         @performance.stub(:performance_start) {DateTime.civil(2012, 02, 27, 9, 30)}
         @performance.stub(:performance_end) {DateTime.civil(2012, 02, 27, 17, 45)}
-        helper.performance_times(@performance).should eq("9:30 am - 5:45 pm")
+        helper.performance_times(@performance).should eq("9:30a")
       end
     end
 
@@ -99,11 +99,11 @@ describe ApplicationHelper do
       end
 
       it "shows date when only a date is given" do
-        helper.date_and_times(@date).should eq("Monday, February 27, 2012")
+        helper.date_and_times(@date).should eq("Mon, February 27")
       end
 
       it "shows date and time when only a date and occurrence is given" do
-        helper.date_and_times(@date, @occurrence).should eq("Monday, February 27, 2012 at 9 am - 5 pm")
+        helper.date_and_times(@date, @occurrence).should eq("Mon, February 27 at 9a - 5p")
       end
     end
     
@@ -141,18 +141,14 @@ describe ApplicationHelper do
     
     it "returns nothing if the object does not have a logo" do
       @thing.stub(:logo)
-      helper.logo_for(@thing, nil).should be_nil
+      helper.logo_for(@thing).should be_nil
     end
 
-    it "returns asset path of logo without size when size is not given" do
+    it "returns asset path of logo" do
       @thing.stub(:logo) {"my_logo.png"}
-      helper.logo_for(@thing, nil).should eq("/assets/my_logo.png")
+      helper.logo_for(@thing).should eq("/assets/my_logo.png")
     end
 
-    it "returns asset path without size when the size is something not known" do
-      @thing.stub(:logo) {"my_logo.png"}
-      helper.logo_for(@thing, :humongous).should eq("/assets/my_logo.png")
-    end
     
   end
     

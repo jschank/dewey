@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120204212558) do
+ActiveRecord::Schema.define(:version => 20120108200859) do
 
   create_table "acts", :force => true do |t|
     t.string   "name"
@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(:version => 20120204212558) do
     t.string   "name"
     t.text     "description"
     t.string   "logo"
+    t.boolean  "is_special",  :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "is_special",  :default => false
   end
 
   create_table "links", :force => true do |t|
@@ -54,9 +54,9 @@ ActiveRecord::Schema.define(:version => 20120204212558) do
     t.datetime "event_start"
     t.datetime "event_end"
     t.integer  "event_id"
+    t.float    "cover_charge"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.float    "cover_charge"
   end
 
   add_index "occurrences", ["event_id"], :name => "index_occurrences_on_event_id"
