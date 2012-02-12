@@ -139,16 +139,32 @@ describe ApplicationHelper do
       @thing = double("some model")
     end
     
-    it "returns nothing if the object does not have a logo" do
-      @thing.stub(:logo)
-      helper.logo_for(@thing).should be_nil
+    it "returns rails image if the object does not have a name" do
+      @thing.stub(:name)
+      helper.logo_for(@thing).should eq("/assets/rails.png")
     end
 
-    it "returns asset path of logo" do
-      @thing.stub(:logo) {"my_logo.png"}
-      helper.logo_for(@thing).should eq("/assets/my_logo.png")
+    it "returns asset path of global default logo if it cannot find image for class and name" do
+      @thing.stub(:name) {"my missing logo name"}
+      Dewey::Application.assets.stub(:find_asset).with("/assets/images/my-missing-logo-name-logo.png") {nil}
+      @thing.stub(:class) {Act}
+      Dewey::Application.assets.stub(:find_asset).with("/assets/images/act/act-logo.png") {nil}
+      Dewey::Application.assets.stub(:find_asset).with("/assets/images/rails.png") {Sprockets.StaticAsset.new()}
+      
+      helper.logo_for(@thing).should eq("/assets/my-cool-name-logo.png")
     end
 
+    it "returns asset path of default logo for class, if it cannot find image for name" do
+      @thing.stub(:name) {"my missing logo name"}
+      @thing.stub(:class) {Act}
+      
+      helper.logo_for(@thing).should eq("/assets/my-cool-name-logo.png")
+    end
+
+    it "returns asset path of logo if it exists" do
+      @thing.stub(:name) {"my cool name"}
+      helper.logo_for(@thing).should eq("/assets/my-cool-name-logo.png")
+    end
     
   end
     

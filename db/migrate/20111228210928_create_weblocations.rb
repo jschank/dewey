@@ -3,7 +3,6 @@ class CreateWeblocations < ActiveRecord::Migration
     create_table :weblocations do |t|
       t.string :name
       t.string :tagline
-      t.string :icon
 
       t.timestamps
     end

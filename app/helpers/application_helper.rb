@@ -35,13 +35,23 @@ module ApplicationHelper
   end
   
   def make_link(link)
-    link_to image_tag(image_path(link.weblocation.icon), :class => "webAnchor", :alt => [link.weblocation.tagline, link.weblocation.name].join(' ')), link.url, :target => "_blank"
+    logo = logo_for(link.weblocation)
+    link_to image_tag(logo, :class => "webAnchor", :alt => [link.weblocation.tagline, link.weblocation.name].join(' ')), link.url, :target => "_blank"
   end
 
   def logo_for(thing)
-    filename = thing.try(:logo)
-    return unless filename
-    image_path(filename)    
+    name = thing.try(:name)
+    global_default_image = "rails.png"
+    return image_path(global_default_image) unless name
+    
+    class_name = thing.class.name.parameterize
+    logo_image =  "#{class_name}/#{name.parameterize}-logo.png"
+    return image_path(logo_image) if Dewey::Application.assets.find_asset(logo_image)
+    
+    default_for_class_image = "#{class_name}/#{class_name}-logo.png"
+    return image_path(default_for_class_image) if Dewey::Application.assets.find_asset(default_for_class_image)
+    
+    return image_path(global_default_image)
   end
   
   def sortable_name(name)

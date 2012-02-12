@@ -12,8 +12,6 @@ class CreateVenues < ActiveRecord::Migration
 
       t.string :phone
 
-      t.string :logo
-
       t.timestamps
     end
   end

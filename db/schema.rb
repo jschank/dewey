@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(:version => 20120108200859) do
     t.string   "name"
     t.text     "description"
     t.string   "hometown"
-    t.string   "logo"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "formerly"
@@ -26,7 +25,6 @@ ActiveRecord::Schema.define(:version => 20120108200859) do
   create_table "events", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "logo"
     t.boolean  "is_special",  :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -85,7 +83,6 @@ ActiveRecord::Schema.define(:version => 20120108200859) do
     t.string   "state"
     t.string   "zip"
     t.string   "phone"
-    t.string   "logo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

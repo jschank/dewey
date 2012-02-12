@@ -4,7 +4,6 @@ class CreateActs < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.string :hometown
-      t.string :logo
 
       t.timestamps
     end
