@@ -1,4 +1,4 @@
-Meeting: 1/21
+Next Meeting:
 	* Add "related events" using a [self-join association](http://edgeguides.rubyonrails.org/association_basics.html#self-joins)
 	* Add related acts to the acts table
 
@@ -11,10 +11,6 @@ Later:
 Issues:
 
 Main Page:
-
-	Logos: Generate the logo name from the Act/event/venue name. Instead of hard coding it in the database. Then we can drop the logo column.
-	The logo would be <name>-logo.png, and there is some Rails text helper to convert spaces to dashes. If the logo is not found, we should use the default logo. 
-	Or the default logo for the class.
 
 	Find out how we can access or use location services on the iPhone.
 
@@ -51,3 +47,6 @@ DONE
 	* Remove space between time and am or pm and remove m from am and pm so it displays as a or p.
 	* truncation is working If we can't get truncation to work on long lines (...), can we get them to wrap?
 	* This could be an issue on all show pages.  We need a character limit to the description area.  When the limit is reached it will cut off the description with a … and then have a link that says show more.  Clicking the show more link expands the description area and shows the entire description which now ends with a show less link that would close the description back up and restore the default state.
+	* Logos: Generate the logo name from the Act/event/venue name. Instead of hard coding it in the database. Then we can drop the logo column.
+	  The logo would be <name>-logo.png, and there is some Rails text helper to convert spaces to dashes. If the logo is not found, we should use the default logo. 
+	  Or the default logo for the class.

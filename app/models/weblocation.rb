@@ -1,5 +1,5 @@
 class Weblocation < ActiveRecord::Base
-  validates :name, :tagline, :icon, :presence => true
+  validates :name, :presence => true
   
   belongs_to :link
 end

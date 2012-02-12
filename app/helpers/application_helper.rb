@@ -36,12 +36,12 @@ module ApplicationHelper
   
   def make_link(link)
     logo = logo_for(link.weblocation)
-    link_to image_tag(logo, :class => "webAnchor", :alt => [link.weblocation.tagline, link.weblocation.name].join(' ')), link.url, :target => "_blank"
+    link_to image_tag(logo, :class => "webAnchor", :alt => ["visit us at", link.weblocation.name].join(' ')), link.url, :target => "_blank"
   end
 
   def logo_for(thing)
     name = thing.try(:name)
-    global_default_image = "rails.png"
+    global_default_image = "default-logo.png"
     return image_path(global_default_image) unless name
     
     class_name = thing.class.name.parameterize

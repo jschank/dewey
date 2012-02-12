@@ -89,8 +89,6 @@ ActiveRecord::Schema.define(:version => 20120108200859) do
 
   create_table "weblocations", :force => true do |t|
     t.string   "name"
-    t.string   "tagline"
-    t.string   "icon"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

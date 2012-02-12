@@ -6,6 +6,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jTruncate
 //= require jquery-expander
 //= require_tree .

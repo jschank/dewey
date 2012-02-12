@@ -2,7 +2,7 @@ class ActsController < ApplicationController
   # GET /acts
   # GET /acts.json
   def index
-    @acts = Act.all
+    @acts = Act.all.sort { |a, b| a.name.downcase <=> b.name.downcase }
 
     respond_to do |format|
       format.html { render :layout => 'application_index' }# index.html.erb

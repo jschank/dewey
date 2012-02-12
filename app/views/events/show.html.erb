@@ -3,7 +3,9 @@
 <div class="specificHeader">
 <img src="<%= logo_for(@event) %>" class="large" />
 <h4><%= @event.name %></h4>
-<div class="description"><%= textilize(@event.description) %></div>
+<div class="description" id="event_collapsable">
+	<%= textilize(@event.description) %>
+</div>
 <% if @occurrence %>
 	<p class="dates"><%= date_and_times(@occurrence.event_start) %></p>	
 	<p class="times"><%= occurrence_times(@occurrence) %></p>	

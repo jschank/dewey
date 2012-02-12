@@ -14,12 +14,12 @@
 # When running rake db:seed, the runs are additive, so dupes will be created. do a rake db:reset instead
 
 # *** Actual Seeds ***
-facebook = Weblocation.create!({:name => "Facebook", :tagline => "join us on",     :icon => "facebook-logo.png"})
-itunes   = Weblocation.create!({:name => "iTunes",   :tagline => "look for us on", :icon => "itunes-logo.png"})
-myspace  = Weblocation.create!({:name => "MySpace",  :tagline => "join us on",     :icon => "myspace-logo.png"})
-twit     = Weblocation.create!({:name => "Twitter",  :tagline => "follow us on",   :icon => "twitter-logo.png"})
-www      = Weblocation.create!({:name => "Web",      :tagline => "join us on the", :icon => "web-logo.png"})
-youtube  = Weblocation.create!({:name => "YouTube",  :tagline => "watch us on",    :icon => "youtube-logo.png"})
+facebook = Weblocation.create!({:name => "Facebook"})
+itunes   = Weblocation.create!({:name => "iTunes"})
+myspace  = Weblocation.create!({:name => "MySpace"})
+twit     = Weblocation.create!({:name => "Twitter"})
+www      = Weblocation.create!({:name => "Web"})
+youtube  = Weblocation.create!({:name => "YouTube"})
 
 # ***Venues***
 
@@ -61,8 +61,20 @@ sbb = sb.locations.build({:name => "Deck Stage"})
 sb.links.build( {:weblocation => www, :url => "http://www.thestarboard.com/"})
 sb.save!
 
+jimmy_description = <<EOD
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ullamcorper odio vitae lacus volutpat condimentum. Suspendisse eleifend massa nec purus eleifend eu elementum sem hendrerit. Sed eget nisl purus, a rhoncus dui. Vestibulum accumsan tellus et lacus tincidunt non tempus odio accumsan. Vestibulum tortor risus, vestibulum in ultricies a, pharetra sit amet nunc. Suspendisse sollicitudin lobortis odio vel semper. In a sapien felis. Integer fringilla, lorem et bibendum ultrices, felis ligula suscipit orci, ac consectetur nisi libero quis purus. Maecenas porta rhoncus venenatis. Integer vel erat elit. Quisque vel tortor velit, ut rhoncus mi. Proin dictum commodo ullamcorper. Cras eu nisl metus. Nulla fringilla turpis erat, vitae hendrerit nisi.
+
+Fusce quis metus tellus. Nunc quis nisi id arcu sollicitudin ultricies. Vestibulum commodo dui eu velit lobortis nec gravida tellus ullamcorper. Nullam at dolor ipsum. Fusce viverra lectus nec ipsum sodales congue. Mauris dignissim velit vitae nulla varius nec ornare urna egestas. Aenean ac egestas sapien. Sed metus metus, ultrices in consequat nec, aliquam eu urna. Quisque libero ipsum, rutrum nec tempor nec, tincidunt quis elit. Donec ultrices convallis nisi.
+
+Donec porttitor lacus eu eros pharetra venenatis. Etiam pretium lectus et nunc fringilla eget auctor nisl ultrices. Cras malesuada urna at mauris porttitor at ultrices purus gravida. Cras ut dolor id massa egestas lobortis. Quisque nec justo id erat vestibulum tempus vel in orci. Nullam sed pharetra tortor. In hac habitasse platea dictumst. Nulla nisi velit, rutrum ac ultrices quis, egestas non neque. Curabitur sit amet dolor lectus. Maecenas fermentum purus id metus vehicula quis pharetra nulla sagittis. Donec tincidunt elit nec neque lacinia egestas. Integer rutrum nibh ac sem condimentum pulvinar dignissim erat suscipit. Sed porta sodales neque id imperdiet. Integer sagittis, tellus ac commodo eleifend, nibh massa euismod risus, et molestie massa justo nec enim. Sed rhoncus purus id magna pulvinar quis lacinia risus mollis.
+
+Suspendisse ac lorem sed magna eleifend placerat quis non lorem. Maecenas at risus tortor. Ut ultrices dolor elit, placerat fringilla eros. Praesent tellus libero, malesuada a iaculis nec, dictum eget elit. Nullam vel mauris vitae nulla tincidunt consequat. Suspendisse tempor leo a dui commodo accumsan. Mauris tempus iaculis risus, vel molestie diam suscipit a. Etiam convallis erat et elit posuere blandit. Aenean at sapien justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin eu arcu neque.
+
+Nullam pellentesque accumsan tellus, a ornare nulla ultricies congue. Praesent porta metus id arcu bibendum accumsan. Quisque turpis lorem, blandit eget aliquet dapibus, tristique id felis. Mauris nec scelerisque orci. Duis ullamcorper tempor mi suscipit mattis. Mauris congue, risus vel pellentesque sollicitudin, libero velit cursus tellus, eget laoreet augue mauris pellentesque velit. Aliquam et ipsum at ante semper tincidunt non vel metus
+EOD
+
 # Jimmy's Grille
-jg = Venue.create({:name => "Jimmy's Grille", :description => 'Outdoor Bar and Grille.', :address1 => 'Highway One and Bellevue Street', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-4600'})
+jg = Venue.create({:name => "Jimmy's Grille", :description => jimmy_description, :address1 => 'Highway One and Bellevue Street', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-4600'})
 jg1 = jg.locations.build()
 jg.links.build( {:weblocation => www, :url => "http://www.deweybeachlife.com/dning_jimmys_db.html"})
 jg.save!
@@ -261,7 +273,7 @@ gc_concert.links.build({:weblocation => www, :url => 'http://www.deweybeachfest.
 gc_concert.save!
 
 #Dewey Beach Music Conference
-dbmc = Event.create({:is_special => true})
+dbmc = Event.create({:is_special => true, :name => 'Dewey Beach Music Conference', :description => 'DBMC may not be the biggest music conference in the northeast, but it has garnered more than its fair share of critical acclaim, rave reviews and enthusiastic return participants. This is due in no small part to the consistent quality of talent and its location.'})
 dbmc.links.build({:weblocation => www, :url => 'http://www.deweybeachfest.com/dbmc/' })
 dbmc.save!
 

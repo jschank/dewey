@@ -4,7 +4,9 @@
     <div class="specificHeader">
 	<img src="<%= logo_for(@venue) %>" style="-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(226,226,226,0.2))); margin: 0 10px 50px 0; float: left;" />
     <h4><%= @venue.name %></h4>
-	<div class="description"><%= textilize(@venue.description) %></div>
+	<div class="description" id="venue_collapsable">
+		<%= textilize(@venue.description) %>
+	</div>
     <p><%= @venue.address1 %><br/>
 	<% if @venue.address2 %>	
 		<%= @venue.address2 %><br/>
