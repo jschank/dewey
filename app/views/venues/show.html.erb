@@ -3,6 +3,7 @@
 <% specific_area do %>
     <div class="specificHeader">
 	<img src="<%= logo_for(@venue) %>" style="-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(226,226,226,0.2))); margin: 0 10px 50px 0; float: left;" />
+<div class="infoShow">
     <h4><%= @venue.name %></h4>
 	<div class="description" id="venue_collapsable">
 		<%= textilize(@venue.description) %>
@@ -13,6 +14,7 @@
 	<% end %>
     <%= @venue.city %>, <%= @venue.state %>  <%= @venue.zip %></p>
     <p>Phone: <%= @venue.phone %></p>
+</div>
 	<p class="visit">Visit us:</p>
 	<% @venue.links.each do |link| %>
 		<%= make_link(link) %>

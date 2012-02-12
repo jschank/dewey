@@ -19,6 +19,8 @@ Main Page:
 Event Show Page Issues:
 
 	We want special events(only) to include the venue and location for each performance in the performance list.
+	
+	Venues should be listed in alpha order when there is more than one venue.
 
 Act Show page Issues:
 

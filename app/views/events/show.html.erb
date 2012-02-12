@@ -2,6 +2,7 @@
 <% specific_area do %>
 <div class="specificHeader">
 <img src="<%= logo_for(@event) %>" class="large" />
+<div class="infoShow">
 <h4><%= @event.name %></h4>
 <div class="description" id="event_collapsable">
 	<%= textilize(@event.description) %>
@@ -11,6 +12,7 @@
 	<p class="times"><%= occurrence_times(@occurrence) %></p>	
 	<%= display_cover_charge(@occurrence) %>
 <% end %>
+</div>
 <p class="visit">Visit us:</p>
 <% @event.links.each do |link| %>
 	<%= make_link(link) %>
