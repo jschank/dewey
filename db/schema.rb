@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(:version => 20120108200859) do
     t.string   "name"
     t.text     "description"
     t.string   "hometown"
+    t.string   "formerly"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "formerly"
   end
 
   create_table "events", :force => true do |t|
