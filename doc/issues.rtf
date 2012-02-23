@@ -1,0 +1,36 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf320
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs24 \cf0 Occurrence Issues
+\b0 \
+\
+If we remove the start and end times from the occurrence table the follow fields will remain:\
+event_id\
+cover_charge\
+\
+Issues with occurrence table if we remove start and end times:\
+An occurrence is nothing but a scheduled event, so if the scheduling goes somewhere else do we really need the occurrence table? I still would like to add a table the had additional info specific to an event occurrence, but my guess would be that it could connect via the scheduler. The only thing left is the cover charge and the could be added to the performance table.  if we had multiple acts we'd have multiple entries for the cover charge, but we could display just the first.  \
+\
+Or we could keep the occurrence table with cover charge which could still help us with special events.  Here's how:\
+Thinking from the perspective of the iPad timeline view for a special event (multiple venues over multiple days) the problem I see for how we do things now is that event starts say on Thursday night and ends on say Sunday at 1am then it looks like one continuous event instead of what it needs to look like on the bar chart, three events over three days.  So we create 1 occurrence, but schedule 3 start and end times for that occurrence.  Then the candlestick chart would display this way: Venue Name, opening time (doors) with a candlestick of a color to closing time, event start with a candlestick of a color to the event end time for the day, and then colored dots for when each performance starts.\
+\
+
+\b Venue Issues
+\b0 \
+\
+We need to figure out operating hours for the venues so that it will display properly on the iPad timeline view, but be flexible enough for venues that aren't open unless there is an act.  Should this be a table separate from the scheduler table or part of the scheduler?\
+\
+
+\b Performances Issues
+\b0 \
+\
+If we remove the start and end times for a scheduler, then performances would be nothing but a join table with the added field of priority for sorting the act order.  \
+\
+Is there a way for events with a single performance to drop the event and occurrence and let the performance stand alone as if it's an event?  Say no occurrence id in the performance then display performance as event occurrence.  What if there is an event with no act?  Can we just list the event name and times and nothing else?\
+\
+\
+\
+}
