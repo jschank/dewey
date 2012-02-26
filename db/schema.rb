@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120108200859) do
+ActiveRecord::Schema.define(:version => 20120225222031) do
 
   create_table "acts", :force => true do |t|
     t.string   "name"
@@ -48,31 +48,16 @@ ActiveRecord::Schema.define(:version => 20120108200859) do
 
   add_index "locations", ["venue_id"], :name => "index_locations_on_venue_id"
 
-  create_table "occurrences", :force => true do |t|
-    t.datetime "event_start"
-    t.datetime "event_end"
-    t.integer  "event_id"
-    t.float    "cover_charge"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "occurrences", ["event_id"], :name => "index_occurrences_on_event_id"
-
-  create_table "performances", :force => true do |t|
-    t.integer  "act_id"
-    t.integer  "occurrence_id"
+  create_table "schedules", :force => true do |t|
+    t.integer  "schedulable_id"
+    t.string   "schedulable_type"
+    t.datetime "start"
+    t.datetime "end"
     t.integer  "location_id"
-    t.datetime "performance_start"
-    t.datetime "performance_end"
-    t.integer  "priority",          :default => 1
+    t.integer  "parent_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "performances", ["act_id"], :name => "index_performances_on_act_id"
-  add_index "performances", ["location_id"], :name => "index_performances_on_location_id"
-  add_index "performances", ["occurrence_id"], :name => "index_performances_on_occurrence_id"
 
   create_table "venues", :force => true do |t|
     t.string   "name"

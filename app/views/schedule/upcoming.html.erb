@@ -1,0 +1,55 @@
+<% upcoming_area do %>
+<% @schedule.group_by{|s| s.start.to_date}.sort.each do |start_date, parent_items_for_date| %>
+		<h2><%= date_and_times(start_date) %></h2>
+		<% parent_items_for_date.each do |p| %>
+
+			<%= link_to "http://www.apple.com", :class => "link_box" do %>
+			<img src="<%= logo_for(p.location.venue) %>" class="small" />
+				<div class="info">
+					<h4><%= p.schedulable.name %></h4>
+					<p class="times"><%= times(p) %></p>					
+					<% if p.child_schedules.count > 0 %>	
+						<% p.child_schedules.sort{|a, b| a.start <=> b.start}.each do |child| %>
+							<p><%= child.schedulable.name %></p>
+							<p class="times"><%= times(child) %></p>
+						<% end %>
+					<% end %>
+				</div>
+			<% end %>
+		
+		<% end %>
+	<% end %>
+<% end %>
+					
+<% if false %>
+			<% performances_for_occurrence.group_by {|p| p.venue}.each do |venue, performances_for_venue| %>
+				<% performances_for_venue.group_by { |p| p.location}.each do |location, performances_for_location| %>
+					<%= link_to current_event_path(occurrence.event, occurrence), :class => "link_box" do %>
+					<img src="<%= logo_for(venue) %>" class="small" />
+						<div class="info">
+						<h4><%= occurrence.event.name %></h4>
+						<% performances_for_location.sort{|a, b| a.performance_start <=> b.performance_start}.each_with_index do |performance, index| %>
+							<%if performance.event.is_special %>
+							<% if index == 0 %><h5><%= performance.location.name %></h5><% end %>
+								<p><%= performance.act.name %></p>
+								<p class="times"><%= performance_times(performance) %></p>							
+							<% else %>
+								<% if performance.priority > 0 %><p><%= performance.act.name %></p><% end %>
+							<% end %>
+						<% end %>
+						<% if occurrence.event.is_special == false %>
+							<p class="times"><%= occurrence_times(occurrence) %></p>
+						<% end %>
+						<%= display_cover_charge(occurrence) %>
+						</div>
+					<% end %>
+				<% end %>
+			<% end %>
+<%end %>
+
+
+<% admin_area do %>
+	<% if false %>
+		<%= link_to 'New Event', new_event_path %>
+	<% end %>
+<% end %>

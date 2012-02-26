@@ -71,6 +71,13 @@ module ApplicationHelper
     end_time   = (occurrence.event_end)   ? time_format(occurrence.event_end).chop : "?"
     "#{start_time} - #{end_time}".downcase
   end
+
+  def times(schedulable)
+    return "" unless schedulable
+    start_time = (schedulable.start) ? time_format(schedulable.start).chop : "?"
+    end_time   = (schedulable.end)   ? time_format(schedulable.end).chop : "?"
+    "#{start_time} - #{end_time}".downcase
+  end
   
   def performance_times(performance)
     return "" unless performance
