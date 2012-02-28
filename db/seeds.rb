@@ -208,7 +208,10 @@ tt = Event.create({:name => 'Taco Toss', :description => 'Slinging mexican food.
 tt.links.build({:weblocation => www, :url => 'http://www.deweybeachlife.com/'})
 tt.save!
 
-# ***Occurrences***
+
+
+
+# ***Parents***
 
 # Jam 1
 js1 = js.schedules.build({:location => bc1, :start => '2011-07-02T17:00:00+00:00', :end => '2011-07-03T01:00:00+00:00'})
@@ -234,35 +237,37 @@ js5.save!
 tt1 = tt.schedules.build({:location => lh1, :start => '2011-07-01T17:00:00+00:00', :end => '2011-07-01T21:00:00+00:00'})
 tt1.save!
 
-# ***Schedule***
+# DJ Smoky 1
+djs.schedules.build({:location => sb1, :start => '2011-07-01T21:00:00+00:00', :end => '2011-07-02T01:00:00+00:00'}).save!
+
+# DJ Smoky 2
+djs.schedules.build({:location => sb1, :start => '2011-07-08T21:00:00+00:00', :end => '2011-07-09T01:00:00+00:00'}).save!
+
+
+# Love Seed Moma Jump Concert
+lsmj1 = lsmj.schedules.build({:location => bc1, :start => '2011-07-02T21:00:00+00:00'}).save!
+
+# Mr. Greengenes Concert
+gg1 = gg.schedules.build({:location => bc1, :start => '2011-07-09T21:00:00+00:00'}).save!
+
+
+# ***Children***
 
 # Jam 1
 lsmj.schedules.build({:location => bc1, :start => '2011-07-02T17:00:00+00:00', :parent => js1 }).save!
 la.schedules.build({:location => bc1, :start => '2011-07-02T18:20:00+00:00', :parent => js1 }).save!
 ggg.schedules.build({:location => bc1, :start => '2011-07-02T19:40:00+00:00', :parent => js1 }).save!
-lsmj.schedules.build({:location => bc1, :start => '2011-07-02T21:00:00+00:00', :parent => js1 }).save!
-la.schedules.build({:location => bc1, :start => '2011-07-02T22:20:00+00:00', :parent => js1 }).save!
-lsmj.schedules.build({:location => bc1, :start => '2011-07-02T23:40:00+00:00', :parent => js1 }).save!
  
-# # Jam 2
+# Love Seed Moma Jump Concert
+la.schedules.build({:location => bc1, :start => '2011-07-02T22:20:00+00:00', :parent => lsmj1 }).save!
+lsmj.schedules.build({:location => bc1, :start => '2011-07-02T23:40:00+00:00', :parent => lsmj1 }).save!
+
+# Jam 2
 gg.schedules.build({:location => bc1, :start => '2011-07-09T17:00:00+00:00', :parent => js2 }).save!
 bs.schedules.build({:location => bc1, :start => '2011-07-09T18:20:00+00:00', :parent => js2 }).save!
 sd.schedules.build({:location => bc1, :start => '2011-07-09T19:40:00+00:00', :parent => js2 }).save!
-gg.schedules.build({:location => bc1, :start => '2011-07-09T21:00:00+00:00', :parent => js2 }).save!
-bs.schedules.build({:location => bc1, :start => '2011-07-09T22:20:00+00:00', :parent => js2 }).save!
-gg.schedules.build({:location => bc1, :start => '2011-07-09T23:40:00+00:00', :parent => js2 }).save!
 
-# DJ Smoky 1
-djs.schedules.build({:location => sb1, :start => '2011-07-01T21:00:00+00:00', :end => '2011-07-02T01:00:00+00:00'}).save!
-
-# # DJ Smoky 2
-djs.schedules.build({:location => sb1, :start => '2011-07-08T21:00:00+00:00', :end => '2011-07-09T01:00:00+00:00'}).save!
-
-# bc.schedules.build({:start => })
-
-
-
-
-
-
+# Mr. Greengenes Concert
+bs.schedules.build({:location => bc1, :start => '2011-07-09T22:20:00+00:00', :parent => gg1 }).save!
+gg.schedules.build({:location => bc1, :start => '2011-07-09T23:40:00+00:00', :parent => gg1 }).save!
 
