@@ -32,7 +32,7 @@ Venue Show Page Issues:
 
 What if:
 
-	What if we had a concept of scheduleable, and acts were schedulable. As are other things like drink specials.
+	What if we had a concept of schedulable, and acts were schedulable. As are other things like drink specials.
 	The schedulable table would have the start and stop times, and it would have a link to a location, and an event
 
 	Events become just place holders for names and descriptions.

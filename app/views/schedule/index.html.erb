@@ -8,8 +8,8 @@
 				<div class="info">
 					<h4><%= p.schedulable.name %></h4>
 					<p class="times"><%= times(p) %></p>					
-					<% if p.child_schedules.count > 0 %>	
-						<% p.child_schedules.sort{|a, b| a.start <=> b.start}.each do |child| %>
+					<% if p.children.count > 0 %>	
+					<% p.children.sort{|a, b| a.start <=> b.start}.each do |child| %>
 							<p><%= child.schedulable.name %></p>
 							<p class="times"><%= times(child) %></p>
 						<% end %>

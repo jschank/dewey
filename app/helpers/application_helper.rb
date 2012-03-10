@@ -65,33 +65,25 @@ module ApplicationHelper
     (datetime.min > 0) ? datetime.to_s(:reduced) : datetime.to_s(:hour_only)
   end
 
-  def occurrence_times(occurrence)
-    return "" unless occurrence
-    start_time = (occurrence.event_start) ? time_format(occurrence.event_start).chop : "?"
-    end_time   = (occurrence.event_end)   ? time_format(occurrence.event_end).chop : "?"
-    "#{start_time} - #{end_time}".downcase
+  def date_and_times(date)
+    date.strftime("%a, %B %-d")
   end
 
   def times(schedulable)
     return "" unless schedulable
-    start_time = (schedulable.start) ? time_format(schedulable.start).chop : "?"
-    end_time   = (schedulable.end)   ? time_format(schedulable.end).chop : "?"
-    "#{start_time} - #{end_time}".downcase
+    times = []
+    times << time_format(schedulable.start).chop if schedulable.start
+    times << time_format(schedulable.end).chop if schedulable.end
+    times.join(" - ").downcase
   end
   
   def performance_times(performance)
     return "" unless performance
-    start_time = (performance.performance_start) ? time_format(performance.performance_start).chop : "?"
+    start_time = (performance.performance_start) ? time_format(performance.performance_start).chop : ""
     # end_time   = (performance.performance_end)   ? time_format(performance.performance_end) : "?"
     # "#{start_time.chop} - #{end_time.chop}".downcase
     "#{start_time}".downcase
   end
   
-  def date_and_times(date, occurrence = nil)
-    str = ""
-    str += date.strftime("%a, %B %-d")
-    str += " at #{occurrence_times(occurrence)}" if occurrence
-    str
-  end
 
 end

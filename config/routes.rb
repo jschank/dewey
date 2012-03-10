@@ -1,6 +1,6 @@
 Dewey::Application.routes.draw do
 
-  get "schedule/upcoming"
+  get "schedule/index"
 
   resources :acts
 
@@ -8,8 +8,6 @@ Dewey::Application.routes.draw do
 
   resources :venues
   
-  match 'events/:id/:occurrence_id' => 'events#show', :as => :current_event
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -57,7 +55,7 @@ Dewey::Application.routes.draw do
   #     resources :products
   #   end
 
-  root :to => 'schedule#upcoming'
+  root :to => 'schedule#index'
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
