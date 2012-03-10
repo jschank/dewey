@@ -6,6 +6,7 @@ class CreateSchedules < ActiveRecord::Migration
       t.datetime :start
       t.datetime :end
       t.references :location
+      t.integer :parent_id
 
       t.timestamps
     end
