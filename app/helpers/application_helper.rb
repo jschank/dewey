@@ -76,6 +76,14 @@ module ApplicationHelper
     times << time_format(schedulable.end).chop if schedulable.end
     times.join(" - ").downcase
   end
+
+  def time_list(schedulables)
+    return "" unless schedulables
+    times = []
+    times << time_format(schedulable.start).chop if schedulable.start
+    times << time_format(schedulable.end).chop if schedulable.end
+    times.join(" - ").downcase
+  end
   
   def performance_times(performance)
     return "" unless performance

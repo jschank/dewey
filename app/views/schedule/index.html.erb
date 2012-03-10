@@ -7,9 +7,9 @@
 			<img src="<%= logo_for(p.location.venue) %>" class="small" />
 				<div class="info">
 					<h4><%= p.schedulable.name %></h4>
-					<p class="times"><%= times(p) %></p>					
-					<% if p.children.count > 0 %>	
-					<% p.children.sort{|a, b| a.start <=> b.start}.each do |child| %>
+					<p class="times"><%= time_list(p.to_ary + Schedule.children_that_are_same_as(p)) %></p>					
+					<% if Schedule.children_that_are_not_same_as(p).count > 0 %>	
+					<% Schedule.children_that_are_not_same_as(p).sort{|a, b| a.start <=> b.start}.each do |child| %>
 							<p><%= child.schedulable.name %></p>
 							<p class="times"><%= times(child) %></p>
 						<% end %>
