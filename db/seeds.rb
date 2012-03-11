@@ -124,6 +124,26 @@ bs = Act.create({:name => 'Burnt Sienna', :description => 'Coverband from Philad
 bs.links.build({:weblocation => www, :url => 'http://www.burntsiennaband.com/'})
 bs.save!
 
+dsb_description = <<EOD
+There is no question of Doug Segree's genuine enthusiasm and love for making music. A talented musician out of Annapolis, MD, he speaks to his audience through acoustic guitars and spirited vocals. People are drawn to the melodic nature of his music - great songs about life, sung with conviction and performed with true passion. 
+
+He began his music career as a regular performer at local college bars in and around Gainesville, Florida while receiving his MBA at the University of Florida in 1994. The world of business took a backseat as he began fulfilling his love for performing and entertaining that has taken him to stages throughout the country. 
+
+Doug has been a mainstay performer in the Mid-Atlantic region over the last fifteen years. He and his band have been playing the fifth quarter club level parties at every Washington Redskin home game at Fed-Ex Field, along with performances at Washington Wizards games at The Verizon Center. He has been a part of a "Dewey Tradition" for the past fourteen summers, playing “Suicide Sunday” afternoon deck parties at the world famous Starboard in Dewey Beach, DE. 
+
+Performing solo or with his band of many sizes, Doug Segree specializes in private events and has performed at functions throughout the country –playing parties of all sizes ranging from thousands of guests to small backyard gatherings, corporate events, weddings, birthday’s, graduations, grand openings, auctions – you name it and they’ve done it! 
+
+Doug has also successfully recorded and released four albums on the indie label, Kid Arnold Records and spent many years on the concert stage performing his own material. He has shared the stage with some amazing artists including Matchbox 20, Sister Hazel, Edwin McCain, Pat McGee Band, Mark Broussard, Derek Trucks, The Coral Reef Band, George Clinton and P-Funk, Dave Edmunds, Less Than Jake and Dave Mason of Traffic. 
+
+He has had his songs aired on major network television – ABC (Cougartown), Cinemax (various films), the DVD version of the WB network’s TV show "Felicity", and has been included on various CD compilations released nationwide.
+
+One notable career highlight was performing the National Anthem live, televised for millions on the NFL network at Fed-Ex Field for the Redskins/Bears December 2007 game. Doug contributes his many talents donating his time and services to important causes like the Summitt School, Friends Foundation, The Boys and Girls Club, Breast Cancer Foundation and the SPCA just to name a few. In addition to completing a new studio recording, he is also working on a children’s album.
+EOD
+
+dsb = Act.create({:name => 'Doug Segree Band', :description => dsb_description})
+dsb.links.build({:weblocation => www, :url => 'http://www.dougsegree.com/'})
+dsb.save!
+
 lsmj = Act.create({:name => 'Love Seed Mama Jump'})
 lsmj.links.build({:weblocation => www, :url => 'http://www.loveseed.com/'})
 lsmj.save!
@@ -232,16 +252,34 @@ zakSmithBand = Act.create({:name => 'Zak Smith Band', :hometown => 'New York, NY
 zakSmithBand.links.build({:weblocation => www, :url => 'http://www.zaksmithband.com/'})
 zakSmithBand.save!
 
+tw_description = <<EOD
+Total Whiteout doesn't just bring the party, they are the party. Playing an incredibly energetic set with selections ranging from Journey to The Backstreet Boys to LMFAO, Total Whiteout utilizes their versatility to keep their crowds energized from start to finish. Whether it be one of their high-tempo guitar/keyboard solos or one of their groovy dance beats, Eric, Pete, Chris, Kevin, and Isaiah use all of their available tools to put together a non-stop exciting show. With years of experience playing between the different members of the band but at an impressively young age, Total Whiteout is the perfect fit for almost any venue that's looking for a great time.
+EOD
+
+tw = Act.create({:name => 'Total Whiteout', :hometown => 'State College, PA', :description => tw_description})
+tw.links.build({:weblocation => facebook, :url => 'http://www.facebook.com/totalwhiteout'})
+tw.save!
 
 # DJs
 djs = Act.create({:name => 'SmokyTheWhore', :description => 'Smoky is the best DJ in Dewey Beach every summer, with that silky smooth voice and camera that takes amazing candid photos. Outside of Dewey, he will work any gig...weddings, memorials, Klan rallies disguised as weddings, etc! He will even wear a Redskins jersey to a gig even though he is a DIEHARD Steelers fan...his excuse "Dan Snyder writes the check, I wear his jersey!" He will play any type of music for the right price...Celine Dion may cost you a little more, but he will play it! ABBA? You betcha!!!! His "Man Card" has been pulled on multiple occassions, his "Black Card" was pulled when he played "Sweet Home Alabama"
-
 We love SmokyTheWhore!'})
 djs.links.build({:weblocation => www, :url => 'http://smokythedj.com/'})
 djs.save!
 
-djjj = Act.create({:name => 'DJ Jazzy Jeff', :description => 'Fresh Prince\'s Sidekick'})
-djjj.save!
+djjh_description = <<EOD
+A transplant from D.C., DJ John Hardy has been at The Starboard for 27 years. “I got a prison sentence imposing community service,” he explains, but many give assurances that John’s long hours behind the DJ booth have never been subject to conditions of solitary confinement. Even so, he says his favorite Starboard moments come at closing time. “I can’t wait to get home to my baby!”
+ John Hardy claims line dancing as his favorite sport, the American Legion as his favorite team and puts gumdrops on the pinnacle of his food pyramid. “Harold and Maude” gets top movie billing, while he awards the best actor and actress slots to Popeye and Marilyn Chambers. On Saturday mornings you might catch him watching Road Runner cartoons over a glass of grape juice, which he says is his favorite drink.
+ Known for traveling the country and bringing the hottest new music to The Starboard for decades, John Hardy’s all-time musical favorite is “Off to See the Wizard.” But his personal music selection doesn’t impede his ability to entertain The Starboard’s patrons. “They’re the most wonderful people in the whole wide world,” he says.
+EOD
+
+djjh = Act.create({:name => 'DJ John Hardy', :description => djjh_description})
+djjh.save!
+
+mhatl = Act.create({:name => 'Mike Hines & The Look', :description => ''})
+mhatl.save!
+
+e9 = Act.create({:name => 'E9', :description => ''})
+e9.save!
 
 
 
@@ -261,6 +299,21 @@ tt.save!
 scrr = Event.create({:name => "Rusty Rudder Saturday Night", :description => 'Saturday Night Concert at the Rudder.'})
 scrr.links.build({:weblocation => www, :url => 'http://www.deweybeachlife.com'})
 scrr.save!
+
+# Rudder's Opening
+ro = Event.create({:name => "Rusty Rudder Opening", :description => "St. Patty's Day & Dewey Beach Opening Weekend"})
+ro.links.build({:weblocation => www, :url => 'http://www.deweybeachlife.com'})
+ro.save!
+
+# Starboard Opening
+so_description = <<EOD
+The countdown has been on for weeks...the excitement is definitely building...it's time to get serious about the greatest weekend of the year...STARBOARD OPENING! 
+
+The parking lot will be TENTED IN as usual, making room to handle the crowds heading this way in celebration of The Starboard! I am quite positive you are all going to be extremely pleased with some of the changes made over our winter 'break'... while not exactly a break cause several of us have been here regularly making upgrades so The Starboard can continue to be the pace car of restaurant and bar business in Dewey Beach!
+EOD
+so = Event.create({:name => "Starboard Opening", :description => so_description})
+so.links.build({:weblocation => www, :url => 'http://www.thestarboard.com/'})
+so.save!
 
 # The Bangles
 tb_concert = Event.create({:name => 'The Bangles', :description => 'a night with the bangles'})
@@ -290,204 +343,253 @@ rotb.save!
 
 # ***Occurrences***
 
+# rudder opening
+ro1 = ro.occurrences.build({:event_start => '2012-03-16T21:00:00+00:00', :event_end => '2012-03-17T01:00:00+00:00'})
+ro1.save!
+
+ro2 = ro.occurrences.build({:event_start => '2012-03-17T21:00:00+00:00', :event_end => '2012-03-18T01:00:00+00:00'})
+ro2.save!
+
+
 # Jam 1
-js1 = js.occurrences.build({:event_start => '2011-07-02T17:00:00+00:00', :event_end => '2011-07-03T01:00:00+00:00'})
-js1.save!
+# js1 = js.occurrences.build({:event_start => '2011-07-02T17:00:00+00:00', :event_end => '2011-07-03T01:00:00+00:00'})
+# js1.save!
 
 # Jam 2
-js2 = js.occurrences.build({:event_start => '2011-07-09T17:00:00+00:00', :event_end => '2011-07-10T01:00:00+00:00'})
-js2.save!
+# js2 = js.occurrences.build({:event_start => '2011-07-09T17:00:00+00:00', :event_end => '2011-07-10T01:00:00+00:00'})
+# js2.save!
 
 # Jam 3
-js3 = js.occurrences.build({:event_start => '2011-07-16T17:00:00+00:00', :event_end => '2011-07-17T01:00:00+00:00'})
-js3.save!
+# js3 = js.occurrences.build({:event_start => '2011-07-16T17:00:00+00:00', :event_end => '2011-07-17T01:00:00+00:00'})
+# js3.save!
 
 # Jam 4
-js4 = js.occurrences.build({:event_start => '2011-07-23T17:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00'})
-js4.save!
+# js4 = js.occurrences.build({:event_start => '2011-07-23T17:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00'})
+# js4.save!
 
 # Jam 5
-js5 = js.occurrences.build({:event_start => '2011-07-30T17:00:00+00:00', :event_end => '2011-07-31T01:00:00+00:00'})
-js5.save!
+# js5 = js.occurrences.build({:event_start => '2011-07-30T17:00:00+00:00', :event_end => '2011-07-31T01:00:00+00:00'})
+# js5.save!
 
 # Taco Toss 1
-tt1 = tt.occurrences.build({:event_start => '2011-07-01T16:00:00+00:00', :event_end => '2011-07-01T21:00:00+00:00'})
-tt1.save!
+# tt1 = tt.occurrences.build({:event_start => '2011-07-01T16:00:00+00:00', :event_end => '2011-07-01T21:00:00+00:00'})
+# tt1.save!
 
 # Taco Toss 2
-tt2 = tt.occurrences.build({:event_start => '2011-07-08T16:00:00+00:00', :event_end => '2011-07-08T21:00:00+00:00'})
-tt2.save!
+# tt2 = tt.occurrences.build({:event_start => '2011-07-08T16:00:00+00:00', :event_end => '2011-07-08T21:00:00+00:00'})
+# tt2.save!
 
 # Taco Toss 3
-tt3 = tt.occurrences.build({:event_start => '2011-07-15T16:00:00+00:00', :event_end => '2011-07-15T21:00:00+00:00'})
-tt3.save!
+# tt3 = tt.occurrences.build({:event_start => '2011-07-15T16:00:00+00:00', :event_end => '2011-07-15T21:00:00+00:00'})
+# tt3.save!
 
 # Taco Toss 4
-tt4 = tt.occurrences.build({:event_start => '2011-07-22T16:00:00+00:00', :event_end => '2011-07-22T21:00:00+00:00'})
-tt4.save!
+# tt4 = tt.occurrences.build({:event_start => '2011-07-22T16:00:00+00:00', :event_end => '2011-07-22T21:00:00+00:00'})
+# tt4.save!
 
 # Taco Toss 5
-tt5 = tt.occurrences.build({:event_start => '2011-07-29T16:00:00+00:00', :event_end => '2011-07-29T21:00:00+00:00'})
-tt5.save!
+# tt5 = tt.occurrences.build({:event_start => '2011-07-29T16:00:00+00:00', :event_end => '2011-07-29T21:00:00+00:00'})
+# tt5.save!
 
 # Rusty Rudder Saturday Night Concert 1
-scrr1 = scrr.occurrences.build({:event_start => '2011-07-02T21:00:00+00:00', :event_end => '2011-07-03T01:00:00+00:00'})
-scrr1.save!
+# scrr1 = scrr.occurrences.build({:event_start => '2011-07-02T21:00:00+00:00', :event_end => '2011-07-03T01:00:00+00:00'})
+# scrr1.save!
 
 # Rusty Rudder Saturday Night Concert 2
-scrr2 = scrr.occurrences.build({:event_start => '2011-07-09T21:00:00+00:00', :event_end => '2011-07-10T01:00:00+00:00'})
-scrr2.save!
+# scrr2 = scrr.occurrences.build({:event_start => '2011-07-09T21:00:00+00:00', :event_end => '2011-07-10T01:00:00+00:00'})
+# scrr2.save!
 
 # Rusty Rudder Saturday Night Concert 3
-scrr3 = scrr.occurrences.build({:event_start => '2011-07-16T21:00:00+00:00', :event_end => '2011-07-17T01:00:00+00:00'})
-scrr3.save!
+# scrr3 = scrr.occurrences.build({:event_start => '2011-07-16T21:00:00+00:00', :event_end => '2011-07-17T01:00:00+00:00'})
+# scrr3.save!
 
 # Rusty Rudder Saturday Night Concert 4
-scrr4 = scrr.occurrences.build({:event_start => '2011-07-23T21:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00'})
-scrr4.save!
+# scrr4 = scrr.occurrences.build({:event_start => '2011-07-23T21:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00'})
+# scrr4.save!
 
 # Rusty Rudder Saturday Night Concert 5
-scrr5 = scrr.occurrences.build({:event_start => '2011-07-30T21:00:00+00:00', :event_end => '2011-07-31T01:00:00+00:00'})
-scrr5.save!
+# scrr5 = scrr.occurrences.build({:event_start => '2011-07-30T21:00:00+00:00', :event_end => '2011-07-31T01:00:00+00:00'})
+# scrr5.save!
 
 # The Bangles
-tb1 = tb_concert.occurrences.build({:cover_charge => '15.99', :event_start => '2011-07-05T20:00:00+00:00', :event_end => '2011-07-06T01:00:00+00:00'})
-tb1.save!
+# tb1 = tb_concert.occurrences.build({:cover_charge => '15.99', :event_start => '2011-07-05T20:00:00+00:00', :event_end => '2011-07-06T01:00:00+00:00'})
+# tb1.save!
 
 # George Clinton
-gc1 = gc_concert.occurrences.build({:cover_charge => '25.00', :event_start => '2011-07-23T20:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00'})
-gc1.save!
+# gc1 = gc_concert.occurrences.build({:cover_charge => '25.00', :event_start => '2011-07-23T20:00:00+00:00', :event_end => '2011-07-24T01:00:00+00:00'})
+# gc1.save!
 
 #Dewey Beach Music Conference 2011 Occurrence
-dbmc2011 = dbmc.occurrences.build({:event_start => '2011-09-22T21:40:00+00:00', :event_end => '2011-09-25T01:00:00+00:00'})
-dbmc2011.save!
+# dbmc2011 = dbmc.occurrences.build({:event_start => '2011-09-22T21:40:00+00:00', :event_end => '2011-09-25T01:00:00+00:00'})
+# dbmc2011.save!
+
+# Starboard Opening
+so1 = so.occurrences.build({:event_start => '2012-03-15T9:00:00+00:00', :event_end => '2012-03-16T01:00:00+00:00'})
+so1.save!
+
+so2 = so.occurrences.build({:event_start => '2012-03-16T9:00:00+00:00', :event_end => '2012-03-17T01:00:00+00:00'})
+so2.save!
+
+so3 = so.occurrences.build({:event_start => '2012-03-17T9:00:00+00:00', :event_end => '2012-03-18T01:00:00+00:00'})
+so3.save!
+
+so4 = so.occurrences.build({:event_start => '2012-03-18T9:00:00+00:00', :event_end => '2012-03-19T01:00:00+00:00'})
+so4.save!
 
 # DJ Smoky 1
-djse1 = djse.occurrences.build({:event_start => '2011-07-01T21:00:00+00:00', :event_end => '2011-07-02T01:00:00+00:00'})
-djse1.save!
+# djse1 = djse.occurrences.build({:event_start => '2011-07-01T21:00:00+00:00', :event_end => '2011-07-02T01:00:00+00:00'})
+# djse1.save!
 
 # DJ Smoky 2
-djse2 = djse.occurrences.build({:event_start => '2011-07-08T21:00:00+00:00', :event_end => '2011-07-09T01:00:00+00:00'})
-djse2.save!
+# djse2 = djse.occurrences.build({:event_start => '2011-07-08T21:00:00+00:00', :event_end => '2011-07-09T01:00:00+00:00'})
+# djse2.save!
 
 # DJ Smoky 3
-djse3 = djse.occurrences.build({:event_start => '2011-07-15T21:00:00+00:00', :event_end => '2011-07-16T01:00:00+00:00'})
-djse3.save!
+# djse3 = djse.occurrences.build({:event_start => '2011-07-15T21:00:00+00:00', :event_end => '2011-07-16T01:00:00+00:00'})
+# djse3.save!
 
 # DJ Smoky 4
-djse4 = djse.occurrences.build({:event_start => '2011-07-22T21:00:00+00:00', :event_end => '2011-07-23T01:00:00+00:00'})
-djse4.save!
+# djse4 = djse.occurrences.build({:event_start => '2011-07-22T21:00:00+00:00', :event_end => '2011-07-23T01:00:00+00:00'})
+# djse4.save!
 
 # DJ Smoky 5
-djse5 = djse.occurrences.build({:event_start => '2011-07-29T21:00:00+00:00', :event_end => '2011-07-30T01:00:00+00:00'})
-djse5.save!
+# djse5 = djse.occurrences.build({:event_start => '2011-07-29T21:00:00+00:00', :event_end => '2011-07-30T01:00:00+00:00'})
+# djse5.save!
 
 # Running of the Bull 2011
-rotb2011 = rotb.occurrences.build({:event_start => '2011-07-09T11:00:00+00:00', :event_end => '2011-07-09T15:00:00+00:00'})
-rotb2011.save!
+# rotb2011 = rotb.occurrences.build({:event_start => '2011-07-09T11:00:00+00:00', :event_end => '2011-07-09T15:00:00+00:00'})
+# rotb2011.save!
 
 
 
 
 # ***Performances***
 
-# Jam 1
-js1.performances.build({:location => bc1, :act => lsmj, :priority => 1, :performance_start => '2011-07-02T17:00:00+00:00', :performance_end => '2011-07-03T01:00:00+00:00'}).save!
-js1.performances.build({:location => bc1, :act => la,   :priority => 2, :performance_start => '2011-07-02T17:00:00+00:00', :performance_end => '2011-07-03T01:00:00+00:00'}).save!
-js1.performances.build({:location => bc1, :act => ggg,  :priority => 3, :performance_start => '2011-07-02T17:00:00+00:00', :performance_end => '2011-07-03T01:00:00+00:00'}).save!
-
-# Jam 2
-js2.performances.build({:location => bc1, :act => gg, :priority => 1, :performance_start => '2011-07-09T17:00:00+00:00', :performance_end => '2011-07-10T01:00:00+00:00'}).save!
-js2.performances.build({:location => bc1, :act => bs, :priority => 2, :performance_start => '2011-07-09T17:00:00+00:00', :performance_end => '2011-07-10T01:00:00+00:00'}).save!
-js2.performances.build({:location => bc1, :act => sd, :priority => 3, :performance_start => '2011-07-09T17:00:00+00:00', :performance_end => '2011-07-10T01:00:00+00:00'}).save!
-
-# Jam 3
-js3.performances.build({:location => bc1, :act => la,  :priority => 1, :performance_start => '2011-07-16T17:00:00+00:00', :performance_end => '2011-07-17T01:00:00+00:00'}).save!
-js3.performances.build({:location => bc1, :act => ek,  :priority => 2, :performance_start => '2011-07-16T17:00:00+00:00', :performance_end => '2011-07-17T01:00:00+00:00'}).save!
-js3.performances.build({:location => bc1, :act => t10, :priority => 3, :performance_start => '2011-07-16T17:00:00+00:00', :performance_end => '2011-07-17T01:00:00+00:00'}).save!
-
-# Jam 4
-js4.performances.build({:location => bc1, :act => _3am, :priority => 1, :performance_start => '2011-07-23T17:00:00+00:00', :performance_end => '2011-07-24T01:00:00+00:00'}).save!
-js4.performances.build({:location => bc1, :act => ls,   :priority => 2, :performance_start => '2011-07-23T17:00:00+00:00', :performance_end => '2011-07-24T01:00:00+00:00'}).save!
-js4.performances.build({:location => bc1, :act => la,   :priority => 3, :performance_start => '2011-07-23T17:00:00+00:00', :performance_end => '2011-07-24T01:00:00+00:00'}).save!
-
-# Jam 5
-js5.performances.build({:location => bc1, :act => kn,  :priority => 1, :performance_start => '2011-07-30T17:00:00+00:00', :performance_end => '2011-07-31T01:00:00+00:00'}).save!
-js5.performances.build({:location => bc1, :act => ggg, :priority => 2, :performance_start => '2011-07-30T17:00:00+00:00', :performance_end => '2011-07-31T01:00:00+00:00'}).save!
-js5.performances.build({:location => bc1, :act => la,  :priority => 3, :performance_start => '2011-07-30T17:00:00+00:00', :performance_end => '2011-07-31T01:00:00+00:00'}).save!
-
-# Taco Toss 1
-tt1.performances.build({:location => lh1, :act => djjj, :performance_start => '2011-07-01T16:00:00+00:00', :performance_end => '2011-07-01T21:00:00+00:00' }).save!
-
-# Taco Toss 2
-tt2.performances.build({:location => lh1, :act => djjj, :performance_start => '2011-07-08T16:00:00+00:00', :performance_end => '2011-07-08T21:00:00+00:00' }).save!
-
-# Taco Toss 3
-tt3.performances.build({:location => lh1, :act => djjj, :performance_start => '2011-07-15T16:00:00+00:00', :performance_end => '2011-07-15T21:00:00+00:00' }).save!
-
-# Taco Toss 4
-tt4.performances.build({:location => lh1, :act => djjj, :performance_start => '2011-07-22T16:00:00+00:00', :performance_end => '2011-07-22T21:00:00+00:00' }).save!
-
-# Taco Toss 5
-tt5.performances.build({:location => lh1, :act => djjj, :performance_start => '2011-07-29T16:00:00+00:00', :performance_end => '2011-07-29T21:00:00+00:00' }).save!
-
-
-# Rusty Rudder Saturday Night Concert 1
-scrr1.performances.build({:location => rr1, :act => kn, :performance_start => '2011-07-02T21:00:00+00:00', :performance_end => '2011-07-03T01:00:00+00:00' }).save!
-
-# Rusty Rudder Saturday Night Concert 2
-scrr2.performances.build({:location => rr1, :act => kn, :performance_start => '2011-07-09T21:00:00+00:00', :performance_end => '2011-07-10T01:00:00+00:00' }).save!
-
-# Rusty Rudder Saturday Night Concert 3
-scrr3.performances.build({:location => rr1, :act => gg, :performance_start => '2011-07-16T21:00:00+00:00', :performance_end => '2011-07-17T01:00:00+00:00' }).save!
-
-# Rusty Rudder Saturday Night Concert 4
-scrr4.performances.build({:location => rr1, :act => sd, :performance_start => '2011-07-23T21:00:00+00:00', :performance_end => '2011-07-24T01:00:00+00:00' }).save!
+# # Jam 1
+# js1.performances.build({:location => bc1, :act => lsmj, :priority => 1, :performance_start => '2011-07-02T17:00:00+00:00', :performance_end => '2011-07-03T01:00:00+00:00'}).save!
+# js1.performances.build({:location => bc1, :act => la,   :priority => 2, :performance_start => '2011-07-02T17:00:00+00:00', :performance_end => '2011-07-03T01:00:00+00:00'}).save!
+# js1.performances.build({:location => bc1, :act => ggg,  :priority => 3, :performance_start => '2011-07-02T17:00:00+00:00', :performance_end => '2011-07-03T01:00:00+00:00'}).save!
+# 
+# # Jam 2
+# js2.performances.build({:location => bc1, :act => gg, :priority => 1, :performance_start => '2011-07-09T17:00:00+00:00', :performance_end => '2011-07-10T01:00:00+00:00'}).save!
+# js2.performances.build({:location => bc1, :act => bs, :priority => 2, :performance_start => '2011-07-09T17:00:00+00:00', :performance_end => '2011-07-10T01:00:00+00:00'}).save!
+# js2.performances.build({:location => bc1, :act => sd, :priority => 3, :performance_start => '2011-07-09T17:00:00+00:00', :performance_end => '2011-07-10T01:00:00+00:00'}).save!
+# 
+# # Jam 3
+# js3.performances.build({:location => bc1, :act => la,  :priority => 1, :performance_start => '2011-07-16T17:00:00+00:00', :performance_end => '2011-07-17T01:00:00+00:00'}).save!
+# js3.performances.build({:location => bc1, :act => ek,  :priority => 2, :performance_start => '2011-07-16T17:00:00+00:00', :performance_end => '2011-07-17T01:00:00+00:00'}).save!
+# js3.performances.build({:location => bc1, :act => t10, :priority => 3, :performance_start => '2011-07-16T17:00:00+00:00', :performance_end => '2011-07-17T01:00:00+00:00'}).save!
+# 
+# # Jam 4
+# js4.performances.build({:location => bc1, :act => _3am, :priority => 1, :performance_start => '2011-07-23T17:00:00+00:00', :performance_end => '2011-07-24T01:00:00+00:00'}).save!
+# js4.performances.build({:location => bc1, :act => ls,   :priority => 2, :performance_start => '2011-07-23T17:00:00+00:00', :performance_end => '2011-07-24T01:00:00+00:00'}).save!
+# js4.performances.build({:location => bc1, :act => la,   :priority => 3, :performance_start => '2011-07-23T17:00:00+00:00', :performance_end => '2011-07-24T01:00:00+00:00'}).save!
+# 
+# # Jam 5
+# js5.performances.build({:location => bc1, :act => kn,  :priority => 1, :performance_start => '2011-07-30T17:00:00+00:00', :performance_end => '2011-07-31T01:00:00+00:00'}).save!
+# js5.performances.build({:location => bc1, :act => ggg, :priority => 2, :performance_start => '2011-07-30T17:00:00+00:00', :performance_end => '2011-07-31T01:00:00+00:00'}).save!
+# js5.performances.build({:location => bc1, :act => la,  :priority => 3, :performance_start => '2011-07-30T17:00:00+00:00', :performance_end => '2011-07-31T01:00:00+00:00'}).save!
+# 
+# # Taco Toss 1
+# tt1.performances.build({:location => lh1, :act => djjj, :performance_start => '2011-07-01T16:00:00+00:00', :performance_end => '2011-07-01T21:00:00+00:00' }).save!
+# 
+# # Taco Toss 2
+# tt2.performances.build({:location => lh1, :act => djjj, :performance_start => '2011-07-08T16:00:00+00:00', :performance_end => '2011-07-08T21:00:00+00:00' }).save!
+# 
+# # Taco Toss 3
+# tt3.performances.build({:location => lh1, :act => djjj, :performance_start => '2011-07-15T16:00:00+00:00', :performance_end => '2011-07-15T21:00:00+00:00' }).save!
+# 
+# # Taco Toss 4
+# tt4.performances.build({:location => lh1, :act => djjj, :performance_start => '2011-07-22T16:00:00+00:00', :performance_end => '2011-07-22T21:00:00+00:00' }).save!
+# 
+# # Taco Toss 5
+# tt5.performances.build({:location => lh1, :act => djjj, :performance_start => '2011-07-29T16:00:00+00:00', :performance_end => '2011-07-29T21:00:00+00:00' }).save!
+# 
+# 
+# # Rusty Rudder Saturday Night Concert 1
+# scrr1.performances.build({:location => rr1, :act => kn, :performance_start => '2011-07-02T21:00:00+00:00', :performance_end => '2011-07-03T01:00:00+00:00' }).save!
+# 
+# # Rusty Rudder Saturday Night Concert 2
+# scrr2.performances.build({:location => rr1, :act => kn, :performance_start => '2011-07-09T21:00:00+00:00', :performance_end => '2011-07-10T01:00:00+00:00' }).save!
+# 
+# # Rusty Rudder Saturday Night Concert 3
+# scrr3.performances.build({:location => rr1, :act => gg, :performance_start => '2011-07-16T21:00:00+00:00', :performance_end => '2011-07-17T01:00:00+00:00' }).save!
+# 
+# # Rusty Rudder Saturday Night Concert 4
+# scrr4.performances.build({:location => rr1, :act => sd, :performance_start => '2011-07-23T21:00:00+00:00', :performance_end => '2011-07-24T01:00:00+00:00' }).save!
+# 
+# # Rusty Rudder Saturday Night Concert 5
+# scrr5.performances.build({:location => rr1, :act => cr, :performance_start => '2011-07-30T21:00:00+00:00', :performance_end => '2011-07-31T01:00:00+00:00' }).save!
 
 # Rusty Rudder Saturday Night Concert 5
-scrr5.performances.build({:location => rr1, :act => cr, :performance_start => '2011-07-30T21:00:00+00:00', :performance_end => '2011-07-31T01:00:00+00:00' }).save!
+ro1.performances.build({:location => rr1, :act => mhatl, :performance_start => '2012-03-16T21:00:00+00:00', :performance_end => '2012-03-17T01:00:00+00:00' }).save!
+ro1.performances.build({:location => rr1, :act => e9, :performance_start => '2012-03-16T21:00:00+00:00', :performance_end => '2012-03-17T01:00:00+00:00' }).save!
 
-# The Bangles
-tb1.performances.build({:location => bc1, :act => tb, :priority => 0, :performance_start => '2011-07-05T22:00:00+00:00', :performance_end => '2011-07-06T01:00:00+00:00' }).save!
-tb1.performances.build({:location => bc1, :act => as, :priority => 1, :performance_start => '2011-07-05T21:00:00+00:00', :performance_end => '2011-07-05T21:40:00+00:00' }).save!
+ro2.performances.build({:location => rr1, :act => lsmj, :performance_start => '2012-03-17T21:00:00+00:00', :performance_end => '2012-03-18T01:00:00+00:00' }).save!
+ro2.performances.build({:location => rr1, :act => tw, :performance_start => '2012-03-17T21:00:00+00:00', :performance_end => '2012-03-18T01:00:00+00:00' }).save!
 
-# George Clinton
-gc1.performances.build({:location => bc1, :act => gc, :priority => 0, :performance_start => '2011-07-23T21:00:00+00:00', :performance_end => '2011-07-24T01:00:00+00:00' }).save!
+# 
+# # The Bangles
+# tb1.performances.build({:location => bc1, :act => tb, :priority => 0, :performance_start => '2011-07-05T22:00:00+00:00', :performance_end => '2011-07-06T01:00:00+00:00' }).save!
+# tb1.performances.build({:location => bc1, :act => as, :priority => 1, :performance_start => '2011-07-05T21:00:00+00:00', :performance_end => '2011-07-05T21:40:00+00:00' }).save!
+# 
+# # George Clinton
+# gc1.performances.build({:location => bc1, :act => gc, :priority => 0, :performance_start => '2011-07-23T21:00:00+00:00', :performance_end => '2011-07-24T01:00:00+00:00' }).save!
+# 
+# # Dewey Beach Music Conference
+# dbmc2011.performances.build({:location => ms1, :act => lauraMarie, :performance_start => '2011-09-23T21:30:00+00:00', :performance_end => '2011-09-23T22:00:00+00:00'}).save!
+# dbmc2011.performances.build({:location => wg1, :act => liat, :performance_start => '2011-09-24T21:00:00+00:00', :performance_end => '2011-09-24T22:00:00+00:00'}).save!
+# dbmc2011.performances.build({:location => jg1, :act => lizBethRose, :performance_start => '2011-09-24T20:00:00+00:00', :performance_end => '2011-09-24T11:00:00+00:00'}).save!
+# dbmc2011.performances.build({:location => gdbg1, :act => loriCitro, :performance_start => '2011-09-24T22:00:00+00:00', :performance_end => '2011-09-24T22:30:00+00:00'}).save!
+# dbmc2011.performances.build({:location => rrc, :act => loveViaDanceMachine, :performance_start => '2011-09-23T21:00:00+00:00', :performance_end => '2011-09-23T21:40:00+00:00'}).save!
+# dbmc2011.performances.build({:location => rrb, :act => lovebettie, :performance_start => '2011-09-24T22:20:00+00:00', :performance_end => '2011-09-24T23:00:00+00:00'}).save!
+# dbmc2011.performances.build({:location => rrd, :act => lowercaseblues, :performance_start => '2011-09-23T00:20:00+00:00', :performance_end => '2011-09-23T01:00:00+00:00'}).save!
+# dbmc2011.performances.build({:location => ms1, :act => luciar, :performance_start => '2011-09-23T21:00:00+00:00', :performance_end => '2011-09-23T21:30:00+00:00'}).save!
+# dbmc2011.performances.build({:location => bca, :act => luckyDub, :performance_start => '2011-09-24T23:00:00+00:00', :performance_end => '2011-09-24T23:40:00+00:00'}).save!
+# dbmc2011.performances.build({:location => bcb, :act => zakSmithBand, :performance_start => '2011-09-24T21:00:00+00:00', :performance_end => '2011-09-24T21:40:00+00:00'}).save!
+# dbmc2011.performances.build({:location => jg1, :act => liat, :performance_start => '2011-09-23T21:00:00+00:00', :performance_end => '2011-09-23T22:00:00+00:00'}).save!
+# dbmc2011.performances.build({:location => bcb, :act => gg, :performance_start => '2011-09-23T21:00:00+00:00', :performance_end => '2011-09-23T22:00:00+00:00'}).save!
+# 
 
-# Dewey Beach Music Conference
-dbmc2011.performances.build({:location => ms1, :act => lauraMarie, :performance_start => '2011-09-23T21:30:00+00:00', :performance_end => '2011-09-23T22:00:00+00:00'}).save!
-dbmc2011.performances.build({:location => wg1, :act => liat, :performance_start => '2011-09-24T21:00:00+00:00', :performance_end => '2011-09-24T22:00:00+00:00'}).save!
-dbmc2011.performances.build({:location => jg1, :act => lizBethRose, :performance_start => '2011-09-24T20:00:00+00:00', :performance_end => '2011-09-24T11:00:00+00:00'}).save!
-dbmc2011.performances.build({:location => gdbg1, :act => loriCitro, :performance_start => '2011-09-24T22:00:00+00:00', :performance_end => '2011-09-24T22:30:00+00:00'}).save!
-dbmc2011.performances.build({:location => rrc, :act => loveViaDanceMachine, :performance_start => '2011-09-23T21:00:00+00:00', :performance_end => '2011-09-23T21:40:00+00:00'}).save!
-dbmc2011.performances.build({:location => rrb, :act => lovebettie, :performance_start => '2011-09-24T22:20:00+00:00', :performance_end => '2011-09-24T23:00:00+00:00'}).save!
-dbmc2011.performances.build({:location => rrd, :act => lowercaseblues, :performance_start => '2011-09-23T00:20:00+00:00', :performance_end => '2011-09-23T01:00:00+00:00'}).save!
-dbmc2011.performances.build({:location => ms1, :act => luciar, :performance_start => '2011-09-23T21:00:00+00:00', :performance_end => '2011-09-23T21:30:00+00:00'}).save!
-dbmc2011.performances.build({:location => bca, :act => luckyDub, :performance_start => '2011-09-24T23:00:00+00:00', :performance_end => '2011-09-24T23:40:00+00:00'}).save!
-dbmc2011.performances.build({:location => bcb, :act => zakSmithBand, :performance_start => '2011-09-24T21:00:00+00:00', :performance_end => '2011-09-24T21:40:00+00:00'}).save!
-dbmc2011.performances.build({:location => jg1, :act => liat, :performance_start => '2011-09-23T21:00:00+00:00', :performance_end => '2011-09-23T22:00:00+00:00'}).save!
-dbmc2011.performances.build({:location => bcb, :act => gg, :performance_start => '2011-09-23T21:00:00+00:00', :performance_end => '2011-09-23T22:00:00+00:00'}).save!
+# Thursday - DJ John Hardy
+# Friday - DJ Smoky
+# Saturday - Doug Segree Band 2-6pm
+# DJ's John Hardy & Smoky
+# Sunday - Kristen and Joe Acoustic 2-6pm
+# DJ's John Hardy & Smoky
 
-# DJ Smoky 1
-djse1.performances.build({:location => sb1, :act => djs, :performance_start => '2011-07-01T21:00:00+00:00', :performance_end => '2011-07-02T01:00:00+00:00', :priority => 0 }).save!
+so1.performances.build({:location => sb1, :act => djjh, :performance_start => '2012-03-15T9:00:00+00:00', :performance_end => '2012-03-16T01:00:00+00:00', :priority => 1 }).save!
 
-# DJ Smoky 2
-djse2.performances.build({:location => sb1, :act => djs, :performance_start => '2011-07-08T21:00:00+00:00', :performance_end => '2011-07-09T01:00:00+00:00', :priority => 0 }).save!
+so2.performances.build({:location => sb1, :act => djs, :performance_start => '2012-03-16T9:00:00+00:00', :performance_end => '2012-03-17T01:00:00+00:00', :priority => 1 }).save!
 
-# DJ Smoky 3
-djse3.performances.build({:location => sb1, :act => djs, :performance_start => '2011-07-15T21:00:00+00:00', :performance_end => '2011-07-16T01:00:00+00:00', :priority => 0 }).save!
+so3.performances.build({:location => sb1, :act => dsb, :performance_start => '2012-03-17T14:00:00+00:00', :performance_end => '2012-03-17T18:00:00+00:00', :priority => 1 }).save!
+so3.performances.build({:location => sb1, :act => djjh, :performance_start => '2012-03-17T9:00:00+00:00', :performance_end => '2012-03-18T1:00:00+00:00', :priority => 1 }).save!
+so3.performances.build({:location => sb1, :act => djs, :performance_start => '2012-03-17T9:00:00+00:00', :performance_end => '2012-03-18T1:00:00+00:00', :priority => 1 }).save!
 
-# DJ Smoky 4
-djse4.performances.build({:location => sb1, :act => djs, :performance_start => '2011-07-22T21:00:00+00:00', :performance_end => '2011-07-23T01:00:00+00:00', :priority => 0 }).save!
+so4.performances.build({:location => sb1, :act => kj, :performance_start => '2012-03-18T14:00:00+00:00', :performance_end => '2012-03-18T18:00:00+00:00', :priority => 1 }).save!
+so4.performances.build({:location => sb1, :act => djjh, :performance_start => '2012-03-18T9:00:00+00:00', :performance_end => '2012-03-19T1:00:00+00:00', :priority => 1 }).save!
+so4.performances.build({:location => sb1, :act => djs, :performance_start => '2012-03-18T9:00:00+00:00', :performance_end => '2012-03-19T1:00:00+00:00', :priority => 1 }).save!
 
-# DJ Smoky 5
-djse5.performances.build({:location => sb1, :act => djs, :performance_start => '2011-07-29T21:00:00+00:00', :performance_end => '2011-07-30T01:00:00+00:00', :priority => 0 }).save!
-
-# DJ Smoky Running of the Bull 2011
-rotb2011.performances.build({:location => sb1, :act => djs, :performance_start => '2011-07-09T11:00:00+00:00', :performance_end => '2011-07-09T15:00:00+00:00', :priority => 2 }).save!
-
-# Laura Lea Running of the Bull 2011
-rotb2011.performances.build({:location => sb1, :act => tf, :performance_start => '2011-07-09T11:00:00+00:00', :performance_end => '2011-07-09T15:00:00+00:00', :priority => 1 }).save!
+# # DJ Smoky 1
+# djse1.performances.build({:location => sb1, :act => djs, :performance_start => '2011-07-01T21:00:00+00:00', :performance_end => '2011-07-02T01:00:00+00:00', :priority => 0 }).save!
+# 
+# # DJ Smoky 2
+# djse2.performances.build({:location => sb1, :act => djs, :performance_start => '2011-07-08T21:00:00+00:00', :performance_end => '2011-07-09T01:00:00+00:00', :priority => 0 }).save!
+# 
+# # DJ Smoky 3
+# djse3.performances.build({:location => sb1, :act => djs, :performance_start => '2011-07-15T21:00:00+00:00', :performance_end => '2011-07-16T01:00:00+00:00', :priority => 0 }).save!
+# 
+# # DJ Smoky 4
+# djse4.performances.build({:location => sb1, :act => djs, :performance_start => '2011-07-22T21:00:00+00:00', :performance_end => '2011-07-23T01:00:00+00:00', :priority => 0 }).save!
+# 
+# # DJ Smoky 5
+# djse5.performances.build({:location => sb1, :act => djs, :performance_start => '2011-07-29T21:00:00+00:00', :performance_end => '2011-07-30T01:00:00+00:00', :priority => 0 }).save!
+# 
+# # DJ Smoky Running of the Bull 2011
+# rotb2011.performances.build({:location => sb1, :act => djs, :performance_start => '2011-07-09T11:00:00+00:00', :performance_end => '2011-07-09T15:00:00+00:00', :priority => 2 }).save!
+# 
+# # Laura Lea Running of the Bull 2011
+# rotb2011.performances.build({:location => sb1, :act => tf, :performance_start => '2011-07-09T11:00:00+00:00', :performance_end => '2011-07-09T15:00:00+00:00', :priority => 1 }).save!
 
 
 
