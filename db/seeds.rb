@@ -44,7 +44,7 @@ lh.links.build( {:weblocation => www, :url => "http://www.ruddertowneusa.com/The
 lh.save!
 
 # Rusty Rudder
-rr = Venue.create({:name => 'Rusty Rudder', :description => 'The Rudder is now open daily.  Join us for our famous all u can eat Land and Sea Buffet served Friday and Saturdays at 4:30.We have live entertainment weekly.', :address1 => '113 Dickinson Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-3888' })
+rr = Venue.create({:name => 'Rusty Rudder', :description => 'The Rudder is now open daily.  Join us for our famous all u can eat Land and Sea Buffet served Friday and Saturdays at 4:30. We have live entertainment weekly.', :address1 => '113 Dickinson Street & The Bay', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-3888' })
 rr1 = rr.locations.build()
 rra = rr.locations.build({:name => "Stage A"})
 rrb = rr.locations.build({:name => "Stage B"})
@@ -54,7 +54,7 @@ rr.links.build( {:weblocation => www, :url => "http://www.deweybeachlife.com/dni
 rr.save!
 
 # Starboard
-sb = Venue.create({:name => 'The Starboard', :description => 'John thinks it is too crowded.', :address1 => '2009 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-4600'})
+sb = Venue.create({:name => 'The Starboard', :description => "The Heart of Dewey Beach Delaware and home of the world's greatest bloody mary bar.", :address1 => '2009 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-4600'})
 sb1 = sb.locations.build()
 sba = sb.locations.build({:name => "Main Stage"})
 sbb = sb.locations.build({:name => "Deck Stage"})
@@ -268,17 +268,31 @@ djs.save!
 
 djjh_description = <<EOD
 A transplant from D.C., DJ John Hardy has been at The Starboard for 27 years. “I got a prison sentence imposing community service,” he explains, but many give assurances that John’s long hours behind the DJ booth have never been subject to conditions of solitary confinement. Even so, he says his favorite Starboard moments come at closing time. “I can’t wait to get home to my baby!”
- John Hardy claims line dancing as his favorite sport, the American Legion as his favorite team and puts gumdrops on the pinnacle of his food pyramid. “Harold and Maude” gets top movie billing, while he awards the best actor and actress slots to Popeye and Marilyn Chambers. On Saturday mornings you might catch him watching Road Runner cartoons over a glass of grape juice, which he says is his favorite drink.
- Known for traveling the country and bringing the hottest new music to The Starboard for decades, John Hardy’s all-time musical favorite is “Off to See the Wizard.” But his personal music selection doesn’t impede his ability to entertain The Starboard’s patrons. “They’re the most wonderful people in the whole wide world,” he says.
+
+John Hardy claims line dancing as his favorite sport, the American Legion as his favorite team and puts gumdrops on the pinnacle of his food pyramid. “Harold and Maude” gets top movie billing, while he awards the best actor and actress slots to Popeye and Marilyn Chambers. On Saturday mornings you might catch him watching Road Runner cartoons over a glass of grape juice, which he says is his favorite drink.
+
+Known for traveling the country and bringing the hottest new music to The Starboard for decades, John Hardy’s all-time musical favorite is “Off to See the Wizard.” But his personal music selection doesn’t impede his ability to entertain The Starboard’s patrons. “They’re the most wonderful people in the whole wide world,” he says.
 EOD
 
 djjh = Act.create({:name => 'DJ John Hardy', :description => djjh_description})
 djjh.save!
 
-mhatl = Act.create({:name => 'Mike Hines & The Look', :description => ''})
+mhatl_description = <<EOD
+Mike Hines is a very experienced, suave talent with a distinctive tenor/baritone voice. His smooth yet forceful vocal stylings ignite a fire in the soul of the listener. The singer/songwriter's highly energized entertaining stage performance is second to none. The Delaware State News declares: "Any man that can musically persuade dance floor crowds to endure and generate significant body heat on an already 80 degree-plus evening qualifies as nothing less than impressive." Hines' songwriting uniquely blends the old with the new; creating a sound that is original and captivating. He writes from the heart about love, romance and relationships. His songs weave a common thread drawing listeners of all types, who can relate intimately with his songs of passion. Mike's soulful stylings reflect a strong sense of R&B history. His lyrics resonate with the influence of greats from the past, such as Smokey, Stevie, Michael and Prince as well as Babyface, Jam and Lewis. With charisma, dynamic vocal ability and awesome stage presence, this singer/songwriter soars above the crowd!
+EOD
+
+mhatl = Act.create({:name => 'Mike Hines & The Look', :description => mhatl_description})
+mhatl.links.build({:weblocation => www, :url => 'http://www.mikehines.com'})
 mhatl.save!
 
-e9 = Act.create({:name => 'E9', :description => ''})
+e9_description = <<EOD
+Gli E-ninth o "E9" nascono nel 2008, sono una band emergente abruzzese che propone brani "old school" improntati principalmente su uno stile Rock/Funk/Blues (Jimi Hendrix/Extreme..) con accenni anche al più recente "Progressive/Shred" accompagnati da un sound molto musicale e allo stesso tempo aggressivo. Il nome della band "E9" sta per Mi Nona, accordo che, secondo i membri della band, può risultare misterioso, triste e allo stesso tempo "molto Funk", nel quale viene racchiuso un vero e proprio genere musicale da quell'infinito genio di Jimi Hendrix. La band propone svariate cover "Hendrixiane" riadattate nello stile"E9" (i botta e risposta tra le 2 chitarre ne sono l'esempio più lampante...). La Band suona e riarrangia anche su cover di noti artisti, affiancandole a brani inediti prettamente strumentali.
+
+Google Translation: The E-ninth or "E9" born in 2008, is an emerging band featuring songs Abruzzo "old school" characterized primarily a style of Rock / Funk / Blues (Jimi Hendrix / Extreme ..) with references even to the most recent "Progressive / Shred" accompanied by a sound very musical and at the same time aggressive. The band name "E9" is for me Nona, an agreement that, according to members of the band, may be mysterious, and sad at the same time "very Funk", which is enclosed in a real musical genre from the infinite genius Jimi Hendrix. The band offers a variety of cover "Hendrixiane" repurposed style "E9" (the repartee between the 2 guitars are the best example ...). The band plays and a new arrangement also covers of famous artists and supporting them in new songs purely instrumental.
+EOD
+
+e9 = Act.create({:name => 'E9', :description => e9_description})
+e9.links.build({:weblocation => myspace, :url => 'http://www.myspace.com/e9band'})
 e9.save!
 
 
@@ -343,11 +357,25 @@ rotb.save!
 
 # ***Occurrences***
 
+# Starboard Opening
+so1 = so.occurrences.build({:event_start => '2012-03-15T9:00:00+00:00', :event_end => '2012-03-16T01:00:00+00:00'})
+so1.save!
+
+so2 = so.occurrences.build({:event_start => '2012-03-16T9:00:00+00:00', :event_end => '2012-03-17T01:00:00+00:00'})
+so2.save!
+
+so3 = so.occurrences.build({:event_start => '2012-03-17T9:00:00+00:00', :event_end => '2012-03-18T01:00:00+00:00'})
+so3.save!
+
+so4 = so.occurrences.build({:event_start => '2012-03-18T9:00:00+00:00', :event_end => '2012-03-19T01:00:00+00:00'})
+so4.save!
+
+
 # rudder opening
 ro1 = ro.occurrences.build({:event_start => '2012-03-16T21:00:00+00:00', :event_end => '2012-03-17T01:00:00+00:00'})
 ro1.save!
 
-ro2 = ro.occurrences.build({:event_start => '2012-03-17T21:00:00+00:00', :event_end => '2012-03-18T01:00:00+00:00'})
+ro2 = ro.occurrences.build({:event_start => '2012-03-17T12:00:00+00:00', :event_end => '2012-03-18T01:00:00+00:00'})
 ro2.save!
 
 
@@ -422,19 +450,6 @@ ro2.save!
 #Dewey Beach Music Conference 2011 Occurrence
 # dbmc2011 = dbmc.occurrences.build({:event_start => '2011-09-22T21:40:00+00:00', :event_end => '2011-09-25T01:00:00+00:00'})
 # dbmc2011.save!
-
-# Starboard Opening
-so1 = so.occurrences.build({:event_start => '2012-03-15T9:00:00+00:00', :event_end => '2012-03-16T01:00:00+00:00'})
-so1.save!
-
-so2 = so.occurrences.build({:event_start => '2012-03-16T9:00:00+00:00', :event_end => '2012-03-17T01:00:00+00:00'})
-so2.save!
-
-so3 = so.occurrences.build({:event_start => '2012-03-17T9:00:00+00:00', :event_end => '2012-03-18T01:00:00+00:00'})
-so3.save!
-
-so4 = so.occurrences.build({:event_start => '2012-03-18T9:00:00+00:00', :event_end => '2012-03-19T01:00:00+00:00'})
-so4.save!
 
 # DJ Smoky 1
 # djse1 = djse.occurrences.build({:event_start => '2011-07-01T21:00:00+00:00', :event_end => '2011-07-02T01:00:00+00:00'})
@@ -521,13 +536,6 @@ so4.save!
 # # Rusty Rudder Saturday Night Concert 5
 # scrr5.performances.build({:location => rr1, :act => cr, :performance_start => '2011-07-30T21:00:00+00:00', :performance_end => '2011-07-31T01:00:00+00:00' }).save!
 
-# Rusty Rudder Saturday Night Concert 5
-ro1.performances.build({:location => rr1, :act => mhatl, :performance_start => '2012-03-16T21:00:00+00:00', :performance_end => '2012-03-17T01:00:00+00:00' }).save!
-ro1.performances.build({:location => rr1, :act => e9, :performance_start => '2012-03-16T21:00:00+00:00', :performance_end => '2012-03-17T01:00:00+00:00' }).save!
-
-ro2.performances.build({:location => rr1, :act => lsmj, :performance_start => '2012-03-17T21:00:00+00:00', :performance_end => '2012-03-18T01:00:00+00:00' }).save!
-ro2.performances.build({:location => rr1, :act => tw, :performance_start => '2012-03-17T21:00:00+00:00', :performance_end => '2012-03-18T01:00:00+00:00' }).save!
-
 # 
 # # The Bangles
 # tb1.performances.build({:location => bc1, :act => tb, :priority => 0, :performance_start => '2011-07-05T22:00:00+00:00', :performance_end => '2011-07-06T01:00:00+00:00' }).save!
@@ -558,17 +566,26 @@ ro2.performances.build({:location => rr1, :act => tw, :performance_start => '201
 # Sunday - Kristen and Joe Acoustic 2-6pm
 # DJ's John Hardy & Smoky
 
-so1.performances.build({:location => sb1, :act => djjh, :performance_start => '2012-03-15T9:00:00+00:00', :performance_end => '2012-03-16T01:00:00+00:00', :priority => 1 }).save!
+so1.performances.build({:location => sb1, :act => djjh, :performance_start => '2012-03-15T9:00:00+00:00', :performance_end => '2012-03-16T01:00:00+00:00' }).save!
 
-so2.performances.build({:location => sb1, :act => djs, :performance_start => '2012-03-16T9:00:00+00:00', :performance_end => '2012-03-17T01:00:00+00:00', :priority => 1 }).save!
+so2.performances.build({:location => sb1, :act => djs, :performance_start => '2012-03-16T9:00:00+00:00', :performance_end => '2012-03-17T01:00:00+00:00' }).save!
 
-so3.performances.build({:location => sb1, :act => dsb, :performance_start => '2012-03-17T14:00:00+00:00', :performance_end => '2012-03-17T18:00:00+00:00', :priority => 1 }).save!
-so3.performances.build({:location => sb1, :act => djjh, :performance_start => '2012-03-17T9:00:00+00:00', :performance_end => '2012-03-18T1:00:00+00:00', :priority => 1 }).save!
-so3.performances.build({:location => sb1, :act => djs, :performance_start => '2012-03-17T9:00:00+00:00', :performance_end => '2012-03-18T1:00:00+00:00', :priority => 1 }).save!
+so3.performances.build({:location => sb1, :act => dsb, :performance_start => '2012-03-17T14:00:00+00:00', :performance_end => '2012-03-17T18:00:00+00:00' }).save!
+so3.performances.build({:location => sb1, :act => djjh, :performance_start => '2012-03-17T9:00:00+00:00', :performance_end => '2012-03-18T1:00:00+00:00' }).save!
+so3.performances.build({:location => sb1, :act => djs, :performance_start => '2012-03-17T9:00:00+00:00', :performance_end => '2012-03-18T1:00:00+00:00' }).save!
 
-so4.performances.build({:location => sb1, :act => kj, :performance_start => '2012-03-18T14:00:00+00:00', :performance_end => '2012-03-18T18:00:00+00:00', :priority => 1 }).save!
-so4.performances.build({:location => sb1, :act => djjh, :performance_start => '2012-03-18T9:00:00+00:00', :performance_end => '2012-03-19T1:00:00+00:00', :priority => 1 }).save!
-so4.performances.build({:location => sb1, :act => djs, :performance_start => '2012-03-18T9:00:00+00:00', :performance_end => '2012-03-19T1:00:00+00:00', :priority => 1 }).save!
+so4.performances.build({:location => sb1, :act => kj, :performance_start => '2012-03-18T14:00:00+00:00', :performance_end => '2012-03-18T18:00:00+00:00' }).save!
+so4.performances.build({:location => sb1, :act => djjh, :performance_start => '2012-03-18T9:00:00+00:00', :performance_end => '2012-03-19T1:00:00+00:00' }).save!
+so4.performances.build({:location => sb1, :act => djs, :performance_start => '2012-03-18T9:00:00+00:00', :performance_end => '2012-03-19T1:00:00+00:00' }).save!
+
+# Rusty Rudder Opening
+ro1.performances.build({:location => rr1, :act => mhatl, :performance_start => '2012-03-16T21:00:00+00:00', :performance_end => '2012-03-17T01:00:00+00:00' }).save!
+ro1.performances.build({:location => rr1, :act => e9, :performance_start => '2012-03-16T21:00:00+00:00', :performance_end => '2012-03-17T01:00:00+00:00' }).save!
+
+ro2.performances.build({:location => rr1, :act => lsmj, :performance_start => '2012-03-17T21:00:00+00:00', :performance_end => '2012-03-18T01:00:00+00:00' }).save!
+ro2.performances.build({:location => rr1, :act => tw, :performance_start => '2012-03-17T21:00:00+00:00', :performance_end => '2012-03-18T01:00:00+00:00' }).save!
+
+
 
 # # DJ Smoky 1
 # djse1.performances.build({:location => sb1, :act => djs, :performance_start => '2011-07-01T21:00:00+00:00', :performance_end => '2011-07-02T01:00:00+00:00', :priority => 0 }).save!
