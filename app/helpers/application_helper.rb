@@ -69,16 +69,18 @@ module ApplicationHelper
     date.strftime("%a, %B %-d")
   end
 
-  def times(schedulable)
-    return "" unless schedulable
-    times = []
-    times << time_format(schedulable.start).chop if schedulable.start
-    times << time_format(schedulable.end).chop if schedulable.end
-    times.join(" - ").downcase
-  end
-
   def time_list(schedulables)
     return "" unless schedulables
+    schedulables.map do |schedulable|
+      schedulable_times = []
+      schedulable_times << time_format(schedulable.start).chop if schedulable.start
+      schedulable_times << time_format(schedulable.end).chop if schedulable.end
+      schedulable_times.join(" - ").downcase
+    end.join(", ")
+  end
+
+  def times(schedulable)
+    return "" unless schedulable
     times = []
     times << time_format(schedulable.start).chop if schedulable.start
     times << time_format(schedulable.end).chop if schedulable.end

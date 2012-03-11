@@ -271,4 +271,5 @@ sd.schedules.build({:location => bc1, :start => '2011-07-09T19:40:00+00:00', :pa
 # Mr. Greengenes Concert
 bs.schedules.build({:location => bc1, :start => '2011-07-09T22:20:00+00:00', :parent => gg1 }).save!
 gg.schedules.build({:location => bc1, :start => '2011-07-09T23:40:00+00:00', :parent => gg1 }).save!
+bs.schedules.build({:location => bc1, :start => '2011-07-10T01:00:00+00:00', :parent => gg1 }).save!
 
