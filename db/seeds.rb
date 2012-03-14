@@ -277,6 +277,24 @@ EOD
 djjh = Act.create({:name => 'DJ John Hardy', :description => djjh_description})
 djjh.save!
 
+djab_description = <<EOD
+As a young music enthusiast, Aaron discovered his passion for DJ'ing while traveling across Europe. He experienced the atmosphere at world renowned Ibiza, Spain clubs such as Space, Pacha, Amnesia, Privilege, Eden and Cafe Mambo to name a few. He also studied briefly in Germany where he frequented the legendary Sven Vath Cocoon club as well as Berlin's underground scene.
+
+Aaron gathered an extensive repertoire of music and experience as a resident DJ at Penn State where he played to thousands of students during fraternity parties and events for Penn State. 
+
+He currently resides in the Lehigh Valley playing at venues which include The Firehouse, Sands Casino, and the Lehigh Valley Universities. He often makes appearances at Penn State University where he made his mark as one of the first electronic dance music DJ's in State College, PA.
+
+Always searching for the next big track; pop, hip-hop, house, electro, dance, mashup or dubstep, Aaron B will have the crowd telling their friends 3 words: It-went-off.
+EOD
+
+djab = Act.create({:name => 'DJ Aaron B', :description => djab_description})
+djab.links.build({:weblocation => www, :url => 'http://www.soundcloud.com/aaronbonner'})
+djab.links.build({:weblocation => twit, :url => 'http://www.twitter.com/aaronbonner'})
+djab.save!
+
+djss = Act.create({:name => 'Sweet Shop', :description => 'DJ & Drum Duo'})
+djss.save!
+
 mhatl_description = <<EOD
 Mike Hines is a very experienced, suave talent with a distinctive tenor/baritone voice. His smooth yet forceful vocal stylings ignite a fire in the soul of the listener. The singer/songwriter's highly energized entertaining stage performance is second to none. The Delaware State News declares: "Any man that can musically persuade dance floor crowds to endure and generate significant body heat on an already 80 degree-plus evening qualifies as nothing less than impressive." Hines' songwriting uniquely blends the old with the new; creating a sound that is original and captivating. He writes from the heart about love, romance and relationships. His songs weave a common thread drawing listeners of all types, who can relate intimately with his songs of passion. Mike's soulful stylings reflect a strong sense of R&B history. His lyrics resonate with the influence of greats from the past, such as Smokey, Stevie, Michael and Prince as well as Babyface, Jam and Lewis. With charisma, dynamic vocal ability and awesome stage presence, this singer/songwriter soars above the crowd!
 EOD
@@ -286,13 +304,22 @@ mhatl.links.build({:weblocation => www, :url => 'http://www.mikehines.com'})
 mhatl.save!
 
 e9_description = <<EOD
-Gli E-ninth o "E9" nascono nel 2008, sono una band emergente abruzzese che propone brani "old school" improntati principalmente su uno stile Rock/Funk/Blues (Jimi Hendrix/Extreme..) con accenni anche al più recente "Progressive/Shred" accompagnati da un sound molto musicale e allo stesso tempo aggressivo. Il nome della band "E9" sta per Mi Nona, accordo che, secondo i membri della band, può risultare misterioso, triste e allo stesso tempo "molto Funk", nel quale viene racchiuso un vero e proprio genere musicale da quell'infinito genio di Jimi Hendrix. La band propone svariate cover "Hendrixiane" riadattate nello stile"E9" (i botta e risposta tra le 2 chitarre ne sono l'esempio più lampante...). La Band suona e riarrangia anche su cover di noti artisti, affiancandole a brani inediti prettamente strumentali.
+In the fall of 1997 Chris Myers and Eric Eden were members of the Philadelphia based band Strange As Angels. They began to spend a lot of time writing original music and made the tough decision to leave one of the area’s most popular groups and venture out on their own. Their vision of a groove oriented band with an edge seemed appealing to Rick Green, of Midnight Sun Management (who had handled Strange As Angels) and with his support they began to assemble a band. Eric and Chris contacted Dave Simmons, formerly of Mike Hines and The Look (another Midnight Sun group that had recently disbanded) and soon began to record at a studio in which Dave was a partner. The studio was called KNAPPY*s BASSment Recording. With Knappy engineering the tracks and side musicians being brought in when needed a three-song demo was completed. As the studio relationship evolved Knappy began to play a major role in the writing and recording process and was asked to join the group.  The band then began the arduous task of finding a bass player with the right combination of feel and creativity that would add to the current lineup.  The player that fit the project perfectly was Jude of the Philadelphia based band “Fuzzy Bunny Slippers”.  Jude joined and the lineup was complete.
 
-Google Translation: The E-ninth or "E9" born in 2008, is an emerging band featuring songs Abruzzo "old school" characterized primarily a style of Rock / Funk / Blues (Jimi Hendrix / Extreme ..) with references even to the most recent "Progressive / Shred" accompanied by a sound very musical and at the same time aggressive. The band name "E9" is for me Nona, an agreement that, according to members of the band, may be mysterious, and sad at the same time "very Funk", which is enclosed in a real musical genre from the infinite genius Jimi Hendrix. The band offers a variety of cover "Hendrixiane" repurposed style "E9" (the repartee between the 2 guitars are the best example ...). The band plays and a new arrangement also covers of famous artists and supporting them in new songs purely instrumental.
+A meeting was set at Midnight Sun to decide the name of the group and after a lot of interesting suggestions Engine #9 seemed the obvious choice. The idea originated from a song that the band had been kicking around while rehearsing, “The Choice Is Yours” by a rap group called Black Sheep. This seemed to convey the groove/hip hop side of the band and the performance of the song with a rock edge exemplified what Engine #9 was attempting to do with their original music.
+
+In May of 1998 Engine #9 made their debut in Beach Haven, NJ and began playing in the tri-state area performing covers and original music. By the fall of 1998 Engine #9 was headlining shows as far north as Boston, MA and Vermont. Engine #9 continued to perform for the next two years up and down the North Eastern part of the country. In 2001 Engine #9 made the difficult decision to focus on writing and recording original music so they took a break from performing. A close friend, guitarist Billy Neill (Flip Like Wilson) was added after several fruitful recording sessions. Billy’s signature guitar sound gave E9 the edge that they were seeking. With Billy in the fold, Engine began the recording sessions for their debut release ” Enjoy The Buffet “.
+
+“Enjoy The Buffet” was released in the winter of 2003 and for the next three years the band performed and headlined original music festivals throughout the tri-state area. The band also began adding a few cover shows to keep them sharp. In February of 2006, the winds of change blew into camp E9 again and Eric Eden made the difficult decision to move on and the band split with Midnight Sun, their longtime management company. Change has always been kind to the core members of Engine #9 and it was no different this time around.  Jude, who had been on hiatus from E9 writing and recording with his band “Pretty Alien” rejoined in early 2007 and the band began working on their untitled second release.
+
+Engine #9 is currently booking cover shows and putting the finishing touches on the next original release.
 EOD
 
-e9 = Act.create({:name => 'E9', :description => e9_description})
-e9.links.build({:weblocation => myspace, :url => 'http://www.myspace.com/e9band'})
+e9 = Act.create({:name => 'Engine #9', :description => e9_description})
+e9.links.build({:weblocation => www, :url => 'http://www.engine9.com/'})
+e9.links.build({:weblocation => facebook, :url => 'http://www.facebook.com/engine9'})
+e9.links.build({:weblocation => myspace, :url => 'http://www.myspace.com/e9online'})
+e9.links.build({:weblocation => itunes, :url => 'http://itunes.apple.com/us/artist/engine-9/id286231014?uo=4'})
 e9.save!
 
 
@@ -315,7 +342,7 @@ scrr.links.build({:weblocation => www, :url => 'http://www.deweybeachlife.com'})
 scrr.save!
 
 # Rudder's Opening
-ro = Event.create({:name => "Rusty Rudder Opening", :description => "St. Patty's Day & Dewey Beach Opening Weekend"})
+ro = Event.create({:name => "Rusty Rudder Opening", :description => "St. Patty's Day & Dewey Beach Opening Weekend. No Cover and $1 Bud Light Platinum Bottles all weekend."})
 ro.links.build({:weblocation => www, :url => 'http://www.deweybeachlife.com'})
 ro.save!
 
@@ -582,8 +609,10 @@ so4.performances.build({:location => sb1, :act => djs, :performance_start => '20
 ro1.performances.build({:location => rr1, :act => mhatl, :performance_start => '2012-03-16T21:00:00+00:00', :performance_end => '2012-03-17T01:00:00+00:00' }).save!
 ro1.performances.build({:location => rr1, :act => e9, :performance_start => '2012-03-16T21:00:00+00:00', :performance_end => '2012-03-17T01:00:00+00:00' }).save!
 
-ro2.performances.build({:location => rr1, :act => lsmj, :performance_start => '2012-03-17T21:00:00+00:00', :performance_end => '2012-03-18T01:00:00+00:00' }).save!
+ro2.performances.build({:location => rr1, :act => djab, :performance_start => '2012-03-17T20:00:00+00:00', :performance_end => '2012-03-18T01:00:00+00:00' }).save!
+ro2.performances.build({:location => rr1, :act => djss, :performance_start => '2012-03-17T21:00:00+00:00', :performance_end => '2012-03-18T01:00:00+00:00' }).save!
 ro2.performances.build({:location => rr1, :act => tw, :performance_start => '2012-03-17T21:00:00+00:00', :performance_end => '2012-03-18T01:00:00+00:00' }).save!
+ro2.performances.build({:location => rr1, :act => lsmj, :performance_start => '2012-03-17T21:00:00+00:00', :performance_end => '2012-03-18T01:00:00+00:00' }).save!
 
 
 
