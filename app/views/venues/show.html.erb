@@ -3,18 +3,18 @@
 <% specific_area do %>
     <div class="specificHeader">
 	<img src="<%= logo_for(@venue) %>" style="-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(226,226,226,0.2))); margin: 0 10px 50px 0; float: left;" />
-<div class="infoShow">
-    <h4><%= @venue.name %></h4>
-	<div class="description" id="venue_collapsable">
-		<%= textilize(@venue.description) %>
+	<div class="infoShow">
+	    <h4><%= @venue.name %></h4>
+		<div class="description" id="venue_collapsable">
+			<%= textilize(@venue.description) %>
+		</div>		
+	    <p><%= @venue.address1 %><br/>
+		<% if @venue.address2 %>	
+			<%= @venue.address2 %><br/>
+		<% end %>
+	    <%= @venue.city %>, <%= @venue.state %>  <%= @venue.zip %></p>
+	    <p>Phone: <%= @venue.phone %></p>
 	</div>
-    <p><%= @venue.address1 %><br/>
-	<% if @venue.address2 %>	
-		<%= @venue.address2 %><br/>
-	<% end %>
-    <%= @venue.city %>, <%= @venue.state %>  <%= @venue.zip %></p>
-    <p>Phone: <%= @venue.phone %></p>
-</div>
 	<p class="visit">Visit us:</p>
 	<% @venue.links.each do |link| %>
 		<%= make_link(link) %>
@@ -23,25 +23,27 @@
 <% end %>
 
 <% upcoming_area do %>
-<h2>Upcoming Events at <%= @venue.name %></h2>
-	<% @future_occurrences.group_by{ |o| o.event_start}.each do |date, occurrences_for_date | %>
-		<% occurrences_for_date.each do |occurrence| %>
-		<%= link_to current_event_path(occurrence.event, occurrence), :class => "link_box" do %>
-			<img src="<%= logo_for(occurrence.event) %>" class="small" />
+
+<h2>Upcoming at <%= @venue.name %></h2>
+<% @future_events.group_by{ |e| e.start.to_date}.each do |date, events_for_date | %>
+	<h2><%= date_and_times(date) %></h2>
+	<% events_for_date.each do |event| %>
+		<%= link_to "http://www.apple.com", :class => "link_box" do %>
+			<img src="<%= logo_for(event) %>" class="small" />
 			<div class="info">
-			<h4><%= occurrence.event.name %></h4>
-			<% occurrence.performances.each do |performance| %>
-				<% if performance.priority > 0 %>
-				<p><%= performance.act.name %></p>
+				<h4><%= event.schedulable.name %></h4>
+				<p class="times"><%= time_list([event] + Schedule.children_that_are_same_as(event)) %></p>					
+				<% if event.agenda.count > 0 %>	
+					<% event.agenda.each do | schedulable_key, schedulable_items| %>
+						<p><%= Schedule.retrieve(*schedulable_key).name %></p>
+						<p class="times"><%= time_list(schedulable_items) %></p>
+					<% end %>
 				<% end %>
-			<% end %>
-			<p class="dates"><%= date.to_date.to_s(:long) %></p>
-			<p class="times"><%= occurrence_times(occurrence) %></p>
-			<%= display_cover_charge(occurrence) %>
 			</div>
 		<% end %>
-	    <% end %>
 	<% end %>
+<% end %>
+
 <% end %>
 
 <% admin_area do %>

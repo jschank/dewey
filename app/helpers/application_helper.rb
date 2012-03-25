@@ -38,7 +38,7 @@ module ApplicationHelper
     logo = logo_for(link.weblocation)
     link_to image_tag(logo, :class => "webAnchor", :alt => ["visit us at", link.weblocation.name].join(' ')), link.url, :target => "_blank"
   end
-
+  
   def logo_for(thing)
     name = thing.try(:name)
     global_default_image = "default-logo.png"
