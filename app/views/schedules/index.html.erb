@@ -2,7 +2,7 @@
 <% @schedule.group_by{|s| s.start.to_date}.sort.each do |start_date, parent_items_for_date| %>
 		<h2><%= date_and_times(start_date) %></h2>
 		<% parent_items_for_date.each do |p| %>
-			<%= link_to "http://www.apple.com", :class => "link_box" do %>
+		<%= link_to schedule_path(p), :class => "link_box" do %>
 			<img src="<%= logo_for(p.location.venue) %>" class="small" />
 				<div class="info">
 					<h4><%= p.schedulable.name %></h4>

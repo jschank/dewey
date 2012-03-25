@@ -2,33 +2,29 @@
 
 <% specific_area do %>
     <div class="specificHeader">
-	<img src="<%= logo_for(@venue) %>" style="-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(226,226,226,0.2))); margin: 0 10px 50px 0; float: left;" />
+		<img src="<%= logo_for(@schedule.schedulable) %>" style="-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(226,226,226,0.2))); margin: 0 10px 50px 0; float: left;" />
 	<div class="infoShow">
-	    <h4><%= @venue.name %></h4>
+	    <h4><%= @schedule.schedulable.name %></h4>
 		<div class="description" id="venue_collapsable">
-			<%= textilize(@venue.description) %>
+			<%= textilize(@schedule.schedulable.description) %>
 		</div>		
-	    <p><%= @venue.address1 %><br/>
-		<% if @venue.address2 %>	
-			<%= @venue.address2 %><br/>
-		<% end %>
-	    <%= @venue.city %>, <%= @venue.state %>  <%= @venue.zip %></p>
-	    <p>Phone: <%= @venue.phone %></p>
 	</div>
-	<p class="visit">Visit us:</p>
-	<% @venue.links.each do |link| %>
-		<%= make_link(link) %>
+	<% if @schedule.schedulable.links.count > 0 %>
+		<p class="visit">Visit us:</p>
+		<% @schedule.schedulable.links.each do |link| %>
+			<%= make_link(link) %>
+		<% end %>
 	<% end %>
     </div>
 <% end %>
 
 <% upcoming_area do %>
-
+<% if false %>
 <h2>Upcoming at <%= @venue.name %></h2>
 <% @future_schedulables.group_by{ |s| s.start.to_date}.each do |date, schedulables_for_date | %>
 	<h3><%= date_and_times(date) %></h3>
 	<% schedulables_for_date.each do |schedulable| %>
-		<%= link_to schedule_path(schedulable), :class => "link_box" do %>
+		<%= link_to "http://www.apple.com", :class => "link_box" do %>
 		<img src="<%= logo_for(schedulable.schedulable) %>" class="small" />
 			<div class="info">
 				<h4><%= schedulable.schedulable.name %></h4>
@@ -42,6 +38,7 @@
 			</div>
 		<% end %>
 	<% end %>
+<% end %>
 <% end %>
 
 <% end %>

@@ -8,6 +8,8 @@ Dewey::Application.routes.draw do
 
   resources :venues
   
+  resources :schedules
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -55,7 +57,7 @@ Dewey::Application.routes.draw do
   #     resources :products
   #   end
 
-  root :to => 'schedule#index'
+  root :to => 'schedules#index'
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
