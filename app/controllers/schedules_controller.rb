@@ -13,6 +13,7 @@ class SchedulesController < ApplicationController
   # GET /schedules/1.json
   def show
     @schedule = Schedule.find(params[:id])
+    @future_schedulables = Schedule.future_events_of(DateTime.civil(2011, 01, 01), @schedule)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @schedule }
