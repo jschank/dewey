@@ -24,14 +24,14 @@
 <h2>Venue</h2>
 	<%= link_to venue_path(@schedule.location.venue), :class => "link_box" do %>
 	<img src="<%= logo_for(@schedule.location.venue) %>" class="small" />
-	<h4><%= @schedule.location.venue.name %></h4>	
+	<h4 class="oneline"><%= @schedule.location.venue.name %></h4>	
 <% end %>
 
-<h2>Performances</h2>
+<h2>Acts</h2>
 <% @schedule.children.each do |c| %>
 	<%= link_to schedule_path(c.schedulable), :class => "link_box" do %>
 		<img src="<%= logo_for(c.schedulable) %>" class="small" />
-		<h4><%= c.schedulable.name %></h4>	
+		<h4 class="oneline"><%= c.schedulable.name %></h4>	
 	<% end %>
 <% end %>
 
