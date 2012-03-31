@@ -15,9 +15,11 @@
 	    <%= @venue.city %>, <%= @venue.state %>  <%= @venue.zip %></p>
 	    <p>Phone: <%= @venue.phone %></p>
 	</div>
-	<p class="visit">Visit us:</p>
-	<% @venue.links.each do |link| %>
-		<%= make_link(link) %>
+	<% if @venue.links.count > 0 %>
+		<p class="visit">Visit us:</p>
+		<% @venue.links.each do |link| %>
+			<%= make_link(link) %>
+		<% end %>
 	<% end %>
     </div>
 <% end %>
