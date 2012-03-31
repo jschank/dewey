@@ -11,6 +11,11 @@ sonicbids    = Weblocation.create!({:name => "sonicbids"})
 tumblr       = Weblocation.create!({:name => "tumblr"})
 
 
+
+
+# *** Acts ***
+
+
 # *** Colourslide ***
 colourslide_description = <<EOD
 Colourslide is Alex Lawhon, Dean Newman, and Quincy Mooring. You will learn more about us in good time.
@@ -489,3 +494,29 @@ westolethekids.links.build({:weblocation => twit, :url => 'https://twitter.com/#
 westolethekids.links.build({:weblocation => youtube, :url => 'http://www.youtube.com/WeStoleTheKIds'})
 westolethekids.links.build({:weblocation => tumblr, :url => 'http://WeStoleTheKIds.tumblr.com'})
 westolethekids.save!
+
+
+
+
+# ***Events***
+
+# *** Popfest ***
+popfest = Event.create({:name => 'Popfest', :description => 'Power Pop, Britpop, and Pop Punk Bands on 4 Stages. No cover.'})
+popfest.links.build({:weblocation => www, :url => 'http://www.deweybeachfest.com/popfest/'})
+popfest.save!
+
+
+
+
+
+# ***Venues***
+
+# *** Rusty Rudder ***
+rudder = Venue.create!({:name => 'Rusty Rudder', :description => 'The Rusty Rudder is a live music club and restaurant located next to the bay.', :address1 => '113 Dickinson St.', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-3888'})
+rudder1 = bc.locations.build()
+ruddera = bc.locations.build({:name => "Outside Stage A"})
+rudderb = bc.locations.build({:name => "Outside Stage B"})
+rudderc = bc.locations.build({:name => "Inside Stage C"})
+rudderd = bc.locations.build({:name => "Inside Stage D"})
+rudder.links.build( {:weblocation => www, :url => "http://www.deweybeachlife.com/dning_rr.html"})
+rudder.save!
