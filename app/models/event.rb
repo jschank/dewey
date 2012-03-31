@@ -7,4 +7,10 @@ class Event < ActiveRecord::Base
   # has_many :acts, :through => :performances, :source => :act
   
   default_scope :order => 'name ASC'
+
+  def self.upcoming(date, event)
+    items = Schedule.future_events_of(date, event)
+    items.map{ |i| i.get_ultimate_parent }.uniq
+  end
+
 end
