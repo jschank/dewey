@@ -16,11 +16,20 @@ class Schedule < ActiveRecord::Base
         .order( :start )      
   end
   
+  # maybe this should become a static method on the Act instead of on the schedule.
   def self.future_events_of(date, schedulable)
-      where("start >= ? AND parent_id is null", date)
-        .scoped( :conditions => { :schedulable_id => schedulable.schedulable_id, :schedulable_type => schedulable.schedulable_type } )
+      where("start >= ?", date)
+        .scoped( :conditions => { :schedulable_id => schedulable.id, :schedulable_type => schedulable.class.name } )
         .order( :start )
         .reject{ |i| i == schedulable }
+  end
+  
+  def get_ultimate_parent
+    node = self
+    while node.parent_id != nil do
+      node = Schedule.find(node.parent_id)
+    end
+    node
   end
   
   def self.children_that_are_not_same_as(parent)

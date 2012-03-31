@@ -9,4 +9,9 @@ class Act < ActiveRecord::Base
 
   default_scope :order => 'name ASC'
   
+  def self.upcoming(date, act)
+    items = Schedule.future_events_of(date, act)
+    items.map{ |i| i.get_ultimate_parent }.uniq
+  end
+    
 end

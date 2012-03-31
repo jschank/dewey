@@ -18,14 +18,49 @@
 <% end %>
 
 <% upcoming_area do %>
-	<h2>Upcoming Events for <%= @act.name %></h2>
-	<% @future_performances.group_by{ |p| p.performance_start.to_date}.each do |date, performances_for_date | %>
-		<% performances_for_date.each do |performance| %>
-			<%= render :partial => "acts/special_event", :locals => { :performance => performance } if performance.occurrence.event.is_special %>
-			<%= render :partial => "acts/regular_event", :locals => { :performance => performance } unless performance.occurrence.event.is_special %>
-	    <% end %>
+<% @future_schedulables.group_by{|s| s.start.to_date}.sort.each do |start_date, parent_items_for_date| %>
+		<h2><%= date_and_times(start_date) %></h2>
+		<% parent_items_for_date.each do |p| %>
+		<%= link_to schedule_path(p), :class => "link_box" do %>
+			<img src="<%= logo_for(p.location.venue) %>" class="small" />
+				<div class="info">
+					<h4><%= p.schedulable.name %><span class="times">, <%= time_list([p] + Schedule.children_that_are_same_as(p)) %></span></h4>
+					<% if p.agenda.count > 0 %>	
+						<% p.agenda.each do | schedulable_key, schedulable_items| %>
+							<p><%= Schedule.retrieve(*schedulable_key).name %><span class="times">, <%= time_list(schedulable_items) %></span></p>
+						<% end %>
+					<% end %>
+				</div>
+			<% end %>
+		
+		<% end %>
 	<% end %>
 <% end %>
+
+<% if false %>
+<% upcoming_area do %>
+	<h2>Upcoming for <%= @act.name %></h2>
+	<% @future_schedulables.group_by{ |s| s.start.to_date}.each do |date, schedulables_for_date | %>
+	<h3><%= date_and_times(date) %></h3>
+	<% schedulables_for_date.each do |schedulable| %>
+		<%= link_to schedule_path(schedulable), :class => "link_box" do %>
+		<img src="<%= logo_for(schedulable.schedulable) %>" class="small" />
+			<div class="info">
+				<h4><%= schedulable.schedulable.name %></h4>
+				<p class="times"><%= time_list([schedulable] + Schedule.children_that_are_same_as(schedulable)) %></p>					
+				<% if schedulable.agenda.count > 0 %>	
+					<% schedulable.agenda.each do | schedulable_key, schedulable_items| %>
+						<p><%= Schedule.retrieve(*schedulable_key).name %></p>
+						<p class="times"><%= time_list(schedulable_items) %></p>
+					<% end %>
+				<% end %>
+			</div>
+		<% end %>
+	<% end %>
+<% end %>
+<% end %>
+<% end %>
+
 
 <% admin_area do %>
 	<%= link_to edit_act_path(@act) do %>

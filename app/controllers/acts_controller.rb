@@ -13,8 +13,8 @@ class ActsController < ApplicationController
   # GET /acts/1
   # GET /acts/1.json
   def show
-    @act = Act.find(params[:id], :include => [:performances, :occurrences, :events, :locations, :venues])
-    @future_performances = Performance.future_performances(DateTime.civil(2011, 01, 01)).where( :conditions => { :performances => {:act_id => @act}} )
+    @act = Act.find(params[:id])
+    @future_schedulables = Act.upcoming(DateTime.civil(2011, 01, 01), @act)
 
     respond_to do |format|
       format.html # show.html.erb
