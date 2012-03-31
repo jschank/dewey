@@ -3,18 +3,20 @@
 <% specific_area do %>
     <div class="specificHeader">
 		<img src="<%= logo_for(@schedule.schedulable) %>" style="-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(226,226,226,0.2))); margin: 0 10px 50px 0; float: left;" />
-	<div class="infoShow">
-	    <h4><%= @schedule.schedulable.name %></h4>
-		<div class="description" id="venue_collapsable">
-			<%= textilize(@schedule.schedulable.description) %>
-		</div>		
-	</div>
-	<% if @schedule.schedulable.links.count > 0 %>
-		<p class="visit">Visit us:</p>
-		<% @schedule.schedulable.links.each do |link| %>
-			<%= make_link(link) %>
+		<div class="infoShow">
+		    <h4><%= @schedule.schedulable.name %></h4>
+			<div class="description" id="venue_collapsable">
+				<%= textilize(@schedule.schedulable.description) %>
+			</div>		
+			<p class="dates"><%= date_and_times(@schedule.start) %></p>	
+			<p class="times"><%= times(@schedule) %></p>	
+	    </div>
+		<% if @schedule.schedulable.links.count > 0 %>
+			<p class="visit">Visit us:</p>
+			<% @schedule.schedulable.links.each do |link| %>
+				<%= make_link(link) %>
+			<% end %>
 		<% end %>
-	<% end %>
     </div>
 <% end %>
 
