@@ -7,60 +7,33 @@
 <div class="description" id="event_collapsable">
 	<%= textilize(@event.description) %>
 </div>
-<% if @occurrence %>
-	<p class="dates"><%= date_and_times(@occurrence.event_start) %></p>	
-	<p class="times"><%= occurrence_times(@occurrence) %></p>	
-	<%= display_cover_charge(@occurrence) %>
-<% end %>
 </div>
 <p class="visit">Visit us:</p>
 <% @event.links.each do |link| %>
 	<%= make_link(link) %>
 <% end %>
 </div>
-    
-<% if @occurrence %>
-	<%= content_tag :h3, pluralize(@occurrence.venues.count, "Venue") %>
-	<% @occurrence.venues.each do |venue| %>
-	<%= link_to venue_path(venue), :class => "link_box" do %>
-		<img src="<%= logo_for(venue) %>" class="small" />
-		<h4 class="oneline"><%= venue.name %></h4>
-	<% end %>
-	<% end %>
-
-	<%= content_tag :h3, pluralize(@occurrence.performances.count, "Performance") %>
-	<% @occurrence.performances.each do |performance| %>
-	<%= link_to act_path(performance.act), :class => "link_box" do %>
-		<img src="<%= logo_for(performance.act) %>" class="small" />
-		<div class="info">
-		<h4><%= performance.act.name %></h4>
-		<p class="dates"><%= performance.performance_start.to_date.to_s(:long) %></p>
-		<p class="times"><%= performance_times(performance) %></p>
-	</div>
-	<% end %>
-    <% end %>
 <% end %>
 
-<% end %>
 
 <% upcoming_area do %>
-	<% if @future_occurrences.count > 0 %>
-		<h2>Upcoming <%= @event.name.pluralize %></h2>
-		<% @future_occurrences.group_by{ |o| o.event_start}.each do |date, occurrences_for_date | %>
-			<% occurrences_for_date.each do |occurrence| %>
-				<%= link_to current_event_path(occurrence.event, occurrence), :class => "link_box" do %>
-				<img src="<%= logo_for(occurrence.venues[0]) %>" class="small" />
-				<div class="info">
-				<h4><%= date.to_date.to_s(:long) %></h4>
-					<% occurrence.performances.each do |performance| %>
-						<% if performance.priority > 0 %>
-						<p><%= performance.act.name %></p>
+<% if @future_schedulables.count > 0 %>
+<h2>Upcoming for <%= @event.name %></h2>
+		<% @future_schedulables.group_by{|s| s.start.to_date}.sort.each do |start_date, parent_items_for_date| %>
+			<h3><%= date_and_times(start_date) %></h3>
+			<% parent_items_for_date.each do |p| %>
+			<%= link_to schedule_path(p), :class => "link_box" do %>
+				<img src="<%= logo_for(p.location.venue) %>" class="small" />
+					<div class="info">
+						<h4><%= p.schedulable.name %><span class="times">, <%= time_list([p] + Schedule.children_that_are_same_as(p)) %></span></h4>
+						<% if p.agenda.count > 0 %>	
+							<% p.agenda.each do | schedulable_key, schedulable_items| %>
+								<p><%= Schedule.retrieve(*schedulable_key).name %><span class="times">, <%= time_list(schedulable_items) %></span></p>
+							<% end %>
 						<% end %>
-					<% end %>
-				<p class="times"><%= occurrence_times(occurrence) %></p>
-				</div>
-				<% end %>
-		    <% end %>
+					</div>
+				<% end %>		
+			<% end %>
 		<% end %>
 	<% end %>
 <% end %>

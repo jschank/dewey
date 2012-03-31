@@ -11,23 +11,11 @@ class EventsController < ApplicationController
     end
   end
 
-  def upcoming
-    @future_performances = Performance.future_performances(DateTime.civil(2011, 01, 01))
-    # @happening_now = Performance.in_progress(DateTime.civil(2011, 07, 02, 22, 0, 0))
-    
-    respond_to do |format|
-      format.html # upcoming_events.html.erb
-      format.json { render :json => @events }
-    end
-  end
-
   # GET /events/1
   # GET /events/1.json
   def show
-    @occurrence = Occurrence.find(params[:occurrence_id], :include => [:event, :performances, :acts, :locations, :venues ]) if params[:occurrence_id]
-    @event = @occurrence.try(:event) || Event.find(params[:id])
-    upcoming = Occurrence.future_occurrences(DateTime.civil(2011, 01, 01)).scoped( :conditions => { :event_id => @event } )
-    @future_occurrences = upcoming.delete_if { |occurrence| occurrence == @occurrence }
+    @event = Event.find(params[:id])
+    @future_schedulables = Event.upcoming(DateTime.civil(2011, 01, 01), @event)
 
     respond_to do |format|
       format.html # show.html.erb
