@@ -28,6 +28,7 @@
 				<img src="<%= logo_for(p.location.venue) %>" class="small" />
 					<div class="info">
 						<h4><%= p.schedulable.name %><span class="times">, <%= time_list([p] + Schedule.children_that_are_same_as(p)) %></span></h4>
+						<h5><%= p.location.name %></h5>
 						<% if p.agenda.count > 0 %>	
 							<% p.agenda.each do | schedulable_key, schedulable_items| %>
 								<p><%= Schedule.retrieve(*schedulable_key).name %><span class="times">, <%= time_list(schedulable_items) %></span></p>

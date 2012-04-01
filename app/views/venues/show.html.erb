@@ -33,12 +33,11 @@
 				<%= link_to schedule_path(schedulable), :class => "link_box" do %>
 				<img src="<%= logo_for(schedulable.schedulable) %>" class="small" />
 					<div class="info">
-						<h4><%= schedulable.schedulable.name %></h4>
-						<p class="times"><%= time_list([schedulable] + Schedule.children_that_are_same_as(schedulable)) %></p>					
+						<h4><%= schedulable.schedulable.name %><span class="times">, <%= time_list([schedulable] + Schedule.children_that_are_same_as(schedulable)) %></span></h4>
+						<h5><%= schedulable.location.name %></h5>
 						<% if schedulable.agenda.count > 0 %>	
 							<% schedulable.agenda.each do | schedulable_key, schedulable_items| %>
-								<p><%= Schedule.retrieve(*schedulable_key).name %></p>
-								<p class="times"><%= time_list(schedulable_items) %></p>
+								<p><%= Schedule.retrieve(*schedulable_key).name %><span class="times">, <%= time_list(schedulable_items) %></span></p>
 							<% end %>
 						<% end %>
 					</div>
