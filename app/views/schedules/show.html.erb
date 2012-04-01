@@ -5,6 +5,7 @@
 		<img src="<%= logo_for(@schedule.schedulable) %>" style="-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(226,226,226,0.2))); margin: 0 10px 50px 0; float: left;" />
 		<div class="infoShow">
 		    <h4><%= @schedule.schedulable.name %></h4>
+			<h5><%= @schedule.location.name %></h5>
 			<div class="description" id="venue_collapsable">
 				<%= textilize(@schedule.schedulable.description) %>
 			</div>		
