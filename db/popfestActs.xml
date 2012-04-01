@@ -1,4 +1,28 @@
-# *** Weblinks ***
+# encoding: utf-8
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+#
+# Examples:
+#
+#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
+#   Mayor.create(:name => 'Emanuel', :city => cities.first)
+
+# special_events  id  name  description link  logo  created_at  updated_at  special_event_start special_event_end
+# events  id  name  description link  logo  created_at  updated_at  venue_id  performance_id  special_event_id  stage event_start event_end is_all_day
+# venues  id  name  description link  logo  created_at  updated_at  address1  address2  city  state zip phone gps_coordinates hours
+# performances  id  name  description link  logo  created_at  updated_at  kind  related_performance
+# When running rake db:seed, the runs are additive, so dupes will be created. do a rake db:reset instead
+
+# *** Actual Seeds ***
+
+
+# *** Weblocations ***
+facebook     = Weblocation.create!({:name => "Facebook"})
+itunes       = Weblocation.create!({:name => "iTunes"})
+myspace      = Weblocation.create!({:name => "MySpace"})
+twit         = Weblocation.create!({:name => "Twitter"})
+www          = Weblocation.create!({:name => "Web"})
+youtube      = Weblocation.create!({:name => "YouTube"})
 email        = Weblocation.create!({:name => "e-mail"})
 bandcamp     = Weblocation.create!({:name => "bandcamp"})
 bigcartel    = Weblocation.create!({:name => "bigcartel"})
@@ -10,6 +34,28 @@ reverbnation = Weblocation.create!({:name => "ReverbNation"})
 sonicbids    = Weblocation.create!({:name => "sonicbids"})
 tumblr       = Weblocation.create!({:name => "tumblr"})
 
+
+
+# ***Venues***
+
+# *** Rusty Rudder ***
+rudder = Venue.create!({:name => 'Rusty Rudder', :description => 'The Rusty Rudder is a live music club and restaurant located next to the bay.', :address1 => '113 Dickinson St.', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-3888'})
+rudder1 = rudder.locations.build()
+ruddera = rudder.locations.build({:name => "Outside Stage A"})
+rudderb = rudder.locations.build({:name => "Outside Stage B"})
+rudderc = rudder.locations.build({:name => "Inside Stage C"})
+rudderd = rudder.locations.build({:name => "Inside Stage D"})
+rudder.links.build( {:weblocation => www, :url => "http://www.deweybeachlife.com/dning_rr.html"})
+rudder.save!
+
+
+# Starboard
+sb = Venue.create({:name => 'The Starboard', :description => 'The Heart of Dewey Beach Delaware and home of the world's greatest bloody mary bar.', :address1 => '2009 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-4600'})
+sb1 = sb.locations.build()
+sba = sb.locations.build({:name => "Main Stage"})
+sbb = sb.locations.build({:name => "Deck Stage"})
+sb.links.build( {:weblocation => www, :url => "http://www.thestarboard.com/"})
+sb.save!
 
 
 
@@ -496,6 +542,18 @@ westolethekids.links.build({:weblocation => tumblr, :url => 'http://WeStoleTheKI
 westolethekids.save!
 
 
+# *** Laura Lea and Trip Fabulous ***
+lauralea_description = <<EOD
+Tripp Fabulous is a female fronted Cover/Original band with an excellent range of various influences from Alice in Chains to Tool to Pat Benetar to Journey and whose Song Selection proves to be of the widest variety. An eclectic mix of unmatched musicians working together to master and create bomb tunes to dance, sing along or just rock out to, Tripp Fabulous is all the party you can handle!
+EOD
+
+lauralea = Act.create({:name => 'Laura Lea and Trip Fabulous', :description => lauralea_description, :hometown => 'Philadelphia, PA'})
+lauralea.links.build({:weblocation => www, :url => 'http://www.trippfabulous.com/'})
+lauralea.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/trippfabulous'})
+lauralea.links.build({:weblocation => myspace, :url => 'http://www.myspace.com/trippfabulous'})
+lauralea.save!
+
+
 
 
 # ***Events***
@@ -507,16 +565,88 @@ popfest.save!
 
 
 
+# ***Parents***
+
+# Popfest Day 1 Stage A
+popfest1a = popfest.schedules.build({:location => ruddera, :start => '2012-04-13T20:00:00+00:00', :end => '2012-04-14T01:00:00+00:00'})
+popfest1a.save!
+
+# Popfest Day 1 Stage B
+popfest1b = popfest.schedules.build({:location => rudderb, :start => '2012-04-13T20:00:00+00:00', :end => '2012-04-14T01:00:00+00:00'})
+popfest1b.save!
+
+# Popfest Day 1 Stage C
+popfest1c = popfest.schedules.build({:location => rudderc, :start => '2012-04-13T20:00:00+00:00', :end => '2012-04-14T01:00:00+00:00'})
+popfest1c.save!
+
+# Popfest Day 1 Stage D
+popfest2d = popfest.schedules.build({:location => rudderd, :start => '2012-04-13T20:00:00+00:00', :end => '2012-04-14T01:00:00+00:00'})
+popfest2d.save!
+
+# Popfest Day 2 Stage A
+popfest2a = popfest.schedules.build({:location => ruddera, :start => '2012-04-14T20:00:00+00:00', :end => '2012-04-15T01:00:00+00:00'})
+popfest2a.save!
+
+# Popfest Day 2 Stage B
+popfest2b = popfest.schedules.build({:location => rudderb, :start => '2012-04-14T20:00:00+00:00', :end => '2012-04-15T01:00:00+00:00'})
+popfest2b.save!
+
+# Popfest Day 2 Stage C
+popfest2c = popfest.schedules.build({:location => rudderc, :start => '2012-04-14T20:00:00+00:00', :end => '2012-04-15T01:00:00+00:00'})
+popfest2c.save!
+
+# Popfest Day 2 Stage D
+popfest2d = popfest.schedules.build({:location => rudderd, :start => '2012-04-14T20:00:00+00:00', :end => '2012-04-15T01:00:00+00:00'})
+popfest2d.save!
+
+# Laura Lea and Trip Fabulous Concert
+lauralea1 = lauralea.schedules.build({:location => sb1, :start => '2012-04-14T22:00:00+00:00', :end => '2012-04-15T01:00:00+00:00'})
+lauralea1.save!
 
 
-# ***Venues***
 
-# *** Rusty Rudder ***
-rudder = Venue.create!({:name => 'Rusty Rudder', :description => 'The Rusty Rudder is a live music club and restaurant located next to the bay.', :address1 => '113 Dickinson St.', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-3888'})
-rudder1 = bc.locations.build()
-ruddera = bc.locations.build({:name => "Outside Stage A"})
-rudderb = bc.locations.build({:name => "Outside Stage B"})
-rudderc = bc.locations.build({:name => "Inside Stage C"})
-rudderd = bc.locations.build({:name => "Inside Stage D"})
-rudder.links.build( {:weblocation => www, :url => "http://www.deweybeachlife.com/dning_rr.html"})
-rudder.save!
+
+# ***Children***
+
+# Popfest Day 1 Stage A
+minshara.schedules.build({:location => ruddera, :start => '2012-04-13T21:40:00+00:00', :parent => popfest1a }).save!
+westolethekids.schedules.build({:location => ruddera, :start => '2012-04-13T23:00:00+00:00', :parent => popfest1a }).save!
+kassini.schedules.build({:location => ruddera, :start => '2012-04-14T00:20:00+00:00', :parent => popfest1a }).save!
+
+# Popfest Day 1 Stage B
+violettone.schedules.build({:location => rudderb, :start => '2012-04-13T21:00:00+00:00', :parent => popfest1b }).save!
+lovebettie.schedules.build({:location => rudderb, :start => '2012-04-13T22:20:00+00:00', :parent => popfest1b }).save!
+kingsfoil.schedules.build({:location => rudderb, :start => '2012-04-13T23:40:00+00:00', :parent => popfest1b }).save!
+
+# Popfest Day 1 Stage C
+jonsandler.schedules.build({:location => rudderc, :start => '2012-04-13T21:00:00+00:00', :parent => popfest1c }).save!
+justinkalk.schedules.build({:location => rudderc, :start => '2012-04-13T22:20:00+00:00', :parent => popfest1c }).save!
+undergroundallstars.schedules.build({:location => rudderc, :start => '2012-04-13T23:40:00+00:00', :parent => popfest1c }).save!
+
+# Popfest Day 1 Stage D
+lizbethrose.schedules.build({:location => rudderd, :start => '2012-04-13T20:20:00+00:00', :parent => popfest1d }).save!
+rorysullivan.schedules.build({:location => rudderd, :start => '2012-04-13T21:40:00+00:00', :parent => popfest1d }).save!
+sinclarity.schedules.build({:location => rudderd, :start => '2012-04-13T23:00:00+00:00', :parent => popfest1d }).save!
+morningfuzz.schedules.build({:location => rudderd, :start => '2012-04-14T00:20:00+00:00', :parent => popfest1d }).save!
+
+# Popfest Day 2 Stage A
+rodkim.schedules.build({:location => ruddera, :start => '2012-04-13T20:20:00+00:00', :parent => popfest2a }).save!
+lastflightout.schedules.build({:location => ruddera, :start => '2012-04-13T21:40:00+00:00', :parent => popfest2a }).save!
+duckyduke.schedules.build({:location => ruddera, :start => '2012-04-13T23:00:00+00:00', :parent => popfest2a }).save!
+soraia.schedules.build({:location => ruddera, :start => '2012-04-14T00:20:00+00:00', :parent => popfest2a }).save!
+
+# Popfest Day 2 Stage B
+chipgreene.schedules.build({:location => rudderb, :start => '2012-04-13T21:00:00+00:00', :parent => popfest2b }).save!
+darrymiller.schedules.build({:location => rudderb, :start => '2012-04-13T22:20:00+00:00', :parent => popfest2b }).save!
+darlingparade.schedules.build({:location => rudderb, :start => '2012-04-13T23:40:00+00:00', :parent => popfest2b }).save!
+
+# Popfest Day 2 Stage C
+jayloftus.schedules.build({:location => rudderc, :start => '2012-04-13T21:00:00+00:00', :parent => popfest2c }).save!
+colourslide.schedules.build({:location => rudderc, :start => '2012-04-13T22:20:00+00:00', :parent => popfest2c }).save!
+findvienna.schedules.build({:location => rudderc, :start => '2012-04-13T23:40:00+00:00', :parent => popfest2c }).save!
+
+# Popfest Day 2 Stage D
+junedivided.schedules.build({:location => rudderd, :start => '2012-04-13T21:40:00+00:00', :parent => popfest2d }).save!
+lovebettie.schedules.build({:location => rudderd, :start => '2012-04-13T23:00:00+00:00', :parent => popfest2d }).save!
+justinkalk.schedules.build({:location => rudderd, :start => '2012-04-14T00:20:00+00:00', :parent => popfest2d }).save!
+
