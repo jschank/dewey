@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <% index_area do %>
-<h2>Events</h2>
+<h3>Events</h3>
 	<% @events.group_by{ |e| e.name.chars.first }.each do |letter, events| %>
-		<h3><%= letter %></h3>
+		<h2><%= letter %></h2>
 		<% events.each do |event| %>
 		<%= link_to event_path(event), :class => "link_box" do %>
 		<img src="<%= logo_for(event) %>" class="small" />

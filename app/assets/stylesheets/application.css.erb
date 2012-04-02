@@ -35,7 +35,7 @@ h1
 	text-shadow: 0 -1px #888;
 }
 
-h2	{
+h3	{
 	border-bottom: 1px solid #949494;
 	color: #fff;
 	font: bold 12pt Helvetica, sans-serif;
@@ -48,7 +48,7 @@ h2	{
 	overflow: none;
 }
 
-h3
+h2
 {
 	border-bottom: 1px solid #949494;
 	background: url(<%= asset_path 'h3-bg.png' %>) repeat-x left top;
@@ -237,3 +237,45 @@ img.small
 	border-top: none;
 }
 
+#tabbarbg	{
+	width: 100%;
+	height: 49px;
+	background-image: url( <%= asset_path 'tabbar-bg.png' %> );
+	background-repeat: repeat-x;
+}
+
+#tabbar	{
+	margin: 0 auto;
+	width: 320px;
+	height: 49px;
+}
+
+#tabbar .schedule, #tabbar .acts, #tabbar .events, #tabbar .venues, #tabbar .festivals	{
+border: none;
+display: block;
+width: 64px;
+height: 49px;
+background-image: url(<%= asset_path 'tabbar.png' %>);
+float: left;
+text-indent: -9999px;
+}
+
+#tabbar .schedule	{
+background-position: 0px 0px;
+}
+
+#tabbar .acts	{
+background-position: -65px 0px;
+}
+
+#tabbar .events	{
+background-position: -129px 0px;
+}
+
+#tabbar .venues	{
+background-position: -193px 0px;
+}
+
+#tabbar .festivals	{
+background-position: -257px 0px;
+}
