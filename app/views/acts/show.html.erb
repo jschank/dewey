@@ -44,7 +44,9 @@
 <% end %>
 
 <% admin_area do %>
-	<%= link_to edit_act_path(@act) do %>
-		<img src="<%= asset_path 'edit-button.png' %>" style="position: absolute; top: 7px; right: 10px;">
+	<% if false %>
+		<%= link_to edit_act_path(@act) do %>
+			<img src="<%= asset_path 'edit-button.png' %>" style="position: absolute; top: 7px; right: 10px;">
+		<% end %>
 	<% end %>
 <% end %>
