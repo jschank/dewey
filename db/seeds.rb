@@ -561,6 +561,7 @@ lauralea.save!
 # *** Popfest ***
 popfest = Event.create({:name => 'Popfest', :description => 'Power Pop, Britpop, and Pop Punk Bands on 4 Stages. No cover.'})
 popfest.links.build({:weblocation => www, :url => 'http://www.deweybeachfest.com/popfest/'})
+popfest.links.build({:weblocation => facebook, :url => 'http://www.facebook.com/pages/Dewey-Beach-Popfest/174417692588388'})
 popfest.save!
 
 
