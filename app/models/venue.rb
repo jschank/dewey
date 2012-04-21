@@ -7,4 +7,6 @@ class Venue < ActiveRecord::Base
   has_many :locations
 
   default_scope :order => 'name ASC'
+
+  validates :name, :presence => true
 end

@@ -6,6 +6,8 @@ class Event < ActiveRecord::Base
   # has_many :performances, :as => :schedulable
   # has_many :acts, :through => :performances, :source => :act
   
+  validates :name, :presence => true
+  
   default_scope :order => 'name ASC'
 
   def self.upcoming(date, event)

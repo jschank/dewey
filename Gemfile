@@ -21,7 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'rails-footnotes', '>= 3.7.5.rc4', :group => :development
+gem 'rails-footnotes', '~> 3.7.7', :group => :development
 
 group :test, :development do
   gem 'rspec-rails'

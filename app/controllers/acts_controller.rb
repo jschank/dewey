@@ -26,6 +26,7 @@ class ActsController < ApplicationController
   # GET /acts/new.json
   def new
     @act = Act.new
+    @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
 
     respond_to do |format|
       format.html # new.html.erb
@@ -45,6 +46,7 @@ class ActsController < ApplicationController
 
     respond_to do |format|
       if @act.save
+        flash[:notice] = "Hello"
         format.html { redirect_to @act, :notice => 'Act was successfully created.' }
         format.json { render :json => @act, :status => :created, :location => @act }
       else

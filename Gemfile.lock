@@ -90,7 +90,7 @@ GEM
       activesupport (= 3.1.0)
       bundler (~> 1.0)
       railties (= 3.1.0)
-    rails-footnotes (3.7.6)
+    rails-footnotes (3.7.7)
       rails (>= 3.0.0)
     railties (3.1.0)
       actionpack (= 3.1.0)
@@ -151,7 +151,7 @@ DEPENDENCIES
   json
   pg
   rails (= 3.1.0)
-  rails-footnotes (>= 3.7.5.rc4)
+  rails-footnotes (~> 3.7.7)
   rspec-rails
   sass-rails (~> 3.1.0)
   syntax
