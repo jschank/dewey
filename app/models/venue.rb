@@ -9,4 +9,7 @@ class Venue < ActiveRecord::Base
   default_scope :order => 'name ASC'
 
   validates :name, :presence => true
+
+  accepts_nested_attributes_for :links, :reject_if => lambda { |a| a[:url].blank? }, :allow_destroy => true
+
 end

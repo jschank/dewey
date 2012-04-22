@@ -8,6 +8,8 @@ class Event < ActiveRecord::Base
   
   validates :name, :presence => true
   
+  accepts_nested_attributes_for :links, :reject_if => lambda { |a| a[:url].blank? }, :allow_destroy => true
+
   default_scope :order => 'name ASC'
 
   def self.upcoming(date, event)

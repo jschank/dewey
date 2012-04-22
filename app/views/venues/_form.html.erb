@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+<div style="margin: 10px;">
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -43,7 +44,20 @@
     <%= f.label :phone %><br />
     <%= f.text_field :phone %>
   </div>
-  <div class="actions">
+
+
+
+<div id="links" style="margin-top: 20px; border-top: 1px solid #000;">
+	<p style="background-color: #fff; padding: 3px; top: -15px;">Web Links:</p>
+	<%= link_to_add_fields "Add Link", f, :links %>
+    <%= f.fields_for :links do |builder| %>
+    	<%= render "link_fields", :f => builder %>
+    <% end %>
+</div>  
+
+
+  <div class="actions" style="padding: 20px 0;">
     <%= f.submit %>
   </div>
 <% end %>
+</div>
