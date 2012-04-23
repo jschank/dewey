@@ -27,6 +27,7 @@ class SchedulesController < ApplicationController
   def new
     @schedule = Schedule.new
     @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
+    @acts = Act.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
 
     respond_to do |format|
       format.html # new.html.erb

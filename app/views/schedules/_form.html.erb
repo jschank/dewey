@@ -11,8 +11,42 @@
     </div>
   <% end %>
 
+<h3>Schedule A Parent</h3>
 <div style="margin: 10px;">
 
+  <div class="field">
+    <%= f.label 'Pick An Act' %><br />
+	<%= f.collection_select(:schedulable_id, @acts, :id, :name)%>
+  </div>
+
+  <div class="field">
+    <%= f.label :start %><br />
+	<%= f.datetime_select :start %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end %><br />
+	<%= f.datetime_select :end %>
+  </div>
+</div>
+
+<h3>Schedule Any Children</h3>
+<div style="margin: 10px;">
+
+  <div class="field">
+    <%= f.label 'Pick An Act' %><br />
+	<%= f.collection_select(:schedulable_id, @acts, :id, :name)%>
+  </div>
+
+  <div class="field">
+    <%= f.label :start %><br />
+	<%= f.datetime_select :start %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end %><br />
+	<%= f.datetime_select :end %>
+  </div>
 
   <div class="actions" style="padding: 20px 0;">
     <%= f.submit %>
