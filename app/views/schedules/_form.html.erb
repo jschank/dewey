@@ -10,13 +10,31 @@
       </ul>
     </div>
   <% end %>
+  
+<div id="Act_options">  
+<%= options_from_collection_for_select(@acts, :id, :name) %>
+</div>
+
+<div id="Event_options">
+<%= options_from_collection_for_select(@events, :id, :name) %>
+</div>
 
 <h3>Schedule A Parent</h3>
 <div style="margin: 10px;">
 
   <div class="field">
-    <%= f.label 'Pick An Act' %><br />
+    <%= f.label 'Pick a achedulable type' %><br />
+	<%= f.select(:schedulable_type, ["Act", "Event"]) %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Pick a Schedulable' %><br />
 	<%= f.collection_select(:schedulable_id, @acts, :id, :name)%>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Select Venue/Location' %><br />
+	<%= f.collection_select(:location_id, @locations, :id, :form_picker_name)%>
   </div>
 
   <div class="field">
@@ -30,26 +48,26 @@
   </div>
 </div>
 
-<h3>Schedule Any Children</h3>
-<div style="margin: 10px;">
+<div class="actions" style="padding: 20px 0;">
+<%= f.submit %>
+</div>
 
-  <div class="field">
-    <%= f.label 'Pick An Act' %><br />
-	<%= f.collection_select(:schedulable_id, @acts, :id, :name)%>
-  </div>
-
-  <div class="field">
-    <%= f.label :start %><br />
-	<%= f.datetime_select :start %>
-  </div>
-
-  <div class="field">
-    <%= f.label :end %><br />
-	<%= f.datetime_select :end %>
-  </div>
-
-  <div class="actions" style="padding: 20px 0;">
-    <%= f.submit %>
-  </div>
+</div>
 <% end %>
-</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("select#schedule_schedulable_type").change(function(){
+            // Clear all options from sub category select 
+            $("select#schedule_schedulable_id").empty();
+			
+            // Fill sub category select 
+            var options_list = $(this).val()+"_options";
+			
+			// Clone the proper options into the select control
+			var div_entity = "div#"+options_list;
+			var div_contents = $(div_entity).contents().clone();
+            $(div_contents).appendTo("select#schedule_schedulable_id"); 
+        });
+    });
+</script>

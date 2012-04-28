@@ -27,7 +27,10 @@ class SchedulesController < ApplicationController
   def new
     @schedule = Schedule.new
     @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
+    @locations = Location.all.sort { |a, b| a.form_picker_name.downcase <=> b.form_picker_name.downcase }
     @acts = Act.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
+    @events = Event.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
+    # @schedulables = Schedule.find_all_by_section_id( params[:id]).sort_by{ |k| k['name'] }
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,7 +46,10 @@ class SchedulesController < ApplicationController
   # POST /schedules
   # POST /schedules.json
   def create
-    @schedule = Schedule.new(params[:act])
+    @schedule = Schedule.new(params[:schedule])
+    # @act = Act.find(params[:schedulable_id])
+    # @act.schedules.build()
+    
 
     respond_to do |format|
       if @schedule.save
