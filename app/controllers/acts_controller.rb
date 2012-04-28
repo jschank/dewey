@@ -37,6 +37,7 @@ class ActsController < ApplicationController
   # GET /acts/1/edit
   def edit
     @act = Act.find(params[:id])
+    @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
   end
 
   # POST /acts

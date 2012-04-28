@@ -36,6 +36,7 @@ class VenuesController < ApplicationController
   # GET /venues/1/edit
   def edit
     @venue = Venue.find(params[:id])
+    @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
   end
 
   # POST /venues
