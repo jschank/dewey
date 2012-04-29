@@ -7,6 +7,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-expander
+//= require jquery.ui.all
+//= require timepicker
 //= require_tree .
 
 function remove_fields(link) {
@@ -20,3 +22,16 @@ function add_fields(link, association, content) {
         $(link).parent().after(content.replace(regexp, new_id));
 }
 
+function populate_schedulables()
+{
+	// Clear all options from sub category select 
+	$("select#schedule_schedulable_id").empty();
+			
+	// Fill sub category select 
+	var options_list = $(this).val()+"_options";
+			
+	// Clone the proper options into the select control
+	var div_entity = "div#"+options_list;
+	var div_contents = $(div_entity).contents().clone();
+	$(div_contents).appendTo("select#schedule_schedulable_id"); 
+}

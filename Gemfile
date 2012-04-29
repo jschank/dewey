@@ -18,8 +18,9 @@ group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
+  gem 'jquery-ui-rails'
 end
-
+  
 gem 'jquery-rails'
 gem 'rails-footnotes', '~> 3.7.7', :group => :development
 
