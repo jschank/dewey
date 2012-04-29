@@ -170,6 +170,7 @@ Here are some links, notes, tips, etc. For reference when working on the dewey a
 * [How to setup Rails3 and RSpec2 (from scratch)](http://www.rubyinside.com/how-to-rails-3-and-rspec-2-4336.html)
 * [Date Picker](http://trentrichardson.com/examples/timepicker/)
 * [Cascading drop downs](http://www.falsepositives.com/index.php/2010/05/28/building-a-casscading-drop-down-selection-list-for-ruby-on-rails-with-jquery-ajax/)
+* [Image uploading](http://railscasts.com/episodes/253-carrierwave-file-uploads)
 
 ---
 

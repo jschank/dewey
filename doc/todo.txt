@@ -1,4 +1,10 @@
+Problems
+
+* Date picker, when picking an ambiguous date, stores in the database as d/m/y instead of m/d/y, but sometimes it seems to figure it out an work correctly.
+
 Next Meeting:
+	* Get schedule entry to create children.
+	* Get image uploading working.
 	* Add "related events" using a [self-join association](http://edgeguides.rubyonrails.org/association_basics.html#self-joins)
 	* Add related acts to the acts table
 
@@ -13,13 +19,11 @@ Issues:
 Main Page:
 
 	Find out how we can access or use location services on the iPhone.
-
 	Find out how to hide the google search in the browser on iPhone. Or maybe use it, to search our site instead of the web.
 
 Event Show Page Issues:
 
-	We want special events(only) to include the venue and location for each performance in the performance list.
-	
+	We want special events(only) to include the venue and location for each performance in the performance list.	
 	Venues should be listed in alpha order when there is more than one venue.
 
 Act Show page Issues:
@@ -27,7 +31,6 @@ Act Show page Issues:
 Venue Show Page Issues:
 
 	1) Under the upcoming events at that venue section for a special event it lists all the bands playing at that venue for that special event, but there is only one date and time.  For this I would eliminate the acts displayed and make the date and time the occurrence start and end time.  Might need to show the date for both start and end since it would be multi-day.  We can play with the display until we like it.
-
 	2) On the upcoming events, for special events ONLY we should remove the list of acts from the event block. And add for any event over 24 hours, include start and stop dates and times. Add the time to the end of the date string. Thursday, September 22, 2011, 9:40p
 
 What if:
