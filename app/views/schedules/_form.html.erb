@@ -34,12 +34,12 @@
 
   <div class="field">
     <%= f.label :start %><br />
-	<%= f.text_field :start, :class => "timepicker" %>
+	<%= f.text_field :start, :id => "datepickerstart" %>
   </div>
 
   <div class="field">
     <%= f.label :end %><br />
-	<%= f.text_field :end, :class => "timepicker" %>
+	<%= f.text_field :end, :id => "datepickerend" %>
   </div>
 </div>
 
@@ -57,3 +57,9 @@
     });
 </script>
 
+<script type="text/javascript">
+  AnyTime.picker( "datepickerstart",
+    { format: "%Y-%m-%d %T", firstDOW: 1 } );
+  AnyTime.picker( "datepickerend",
+    { format: "%Y-%m-%d %T", firstDOW: 1 } );
+</script>

@@ -12,34 +12,34 @@
   <% end %>
 
 <div style="margin: 10px;">
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :hometown %><br />
-    <%= f.text_field :hometown %>
-  </div>
-  <div class="field">
-    <%= f.label :formerly %><br />
-    <%= f.text_field :formerly %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>  
+	<div class="field">
+		<%= f.label :name, :style => "font: bold 10pt helvetica;" %><br />
+		<%= f.text_field :name, :style => "width: 280px;" %>
+	</div>
+	<div class="field">
+		<%= f.label :hometown, :style => "font: bold 10pt helvetica;" %><br />
+		<%= f.text_field :hometown, :style => "width: 280px;" %>
+	</div>
+	<div class="field">
+		<%= f.label :formerly, :style => "font: bold 10pt helvetica;" %><br />
+		<%= f.text_field :formerly, :style => "width: 280px;" %>
+	</div>
+	<div class="field">
+		<%= f.label :description, :style => "font: bold 10pt helvetica;" %><br />
+		<%= f.text_area :description, :style => "width: 280px;" %>
+	</div>  
 
 
-<div id="links" style="margin-top: 20px; border-top: 1px solid #000;">
-	<p style="background-color: #fff; padding: 3px; top: -15px;">Web Links:</p>
-	<%= link_to_add_fields "Add Link", f, :links %>
-    <%= f.fields_for :links do |builder| %>
-    	<%= render "link_fields", :f => builder %>
-    <% end %>
-</div>  
-
-  <div class="actions" style="padding: 20px 0;">
-    <%= f.submit %>
-  </div>
+	<div id="links" style="margin-top: 20px; border-top: 1px solid #000; position: relative; padding-top: 20px;">
+		<p style="background-color: #fff; padding: 3px; position: absolute; top: -12px; left: 5px; font: bold 12pt helvetica;">Web Links</p>
+		<%= link_to_add_fields "Add Link", f, :links %>
+		<%= f.fields_for :links do |builder| %>
+			<%= render "link_fields", :f => builder %>
+		<% end %>
+	</div>  
+	
+	<div class="actions" style="padding: 20px 0;">
+		<%= f.submit %>
+	</div>
 <% end %>
 </div>

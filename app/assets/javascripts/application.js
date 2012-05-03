@@ -8,6 +8,7 @@
 //= require jquery_ujs
 //= require jquery-expander
 //= require jquery.ui.all
+//= require anytime
 //= require timepicker
 //= require_tree .
 
