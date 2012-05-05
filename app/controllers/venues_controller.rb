@@ -5,7 +5,7 @@ class VenuesController < ApplicationController
     @venues = Venue.all
 
     respond_to do |format|
-      format.html { render :layout => 'application_index' }# index.html.erb
+      format.html 
       format.json { render :json => @venues }
     end
   end

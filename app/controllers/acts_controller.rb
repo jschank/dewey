@@ -5,7 +5,7 @@ class ActsController < ApplicationController
     @acts = Act.all.sort { |a, b| a.name.downcase <=> b.name.downcase }
 
     respond_to do |format|
-      format.html { render :layout => 'application_index' }# index.html.erb
+      format.html 
       format.json { render :json => @acts }
     end
   end

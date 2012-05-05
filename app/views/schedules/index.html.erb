@@ -1,4 +1,4 @@
-<% upcoming_area do %>
+<% index_area do %>
 <% @schedule.group_by{|s| s.start.to_date}.sort.each do |start_date, parent_items_for_date| %>
 		<h3><%= date_and_times(start_date) %></h3>
 		<% parent_items_for_date.each do |p| %>

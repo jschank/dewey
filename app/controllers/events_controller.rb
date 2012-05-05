@@ -6,7 +6,7 @@ class EventsController < ApplicationController
     @events = Event.all
 
     respond_to do |format|
-      format.html { render :layout => 'application_index' }# index.html.erb
+      format.html 
       format.json { render :json => @events }
     end
   end
