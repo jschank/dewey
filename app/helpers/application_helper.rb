@@ -40,7 +40,7 @@ module ApplicationHelper
   end
 	  
   def logo_image(thing, style="large")
-    logo_path = (thing.logo_url) ? thing.logo_url : image_path("#{thing.class.name.underscore}/default-logo.png")
+    logo_path = (thing.logo_url) ? thing.logo_url : image_path("default-#{thing.class.name.underscore}-logo.png")
     image_tag(logo_path, :class => style)    
   end
   

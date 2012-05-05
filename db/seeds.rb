@@ -40,6 +40,7 @@ tumblr       = Weblocation.create!({:name => "tumblr"})
 
 # *** Rusty Rudder ***
 rudder = Venue.create!({:name => 'Rusty Rudder', :description => 'The Rusty Rudder is a live music club and restaurant located next to the bay.', :address1 => '113 Dickinson St.', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-3888'})
+rudder.logo = File.open("public/uploads/venue/"+ rudder.name.parameterize + "-logo.png")
 rudder1 = rudder.locations.build()
 ruddera = rudder.locations.build({:name => "Outside Stage A"})
 rudderb = rudder.locations.build({:name => "Outside Stage B"})
@@ -51,6 +52,7 @@ rudder.save!
 
 # Starboard
 sb = Venue.create({:name => 'The Starboard', :description => "The Heart of Dewey Beach Delaware and home of the world's greatest bloody mary bar.", :address1 => '2009 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-4600'})
+sb.logo = File.open("public/uploads/venue/"+ sb.name.parameterize + "-logo.png")
 sb1 = sb.locations.build()
 sba = sb.locations.build({:name => "Main Stage"})
 sbb = sb.locations.build({:name => "Deck Stage"})
@@ -585,6 +587,7 @@ lauralea.save!
 
 # *** Popfest ***
 popfest = Event.create({:name => 'Popfest', :description => 'Power Pop, Britpop, and Pop Punk Bands on 4 Stages. No cover.'})
+popfest.logo = File.open("public/uploads/event/"+ popfest.name.parameterize + "-logo.png")
 popfest.links.build({:weblocation => www, :url => 'http://www.deweybeachfest.com/popfest/'})
 popfest.links.build({:weblocation => facebook, :url => 'http://www.facebook.com/pages/Dewey-Beach-Popfest/174417692588388'})
 popfest.save!

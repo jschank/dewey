@@ -17,4 +17,6 @@ class Event < ActiveRecord::Base
     items.map{ |i| i.get_ultimate_parent }.uniq
   end
 
+  mount_uploader :logo, LogoUploader
+
 end
