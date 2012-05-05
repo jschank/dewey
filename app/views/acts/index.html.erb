@@ -6,7 +6,7 @@
 		<h2><%= letter %></h2>
 		<% acts.each do |act| %>
 		<%= link_to act_path(act), :class => "link_box" do %>
-		<%= logo_image(act, "small") %>
+		<%= logo_image(act, :class => "small") %>
 			<h4 class="oneline"><%= act.name %> <% if act.formerly.present? %><em class="formerly"> - Formerly: <%= act.formerly %></em><%end%></h4>
 			<% end %>
 		<% end %>

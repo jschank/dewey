@@ -35,30 +35,14 @@ module ApplicationHelper
   end
   
   def make_link(link)
-    logo = logo_for(link.weblocation)
-    link_to image_tag(logo, :class => "webAnchor", :alt => ["visit us at", link.weblocation.name].join(' ')), link.url, :target => "_blank"
+    link_to logo_image(link.weblocation, :class => "webAnchor"), link.url, :target => "_blank"
   end
 	  
-  def logo_image(thing, style="large")
+  def logo_image(thing, options={})
     logo_path = (thing.logo_url) ? thing.logo_url : image_path("default-#{thing.class.name.underscore}-logo.png")
-    image_tag(logo_path, :class => style)    
+    image_tag(logo_path, options)    
   end
-  
-  def logo_for(thing)
-    name = thing.try(:name)
-    global_default_image = "default-logo.png"
-    return image_path(global_default_image) unless name
     
-    class_name = thing.class.name.parameterize
-    logo_image =  "#{class_name}/#{name.parameterize}-logo.png"
-    return image_path(logo_image) if Dewey::Application.assets.find_asset(logo_image)
-    
-    default_for_class_image = "#{class_name}/#{class_name}-logo.png"
-    return image_path(default_for_class_image) if Dewey::Application.assets.find_asset(default_for_class_image)
-    
-    return image_path(global_default_image)
-  end
-  
   def sortable_name(name)
     canonical_name = name.upcase
     first, *rest = canonical_name.split

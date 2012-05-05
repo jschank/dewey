@@ -2,7 +2,7 @@
 
 <% specific_area do %>
     <div class="specificHeader">
-	<%= logo_image(@venue, "large") %>
+		<%= logo_image(@venue, :class => "large") %>
 	<div class="infoShow">
 	    <h4><%= @venue.name %></h4>
 		<div class="description" id="venue_collapsable">
@@ -31,7 +31,7 @@
 			<h3><%= date_and_times(date) %></h3>
 			<% schedulables_for_date.each do |schedulable| %>
 				<%= link_to schedule_path(schedulable), :class => "link_box" do %>
-				<%= logo_image(schedulable.schedulable, "small") %>
+				<%= logo_image(schedulable.schedulable, :class => "small") %>
 					<div class="info">
 						<h4><%= schedulable.schedulable.name %><span class="times">, <%= time_list([schedulable] + Schedule.children_that_are_same_as(schedulable)) %></span></h4>
 						<%= content_tag :h5, schedulable.location.name if schedulable.location.name? %>

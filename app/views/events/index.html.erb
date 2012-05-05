@@ -6,7 +6,7 @@
 		<h2><%= letter %></h2>
 		<% events.each do |event| %>
 		<%= link_to event_path(event), :class => "link_box" do %>
-		<%= logo_image(event, "small") %>
+		<%= logo_image(event, :class => "small") %>
 			<h4 class="oneline"><%= event.name %></h4>
 		<% end %>
 		<% end %>

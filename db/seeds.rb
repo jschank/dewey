@@ -18,22 +18,68 @@
 
 # *** Weblocations ***
 facebook     = Weblocation.create!({:name => "Facebook"})
-itunes       = Weblocation.create!({:name => "iTunes"})
-myspace      = Weblocation.create!({:name => "MySpace"})
-twit         = Weblocation.create!({:name => "Twitter"})
-www          = Weblocation.create!({:name => "Web"})
-youtube      = Weblocation.create!({:name => "YouTube"})
-email        = Weblocation.create!({:name => "e-mail"})
-bandcamp     = Weblocation.create!({:name => "bandcamp"})
-bigcartel    = Weblocation.create!({:name => "bigcartel"})
-jango        = Weblocation.create!({:name => "jango"})
-lastfm       = Weblocation.create!({:name => "last.fm"})
-ourstage     = Weblocation.create!({:name => "OurStage"})
-pandora      = Weblocation.create!({:name => "Pandora"})
-reverb       = Weblocation.create!({:name => "ReverbNation"})
-sonicbids    = Weblocation.create!({:name => "sonicbids"})
-tumblr       = Weblocation.create!({:name => "tumblr"})
+facebook.logo = File.open("public/uploads/weblocation/"+ facebook.name.parameterize + "-logo.png")
+facebook.save!
 
+itunes       = Weblocation.create!({:name => "iTunes"})
+itunes.logo = File.open("public/uploads/weblocation/"+ itunes.name.parameterize + "-logo.png")
+itunes.save!
+
+myspace      = Weblocation.create!({:name => "MySpace"})
+myspace.logo = File.open("public/uploads/weblocation/"+ myspace.name.parameterize + "-logo.png")
+myspace.save!
+
+twit         = Weblocation.create!({:name => "Twitter"})
+twit.logo = File.open("public/uploads/weblocation/"+ twit.name.parameterize + "-logo.png")
+twit.save!
+
+www          = Weblocation.create!({:name => "Web"})
+www.logo = File.open("public/uploads/weblocation/"+ www.name.parameterize + "-logo.png")
+www.save!
+
+youtube      = Weblocation.create!({:name => "YouTube"})
+youtube.logo = File.open("public/uploads/weblocation/"+ youtube.name.parameterize + "-logo.png")
+youtube.save!
+
+email        = Weblocation.create!({:name => "email"})
+email.logo = File.open("public/uploads/weblocation/"+ email.name.parameterize + "-logo.png")
+email.save!
+
+bandcamp     = Weblocation.create!({:name => "bandcamp"})
+bandcamp.logo = File.open("public/uploads/weblocation/"+ bandcamp.name.parameterize + "-logo.png")
+bandcamp.save!
+
+bigcartel    = Weblocation.create!({:name => "bigcartel"})
+bigcartel.logo = File.open("public/uploads/weblocation/"+ bigcartel.name.parameterize + "-logo.png")
+bigcartel.save!
+
+jango        = Weblocation.create!({:name => "jango"})
+jango.logo = File.open("public/uploads/weblocation/"+ jango.name.parameterize + "-logo.png")
+jango.save!
+
+lastfm       = Weblocation.create!({:name => "last.fm"})
+lastfm.logo = File.open("public/uploads/weblocation/"+ lastfm.name.parameterize + "-logo.png")
+lastfm.save!
+
+ourstage     = Weblocation.create!({:name => "OurStage"})
+ourstage.logo = File.open("public/uploads/weblocation/"+ ourstage.name.parameterize + "-logo.png")
+ourstage.save!
+
+pandora      = Weblocation.create!({:name => "Pandora"})
+pandora.logo = File.open("public/uploads/weblocation/"+ pandora.name.parameterize + "-logo.png")
+pandora.save!
+
+reverb       = Weblocation.create!({:name => "ReverbNation"})
+reverb.logo = File.open("public/uploads/weblocation/"+ reverb.name.parameterize + "-logo.png")
+reverb.save!
+
+sonicbids    = Weblocation.create!({:name => "sonicbids"})
+sonicbids.logo = File.open("public/uploads/weblocation/"+ sonicbids.name.parameterize + "-logo.png")
+sonicbids.save!
+
+tumblr       = Weblocation.create!({:name => "tumblr"})
+tumblr.logo = File.open("public/uploads/weblocation/"+ tumblr.name.parameterize + "-logo.png")
+tumblr.save!
 
 
 # ***Venues***

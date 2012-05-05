@@ -3,7 +3,7 @@
 		<h3><%= date_and_times(start_date) %></h3>
 		<% parent_items_for_date.each do |p| %>
 		<%= link_to schedule_path(p), :class => "link_box" do %>
-			<%= logo_image(p.location.venue, "small") %>
+		<%= logo_image(p.location.venue, :class => "small") %>
 				<div class="info">
 					<h4><%= p.schedulable.name %><span class="times">, <%= time_list([p] + Schedule.children_that_are_same_as(p)) %></span></h4>
 					<%= content_tag :h5, p.location.name if p.location.name? %>
