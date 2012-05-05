@@ -9,7 +9,6 @@
 //= require jquery-expander
 //= require jquery.ui.all
 //= require anytime
-//= require timepicker
 //= require_tree .
 
 function remove_fields(link) {
