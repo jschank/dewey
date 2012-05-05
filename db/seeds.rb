@@ -68,6 +68,7 @@ Colourslide is Alex Lawhon, Dean Newman, and Quincy Mooring. You will learn more
 EOD
 
 colourslide = Act.create({:name => 'Colourslide', :description => colourslide_description, :hometown => 'Gainsville, FL'})
+colourslide.logo = File.open("public/uploads/act/"+ colourslide.name.parameterize + "-logo.png")
 colourslide.links.build({:weblocation => www, :url => 'http://colourslide.com/'})
 colourslide.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/Colourslide'})
 colourslide.links.build({:weblocation => twit, :url => 'https://twitter.com/#!/colourslide'})
@@ -86,6 +87,7 @@ Greene's emotionally candid and poignant songs have charted in CMJ and been feat
 EOD
 
 chipgreene = Act.create({:name => 'Chip Greene', :description => chipgreene_description, :hometown => 'Nashville, TN'})
+chipgreene.logo = File.open("public/uploads/act/"+ chipgreene.name.parameterize + "-logo.png")
 chipgreene.links.build({:weblocation => www, :url => 'http://www.chipgreene.com/'})
 chipgreene.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/chipgreene'})
 chipgreene.links.build({:weblocation => twit, :url => 'https://twitter.com/#!/chipgreene'})
@@ -105,6 +107,7 @@ Darling Parade is a female fronted Rock/Pop band from Nashville, TN. Their first
 EOD
 
 darlingparade = Act.create({:name => 'Darling Parade', :description => darlingparade_description, :hometown => 'Nashville, TN'})
+darlingparade.logo = File.open("public/uploads/act/"+ darlingparade.name.parameterize + "-logo.png")
 darlingparade.links.build({:weblocation => www, :url => 'http://darlingparade.com/'})
 darlingparade.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/darlingparade'})
 darlingparade.links.build({:weblocation => twit, :url => 'https://twitter.com/#!/darlingparade'})
@@ -126,6 +129,7 @@ Since that time, Darry Miller and The Veil has been playing shows all over the N
 EOD
 
 darrymiller = Act.create({:name => 'Darry Miller and The Veil', :description => darrymiller_description, :hometown => 'Lancaster, PA'})
+darrymiller.logo = File.open("public/uploads/act/"+ darrymiller.name.parameterize + "-logo.png")
 darrymiller.links.build({:weblocation => www, :url => 'http://darrymillermusic.com/'})
 darrymiller.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/darrymillermusic'})
 darrymiller.links.build({:weblocation => twit, :url => 'https://twitter.com/#!/DarryMiller'})
@@ -151,6 +155,7 @@ Fortunately, when it comes to the music of DUCKY AND THE VINTAGE, there's not a 
 EOD
 
 duckyduke = Act.create({:name => 'Ducky Duke & The Vintage', :description => duckyduke_description, :hometown => 'Harrisburg, PA'})
+duckyduke.logo = File.open("public/uploads/act/"+ duckyduke.name.parameterize + "-logo.png")
 duckyduke.links.build({:weblocation => www, :url => 'http://www.masterkeymanagement.com/DUCKY_AND_THE_VINTAGE.html'})
 duckyduke.links.build({:weblocation => twit, :url => 'https://twitter.com/#!/Duckydukemusic'})
 duckyduke.links.build({:weblocation => youtube, :url => 'http://www.youtube.com/user/DuckyandTheVintage'})
@@ -172,6 +177,7 @@ Armed with a new EP and live show, Find Vienna is poised to hit the road and up 
 EOD
 
 findvienna = Act.create({:name => 'Find Vienna', :description => findvienna_description, :hometown => 'Philadelphia, PA'})
+findvienna.logo = File.open("public/uploads/act/"+ findvienna.name.parameterize + "-logo.png")
 findvienna.links.build({:weblocation => www, :url => 'http://www.wearefindvienna.com/'})
 findvienna.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/findvienna'})
 findvienna.links.build({:weblocation => twit, :url => 'https://twitter.com/#!/findvienna'})
@@ -193,6 +199,7 @@ Though Jay has been writing introspective songs about life experiences since the
 EOD
 
 jayloftus = Act.create({:name => 'Jay Loftus', :description => jayloftus_description, :hometown => 'NJ'})
+jayloftus.logo = File.open("public/uploads/act/"+ jayloftus.name.parameterize + "-logo.png")
 jayloftus.links.build({:weblocation => www, :url => 'http://www.jayloftusmusic.com/'})
 jayloftus.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/jayloftusmusic'})
 jayloftus.links.build({:weblocation => twit, :url => 'https://twitter.com/#!/imjayloftus'})
@@ -208,6 +215,7 @@ Jon Sandler and The Fancy Band is having a great year. They recently recorded a 
 EOD
 
 jonsandler = Act.create({:name => 'Jon Sandler & The Fancy Band', :description => jonsandler_description, :hometown => 'New York, NY'})
+jonsandler.logo = File.open("public/uploads/act/"+ jonsandler.name.parameterize + "-logo.png")
 jonsandler.links.build({:weblocation => www, :url => 'http://jonsandler.com/'})
 jonsandler.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/JonSandlerMusic'})
 jonsandler.links.build({:weblocation => myspace, :url => 'http://www.myspace.com/jonsandler'})
@@ -245,6 +253,7 @@ c.) WE’RE MAKING OUR FIRST FULL-LENGTH ALBUM- NOW!!!!
 EOD
 
 junedivided = Act.create({:name => 'June Divided', :description => junedivided_description, :hometown => 'Philadelphia, PA'})
+junedivided.logo = File.open("public/uploads/act/"+ junedivided.name.parameterize + "-logo.png")
 junedivided.links.build({:weblocation => www, :url => 'http://www.junedivided.com'})
 junedivided.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/JuneDivided'})
 junedivided.links.build({:weblocation => twit, :url => 'http://www.twitter.com/junedivided'})
@@ -262,6 +271,7 @@ With his Nashville based Orchestra, Justin Kalk pens and performs a fresh brand 
 EOD
 
 justinkalk = Act.create({:name => 'Justin Kalk Orchestra', :description => justinkalk_description, :hometown => 'Nashville, TN'})
+justinkalk.logo = File.open("public/uploads/act/"+ justinkalk.name.parameterize + "-logo.png")
 justinkalk.links.build({:weblocation => www, :url => 'http://www.justinkalk.com/Justin_Kalk_Orchestra/Home.html'})
 justinkalk.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/justinkalkorchestra'})
 justinkalk.links.build({:weblocation => myspace, :url => 'http://www.myspace.com/justinkalkorchestra'})
@@ -282,6 +292,7 @@ The first two weeks of April will find Kassini touring the east coast of the Uni
 EOD
 
 kassini = Act.create({:name => 'Kassini', :description => kassini_description, :hometown => 'UK/NY'})
+kassini.logo = File.open("public/uploads/act/"+ kassini.name.parameterize + "-logo.png")
 kassini.links.build({:weblocation => www, :url => 'http://www.kassinimusic.com/'})
 kassini.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/pages/Kassini/115934971787715'})
 kassini.links.build({:weblocation => twit, :url => 'https://twitter.com/#!/kassinimusic'})
@@ -302,6 +313,7 @@ As a four piece, Kingsfoil has seen extensive growth in the south central and ea
 EOD
 
 kingsfoil = Act.create({:name => 'Kingsfoil', :description => kingsfoil_description, :hometown => 'York, PA'})
+kingsfoil.logo = File.open("public/uploads/act/"+ kingsfoil.name.parameterize + "-logo.png")
 kingsfoil.links.build({:weblocation => www, :url => 'http://kingsfoil.com/'})
 kingsfoil.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/kingsfoil'})
 kingsfoil.links.build({:weblocation => twit, :url => 'https://twitter.com/#!/kingsfoil'})
@@ -314,6 +326,7 @@ lastflightout_description = <<EOD
 EOD
 
 lastflightout = Act.create({:name => 'Last Flight Out', :description => lastflightout_description, :hometown => 'Philadelphia, PA'})
+lastflightout.logo = File.open("public/uploads/act/"+ lastflightout.name.parameterize + "-logo.png")
 lastflightout.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/lastflightout'})
 lastflightout.links.build({:weblocation => reverb, :url => 'http://www.reverbnation.com/lastflightoutmusic'})
 lastflightout.save!
@@ -325,6 +338,7 @@ Lizbeth Rose is a fresh new singer/songwriter from the suburbs of Philadelphia. 
 EOD
 
 lizbethrose = Act.create({:name => 'Lizbeth Rose', :description => lizbethrose_description, :hometown => 'Philadelphia, PA'})
+lizbethrose.logo = File.open("public/uploads/act/"+ lizbethrose.name.parameterize + "-logo.png")
 lizbethrose.links.build({:weblocation => www, :url => 'http://lizbethrosemusic.tumblr.com/'})
 lizbethrose.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/LizbethRoseMusic'})
 lizbethrose.links.build({:weblocation => twit, :url => 'https://twitter.com/#!/LizBeth_Rosee'})
@@ -346,6 +360,7 @@ In 2011, Lovebettie released their new EP, engineered, produced, and mixed by no
 EOD
 
 lovebettie = Act.create({:name => 'Lovebettie', :description => lovebettie_description, :hometown => 'Pittsburgh, PA'})
+lovebettie.logo = File.open("public/uploads/act/"+ lovebettie.name.parameterize + "-logo.png")
 lovebettie.links.build({:weblocation => www, :url => 'http://www.lovebettie.com/'})
 lovebettie.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/lovebettie'})
 lovebettie.links.build({:weblocation => twit, :url => 'https://twitter.com/#!/lovebettie'})
@@ -361,6 +376,7 @@ In the first decade of the millennium there has been a rollercoaster of genres t
 EOD
 
 minshara = Act.create({:name => 'Minshara', :description => minshara_description, :hometown => 'Philadelphia, PA'})
+minshara.logo = File.open("public/uploads/act/"+ minshara.name.parameterize + "-logo.png")
 minshara.links.build({:weblocation => www, :url => 'http://rockpaperrecords.com/artists/minshara/'})
 minshara.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/Minshara'})
 minshara.links.build({:weblocation => twit, :url => 'https://twitter.com/#!/minsharamusic'})
@@ -384,6 +400,7 @@ Rock out with Morning Fuzz – coming soon to a show near you. Dance pants optio
 EOD
 
 morningfuzz = Act.create({:name => 'Morning Fuzz', :description => morningfuzz_description, :hometown => 'Brooklyn NY'})
+morningfuzz.logo = File.open("public/uploads/act/"+ morningfuzz.name.parameterize + "-logo.png")
 morningfuzz.links.build({:weblocation => www, :url => 'http://morningfuzz.com/'})
 morningfuzz.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/Morningfuzzrock'})
 morningfuzz.links.build({:weblocation => twit, :url => 'https://twitter.com/#!/morning_fuzz'})
@@ -402,6 +419,7 @@ It’s all about you now. All about who? We may never know. Though Rod’s previ
 EOD
 
 rodkim = Act.create({:name => 'Rod Kim', :description => rodkim_description, :hometown => 'DE'})
+rodkim.logo = File.open("public/uploads/act/"+ rodkim.name.parameterize + "-logo.png")
 rodkim.links.build({:weblocation => www, :url => 'http://www.rodkimrocks.com/'})
 rodkim.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/RodKim'})
 rodkim.links.build({:weblocation => twit, :url => 'https://twitter.com/#!/rodkim'})
@@ -422,6 +440,7 @@ Since their inception, Rory and the Second Season have been hitting the pavement
 EOD
 
 rorysullivan = Act.create({:name => 'Rory Sullivan', :description => rorysullivan_description, :hometown => 'New York, NY'})
+rorysullivan.logo = File.open("public/uploads/act/"+ rorysullivan.name.parameterize + "-logo.png")
 rorysullivan.links.build({:weblocation => www, :url => 'http://rorysullivanmusic.com/'})
 rorysullivan.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/rorysullivansmusic'})
 rorysullivan.links.build({:weblocation => myspace, :url => 'http://www.myspace.com/rorysullivanmusic'})
@@ -444,6 +463,7 @@ In addition to completing an album, Sinclarity had the opportunity to work with 
 EOD
 
 sinclarity = Act.create({:name => 'Sinclarity', :description => sinclarity_description, :hometown => 'York, PA'})
+sinclarity.logo = File.open("public/uploads/act/"+ sinclarity.name.parameterize + "-logo.png")
 sinclarity.links.build({:weblocation => www, :url => 'http://www.sinclarity.com/'})
 sinclarity.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/Sinclaritymusic'})
 sinclarity.links.build({:weblocation => twit, :url => 'https://twitter.com/#!/sinclaritymusic'})
@@ -470,6 +490,7 @@ SORAIA is the presence of rock ‘n’ roll and the future of rock ‘n’ roll.
 EOD
 
 soraia = Act.create({:name => 'Soraia', :description => soraia_description, :hometown => 'Philadelphia, PA'})
+soraia.logo = File.open("public/uploads/act/"+ soraia.name.parameterize + "-logo.png")
 soraia.links.build({:weblocation => www, :url => 'http://www.soraia.com/'})
 soraia.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/Soraia.music'})
 soraia.links.build({:weblocation => twit, :url => 'https://twitter.com/#!/SoraiaRocks'})
@@ -486,6 +507,7 @@ The Violet Tone (2010) is an alternative rock band based out of Philadelphia, PA
 EOD
 
 violettone = Act.create({:name => 'The Violet Tone', :description => violettone_description, :hometown => 'Philadelphia, PA'})
+violettone.logo = File.open("public/uploads/act/"+ violettone.name.parameterize + "-logo.png")
 violettone.links.build({:weblocation => www, :url => 'http://www.theviolettone.com/'})
 violettone.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/theviolettone'})
 violettone.links.build({:weblocation => twit, :url => 'https://twitter.com/#!/theviolettone'})
@@ -518,6 +540,7 @@ Every song on 'People Are Stars' is an experience in life that the listener can 
 EOD
 
 undergroundallstars = Act.create({:name => 'Underground All Stars', :description => undergroundallstars_description, :hometown => 'Charlottesville, VA'})
+undergroundallstars.logo = File.open("public/uploads/act/"+ undergroundallstars.name.parameterize + "-logo.png")
 undergroundallstars.links.build({:weblocation => www, :url => 'http://www.undergroundallstars.com/'})
 undergroundallstars.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/UndergroundAllStars'})
 undergroundallstars.links.build({:weblocation => twit, :url => 'https://twitter.com/#!/uas_official'})
@@ -534,6 +557,7 @@ Music took us, now we're taking you. Let's get it.
 EOD
 
 westolethekids = Act.create({:name => 'We Stole the Kids', :description => westolethekids_description, :hometown => 'New York, NY'})
+westolethekids.logo = File.open("public/uploads/act/"+ westolethekids.name.parameterize + "-logo.png")
 westolethekids.links.build({:weblocation => www, :url => 'http://www.westolethekids.com/'})
 westolethekids.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/WeStoleTheKids'})
 westolethekids.links.build({:weblocation => twit, :url => 'https://twitter.com/#!/WeStoleTheKIds'})
@@ -548,6 +572,7 @@ Tripp Fabulous is a female fronted Cover/Original band with an excellent range o
 EOD
 
 lauralea = Act.create({:name => 'Laura Lea and Trip Fabulous', :description => lauralea_description, :hometown => 'Philadelphia, PA'})
+lauralea.logo = File.open("public/uploads/act/"+ lauralea.name.parameterize + "-logo.png")
 lauralea.links.build({:weblocation => www, :url => 'http://www.trippfabulous.com/'})
 lauralea.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/trippfabulous'})
 lauralea.links.build({:weblocation => myspace, :url => 'http://www.myspace.com/trippfabulous'})

@@ -1,6 +1,6 @@
 <% specific_area do %>
     <div class="specificHeader">
-		<img src="<%= logo_for(@act) %>" class="large" />
+		<%= logo_image(@act, "large") %>
 		<div class="infoShow">
 			<%= content_tag :h4, @act.name %>	
 			<%= display_hometown(@act) %>

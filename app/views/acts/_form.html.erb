@@ -1,4 +1,4 @@
-<%= form_for @act do |f| %>
+<%= form_for @act, :html => {:multipart => true} do |f| %>
   <% if @act.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@act.errors.count, "error") %> prohibited this act from being saved:</h2>
@@ -12,6 +12,11 @@
   <% end %>
 
 <div style="margin: 10px;">
+	
+	<div class="field">
+		<%= f.file_field :logo %>
+	</div>	
+	
 	<div class="field">
 		<%= f.label :name, :style => "font: bold 10pt helvetica;" %><br />
 		<%= f.text_field :name, :style => "width: 280px;" %>
