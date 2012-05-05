@@ -16,6 +16,10 @@
 	<div class="field">
 		<%= f.file_field :logo %>
 	</div>	
+	<div class="field">
+		<%= f.label :remote_logo_url, "or image URL", :style => "font: bold 10pt helvetica;"  %><br />
+		<%= f.text_field :remote_logo_url, :style => "width: 280px;" %>
+	</div>
 	
 	<div class="field">
 		<%= f.label :name, :style => "font: bold 10pt helvetica;" %><br />
