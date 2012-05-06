@@ -1,6 +1,9 @@
 Problems
 
 Next Meeting:
+
+	Add a field to the Scheduleable table for CoverCharge - it will be a string
+	Add a new table, of schedulables, called AdditionalInfo. Its parent will be the schedulable it relates to. Fields: Name, Description, Logo.
  
 	* Table for additional info (things like breastfest, etc.) and cover charge(s).
 	* Any relationships between bands (e.g. Kristen & The Noise and Kristen & Joe)
