@@ -1,0 +1,36 @@
+<%= form_for @weblocation, :html => {:multipart => true} do |f| %>
+  <% if @weblocation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@weblocation.errors.count, "error") %> prohibited this weblocation from being saved:</h2>
+
+      <ul>
+      <% @weblocation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div style="margin: 10px;">
+	
+	<div class="field">
+		<%= f.file_field :logo %>
+	</div>	
+	<div class="field">
+		<%= f.label :remote_logo_url, "or image URL", :style => "font: bold 10pt helvetica;"  %><br />
+		<%= f.text_field :remote_logo_url, :style => "width: 280px;" %>
+	</div>
+	
+	<div class="field">
+		<%= f.label :name, :style => "font: bold 10pt helvetica;" %><br />
+		<%= f.text_field :name, :style => "width: 280px;" %>
+	</div>
+
+	<div class="actions" style="padding: 20px 0;">
+		<%= f.submit %>
+	</div>
+</div>
+
+<% end %>
+
+

@@ -1,5 +1,7 @@
 Dewey::Application.routes.draw do
 
+  resources :weblocations
+
   get "schedule/index"
 
   resources :acts
