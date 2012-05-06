@@ -49,7 +49,7 @@ class WeblocationsController < ApplicationController
 
     respond_to do |format|
       if @weblocation.update_attributes(params[:weblocation])
-        format.html { redirect_to @weblocation, notice: 'Weblocation was successfully updated.' }
+        format.html { redirect_to :action => "index", notice: 'Weblocation was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
