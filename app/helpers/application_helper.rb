@@ -5,8 +5,10 @@ module ApplicationHelper
   ARTICLES = %W[A AN THE]
 
   def admin_area(&block)
-    content_for :admin do      
-      content_tag(:div, :class => 'admin', &block)
+    if user_signed_in?
+      content_for :admin do
+        content_tag(:div, :class => 'admin', &block)
+      end
     end
   end
   

@@ -16,7 +16,7 @@
 <% admin_area do %>
 <h3>Events Admin</h3>
  
-<%= link_to 'New Event', new_event_path %>
+<%= link_to 'New Event', new_event_path %> | <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
 <table>
   <tr>
     <th>ID</th>

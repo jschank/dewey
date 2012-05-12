@@ -23,11 +23,9 @@
 
 <%= yield :in_progress %>
 
-<% if user_signed_in? %>
-  <%= yield :admin %>
-<% else %>
-  <%= yield :index %>
-<% end %>
+<%= yield :admin %>
+
+<%= yield :index %>
 
 
 

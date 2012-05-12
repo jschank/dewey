@@ -1,0 +1,30 @@
+<div class="link_fields">
+  <div class="field">
+    <%= f.label 'Select a schedulable child' %><br />
+	<%= f.select(:schedulable_type, ["Act", "Event"]) %><%= f.collection_select(:schedulable_id, @schedulables, :id, :name)%>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Select Venue/Location' %><br />
+	<%= f.collection_select(:location_id, @locations, :id, :form_picker_name)%>
+  </div>
+
+  <div class="field">
+    <%= f.label :start %><br />
+	<%= f.text_field :start, :id => "datepickerstart" %>
+	<script type="text/javascript">
+	  AnyTime.picker( "datepickerstart", { format: "%Y-%m-%d %T", firstDOW: 1 } );
+	</script>
+  </div>
+
+  <div class="field">
+    <%= f.label :end %><br />
+	<%= f.text_field :end, :id => "datepickerend" %>
+	<script type="text/javascript">
+	  AnyTime.picker( "datepickerend",   { format: "%Y-%m-%d %T", firstDOW: 1 } );
+	</script>
+
+  </div>
+	<%= link_to_function "remove", "remove_fields(this)" %>
+	<%= f.hidden_field :_destroy %>
+</div>  

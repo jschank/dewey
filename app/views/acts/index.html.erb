@@ -16,7 +16,7 @@
 <% admin_area do %>
 <h3>Acts Admin</h3>
  
-<%= link_to 'New Act', new_act_path %>
+<%= link_to 'New Act', new_act_path %> | <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
 <table>
   <tr>
     <th>ID</th>
