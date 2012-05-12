@@ -22,7 +22,7 @@ function add_fields(link, association, content) {
         $(link).parent().after(content.replace(regexp, new_id));
 }
 
-function populate_schedulables()
+function populate_schedulables(chooser)
 {
 	// Clear all options from sub category select 
 	$("select#schedule_schedulable_id").empty();

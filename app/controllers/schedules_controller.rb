@@ -5,6 +5,7 @@ before_filter :authenticate_user!, :except => [:index, :show]
   # GET /schedules
   # GET /schedules.json
   def index
+    @all_scheduled = Schedule.all
     @schedule = Schedule.future_events(DateTime.civil(2011, 01, 01))
     
     respond_to do |format|
