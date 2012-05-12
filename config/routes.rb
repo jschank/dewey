@@ -1,5 +1,7 @@
 Dewey::Application.routes.draw do
 
+  devise_for :users
+
   resources :weblocations
 
   get "schedule/index"

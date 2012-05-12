@@ -14,6 +14,8 @@ gem 'formatize'
 
 gem 'carrierwave'
 
+gem 'devise'
+
 # gem 'rmagick'
 
 # Gems used only for assets and not required
