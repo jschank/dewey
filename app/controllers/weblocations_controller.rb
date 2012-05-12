@@ -1,4 +1,7 @@
 class WeblocationsController < ApplicationController
+
+before_filter :authenticate_user!, :except => [:index, :show]
+
   # GET /weblocations
   # GET /weblocations.json
   def index
