@@ -23,9 +23,14 @@
 
 <%= yield :in_progress %>
 
-<%= yield :index %>
+<% if user_signed_in? %>
+  <%= yield :admin %>
+<% else %>
+  <%= yield :index %>
+<% end %>
 
-<%= yield :admin %>
+
+
 
 <p class="copyright">&copy; 2012 Awkward Fist Bump Software</p>
 <div id="tabbarbg">
