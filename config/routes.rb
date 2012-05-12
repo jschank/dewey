@@ -13,6 +13,8 @@ Dewey::Application.routes.draw do
   resources :venues
   
   resources :schedules
+  
+  match "/schedules/new_child/:parent_id(.:format)" => "schedules#new_child", :as => :new_child 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

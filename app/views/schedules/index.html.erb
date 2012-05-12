@@ -33,17 +33,29 @@
     <th colspan="4">Functions</th>
   </tr>
  
-<% @all_scheduled.each do |schedule| %>
-  <tr>
-    <td><%= schedule.id %></td>
-    <td><%= schedule.schedulable.name %></td>
-    <td><%= schedule.start %></td>
-    <td><%= schedule.end %></td>
-    <td><%= link_to 'Show', schedule %></td>
-    <td><%= link_to 'Edit', edit_schedule_path(schedule) %></td>
-    <td><%= link_to 'Add Child', new_schedule_path(schedule) %></td>
-    <td><%= link_to 'Remove', schedule, :confirm => 'Are you sure?', :method => :delete %></td>
+<% @all_parents.each do |parent| %>
+  <tr style="border-top: 3px solid #000; border-bottom: 2px dashed #000;">
+    <td><%= parent.id %></td>
+    <td><%= parent.schedulable.name %></td>
+    <td><%= parent.start %></td>
+    <td><%= parent.end %></td>
+    <td><%= link_to 'Show', parent %></td>
+    <td><%= link_to 'Edit', edit_schedule_path(parent) %></td>
+    <td><%= link_to 'Add Child', new_child_path(parent) %></td>
+    <td><%= link_to 'Remove', parent, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
+  <% parent.children.each do |child| %>
+  <tr>
+    <td><%= child.id %></td>
+    <td style="padding-left: 50px;"><%= child.schedulable.name %></td>
+    <td><%= child.start %></td>
+    <td><%= child.end %></td>
+    <td><%= link_to 'Show', child %></td>
+    <td><%= link_to 'Edit', edit_schedule_path(child) %></td>
+    <td></td>
+    <td><%= link_to 'Remove', child, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+  <% end %>
 <% end %>
 </table>
 <% end %>

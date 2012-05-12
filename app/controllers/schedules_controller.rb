@@ -5,7 +5,7 @@ before_filter :authenticate_user!, :except => [:index, :show]
   # GET /schedules
   # GET /schedules.json
   def index
-    @all_scheduled = Schedule.all
+    @all_parents = Schedule.where("parent_id is null")
     @schedule = Schedule.future_events(DateTime.civil(2011, 01, 01))
     
     respond_to do |format|
@@ -43,6 +43,23 @@ before_filter :authenticate_user!, :except => [:index, :show]
     end
   end
 
+  # GET /schedules/new_child
+  # GET /schedules/new_child.json
+  def new_child
+    @parent = Schedule.find(params[:parent_id])
+    @child = @parent.children.build
+    @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
+    @locations = Location.all.sort { |a, b| a.form_picker_name.downcase <=> b.form_picker_name.downcase }
+    @acts = Act.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
+    @events = Event.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
+    @schedulables = @acts
+  
+    respond_to do |format|
+      format.html # new_child.html.erb
+      format.json { render :json => @schedule }
+    end
+  end
+
   # GET /schedules/1/edit
   def edit
     @schedule = Schedule.find(params[:id])
@@ -54,8 +71,7 @@ before_filter :authenticate_user!, :except => [:index, :show]
   # POST /schedules
   # POST /schedules.json
   def create
-    @schedule = Schedule.new(params[:schedule])
-    
+    @schedule = Schedule.new(params[:schedule])    
 
     respond_to do |format|
       if @schedule.save
