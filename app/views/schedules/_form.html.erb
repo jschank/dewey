@@ -47,17 +47,14 @@
 	  AnyTime.picker( "datepickerend",   { format: "%Y-%m-%d %T", firstDOW: 1 } );
 	</script>
   </div>
+
+  <div class="field">
+    <%= f.label :parent_id %><br />
+	<%= f.text_field :parent_id %>
+  </div>
+
 </div>
 
-<% if false %>
-<div id="children" style="margin-top: 20px; border-top: 1px solid #000;">
-	<p style="background-color: #fff; padding: 3px; top: -15px;">Child Items:</p>
-	<%= link_to_add_fields "Add Child", f, :children %>
-    <%= f.fields_for :children do |builder| %>
-		<%= render "child_fields", :f => builder %>
-    <% end %>
-</div>  
-<% end %>
 
 <div class="actions" style="padding: 20px 0;">
 <%= f.submit %>

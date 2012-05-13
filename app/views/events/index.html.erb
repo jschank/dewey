@@ -14,10 +14,12 @@
 <% end %>
 
 <% admin_area do %>
-<h3>Events Admin</h3>
+<h3>Events Admin - <span class="signout"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></span></h3>
  
-<%= link_to 'New Event', new_event_path %> | <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
 <table>
+  <tr class="child">
+    <td colspan="5"><%= link_to 'New Event', new_event_path %></td>
+  </tr>
   <tr>
     <th>ID</th>
     <th>Name</th>
@@ -25,7 +27,7 @@
   </tr>
  
 <% @events.each do |event| %>
-  <tr>
+  <tr class="parent">
     <td><%= event.id %></td>
     <td><%= event.name %></td>
     <td><%= link_to 'Show', event %></td>

@@ -14,10 +14,13 @@
 <% end %>
 
 <% admin_area do %>
-<h3>Acts Admin</h3>
+<h3>Acts Admin - <span class="signout"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></span></h3>
  
-<%= link_to 'New Act', new_act_path %> | <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+ 
 <table>
+  <tr class="child">
+    <td colspan="5"><%= link_to 'New Act', new_act_path %></td>
+  </tr>
   <tr>
     <th>ID</th>
     <th>Name</th>
@@ -25,7 +28,7 @@
   </tr>
  
 <% @acts.each do |act| %>
-  <tr>
+  <tr class="parent">
     <td><%= act.id %></td>
     <td><%= act.name %></td>
     <td><%= link_to 'Show', act %></td>

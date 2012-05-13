@@ -14,11 +14,12 @@
 <% end %>
 
 <% admin_area do %>
-<h3>Venue Admin</h3>
+<h3>Venue Admin - <span class="signout"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></span></h3>
  
-<%= link_to 'New Venue', new_venue_path %> | <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-
 <table>
+  <tr class="child">
+    <td colspan="5"><%= link_to 'New Venue', new_venue_path %></td>
+  </tr>
   <tr>
     <th>ID</th>
     <th>Name</th>

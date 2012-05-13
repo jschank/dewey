@@ -20,11 +20,12 @@
 <% end %>
 
 <% admin_area do %>
-<h3>Acts Admin</h3>
+<h3>Acts Admin - <span class="signout"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></span></h3>
  
-<%= link_to 'New Parent Item', new_schedule_path %> | <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-
 <table>
+  <tr class="child">
+    <td colspan="8"><%= link_to 'New Parent Item', new_schedule_path %></td>
+  </tr>
   <tr>
     <th>ID</th>
     <th>Name</th>
@@ -34,21 +35,21 @@
   </tr>
  
 <% @all_parents.each do |parent| %>
-  <tr style="border-top: 3px solid #000; border-bottom: 2px dashed #000;">
+  <tr class="parent">
     <td><%= parent.id %></td>
     <td><%= parent.schedulable.name %></td>
-    <td><%= parent.start %></td>
-    <td><%= parent.end %></td>
+    <td><%= parent.start.to_formatted_s(:long) %></td>
+    <td><%= parent.end.to_formatted_s(:long) %></td>
     <td><%= link_to 'Show', parent %></td>
     <td><%= link_to 'Edit', edit_schedule_path(parent) %></td>
     <td><%= link_to 'Add Child', new_child_path(parent) %></td>
     <td><%= link_to 'Remove', parent, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
   <% parent.children.each do |child| %>
-  <tr>
+  <tr class="child">
     <td><%= child.id %></td>
     <td style="padding-left: 50px;"><%= child.schedulable.name %></td>
-    <td><%= child.start %></td>
+    <td><%= child.start.to_formatted_s(:long) %></td>
     <td><%= child.end %></td>
     <td><%= link_to 'Show', child %></td>
     <td><%= link_to 'Edit', edit_schedule_path(child) %></td>
