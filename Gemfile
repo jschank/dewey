@@ -7,13 +7,9 @@ gem 'rails', '3.1.0'
 # gem 'sqlite3'
 
 gem 'pg'
-
 gem 'json'
-
 gem 'formatize'
-
 gem 'carrierwave'
-
 gem 'devise'
 
 # gem 'rmagick'
