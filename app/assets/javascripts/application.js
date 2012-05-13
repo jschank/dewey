@@ -7,7 +7,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-expander
-//= require jquery.ui.all
 //= require anytime
 //= require_tree .
 
