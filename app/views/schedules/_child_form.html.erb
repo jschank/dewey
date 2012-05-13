@@ -1,65 +1,60 @@
-<%= form_for @child do |f| %>
+<%= form_for @child, :url => { :action => "create_child" } do |f| %>
   <% if @child.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@child.errors.count, "error") %> prohibited this schedule from being saved:</h2>
 
       <ul>
-      <% @child.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @child.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
   
-<div id="Act_options">  
-	<%= options_from_collection_for_select(Act.all, :id, :name) %>
-</div>
-
-<div id="Event_options">
-	<%= options_from_collection_for_select(Event.all, :id, :name) %>
-</div>
-
-<div style="margin: 10px;">
-
-  <div class="field">
-    <%= f.label 'Select a schedulable child' %><br />
-	<%= f.select(:schedulable_type, ["Act", "Event"]) %><%= f.collection_select(:schedulable_id, @schedulables, :id, :name)%>
+  <div id="Act_options">  
+  	<%= options_from_collection_for_select(Act.all, :id, :name) %>
   </div>
 
-  <div class="field">
-    <%= f.label 'Select Venue/Location' %><br />
-	<%= f.collection_select(:location_id, @locations, :id, :form_picker_name)%>
+  <div id="Event_options">
+  	<%= options_from_collection_for_select(Event.all, :id, :name) %>
   </div>
 
-  <div class="field">
-    <%= f.label :start %><br />
-	<%= f.text_field :start, :id => "datepickerstart" %>
-	<script type="text/javascript">
-	  AnyTime.picker( "datepickerstart", { format: "%Y-%m-%d %T", firstDOW: 1 } );
-	</script>
+  <div style="margin: 10px;">
+
+    <div class="field">
+      <%= f.label 'Select a schedulable child' %><br />
+    	<%= f.select(:schedulable_type, ["Act", "Event"]) %><%= f.collection_select(:schedulable_id, @schedulables, :id, :name)%>
+    </div>
+
+    <div class="field">
+      <%= f.label 'Select Venue/Location' %><br />
+    	<%= f.collection_select(:location_id, @locations, :id, :form_picker_name)%>
+    </div>
+
+    <div class="field">
+      <%= f.label :start %><br />
+    	<%= f.text_field :start, :id => "datepickerstart" %>
+    	<script type="text/javascript">
+    	  AnyTime.picker( "datepickerstart", { format: "%Y-%m-%d %T", firstDOW: 1 } );
+    	</script>
+    </div>
+
+    <div class="field">
+      <%= f.label :end %><br />
+    	<%= f.text_field :end, :id => "datepickerend" %>
+    	<script type="text/javascript">
+    	  AnyTime.picker( "datepickerend",   { format: "%Y-%m-%d %T", firstDOW: 1 } );
+    	</script>
+    </div>
+	
+  	<%= f.hidden_field :parent_id %>
+
   </div>
 
-  <div class="field">
-    <%= f.label :end %><br />
-	<%= f.text_field :end, :id => "datepickerend" %>
-	<script type="text/javascript">
-	  AnyTime.picker( "datepickerend",   { format: "%Y-%m-%d %T", firstDOW: 1 } );
-	</script>
+  <div class="actions" style="padding: 20px 0;">
+    <%= f.submit %>
   </div>
 
-  <div class="field">
-    <%= f.label :parent_id %><br />
-	<%= f.text_field :parent_id %>
-  </div>
-
-</div>
-
-
-<div class="actions" style="padding: 20px 0;">
-<%= f.submit %>
-</div>
-
-</div>
 <% end %>
 
 <script type="text/javascript">

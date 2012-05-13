@@ -25,8 +25,6 @@ before_filter :authenticate_user!, :except => [:index, :show]
     end
   end
 
-# I added everything from here...
-
   # GET /schedules/new
   # GET /schedules/new.json
   def new
@@ -48,6 +46,9 @@ before_filter :authenticate_user!, :except => [:index, :show]
   def new_child
     @parent = Schedule.find(params[:parent_id])
     @child = @parent.children.build
+    @child.start = @parent.start
+    @child.end = @parent.end
+    @child.location = @parent.location
     @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @locations = Location.all.sort { |a, b| a.form_picker_name.downcase <=> b.form_picker_name.downcase }
     @acts = Act.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
@@ -57,6 +58,22 @@ before_filter :authenticate_user!, :except => [:index, :show]
     respond_to do |format|
       format.html # new_child.html.erb
       format.json { render :json => @schedule }
+    end
+  end
+
+  # POST /schedules
+  # POST /schedules.json
+  def create_child
+    @schedule = Schedule.new(params[:schedule])    
+
+    respond_to do |format|
+      if @schedule.save
+        format.html { redirect_to schedules_url, :notice => 'Schedule was successfully created.'  }
+        format.json { render :json => @schedule, :status => :created, :location => @schedule }
+      else
+        format.html { render :action => "new_child" }
+        format.json { render :json => @schedule.errors, :status => :unprocessable_entity }
+      end
     end
   end
 
@@ -112,10 +129,5 @@ before_filter :authenticate_user!, :except => [:index, :show]
       format.json { head :ok }
     end
   end
-
-# ...to here
-
-
-
 
 end
