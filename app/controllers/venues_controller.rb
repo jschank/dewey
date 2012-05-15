@@ -29,7 +29,7 @@ before_filter :authenticate_user!, :except => [:index, :show]
   def new
     @venue = Venue.new
     @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
-
+	
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @venue }
