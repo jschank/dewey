@@ -17,7 +17,7 @@ before_filter :authenticate_user!, :except => [:index, :show]
   # GET /acts/1.json
   def show
     @act = Act.find(params[:id])
-    @future_schedulables = Act.upcoming(DateTime.civil(2011, 01, 01), @act)
+    @future_schedulables = Act.upcoming(DateTime.now, @act)
 
     respond_to do |format|
       format.html # show.html.erb

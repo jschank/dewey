@@ -17,7 +17,7 @@ before_filter :authenticate_user!, :except => [:index, :show]
   # GET /venues/1.json
   def show
     @venue = Venue.find(params[:id])
-    @future_schedulables = Schedule.future_events_at(DateTime.civil(2011, 01, 01), @venue)
+    @future_schedulables = Schedule.future_events_at(DateTime.now, @venue)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @venue }
@@ -29,6 +29,7 @@ before_filter :authenticate_user!, :except => [:index, :show]
   def new
     @venue = Venue.new
     @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
+    @locations = Location.all.sort { |a, b| a.form_picker_name.downcase <=> b.form_picker_name.downcase }
 	
     respond_to do |format|
       format.html # new.html.erb
@@ -40,6 +41,7 @@ before_filter :authenticate_user!, :except => [:index, :show]
   def edit
     @venue = Venue.find(params[:id])
     @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
+    @locations = Location.all.sort { |a, b| a.form_picker_name.downcase <=> b.form_picker_name.downcase }
   end
 
   # POST /venues
