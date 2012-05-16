@@ -1,4 +1,4 @@
-<div class="link_fields">
+<div class="dynamic_fields">
 	<%= f.collection_select(:weblocation_id, @weblocations, :id, :name)%><%= f.text_field :url %><%= link_to_function "remove", "remove_fields(this)" %>
 	<%= f.hidden_field :_destroy %>
 </div>  
