@@ -4,7 +4,7 @@ class Venue < ActiveRecord::Base
 
   has_many :schedules, :as => :schedulable
   
-  has_many :locations
+  has_many :locations, :order => 'name ASC'
 
   default_scope :order => 'name ASC'
 
