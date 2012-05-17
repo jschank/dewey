@@ -93,7 +93,7 @@ before_filter :authenticate_user!, :except => [:index, :show]
     respond_to do |format|
       if @schedule.save
         flash[:notice] = "Hello"
-        format.html { redirect_to @schedule, :notice => 'Schedule was successfully created.' }
+        format.html { redirect_to :action => "index", :notice => 'Schedule was successfully updated.' }
         format.json { render :json => @schedule, :status => :created, :location => @schedule }
       else
         format.html { render :action => "new" }
@@ -109,7 +109,7 @@ before_filter :authenticate_user!, :except => [:index, :show]
 
     respond_to do |format|
       if @schedule.update_attributes(params[:schedule])
-        format.html { redirect_to @schedule, :notice => 'Schedule was successfully updated.' }
+        format.html { redirect_to :action => "index", :notice => 'Schedule was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }

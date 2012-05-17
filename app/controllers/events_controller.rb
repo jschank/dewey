@@ -50,7 +50,7 @@ before_filter :authenticate_user!, :except => [:index, :show]
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, :notice => 'Event was successfully created.' }
+        format.html { redirect_to :action => "index", :notice => 'Event was successfully updated.' }
         format.json { render :json => @event, :status => :created, :location => @event }
       else
         format.html { render :action => "new" }
@@ -66,7 +66,7 @@ before_filter :authenticate_user!, :except => [:index, :show]
 
     respond_to do |format|
       if @event.update_attributes(params[:event])
-        format.html { redirect_to @event, :notice => 'Event was successfully updated.' }
+        format.html { redirect_to :action => "index", :notice => 'Event was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }

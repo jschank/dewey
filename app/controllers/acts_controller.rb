@@ -51,7 +51,7 @@ before_filter :authenticate_user!, :except => [:index, :show]
     respond_to do |format|
       if @act.save
         flash[:notice] = "Hello"
-        format.html { redirect_to @act, :notice => 'Act was successfully created.' }
+        format.html { redirect_to :action => "index", :notice => 'act was successfully created.' }
         format.json { render :json => @act, :status => :created, :location => @act }
       else
         format.html { render :action => "new" }
@@ -67,7 +67,7 @@ before_filter :authenticate_user!, :except => [:index, :show]
 
     respond_to do |format|
       if @act.update_attributes(params[:act])
-        format.html { redirect_to @act, :notice => 'Act was successfully updated.' }
+        format.html { redirect_to :action => "index", :notice => 'act was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }

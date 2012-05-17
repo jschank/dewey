@@ -36,7 +36,7 @@ before_filter :authenticate_user!
 
     respond_to do |format|
       if @weblocation.save
-        format.html { redirect_to :action => "index", notice: 'Weblocation was successfully created.' }
+        format.html { redirect_to :action => "index", :notice => 'Weblocation was successfully updated.' }
         format.json { render json: @weblocation, status: :created, location: @weblocation }
       else
         format.html { render action: "new" }
