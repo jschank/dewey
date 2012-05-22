@@ -1,6 +1,6 @@
 Problems
-
 Next Meeting:
+	see http://railscasts.com/episodes/250-authentication-from-scratch?view=asciicast
 
 	Add a field to the Scheduleable table for CoverCharge - it will be a string
 	Add a new table, of schedulables, called AdditionalInfo. Its parent will be the schedulable it relates to. Fields: Name, Description, Logo.

@@ -13,28 +13,29 @@
 	<% end %>
 <% end %>
 
+
 <% admin_area do %>
 <h3>Acts Admin - <span class="signout"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></span></h3>
  
+	<table>
+	  <tr class="child">
+	    <td colspan="5"><%= link_to 'New Act', new_act_path %></td>
+	  </tr>
+	  <tr>
+	    <th>ID</th>
+	    <th>Name</th>
+	    <th colspan="3">Functions</th>
+	  </tr>
  
-<table>
-  <tr class="child">
-    <td colspan="5"><%= link_to 'New Act', new_act_path %></td>
-  </tr>
-  <tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th colspan="3">Functions</th>
-  </tr>
- 
-<% @acts.each do |act| %>
-  <tr class="parent">
-    <td><%= act.id %></td>
-    <td><%= act.name %></td>
-    <td><%= link_to 'Show', act %></td>
-    <td><%= link_to 'Edit', edit_act_path(act) %></td>
-    <td><%= link_to 'Remove', act, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+	<% @acts.each do |act| %>
+	  <tr class="parent">
+	    <td><%= act.id %></td>
+	    <td><%= act.name %></td>
+	    <td><%= link_to 'Show', act %></td>
+	    <td><%= link_to 'Edit', edit_act_path(act) %></td>
+	    <td><%= link_to 'Remove', act, :confirm => 'Are you sure?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+	</table>
+
 <% end %>

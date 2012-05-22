@@ -5,3 +5,4 @@ tmp/
 test/ruby
 .sass-cache/
 config/database.yml
+config/admin.yml
