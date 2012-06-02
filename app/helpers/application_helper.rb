@@ -50,7 +50,11 @@ module ApplicationHelper
     first, *rest = canonical_name.split
     return canonical_name unless ARTICLES.include?(first)
     rest.join(' ')
-  end  
+  end 
+  
+  def histogram(thing) 
+    thing.sort { |a, b| sortable_name(a.name) <=> sortable_name(b.name) }.group_by{ |a| sortable_name(a.name).chars.first }
+  end
 
   def time_format(datetime)
     (datetime.min > 0) ? datetime.to_s(:reduced) : datetime.to_s(:hour_only)

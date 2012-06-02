@@ -1,11 +1,11 @@
 class ActsController < ApplicationController
 
-before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :authenticate_user!, :except => [:index, :show]
 
   # GET /acts
   # GET /acts.json
   def index
-    @acts = Act.all.sort { |a, b| a.name.downcase <=> b.name.downcase }
+    @acts = Act.all
 
     respond_to do |format|
       format.html 
