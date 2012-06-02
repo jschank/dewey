@@ -122,11 +122,17 @@ before_filter :authenticate_user!, :except => [:index, :show]
   # DELETE /schedules/1.json
   def destroy
     @schedule = Schedule.find(params[:id])
-    @schedule.destroy
-
-    respond_to do |format|
-      format.html { redirect_to schedules_url }
-      format.json { head :ok }
+    if @schedule.children.count > 0
+      respond_to do |format|
+        format.html { redirect_to schedules_url, :notice => "Cannot delete this parent scheduled item #{@schedule.schedulable.name} because it has child items. Delete those first." } 
+        format.json { head :ok }
+      end
+    else
+      @schedule.destroy
+      respond_to do |format|
+        format.html { redirect_to schedules_url, :notice => "Successfully deleted scheduled item #{@schedule.schedulable.name}" }
+        format.json { head :ok }
+      end
     end
   end
 

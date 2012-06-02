@@ -134,8 +134,13 @@ A talent that grew from a pre-teen passion into a life calling was raised by top
 Greene's emotionally candid and poignant songs have charted in CMJ and been featured on Sirius XM Radio's Radar Report and in projects by MTV, Sprite and Eddie Bauer.  He stands as one of the top unsigned acts on the radar, ready to lead the best of the rest.
 EOD
 
+## Notice the way the filename is done here, this solves the problem of carrierwave deleting the images from the public/uploads/acts
+## folder when running in development. So what we want is a shadow copy of the logo files, that carrierwave does not know about, so that
+## the files can be restored. Seeds could pull from there (or some public weblocation - possibly dropbox), or we could create a rake task
+## to update logos.
 chipgreene = Act.create({:name => 'Chip Greene', :description => chipgreene_description, :hometown => 'Nashville, TN'})
-chipgreene.logo = File.open("public/uploads/act/"+ chipgreene.name.parameterize + "-logo.png")
+filename = "public/uploads/act/"+ chipgreene.name.parameterize + "-logo.png"
+chipgreene.logo = File.open(filename) if File.exists? filename
 chipgreene.links.build({:weblocation => www, :url => 'http://www.chipgreene.com/'})
 chipgreene.links.build({:weblocation => facebook, :url => 'https://www.facebook.com/chipgreene'})
 chipgreene.links.build({:weblocation => twit, :url => 'https://twitter.com/#!/chipgreene'})

@@ -79,11 +79,17 @@ before_filter :authenticate_user!, :except => [:index, :show]
   # DELETE /events/1.json
   def destroy
     @event = Event.find(params[:id])
-    @event.destroy
-
-    respond_to do |format|
-      format.html { redirect_to events_url }
-      format.json { head :ok }
+    if Schedule.where(:schedulable_id => @event, :schedulable_type => "Event").exists?
+      respond_to do |format|
+        format.html { redirect_to events_url, :notice => "Cannot delete the event #{@event.name} because it is referenced by one or more schedule items. Delete those first." } 
+        format.json { head :ok }
+      end
+    else
+      @event.destroy
+      respond_to do |format|
+        format.html { redirect_to events_url, :notice => "Successfully deleted the event #{@event.name}" }
+        format.json { head :ok }
+      end
     end
   end
 end
