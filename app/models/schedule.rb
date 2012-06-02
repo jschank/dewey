@@ -7,16 +7,16 @@ class Schedule < ActiveRecord::Base
   belongs_to :parent, :class_name => "Schedule", :foreign_key => "parent_id"
   
   def self.future_events(date)
-      where("start >= ? AND parent_id is null", date)
+      where("schedules.end >= ? AND parent_id is null", date)
   end
 
   def self.future_events_at(date, venue)
-      where("start >= ? AND parent_id is null", date).scoped( :conditions => { :location_id => venue.locations} ).order( :start )      
+      where("schedules.end >= ? AND parent_id is null", date).scoped( :conditions => { :location_id => venue.locations} ).order( :start )      
   end
   
   # maybe this should become a static method on the Act instead of on the schedule.
   def self.future_events_of(date, schedulable)
-      where("start >= ?", date).scoped( :conditions => { :schedulable_id => schedulable.id, :schedulable_type => schedulable.class.name } ).order( :start ).reject{ |i| i == schedulable }
+      where("schedules.end >= ?", date).scoped( :conditions => { :schedulable_id => schedulable.id, :schedulable_type => schedulable.class.name } ).order( :start ).reject{ |i| i == schedulable }
   end
   
   def get_ultimate_parent
