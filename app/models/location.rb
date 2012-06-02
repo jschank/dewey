@@ -3,7 +3,7 @@ class Location < ActiveRecord::Base
   # belongs_to :schedule 
   
   def display_name
-    name || venue.name || "<Unknown>"
+    name.to_s.strip == APP_CONFIG['special_location'] ? "" : name.to_s.strip
   end
   
   def form_picker_name

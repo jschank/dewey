@@ -1,6 +1,7 @@
 class SchedulesController < ApplicationController
 
-before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :get_locations
 
   # GET /schedules
   # GET /schedules.json
@@ -30,7 +31,6 @@ before_filter :authenticate_user!, :except => [:index, :show]
   def new
     @schedule = Schedule.new
     @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
-    @locations = Location.all.sort { |a, b| a.form_picker_name.downcase <=> b.form_picker_name.downcase }
     @acts = Act.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @events = Event.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @schedulables = @acts
@@ -50,7 +50,6 @@ before_filter :authenticate_user!, :except => [:index, :show]
     @child.end = @parent.end
     @child.location = @parent.location
     @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
-    @locations = Location.all.sort { |a, b| a.form_picker_name.downcase <=> b.form_picker_name.downcase }
     @acts = Act.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @events = Event.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @schedulables = @acts
@@ -81,7 +80,6 @@ before_filter :authenticate_user!, :except => [:index, :show]
   def edit
     @schedule = Schedule.find(params[:id])
     @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
-    @locations = Location.all.sort { |a, b| a.form_picker_name.downcase <=> b.form_picker_name.downcase }
     @schedulables = @schedule.schedulable_type.camelize.constantize.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
   end
 
@@ -134,6 +132,12 @@ before_filter :authenticate_user!, :except => [:index, :show]
         format.json { head :ok }
       end
     end
+  end
+
+  private
+
+  def get_locations
+    @locations = Location.all.sort { |a, b| a.form_picker_name.downcase <=> b.form_picker_name.downcase }    
   end
 
 end

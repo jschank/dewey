@@ -34,7 +34,7 @@
 				<%= logo_image(schedulable.schedulable, :class => "small") %>
 					<div class="info">
 						<h4><%= schedulable.schedulable.name %><span class="times">, <%= time_list([schedulable] + Schedule.children_that_are_same_as(schedulable)) %></span></h4>
-						<%= content_tag :h5, schedulable.location.name if schedulable.location.name? %>
+						<%= content_tag :h5, schedulable.location.display_name if schedulable.location.display_name.present? %>
 						<% if schedulable.agenda.count > 0 %>	
 							<% schedulable.agenda.each do | schedulable_key, schedulable_items| %>
 								<p><%= Schedule.retrieve(*schedulable_key).name %><span class="times">, <%= time_list(schedulable_items) %></span></p>
