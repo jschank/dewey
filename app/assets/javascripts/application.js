@@ -7,7 +7,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-expander
-//= require anytime
 //= require_tree .
 
 function remove_fields(link) {
