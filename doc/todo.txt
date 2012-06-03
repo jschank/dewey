@@ -1,11 +1,8 @@
 Problems
 Next Meeting:
 
-	* Error handling for schedule section (if you remove any element from acts, events, or locations/venues that is scheduled then the schedules page freaks out)
 	* Get authentication process finalized (see http://railscasts.com/episodes/250-authentication-from-scratch?view=asciicast)
-	* Get default location working
 	* Look into heroku pre-compile error when pushing (https://devcenter.heroku.com/articles/rails3x-asset-pipeline-cedar)
-	* Look into putting times at top of record
 	
 
 	Add a field to the Scheduleable table for CoverCharge - it will be a string
