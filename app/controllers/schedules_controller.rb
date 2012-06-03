@@ -90,7 +90,6 @@ class SchedulesController < ApplicationController
 
     respond_to do |format|
       if @schedule.save
-        flash[:notice] = "Hello"
         format.html { redirect_to :action => "index", :notice => 'Schedule was successfully updated.' }
         format.json { render :json => @schedule, :status => :created, :location => @schedule }
       else

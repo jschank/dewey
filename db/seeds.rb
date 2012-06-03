@@ -87,7 +87,7 @@ tumblr.save!
 # *** Rusty Rudder ***
 rudder = Venue.create!({:name => 'Rusty Rudder', :description => 'The Rusty Rudder is a live music club and restaurant located next to the bay.', :address1 => '113 Dickinson St.', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-3888'})
 rudder.logo = File.open("public/uploads/venue/"+ rudder.name.parameterize + "-logo.png")
-rudder1 = rudder.locations.build()
+rudder1 = rudder.locations.build({:name => "all"})
 ruddera = rudder.locations.build({:name => "Outside Stage A"})
 rudderb = rudder.locations.build({:name => "Outside Stage B"})
 rudderc = rudder.locations.build({:name => "Inside Stage C"})
@@ -99,7 +99,7 @@ rudder.save!
 # Starboard
 sb = Venue.create({:name => 'The Starboard', :description => "The Heart of Dewey Beach Delaware and home of the world's greatest bloody mary bar.", :address1 => '2009 Highway One', :city => 'Dewey Beach', :state => 'DE', :zip => '19971', :phone => '302-227-4600'})
 sb.logo = File.open("public/uploads/venue/"+ sb.name.parameterize + "-logo.png")
-sb1 = sb.locations.build()
+sb1 = sb.locations.build({:name => "all"})
 sba = sb.locations.build({:name => "Main Stage"})
 sbb = sb.locations.build({:name => "Deck Stage"})
 sb.links.build( {:weblocation => www, :url => "http://www.thestarboard.com/"})

@@ -50,7 +50,6 @@ class ActsController < ApplicationController
 
     respond_to do |format|
       if @act.save
-        flash[:notice] = "Hello"
         format.html { redirect_to :action => "index", :notice => 'act was successfully created.' }
         format.json { render :json => @act, :status => :created, :location => @act }
       else
