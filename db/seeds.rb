@@ -648,39 +648,39 @@ popfest.save!
 # ***Parents***
 
 # Popfest Day 1 Stage A
-popfest1a = popfest.schedules.build({:location => ruddera, :start => '2012-04-13T20:00:00+00:00', :end => '2012-04-14T01:00:00+00:00'})
+popfest1a = popfest.schedules.build({:location => ruddera, :start => '2012-04-13T20:00:00-04:00', :end => '2012-04-14T01:00:00-04:00'})
 popfest1a.save!
 
 # Popfest Day 1 Stage B
-popfest1b = popfest.schedules.build({:location => rudderb, :start => '2012-04-13T20:00:00+00:00', :end => '2012-04-14T01:00:00+00:00'})
+popfest1b = popfest.schedules.build({:location => rudderb, :start => '2012-04-13T20:00:00-04:00', :end => '2012-04-14T01:00:00-04:00'})
 popfest1b.save!
 
 # Popfest Day 1 Stage C
-popfest1c = popfest.schedules.build({:location => rudderc, :start => '2012-04-13T20:00:00+00:00', :end => '2012-04-14T01:00:00+00:00'})
+popfest1c = popfest.schedules.build({:location => rudderc, :start => '2012-04-13T20:00:00-04:00', :end => '2012-04-14T01:00:00-04:00'})
 popfest1c.save!
 
 # Popfest Day 1 Stage D
-popfest1d = popfest.schedules.build({:location => rudderd, :start => '2012-04-13T20:00:00+00:00', :end => '2012-04-14T01:00:00+00:00'})
+popfest1d = popfest.schedules.build({:location => rudderd, :start => '2012-04-13T20:00:00-04:00', :end => '2012-04-14T01:00:00-04:00'})
 popfest1d.save!
 
 # Popfest Day 2 Stage A
-popfest2a = popfest.schedules.build({:location => ruddera, :start => '2012-04-14T20:00:00+00:00', :end => '2012-04-15T01:00:00+00:00'})
+popfest2a = popfest.schedules.build({:location => ruddera, :start => '2012-04-14T20:00:00-04:00', :end => '2012-04-15T01:00:00-04:00'})
 popfest2a.save!
 
 # Popfest Day 2 Stage B
-popfest2b = popfest.schedules.build({:location => rudderb, :start => '2012-04-14T20:00:00+00:00', :end => '2012-04-15T01:00:00+00:00'})
+popfest2b = popfest.schedules.build({:location => rudderb, :start => '2012-04-14T20:00:00-04:00', :end => '2012-04-15T01:00:00-04:00'})
 popfest2b.save!
 
 # Popfest Day 2 Stage C
-popfest2c = popfest.schedules.build({:location => rudderc, :start => '2012-04-14T20:00:00+00:00', :end => '2012-04-15T01:00:00+00:00'})
+popfest2c = popfest.schedules.build({:location => rudderc, :start => '2012-04-14T20:00:00-04:00', :end => '2012-04-15T01:00:00-04:00'})
 popfest2c.save!
 
 # Popfest Day 2 Stage D
-popfest2d = popfest.schedules.build({:location => rudderd, :start => '2012-04-14T20:00:00+00:00', :end => '2012-04-15T01:00:00+00:00'})
+popfest2d = popfest.schedules.build({:location => rudderd, :start => '2012-04-14T20:00:00-04:00', :end => '2012-04-15T01:00:00-04:00'})
 popfest2d.save!
 
 # Laura Lea and Trip Fabulous Concert
-lauralea1 = lauralea.schedules.build({:location => sb1, :start => '2012-04-14T22:00:00+00:00', :end => '2012-04-15T01:00:00+00:00'})
+lauralea1 = lauralea.schedules.build({:location => sb1, :start => '2012-04-14T22:00:00-04:00', :end => '2012-04-15T01:00:00-04:00'})
 lauralea1.save!
 
 
@@ -689,44 +689,44 @@ lauralea1.save!
 # ***Children***
 
 # Popfest Day 1 Stage A
-minshara.schedules.build({:location => ruddera, :start => '2012-04-13T21:40:00+00:00', :parent => popfest1a }).save!
-westolethekids.schedules.build({:location => ruddera, :start => '2012-04-13T23:00:00+00:00', :parent => popfest1a }).save!
-kassini.schedules.build({:location => ruddera, :start => '2012-04-14T00:20:00+00:00', :parent => popfest1a }).save!
+minshara.schedules.build({:location => ruddera, :start => '2012-04-13T21:40:00-04:00', :parent => popfest1a }).save!
+westolethekids.schedules.build({:location => ruddera, :start => '2012-04-13T23:00:00-04:00', :parent => popfest1a }).save!
+kassini.schedules.build({:location => ruddera, :start => '2012-04-14T00:20:00-04:00', :parent => popfest1a }).save!
 
 # Popfest Day 1 Stage B
-violettone.schedules.build({:location => rudderb, :start => '2012-04-13T21:00:00+00:00', :parent => popfest1b }).save!
-lovebettie.schedules.build({:location => rudderb, :start => '2012-04-13T22:20:00+00:00', :parent => popfest1b }).save!
-kingsfoil.schedules.build({:location => rudderb, :start => '2012-04-13T23:40:00+00:00', :parent => popfest1b }).save!
+violettone.schedules.build({:location => rudderb, :start => '2012-04-13T21:00:00-04:00', :parent => popfest1b }).save!
+lovebettie.schedules.build({:location => rudderb, :start => '2012-04-13T22:20:00-04:00', :parent => popfest1b }).save!
+kingsfoil.schedules.build({:location => rudderb, :start => '2012-04-13T23:40:00-04:00', :parent => popfest1b }).save!
 
 # Popfest Day 1 Stage C
-jonsandler.schedules.build({:location => rudderc, :start => '2012-04-13T21:00:00+00:00', :parent => popfest1c }).save!
-justinkalk.schedules.build({:location => rudderc, :start => '2012-04-13T22:20:00+00:00', :parent => popfest1c }).save!
-undergroundallstars.schedules.build({:location => rudderc, :start => '2012-04-13T23:40:00+00:00', :parent => popfest1c }).save!
+jonsandler.schedules.build({:location => rudderc, :start => '2012-04-13T21:00:00-04:00', :parent => popfest1c }).save!
+justinkalk.schedules.build({:location => rudderc, :start => '2012-04-13T22:20:00-04:00', :parent => popfest1c }).save!
+undergroundallstars.schedules.build({:location => rudderc, :start => '2012-04-13T23:40:00-04:00', :parent => popfest1c }).save!
 
 # Popfest Day 1 Stage D
-lizbethrose.schedules.build({:location => rudderd, :start => '2012-04-13T20:20:00+00:00', :parent => popfest1d }).save!
-rorysullivan.schedules.build({:location => rudderd, :start => '2012-04-13T21:40:00+00:00', :parent => popfest1d }).save!
-sinclarity.schedules.build({:location => rudderd, :start => '2012-04-13T23:00:00+00:00', :parent => popfest1d }).save!
-morningfuzz.schedules.build({:location => rudderd, :start => '2012-04-14T00:20:00+00:00', :parent => popfest1d }).save!
+lizbethrose.schedules.build({:location => rudderd, :start => '2012-04-13T20:20:00-04:00', :parent => popfest1d }).save!
+rorysullivan.schedules.build({:location => rudderd, :start => '2012-04-13T21:40:00-04:00', :parent => popfest1d }).save!
+sinclarity.schedules.build({:location => rudderd, :start => '2012-04-13T23:00:00-04:00', :parent => popfest1d }).save!
+morningfuzz.schedules.build({:location => rudderd, :start => '2012-04-14T00:20:00-04:00', :parent => popfest1d }).save!
 
 # Popfest Day 2 Stage A
-rodkim.schedules.build({:location => ruddera, :start => '2012-04-13T20:20:00+00:00', :parent => popfest2a }).save!
-lastflightout.schedules.build({:location => ruddera, :start => '2012-04-13T21:40:00+00:00', :parent => popfest2a }).save!
-duckyduke.schedules.build({:location => ruddera, :start => '2012-04-13T23:00:00+00:00', :parent => popfest2a }).save!
-soraia.schedules.build({:location => ruddera, :start => '2012-04-14T00:20:00+00:00', :parent => popfest2a }).save!
+rodkim.schedules.build({:location => ruddera, :start => '2012-04-14T20:20:00-04:00', :parent => popfest2a }).save!
+lastflightout.schedules.build({:location => ruddera, :start => '2012-04-14T21:40:00-04:00', :parent => popfest2a }).save!
+duckyduke.schedules.build({:location => ruddera, :start => '2012-04-14T23:00:00-04:00', :parent => popfest2a }).save!
+soraia.schedules.build({:location => ruddera, :start => '2012-04-15T00:20:00-04:00', :parent => popfest2a }).save!
 
 # Popfest Day 2 Stage B
-chipgreene.schedules.build({:location => rudderb, :start => '2012-04-13T21:00:00+00:00', :parent => popfest2b }).save!
-darrymiller.schedules.build({:location => rudderb, :start => '2012-04-13T22:20:00+00:00', :parent => popfest2b }).save!
-darlingparade.schedules.build({:location => rudderb, :start => '2012-04-13T23:40:00+00:00', :parent => popfest2b }).save!
+chipgreene.schedules.build({:location => rudderb, :start => '2012-04-14T21:00:00-04:00', :parent => popfest2b }).save!
+darrymiller.schedules.build({:location => rudderb, :start => '2012-04-14T22:20:00-04:00', :parent => popfest2b }).save!
+darlingparade.schedules.build({:location => rudderb, :start => '2012-04-14T23:40:00-04:00', :parent => popfest2b }).save!
 
 # Popfest Day 2 Stage C
-jayloftus.schedules.build({:location => rudderc, :start => '2012-04-13T21:00:00+00:00', :parent => popfest2c }).save!
-colourslide.schedules.build({:location => rudderc, :start => '2012-04-13T22:20:00+00:00', :parent => popfest2c }).save!
-findvienna.schedules.build({:location => rudderc, :start => '2012-04-13T23:40:00+00:00', :parent => popfest2c }).save!
+jayloftus.schedules.build({:location => rudderc, :start => '2012-04-14T21:00:00-04:00', :parent => popfest2c }).save!
+colourslide.schedules.build({:location => rudderc, :start => '2012-04-14T22:20:00-04:00', :parent => popfest2c }).save!
+findvienna.schedules.build({:location => rudderc, :start => '2012-04-14T23:40:00-04:00', :parent => popfest2c }).save!
 
 # Popfest Day 2 Stage D
-junedivided.schedules.build({:location => rudderd, :start => '2012-04-13T21:40:00+00:00', :parent => popfest2d }).save!
-lovebettie.schedules.build({:location => rudderd, :start => '2012-04-13T23:00:00+00:00', :parent => popfest2d }).save!
-justinkalk.schedules.build({:location => rudderd, :start => '2012-04-14T00:20:00+00:00', :parent => popfest2d }).save!
+junedivided.schedules.build({:location => rudderd, :start => '2012-04-14T21:40:00-04:00', :parent => popfest2d }).save!
+lovebettie.schedules.build({:location => rudderd, :start => '2012-04-14T23:00:00-04:00', :parent => popfest2d }).save!
+justinkalk.schedules.build({:location => rudderd, :start => '2012-04-15T00:20:00-04:00', :parent => popfest2d }).save!
 
