@@ -4,8 +4,8 @@ task :create_admin => :environment do
   userpass = ENV["admin_password"] || APP_CONFIG["admin_password"]
   
   if (username.present? && userpass.present? ) 
-    user = User.find_or_create_by_email(username)
-    user.password = user.password_confirmation = userpass
+    user = User.find_or_create_by_email(username.dup)
+    user.password = user.password_confirmation = userpass.dup
     if user.save!
       puts "Successfully created user: #{user.email}, with password \"#{user.password}\""
     else
