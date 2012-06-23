@@ -1,26 +1,14 @@
 Problems
 Next Meeting:
 
-	* Get authentication process finalized (see http://railscasts.com/episodes/250-authentication-from-scratch?view=asciicast)
 	* Look into heroku pre-compile error when pushing (https://devcenter.heroku.com/articles/rails3x-asset-pipeline-cedar)
-	
 
-	Add a field to the Scheduleable table for CoverCharge - it will be a string
-	Add a new table, of schedulables, called AdditionalInfo. Its parent will be the schedulable it relates to. Fields: Name, Description, Logo.
+	* Add a new table, of schedulables, called AdditionalInfo. Its parent will be the schedulable it relates to. Fields: Name, Description, Logo. (will handle cover charge too)
  
-	* Table for additional info (things like breastfest, etc.) and cover charge(s).
-	* Any relationships between bands (e.g. Kristen & The Noise and Kristen & Joe)
-	* Admin only access and logons
 	* Applying weblinks to the schedule table, so links for a specific scheduled thing (e.g. tickets) can be made.
-	* Get schedule entry to create children.
-	* Add "related events" using a [self-join association](http://edgeguides.rubyonrails.org/association_basics.html#self-joins)
-	* Add related acts to the acts table
+	* Table for additional info (things like breastfest, etc.) and cover charge(s).
 
-Later:
-	* Upcoming events should display next two weeks. And a link to show more (shows another two weeks each time)
-	* Implement search ability.
-	* Acts and Venues Index pages, Should have a class or ID for each item, which can be be hidden/shown via javascript
-	* Long strings should be rendered with ... instead of wrapping.
+	* Any relationships between bands (e.g. Kristen & The Noise and Kristen & Joe)
 
 Issues:
 
@@ -52,3 +40,11 @@ What if:
 
 	A "special" event is just any event that lasts more than 24 hours, or which has too many performances, for some value of "too many"
 
+Later:
+	* Upcoming events should display next two weeks. And a link to show more (shows another two weeks each time)
+	* Long strings should be rendered with ... instead of wrapping.
+	* Implement search ability.
+
+For the App:
+
+	* APP: Acts and Venues Index pages, Should have a class or ID for each item, which can be be hidden/shown via javascript

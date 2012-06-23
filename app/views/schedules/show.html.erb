@@ -9,11 +9,19 @@
 			<div class="description" id="venue_collapsable">
 				<%= textilize(@schedule.schedulable.description) %>
 			</div>		
+
 			<p class="dates"><%= date_and_times(@schedule.start) %></p>	
 			<p class="times"><%= times(@schedule) %></p>	
+
+			<% if @schedule.schedulable.links.count > 0 %>
+				<% @schedule.links.each do |link| %>
+					<%= make_link(link) %>
+				<% end %>
+			<% end %>
 	    </div>
+		
 		<% if @schedule.schedulable.links.count > 0 %>
-			<p class="visit">Visit us:</p>
+		<p class="visit">Links for <%= @schedule.schedulable.name %>:</p>
 			<% @schedule.schedulable.links.each do |link| %>
 				<%= make_link(link) %>
 			<% end %>

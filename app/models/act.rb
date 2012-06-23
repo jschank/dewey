@@ -1,12 +1,11 @@
 class Act < ActiveRecord::Base  
   has_many :links, :as => :linkable, :dependent => :destroy
   has_many :weblocations, :through => :links
+  accepts_nested_attributes_for :links, :reject_if => lambda { |a| a[:url].blank? }, :allow_destroy => true
   
   has_many :schedules, :as => :schedulable
   
   validates :name, :presence => true
-  
-  accepts_nested_attributes_for :links, :reject_if => lambda { |a| a[:url].blank? }, :allow_destroy => true
 
   default_scope :order => 'name ASC'
   

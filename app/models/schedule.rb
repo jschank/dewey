@@ -6,6 +6,10 @@ class Schedule < ActiveRecord::Base
   has_many :children, :class_name => "Schedule", :foreign_key => "parent_id"
   belongs_to :parent, :class_name => "Schedule", :foreign_key => "parent_id"
   
+  has_many :links, :as => :linkable, :dependent => :destroy
+  has_many :weblocations, :through => :links
+  accepts_nested_attributes_for :links, :reject_if => lambda { |a| a[:url].blank? }, :allow_destroy => true
+  
   def self.future_events(date)
       where("schedules.end >= ? AND parent_id is null", date)
   end
