@@ -10,16 +10,20 @@ class Schedule < ActiveRecord::Base
   has_many :weblocations, :through => :links
   accepts_nested_attributes_for :links, :reject_if => lambda { |a| a[:url].blank? }, :allow_destroy => true
   
-  def self.future_events(date)
+  def self.since_date
+    Rails.env == 'development' ? DateTime.civil(2011, 01, 01) : DateTime.now
+  end
+  
+  def self.future_events(date = since_date)
       where("schedules.end >= ? AND parent_id is null", date)
   end
 
-  def self.future_events_at(date, venue)
+  def self.future_events_at(date = since_date, venue)
       where("schedules.end >= ? AND parent_id is null", date).scoped( :conditions => { :location_id => venue.locations} ).order( :start )      
   end
   
   # maybe this should become a static method on the Act instead of on the schedule.
-  def self.future_events_of(date, schedulable)
+  def self.future_events_of(date = since_date, schedulable)
       where("schedules.end >= ?", date).scoped( :conditions => { :schedulable_id => schedulable.id, :schedulable_type => schedulable.class.name } ).order( :start ).reject{ |i| i == schedulable }
   end
   

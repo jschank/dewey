@@ -7,7 +7,7 @@ class SchedulesController < ApplicationController
   # GET /schedules.json
   def index
     @all_parents = Schedule.where("parent_id is null")
-    @schedule = Schedule.future_events(DateTime.now)
+    @schedule = Schedule.future_events
     
     respond_to do |format|
       format.html 
@@ -19,7 +19,7 @@ class SchedulesController < ApplicationController
   # GET /schedules/1.json
   def show
     @schedule = Schedule.find(params[:id])
-    @future_schedulables = Schedule.future_events_of(DateTime.now, @schedule.schedulable).reject{ |i| i == @schedule }
+    @future_schedulables = Schedule.future_events_of(@schedule.schedulable).reject{ |i| i == @schedule }
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @schedule }
