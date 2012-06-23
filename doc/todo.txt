@@ -1,12 +1,9 @@
 Problems
 Next Meeting:
 
-	* Look into heroku pre-compile error when pushing (https://devcenter.heroku.com/articles/rails3x-asset-pipeline-cedar)
+	* Look into Amazon S3. Create an account	
 
-	* Add a new table, of schedulables, called AdditionalInfo. Its parent will be the schedulable it relates to. Fields: PrimaryKey, Name, Description, scheduleID. (will handle cover charge too)
-	* Table for additional info (things like breastfest, etc.) and cover charge(s).
-	* Schedule items (not the acts) will have Many AdditionalInfos, and each AdditionalInfo will belong to the Schedule item.
-	* Call it Details.
+	* Look into heroku pre-compile error when pushing (https://devcenter.heroku.com/articles/rails3x-asset-pipeline-cedar)
 
 	* Any relationships between bands (e.g. Kristen & The Noise and Kristen & Joe)
 

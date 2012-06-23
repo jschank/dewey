@@ -9,6 +9,7 @@ gem 'rails', '3.1.0'
 gem 'pg'
 gem 'json'
 gem 'formatize'
+gem 'fog'
 gem 'carrierwave'
 gem 'devise'
 
