@@ -1,7 +1,7 @@
 Problems
 Next Meeting:
 
-	* Look into Amazon S3. Create an account	
+	* Consider that development MAY be better off using Local File System instead of S3.
 
 	* Look into heroku pre-compile error when pushing (https://devcenter.heroku.com/articles/rails3x-asset-pipeline-cedar)
 
