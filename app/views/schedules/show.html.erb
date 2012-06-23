@@ -8,7 +8,16 @@
 			<%= content_tag :h5, @schedule.location.display_name if @schedule.location.display_name.present? %>
 			<div class="description" id="venue_collapsable">
 				<%= textilize(@schedule.schedulable.description) %>
-			</div>		
+			</div>
+			
+			<% if @schedule.details.count > 0 %>
+				<p>Additional Details:<p>
+				<% @schedule.details.each do |detail| %>
+					<div class="description">
+						<p><%= detail.name %><%= detail.description.present? ? ": " : "" %><%= detail.description %></p>
+					</div>				
+				<% end %>
+			<% end %>
 
 			<p class="dates"><%= date_and_times(@schedule.start) %></p>	
 			<p class="times"><%= times(@schedule) %></p>	

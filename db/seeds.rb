@@ -681,6 +681,7 @@ popfest2d.save!
 
 # Laura Lea and Trip Fabulous Concert
 lauralea1 = lauralea.schedules.build({:location => sb1, :start => '2012-04-14T22:00:00-04:00', :end => '2012-04-15T01:00:00-04:00'})
+lauralea1.details.build({:name => "Breast-fest", :description => 'a celebration of boobies!'})
 lauralea1.save!
 
 
