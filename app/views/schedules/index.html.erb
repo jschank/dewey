@@ -15,8 +15,8 @@
 					<% if p.details.count > 0 %>
 						<p>Additional Details:<p>
 							<% p.details.each do |detail| %>
-							<div class="description">
-								<p><%= detail.name %><%= detail.description.present? ? ": " : "" %><%= detail.description %></p>
+							<div class="details">
+								<p><strong><%= detail.name %></strong><%= detail.description.present? ? ": " : "" %><%= detail.description %></p>
 							</div>				
 						<% end %>
 					<% end %>
