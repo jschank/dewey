@@ -9,7 +9,7 @@
 			<%= textilize(@venue.description) %>
 		</div>		
 	    <p><%= @venue.address1 %><br/>
-		<% if @venue.address2 %>	
+		<% if @venue.address2.present? %>	
 			<%= @venue.address2 %><br/>
 		<% end %>
 	    <%= @venue.city %>, <%= @venue.state %>  <%= @venue.zip %></p>
