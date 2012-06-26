@@ -161,21 +161,38 @@ p
 	clear: both;
 }
 
-.description, .details	
+.description	
 {
 	margin-bottom: 1em;
 }
  
-.description p, .details p	
+.description p	
 {
 	margin-top: 1em;
 	font: italic 10pt Helvetica, sans-serif;
 	color: #7988a3;
 }
 
-.description p:first-child, .details p:first-child	
+.description p:first-child	
 {
 	margin-top: 0;
+}
+
+.details	
+{
+	margin-bottom: 0;
+}
+ 
+.details p	
+{
+	margin-top: 0;
+	font: 10pt Helvetica, sans-serif;
+	color: #8a8a8a;
+}
+
+.details strong	
+{
+	color: #000000;
 }
 
 .hometown	
@@ -235,20 +252,7 @@ img.small
 	float: left;
 	height: 60px;
 	width: 60px;
-	border-left: none;
-	border-top: none;
-}
-
-a.link_box:nth-of-type(odd) img.small
-{
-	border-right: none;
-	border-bottom: none;
-}
-
-a.link_box:nth-of-type(even) img.small
-{
-	border-right: 1px solid #949494;
-	border-bottom: 1px solid #949494;
+	border: none;	
 }
 
 table	{
