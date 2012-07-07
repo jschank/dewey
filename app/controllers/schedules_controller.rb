@@ -10,7 +10,7 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.future_events
     
     respond_to do |format|
-      format.html 
+      format.html {flash[:notice] = params[:notice]}
       format.json { render :json => @schedule }
     end
   end
@@ -113,13 +113,19 @@ class SchedulesController < ApplicationController
   # PUT /schedules/1.json
   def update
     @schedule = Schedule.find(params[:id])
+    @schedulables = @schedule.schedulable_type.camelize.constantize.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
+    @parent = @schedule.parent
 
     respond_to do |format|
       if @schedule.update_attributes(params[:schedule])
         format.html { redirect_to :action => "index", :notice => 'Schedule was successfully updated.' }
         format.json { head :ok }
       else
-        format.html { render :action => "edit" }
+        if @parent
+          format.html { render :action => "edit_child" }
+        else
+          format.html { render :action => "edit" }
+        end
         format.json { render :json => @schedule.errors, :status => :unprocessable_entity }
       end
     end

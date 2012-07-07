@@ -23,7 +23,7 @@
 
     <div class="field">
       <%= f.label 'Select a schedulable child' %><br />
-    	<%= f.select(:schedulable_type, ["Act", "Event"]) %><%= f.collection_select(:schedulable_id, @schedulables, :id, :name)%>
+      <%= f.select(:schedulable_type, ["Act", "Event"]) %><%= f.collection_select(:schedulable_id, @schedulables, :id, :name)%>
     </div>
 
     <div class="field">
@@ -43,7 +43,7 @@
 	
  <div class="field">
 	<%= f.label :order %><br />
-	<%= f.text_field :order, :value => '1000' %>
+	<%= f.text_field :order %>
  </div>
 
   	<%= f.hidden_field :parent_id %>

@@ -1,5 +1,7 @@
 class Schedule < ActiveRecord::Base
 
+  validates_presence_of :order
+
   belongs_to :schedulable, :polymorphic => true
   belongs_to :location
 
@@ -45,10 +47,10 @@ class Schedule < ActiveRecord::Base
   def self.children_that_are_same_as(parent)
     parent.children.select{ |c| c.schedulable_id == parent.schedulable_id && c.schedulable_type == parent.schedulable_type }
   end
-  
+      
   def agenda
     different_children = Schedule.children_that_are_not_same_as(self)
-    different_children.sort{ |a, b| a.start <=> b.start }.group_by{ |c| [c.schedulable_id, c.schedulable_type] }
+    different_children.sort_by{ |c| [c.order, (c.start.present?) ? c.start : c.parent.start] }.group_by{ |c| [c.schedulable_id, c.schedulable_type] }
     
     
     # i want an array of arrays, where the sub arrays are schedule items, sorted by start time. 
