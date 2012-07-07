@@ -51,11 +51,6 @@ class Schedule < ActiveRecord::Base
   def agenda
     different_children = Schedule.children_that_are_not_same_as(self)
     different_children.sort_by{ |c| [c.order, (c.start.present?) ? c.start : c.parent.start] }.group_by{ |c| [c.schedulable_id, c.schedulable_type] }
-    
-    
-    # i want an array of arrays, where the sub arrays are schedule items, sorted by start time. 
-    # a = [5, "Act"]
-    # a[1].constantize.send("find", a[0]) => returns Act.find(5)   
   end
   
   def self.retrieve(schedulable_id, schedulable_type)
