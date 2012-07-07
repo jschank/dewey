@@ -10,7 +10,7 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.future_events
     
     respond_to do |format|
-      format.html 
+      format.html {flash[:notice] = params[:notice]}
       format.json { render :json => @schedule }
     end
   end
@@ -45,10 +45,10 @@ class SchedulesController < ApplicationController
   # GET /schedules/new_child.json
   def new_child
     @parent = Schedule.find(params[:parent_id])
-    @child = @parent.children.build
-    @child.start = @parent.start
-    @child.end = @parent.end
-    @child.location = @parent.location
+    @schedule = @parent.children.build
+    @schedule.start = @parent.start
+    @schedule.end = @parent.end
+    @schedule.location = @parent.location
     @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @acts = Act.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @events = Event.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
@@ -81,6 +81,16 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
     @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @schedulables = @schedule.schedulable_type.camelize.constantize.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
+    @parent = @schedule.parent
+
+    respond_to do |format|
+      if @parent
+        format.html { render :action => "edit_child" }
+      else
+        format.html { render :action => "edit" }
+      end
+    end
+    
   end
 
   # POST /schedules
@@ -103,13 +113,19 @@ class SchedulesController < ApplicationController
   # PUT /schedules/1.json
   def update
     @schedule = Schedule.find(params[:id])
+    @schedulables = @schedule.schedulable_type.camelize.constantize.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
+    @parent = @schedule.parent
 
     respond_to do |format|
       if @schedule.update_attributes(params[:schedule])
         format.html { redirect_to :action => "index", :notice => 'Schedule was successfully updated.' }
         format.json { head :ok }
       else
-        format.html { render :action => "edit" }
+        if @parent
+          format.html { render :action => "edit_child" }
+        else
+          format.html { render :action => "edit" }
+        end
         format.json { render :json => @schedule.errors, :status => :unprocessable_entity }
       end
     end
