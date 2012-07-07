@@ -1,10 +1,10 @@
-<%= form_for @child, :url => { :action => "create_child" } do |f| %>
-  <% if @child.errors.any? %>
+<%= form_for @schedule do |f| %>
+  <% if @schedule.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@child.errors.count, "error") %> prohibited this schedule from being saved:</h2>
+      <h2><%= pluralize(@schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
 
       <ul>
-        <% @child.errors.full_messages.each do |msg| %>
+        <% @schedule.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
@@ -41,6 +41,11 @@
 	<%= f.datetime_select :end, :include_blank => true  %>
  </div>
 	
+ <div class="field">
+	<%= f.label :order %><br />
+	<%= f.text_field :order, :value => '1000' %>
+ </div>
+
   	<%= f.hidden_field :parent_id %>
 
   <div class="actions" style="padding: 20px 0;">

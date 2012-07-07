@@ -45,10 +45,10 @@ class SchedulesController < ApplicationController
   # GET /schedules/new_child.json
   def new_child
     @parent = Schedule.find(params[:parent_id])
-    @child = @parent.children.build
-    @child.start = @parent.start
-    @child.end = @parent.end
-    @child.location = @parent.location
+    @schedule = @parent.children.build
+    @schedule.start = @parent.start
+    @schedule.end = @parent.end
+    @schedule.location = @parent.location
     @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @acts = Act.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @events = Event.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
@@ -81,6 +81,16 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
     @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @schedulables = @schedule.schedulable_type.camelize.constantize.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
+    @parent = @schedule.parent
+
+    respond_to do |format|
+      if @parent
+        format.html { render :action => "edit_child" }
+      else
+        format.html { render :action => "edit" }
+      end
+    end
+    
   end
 
   # POST /schedules
