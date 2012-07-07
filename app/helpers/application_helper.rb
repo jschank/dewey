@@ -66,12 +66,13 @@ module ApplicationHelper
 
   def time_list(schedulables)
     return "" unless schedulables
-    schedulables.map do |schedulable|
+    times = schedulables.map do |schedulable|
       schedulable_times = []
       schedulable_times << time_format(schedulable.start).chop if schedulable.start
       schedulable_times << time_format(schedulable.end).chop if schedulable.end
       schedulable_times.join(" - ").downcase
     end.join(", ")
+    times.prepend(", ") if times.present?
   end
 
   def times(schedulable)
