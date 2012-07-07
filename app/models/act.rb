@@ -19,6 +19,8 @@ class Act < ActiveRecord::Base
 
   has_many :related_acts, :class_name => "Act", :through => :forward_related_acts, :source => :act_2  
   has_many :acts_related, :class_name => "Act", :through => :reverse_related_acts, :source => :act_1  
+
+  accepts_nested_attributes_for :forward_related_acts, :allow_destroy => true
     
   mount_uploader :logo, LogoUploader
     
