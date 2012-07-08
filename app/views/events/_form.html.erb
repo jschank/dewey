@@ -35,8 +35,8 @@
     <%= f.check_box :is_special %>
   </div>
 
-<div id="links" style="margin-top: 20px; border-top: 1px solid #000;">
-	<p style="background-color: #fff; padding: 3px; top: -15px;">Web Links:</p>
+<div class="form_addition">
+	<p class="form_addition_header">Web Links:</p>
 	<%= link_to_add_fields "Add Link", f, :links %>
     <%= f.fields_for :links do |builder| %>
     	<%= render "link_fields", :f => builder %>
@@ -46,9 +46,6 @@
   <div class="actions" style="padding: 20px 0;">
     <%= f.submit %>
   </div>
-
-
-
 
 <% end %>
 </div>

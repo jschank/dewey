@@ -55,8 +55,8 @@
     <%= f.text_field :phone %>
   </div>
 
-<div id="locations" style="margin-top: 20px; border-top: 1px solid #000;">
-	<p style="background-color: #fff; padding: 3px; top: -15px;">Location(s):</p>
+<div class="form_addition">
+	<p class="form_addition_header">Location(s):</p>
 	<%= link_to_add_fields "Add Location", f, :locations %>
     <%= f.fields_for :locations do |builder| %>
 		<%= render "location_fields", :f => builder %>
@@ -64,8 +64,8 @@
 </div>  
 
 
-<div id="links" style="margin-top: 20px; border-top: 1px solid #000;">
-	<p style="background-color: #fff; padding: 3px; top: -15px;">Web Links:</p>
+<div class="form_addition">
+	<p class="form_addition_header">Web Links:</p>
 	<%= link_to_add_fields "Add Link", f, :links %>
     <%= f.fields_for :links do |builder| %>
     	<%= render "link_fields", :f => builder %>
