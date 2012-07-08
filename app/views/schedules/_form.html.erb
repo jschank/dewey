@@ -44,16 +44,16 @@
 
   <%= f.hidden_field :parent_id %>
 
-	<div id="links" style="margin-top: 20px; border-top: 1px solid #000; position: relative; padding-top: 20px;">
-		<p style="background-color: #fff; padding: 3px; position: absolute; top: -12px; left: 5px; font: bold 12pt helvetica;">Web Links</p>
+	<div class="form_addition">
+		<p class="form_addition_header">Web Links</p>
 		<%= link_to_add_fields "Add Link", f, :links %>
 		<%= f.fields_for :links do |builder| %>
 			<%= render "link_fields", :f => builder %>
 		<% end %>
 	</div>  
 
-	<div id="links" style="margin-top: 20px; border-top: 1px solid #000; position: relative; padding-top: 20px;">
-		<p style="background-color: #fff; padding: 3px; position: absolute; top: -12px; left: 5px; font: bold 12pt helvetica;">Additional Details</p>
+	<div class="form_addition">
+		<p class="form_addition_header">Additional Details</p>
 		<%= link_to_add_fields "Add Details", f, :details %>
 		<%= f.fields_for :details do |builder| %>
 			<%= render "detail_fields", :f => builder %>

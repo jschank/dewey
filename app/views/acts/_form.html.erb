@@ -39,16 +39,16 @@
 	</div>  
 
 
-	<div id="links" style="margin-top: 20px; border-top: 1px solid #000; position: relative; padding-top: 20px;">
-		<p style="background-color: #fff; padding: 3px; position: absolute; top: -12px; left: 5px; font: bold 12pt helvetica;">Web Links</p>
+	<div class="form_addition">
+		<p class="form_addition_header">Web Links</p>
 		<%= link_to_add_fields "Add Link", f, :links %>
 		<%= f.fields_for :links do |builder| %>
 			<%= render "link_fields", :f => builder %>
 		<% end %>
 	</div>  
 
-	<div id="links" style="margin-top: 20px; border-top: 1px solid #000; position: relative; padding-top: 20px;">
-		<p style="background-color: #fff; padding: 3px; position: absolute; top: -12px; left: 5px; font: bold 12pt helvetica;">Related Acts</p>
+	<div class="form_addition">
+		<p class="form_addition_header">Related Acts</p>
 		<%= link_to_add_fields "Add Related Act", f, :forward_related_acts %>
 		<%= f.fields_for :forward_related_acts do |builder| %>
 		<%= render "forward_related_act_fields", :f => builder %>
