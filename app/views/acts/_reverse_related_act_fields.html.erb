@@ -1,0 +1,3 @@
+<div class="dynamic_fields">
+	<%= f.collection_select(:act_1_id, Act.all, :id, :name)%><%= f.hidden_field :act_2_id, :value => @act.id %><%= f.hidden_field :_destroy %><%= link_to_function "remove", "remove_fields(this)" %>
+</div>  
