@@ -33,6 +33,7 @@ group :test, :development do
   gem 'syntax'
   gem 'hirb'
   gem 'wirble'
+  gem 'jazz_hands'
 end
 
 group :test do

@@ -66,21 +66,18 @@ module ApplicationHelper
 
   def time_list(schedulables)
     return "" unless schedulables
-    times = schedulables.map do |schedulable|
-      schedulable_times = []
-      schedulable_times << time_format(schedulable.start).chop if schedulable.start
-      schedulable_times << time_format(schedulable.end).chop if schedulable.end
-      schedulable_times.join(" - ").downcase
-    end.join(", ")
-    times.prepend(", ") if times.present?
+    times_array = schedulables.map { |schedulable| times(schedulable) }
+    times_array = times_array.reject(&:blank?)
+    return "" if times_array.empty?
+    ", " + times_array.join(", ")
   end
 
   def times(schedulable)
     return "" unless schedulable
-    times = []
-    times << time_format(schedulable.start).chop if schedulable.start
-    times << time_format(schedulable.end).chop if schedulable.end
-    times.join(" - ").downcase
+    times_array = []
+    times_array << time_format(schedulable.start).chop if schedulable.start.present?
+    times_array << time_format(schedulable.end).chop if schedulable.end.present?
+    times_array.join(" - ").downcase
   end
   
   def performance_times(performance)
