@@ -45,7 +45,7 @@ h3	{
 	background: url(<%= asset_path 'h2-bg.png' %>) repeat-x left top;
 	height: 20px;
 	text-shadow: 0 1px 2px #000;
-	overflow: none;
+	overflow: hidden;
 }
 
 h2
@@ -59,7 +59,7 @@ h2
 	text-align: left;
 	text-shadow: 0 1px #000;
 	height: 19px;
-	overflow: none;
+	overflow: hidden;
 }
 
 h4
@@ -72,7 +72,7 @@ h4
 
 h4.oneline
 {
-	padding-top: 20px;
+	padding-top: 25px;
 	height: 15pt;
 	overflow: hidden;
 }
@@ -95,7 +95,7 @@ h5
 
 .info
 {
-	padding: 3px 0px 3px 65px;
+	padding: 3px 0px 3px 70px;
 	width: auto;
 }
 
@@ -178,19 +178,19 @@ p
 	margin-top: 0;
 }
 
-.details	
+.addDetails	
 {
 	margin-bottom: 0;
 }
  
-.details p	
+.addDetails p	
 {
 	margin-top: 0;
 	font: 10pt Helvetica, sans-serif;
 	color: #8a8a8a;
 }
 
-.details strong	
+.addDetails strong	
 {
 	color: #000000;
 }
@@ -238,21 +238,20 @@ p
 
 img.large
 {
-	/*-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(238,238,238,0.2)));*/
 	margin: 0 0 0 0;
 	float: left;
 	height: 100px;
 	width: 100px;
-	border: none;	
+	border: 1px solid #949494;	
 }
 
 img.small
 {
-	margin: 0 5px 0 0;
+	margin: 3px 5px 3px 3px;
 	float: left;
 	height: 60px;
 	width: 60px;
-	border: none;	
+	border: 1px solid #949494;	
 }
 
 table	{

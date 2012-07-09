@@ -14,7 +14,7 @@
 					<%= content_tag :h5, p.location.display_name if p.location.display_name.present? %>
 					<% if p.details.count > 0 %>
 							<% p.details.each do |detail| %>
-							<div class="details">
+							<div class="addDetails">
 								<p><strong><%= detail.name %><%= detail.description.present? ? ": " : "" %></strong><%= detail.description %></p>
 							</div>				
 						<% end %>
