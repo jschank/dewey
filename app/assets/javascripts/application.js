@@ -33,3 +33,18 @@ function populate_schedulables(chooser)
 	var div_contents = $(div_entity).contents().clone();
 	$(div_contents).appendTo("select#schedule_schedulable_id"); 
 }
+
+// iOS treats links in Web Apps as something that should be opened in Safari, and javascript location changes as an in-app action that is allowed to saty in the web-app.
+// The code below works because it prevents the default link behavior, replacing it with a js nav call. 
+
+$('a').live('click', function (event)
+{      
+    var href = $(this).attr("href");
+
+    if (href.indexOf(location.hostname) > -1 && $(this).attr("target") != "_blank")
+    {
+        event.preventDefault();
+        window.location = href;
+    }
+
+});
