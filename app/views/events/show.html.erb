@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 <% specific_area do %>
 <div class="specificHeader">
-	<%= logo_image(@event, :class => "large") %>
 	<div class="infoShow">
+		<%= logo_image(@event, :class => "large") %>
 		<h4><%= @event.name %></h4>
 		<div class="description" id="event_collapsable">
 			<%= textilize(@event.description) %>

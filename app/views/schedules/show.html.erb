@@ -2,8 +2,8 @@
 
 <% specific_area do %>
     <div class="specificHeader">
-		<%= logo_image(@schedule.schedulable, :class => "large") %>
 		<div class="infoShow">
+			<%= logo_image(@schedule.schedulable, :class => "large") %>
 		    <h4><%= @schedule.schedulable.name %></h4>
 			<%= content_tag :h5, @schedule.location.display_name if @schedule.location.display_name.present? %>
 			<div class="description" id="venue_collapsable">
@@ -19,8 +19,7 @@
 				<% end %>
 			<% end %>
 
-			<p class="dates"><%= date_and_times(@schedule.start) %></p>	
-			<p class="times"><%= times(@schedule) %></p>	
+			<p class="dates"><%= date_and_times(@schedule.start) %>, <%= times(@schedule) %></p>	
 
 			<% if @schedule.schedulable.links.count > 0 %>
 				<% @schedule.links.each do |link| %>
