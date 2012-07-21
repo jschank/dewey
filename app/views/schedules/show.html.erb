@@ -50,10 +50,10 @@
 
 <% if @schedule.children.count > 0 %>
 	<h2>Acts</h2>
-	<% @schedule.children.each do |c| %>
-	<%= link_to act_path(c.schedulable), :class => "link_box" do %>
-	<%= logo_image(c.schedulable, :class => "small") %>
-			<h4 class="oneline"><%= c.schedulable.name %></h4>	
+	<% @schedule.acts.each do |act| %>
+	<%= link_to act_path(act), :class => "link_box" do %>
+	<%= logo_image(act, :class => "small") %>
+			<h4 class="oneline"><%= act.name %></h4>	
 		<% end %>
 	<% end %>
 <% end %>

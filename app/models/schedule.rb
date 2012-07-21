@@ -56,5 +56,9 @@ class Schedule < ActiveRecord::Base
   def self.retrieve(schedulable_id, schedulable_type)
     schedulable_type.constantize.send("find", schedulable_id)
   end
+
+  def acts
+    children.map(&:schedulable).uniq(&:name).sort_by(&:name)
+  end
   
 end
