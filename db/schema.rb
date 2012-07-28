@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120707185809) do
+ActiveRecord::Schema.define(:version => 20120728214742) do
 
   create_table "acts", :force => true do |t|
     t.string   "name"
@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(:version => 20120707185809) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "logo"
+    t.integer  "popularity", :default => 100
   end
 
 end
