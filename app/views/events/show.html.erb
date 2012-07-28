@@ -10,7 +10,7 @@
 	</div>
 	<% if @event.links.count > 0 %>
 		<p class="visit">Visit us:</p>
-		<% @event.links.each do |link| %>
+		<% @event.links.sort_by{|event| event.weblocation.name}.each do |link| %>
 			<%= make_link(link) %>
 		<% end %>
 	<% end %>

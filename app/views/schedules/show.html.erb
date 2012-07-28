@@ -30,7 +30,7 @@
 		
 		<% if @schedule.schedulable.links.count > 0 %>
 		<p class="visit">Links for <%= @schedule.schedulable.name %>:</p>
-			<% @schedule.schedulable.links.each do |link| %>
+			<% @schedule.schedulable.links.sort_by{|schedulable| schedulable.weblocation.name}.each do |link| %>
 				<%= make_link(link) %>
 			<% end %>
 		<% end %>

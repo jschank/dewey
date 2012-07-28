@@ -17,7 +17,7 @@
 	</div>
 	<% if @venue.links.count > 0 %>
 		<p class="visit">Visit us:</p>
-		<% @venue.links.each do |link| %>
+		<% @venue.links.sort_by{|venue| venue.weblocation.name}.each do |link| %>
 			<%= make_link(link) %>
 		<% end %>
 	<% end %>
