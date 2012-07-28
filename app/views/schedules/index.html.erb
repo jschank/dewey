@@ -1,7 +1,7 @@
 <% index_area do %>
   <% @schedule.group_by{|s| s.start.to_date}.sort.each do |start_date, parent_items_for_date| %>
 		<h3><%= date_and_times(start_date) %></h3>
-		<% parent_items_for_date.sort{ |a, b| a.start <=> b.start  }.each do |p| %>
+		<% parent_items_for_date.sort_by{ |item| [item.start, item.location.venue.name] }.each do |p| %>
   		<%= link_to schedule_path(p), :class => "link_box", :target => "_parent" do %>
     		<%= logo_image(p.location.venue, :class => "small") %>
 				<div class="info">
