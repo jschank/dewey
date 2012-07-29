@@ -2,25 +2,5 @@
 
 <% list.group_by{|s| s.start.to_date}.sort.each do |start_date, parent_items_for_date| %>
 	<h3><%= date_and_times(start_date) %></h3>
-	<% parent_items_for_date.sort_by{ |item| [item.start, item.location.venue.name] }.each do |p| %>
-  		<%= link_to schedule_path(p), :class => "link_box", :target => "_parent" do %>
-    		<%= logo_image(p.location.venue, :class => "small") %>
-			<div class="info">
-				<h4><%= p.schedulable.name %><span class="times"><%= time_list([p] + Schedule.children_that_are_same_as(p)) %></span></h4>
-				<% if p.agenda.count > 0 %>	
-					<% p.agenda.each do | schedulable_key, schedulable_items| %>
-						<p><%= Schedule.retrieve(*schedulable_key).name %><span class="times"><%= time_list(schedulable_items) %></span></p>
-					<% end %>
-				<% end %>
-				<%= content_tag :h5, p.location.display_name if p.location.display_name.present? %>
-				<% if p.details.count > 0 %>
-						<% p.details.each do |detail| %>
-						<div class="addDetails">
-							<p><strong><%= detail.name %><%= detail.description.present? ? ": " : "" %></strong><%= detail.description %></p>
-						</div>				
-					<% end %>
-				<% end %>
-			</div>
-		<% end %>		
-	<% end %>
+	<%= render :partial => 'schedule_item', :collection => parent_items_for_date.sort_by{ |item| [item.start, item.location.venue.name] } %>
 <% end %>
