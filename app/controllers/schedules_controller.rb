@@ -6,8 +6,10 @@ class SchedulesController < ApplicationController
   # GET /schedules
   # GET /schedules.json
   def index
-    @all_parents = Schedule.where("parent_id is null")
-    @schedule = Schedule.future_events
+    @parents = Schedule.all_parents
+    @in_progress = Schedule.in_progress
+    @upcoming = Schedule.upcoming
+    # @schedule = Schedule.future_events
     
     respond_to do |format|
       format.html {flash[:notice] = params[:notice]}

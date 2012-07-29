@@ -15,8 +15,26 @@ class Schedule < ActiveRecord::Base
   has_many :details, :dependent => :destroy
   accepts_nested_attributes_for :details, :allow_destroy => true
   
+  scope :all_parents, where(:parent_id => nil)
+  
   def self.since_date
     Rails.env == 'development' ? DateTime.civil(2011, 01, 01) : DateTime.now
+  end
+  
+  def self.in_progress(date = since_date)
+    all_parents.where("(schedules.start <= ? AND schedules.end is not null AND schedules.end > ?) OR (schedules.end is null AND schedules.start < ? AND schedules.start > ?)", date, date, date, date - 3.hours)
+  end
+  
+  def self.upcoming(date = since_date)
+    all_parents.where("schedules.start > ?", date)
+  end  
+
+  def self.upcoming_events_at(date = since_date, venue)
+      self.upcoming(date).scoped( :conditions => { :location_id => venue.locations} ).order( :start )      
+  end
+
+  def self.upcoming_events_of(date = since_date, schedulable)
+      self.upcoming(date).scoped( :conditions => { :schedulable_id => schedulable.id, :schedulable_type => schedulable.class.name } ).order( :start ).reject{ |i| i == schedulable }
   end
   
   def self.future_events(date = since_date)

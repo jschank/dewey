@@ -8,28 +8,17 @@ Factory.define :event do |f|
   f.description   'Saturday Jam with three bands'  
 end
 
+Factory.define :schedule do |f|
+  
+end
+
 Factory.define :location do |f|
   f.association   :venue
   f.name          'Default'
 end
 
-Factory.define :occurrence do |f|
-  f.event_start   DateTime.civil(2011, 07, 02, 17, 0)
-  f.event_end     DateTime.civil(2011, 07, 03, 01, 0)  
-end
-
-Factory.define :performance do |f|
-  f.association         :act
-  f.association         :occurrence
-  f.association         :location
-  f.performance_start   DateTime.civil(2011, 07, 02, 17, 0)
-  f.performance_end     DateTime.civil(2011, 07, 03, 01, 0)
-  f.priority            1  
-end
-
 Factory.define :weblocation do |f|
   f.name        'Facebook'
-  f.tagline     'join us on'
   f.icon        'facebook-icon.png'
 end
 
