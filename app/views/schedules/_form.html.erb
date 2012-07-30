@@ -76,3 +76,16 @@
 </script>
 
 
+<script type="text/javascript">
+    $(document).ready(function(){
+		$("#clear_end").click(function(){
+			$("#schedule_end_1i").val('');
+			$("#schedule_end_2i").val('');
+			$("#schedule_end_3i").val('');
+			$("#schedule_end_4i").val('');
+			$("#schedule_end_5i").val('');
+			return false;
+		});
+        $("select#schedule_schedulable_type").change(populate_schedulables);
+    });
+</script>
