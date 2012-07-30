@@ -39,7 +39,7 @@
 
  <div class="field">
 	<%= f.label :end %><br />
-	<%= f.datetime_select :end %>
+	<%= f.datetime_select :end, :id => 'end_select', :include_blank => true  %> <%= submit_tag "Clear", :type => 'button', :id => 'clear_end' %>
  </div>
 
   <%= f.hidden_field :parent_id %>
