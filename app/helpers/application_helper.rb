@@ -53,7 +53,7 @@ module ApplicationHelper
   end 
   
   def histogram(thing) 
-    thing.sort { |a, b| sortable_name(a.name) <=> sortable_name(b.name) }.group_by{ |a| sortable_name(a.name).chars.first }
+    thing.sort_by{|t| sortable_name(t.name)}.group_by{ |t| sortable_name(t.name).chars.first }
   end
 
   def time_format(datetime)

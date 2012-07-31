@@ -8,4 +8,6 @@ CarrierWave.configure do |config|
   config.s3_secret_access_key = ENV['s3_secret_access_key'] || APP_CONFIG['s3_secret_access_key']
   config.s3_bucket = ENV['s3_bucket'] || APP_CONFIG['s3_bucket']
 
+  config.remove_previously_stored_files_after_update = false
+
 end
