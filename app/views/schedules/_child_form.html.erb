@@ -82,13 +82,13 @@
 			$("#schedule_start_4i").val('<%= @parent.start.strftime("%H") %>');
 			$("#schedule_start_5i").val('<%= @parent.start.strftime("%M") %>');
 			return false;
-		});
+		});		
 		$("#parent_end").click(function(){
-			$("#schedule_end_1i").val('<%= @parent.end.year %>');
-			$("#schedule_end_2i").val('<%= @parent.end.month %>');
-			$("#schedule_end_3i").val('<%= @parent.end.day %>');
-			$("#schedule_end_4i").val('<%= @parent.end.strftime("%H") %>');
-			$("#schedule_end_5i").val('<%= @parent.end.strftime("%M") %>');
+			$("#schedule_end_1i").val('<%= @parent.end.present? ? @parent.end.year : "" %>');
+			$("#schedule_end_2i").val('<%= @parent.end.present? ? @parent.end.month : "" %>');
+			$("#schedule_end_3i").val('<%= @parent.end.present? ? @parent.end.day : "" %>');
+			$("#schedule_end_4i").val('<%= @parent.end.present? ? @parent.end.strftime("%H") : "" %>');
+			$("#schedule_end_5i").val('<%= @parent.end.present? ? @parent.end.strftime("%M") : "" %>');
 			return false;
 		});
         $("select#schedule_schedulable_type").change(populate_schedulables);
