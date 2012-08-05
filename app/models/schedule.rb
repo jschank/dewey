@@ -16,39 +16,14 @@ class Schedule < ActiveRecord::Base
   accepts_nested_attributes_for :details, :allow_destroy => true
   
   scope :all_parents, where(:parent_id => nil)
-  
-  def self.since_date
-    Rails.env == 'development' ? DateTime.civil(2011, 01, 01) : DateTime.now
-  end
-  
-  def self.in_progress(date = since_date)
-    all_parents.where("(schedules.start <= ? AND schedules.end is not null AND schedules.end > ?) OR (schedules.end is null AND schedules.start < ? AND schedules.start > ?)", date, date, date, date - 3.hours)
-  end
-  
-  def self.upcoming(date = since_date)
-    all_parents.where("schedules.start > ?", date)
+  scope :in_progress, lambda {|date| where("(schedules.start <= ? AND schedules.end is not null AND schedules.end > ?) OR (schedules.end is null AND schedules.start < ? AND schedules.start > ?)", date, date, date, date - 3.hours) }
+  scope :upcoming, lambda { |date| where("schedules.start > ?", date) }
+  scope :at_venue, lambda { |venue| scoped( :conditions => { :location_id => venue.locations} ).order( :start )  }
+  scope :of_schedulable, lambda { |schedulable| scoped( :conditions => { :schedulable_id => schedulable.id, :schedulable_type => schedulable.class.name } ).order( :start ).reject{ |i| i == schedulable } }
+    
+  def is_parent?
+    parent_id == nil
   end  
-
-  def self.upcoming_events_at(date = since_date, venue)
-      self.upcoming(date).scoped( :conditions => { :location_id => venue.locations} ).order( :start )      
-  end
-
-  def self.upcoming_events_of(date = since_date, schedulable)
-      self.upcoming(date).scoped( :conditions => { :schedulable_id => schedulable.id, :schedulable_type => schedulable.class.name } ).order( :start ).reject{ |i| i == schedulable }
-  end
-  
-  def self.future_events(date = since_date)
-      where("schedules.end >= ? AND parent_id is null", date)
-  end
-
-  def self.future_events_at(date = since_date, venue)
-      where("schedules.end >= ? AND parent_id is null", date).scoped( :conditions => { :location_id => venue.locations} ).order( :start )      
-  end
-  
-  # maybe this should become a static method on the Act instead of on the schedule.
-  def self.future_events_of(date = since_date, schedulable)
-      where("schedules.end >= ?", date).scoped( :conditions => { :schedulable_id => schedulable.id, :schedulable_type => schedulable.class.name } ).order( :start ).reject{ |i| i == schedulable }
-  end
   
   def get_ultimate_parent
     node = self

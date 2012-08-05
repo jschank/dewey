@@ -24,7 +24,6 @@ group :assets do
 end
   
 gem 'jquery-rails'
-gem 'rails-footnotes', '~> 3.7.7', :group => :development
 
 group :test, :development do
   gem 'rspec-rails'
@@ -34,6 +33,7 @@ group :test, :development do
   gem 'hirb'
   gem 'wirble'
   gem 'jazz_hands'
+  gem 'rails-footnotes', '~> 3.7.7'
 end
 
 group :test do

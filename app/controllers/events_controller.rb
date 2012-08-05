@@ -17,7 +17,8 @@ before_filter :authenticate_user!, :except => [:index, :show]
   # GET /events/1.json
   def show
     @event = Event.find(params[:id])
-    @future_schedulables = Event.upcoming(DateTime.now, @event)
+    @in_progress = Schedule.in_progress(current_time).of_schedulable(@event).map{ |i| i.get_ultimate_parent }.uniq
+    @upcoming = Schedule.upcoming(current_time).of_schedulable(@event).map{ |i| i.get_ultimate_parent }.uniq
 
     respond_to do |format|
       format.html # show.html.erb

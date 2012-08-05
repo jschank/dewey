@@ -18,6 +18,12 @@ module ApplicationHelper
     end
   end
 
+  def related_area(&block)
+    content_for :related do      
+      content_tag(:div, :class => 'boxIndex', &block)
+    end
+  end
+
   def index_area(&block)
     content_for :index do      
       content_tag(:div, :class => 'boxIndex', &block)

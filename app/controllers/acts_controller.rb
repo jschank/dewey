@@ -17,7 +17,8 @@ class ActsController < ApplicationController
   # GET /acts/1.json
   def show
     @act = Act.find(params[:id])
-    @future_schedulables = Act.upcoming(DateTime.now, @act)
+    @in_progress = Schedule.in_progress(current_time).of_schedulable(@act).map{ |i| i.get_ultimate_parent }.uniq
+    @upcoming = Schedule.upcoming(current_time).of_schedulable(@act).map{ |i| i.get_ultimate_parent }.uniq
 
     respond_to do |format|
       format.html # show.html.erb

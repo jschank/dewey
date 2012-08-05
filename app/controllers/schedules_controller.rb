@@ -7,9 +7,8 @@ class SchedulesController < ApplicationController
   # GET /schedules.json
   def index
     @parents = Schedule.all_parents
-    @in_progress = Schedule.in_progress
-    @upcoming = Schedule.upcoming
-    # @schedule = Schedule.future_events
+    @in_progress = Schedule.all_parents.in_progress(current_time)
+    @upcoming = Schedule.all_parents.upcoming(current_time)
     
     respond_to do |format|
       format.html {flash[:notice] = params[:notice]}
@@ -21,7 +20,9 @@ class SchedulesController < ApplicationController
   # GET /schedules/1.json
   def show
     @schedule = Schedule.find(params[:id])
-    @future_schedulables = Schedule.future_events_of(@schedule.schedulable).reject{ |i| i == @schedule }
+    @in_progress = Schedule.in_progress(current_time).of_schedulable(@schedule.schedulable).reject{ |i| i == @schedule }
+    @upcoming = Schedule.upcoming(current_time).of_schedulable(@schedule.schedulable).reject{ |i| i == @schedule }
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @schedule }

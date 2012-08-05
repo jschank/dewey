@@ -1,12 +1,12 @@
 <% in_progress_area do %>
   <% if @in_progress.count > 0 %>
-  <%= render :partial => 'schedule_list', :locals => {:list => @in_progress, :title => "Happening Now"} %>
+  <%= render :partial => 'shared/schedule_list', :locals => {:list => @in_progress, :title => "Happening Now", :item_partial => 'shared/schedule_item'} %>
   <% end %>
 <% end %>
 
 <% upcoming_area do %>
   <% if @upcoming.count > 0 %>
-  <%= render :partial => 'schedule_list', :locals => {:list => @upcoming, :title => nil} %>
+  <%= render :partial => 'shared/schedule_list', :locals => {:list => @upcoming, :title => "Upcoming", :item_partial => 'shared/schedule_item'} %>
   <% end %>
 <% end %>
 

@@ -17,38 +17,27 @@
 	</div>	
 <% end %>
 
-<% upcoming_area do %>
-
-<% if @act.related.count > 0 %>
-	<h2>Related Acts</h2>
-	<% @act.related.sort_by{ |a| sortable_name(a.name) }.each do |related_act| %>
-	<%= link_to act_path(related_act), :class => "link_box" do %>
-		<%= logo_image(related_act, :class => "small") %>
-			<h4 class="oneline"><%= related_act.name %></h4>	
+<% related_area do %>
+	<% if @act.related.count > 0 %>
+		<h2>Related Acts</h2>
+		<% @act.related.sort_by{ |a| sortable_name(a.name) }.each do |related_act| %>
+		<%= link_to act_path(related_act), :class => "link_box" do %>
+			<%= logo_image(related_act, :class => "small") %>
+				<h4 class="oneline"><%= related_act.name %></h4>	
+			<% end %>
 		<% end %>
 	<% end %>
 <% end %>
 
-<% if @future_schedulables.count > 0 %>
-	<h2>Upcoming for <%= @act.name %></h2>
-		<% @future_schedulables.group_by{|s| s.start.to_date}.sort.each do |start_date, parent_items_for_date| %>
-			<h3><%= date_and_times(start_date) %></h3>
-			<% parent_items_for_date.each do |p| %>
-			<%= link_to schedule_path(p), :class => "link_box" do %>
-			<%= logo_image(p.location.venue, :class => "small") %>
-					<div class="info">
-						<h4><%= p.schedulable.name %><span class="times"><%= time_list([p] + Schedule.children_that_are_same_as(p)) %></span></h4>
-						<%= content_tag :h5, p.location.display_name if p.location.display_name.present? %>
-						<% if p.agenda.count > 0 %>	
-							<% p.agenda.each do | schedulable_key, schedulable_items| %>
-								<p><%= Schedule.retrieve(*schedulable_key).name %><span class="times"><%= time_list(schedulable_items) %></span></p>
-							<% end %>
-						<% end %>
-					</div>
-				<% end %>
-		
-			<% end %>
-		<% end %>
+<% in_progress_area do %>
+	<% if @in_progress.count > 0 %>
+	<%= render :partial => 'shared/schedule_list', :locals => {:list => @in_progress, :title => "Happening Now", :item_partial => 'acts/schedule_item'} %>
+	<% end %>
+<% end %>
+
+<% upcoming_area do %>
+	<% if @upcoming.count > 0 %>
+		<%= render :partial => 'shared/schedule_list', :locals => {:list => @upcoming, :title => "Upcoming for #{@act.name}", :item_partial => 'acts/schedule_item'} %>
 	<% end %>
 <% end %>
 

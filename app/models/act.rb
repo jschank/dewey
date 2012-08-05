@@ -19,12 +19,7 @@ class Act < ActiveRecord::Base
 
   accepts_nested_attributes_for :forward_related_acts, :allow_destroy => true
   accepts_nested_attributes_for :reverse_related_acts, :allow_destroy => true
-  
-  def self.upcoming(date, act)
-    items = Schedule.future_events_of(date, act)
-    items.map{ |i| i.get_ultimate_parent }.uniq
-  end
-    
+      
   def related
     related_acts + acts_related
   end
