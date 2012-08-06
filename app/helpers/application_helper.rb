@@ -69,6 +69,15 @@ module ApplicationHelper
   def date_and_times(date)
     date.strftime("%a, %B %-d")
   end
+  
+  def past_present_future(date)
+    return "" unless date.present?
+    case (date.to_date <=> current_time.to_date)
+      when -1 then "past"
+      when 0 then "present"
+      when 1 then "future"
+    end      
+  end
 
   def time_list(schedulables)
     return "" unless schedulables
