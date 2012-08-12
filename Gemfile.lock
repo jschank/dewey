@@ -114,6 +114,7 @@ GEM
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.5.2)
+    newrelic_rpm (3.4.1)
     nokogiri (1.5.5)
     orm_adapter (0.0.7)
     pg (0.12.2)
@@ -224,6 +225,7 @@ DEPENDENCIES
   jazz_hands
   jquery-rails
   json
+  newrelic_rpm
   pg
   rails (= 3.1.0)
   rails-footnotes (~> 3.7.7)
