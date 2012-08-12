@@ -1,6 +1,12 @@
-<%= content_tag :h2, title if title.present? %>
+<%= content_tag :div, options do %>
 
-<% list.group_by{|s| s.start.to_date}.sort.each do |start_date, parent_items_for_date| %>
-	<h3><%= date_and_times(start_date) %></h3>
-	<%= render :partial => item_partial, :collection => parent_items_for_date.sort_by{ |item| [item.start, item.location.venue.name] } %>
+	<% if title.present? %>
+		<%= content_tag :h2, title %>
+	<% end %>
+
+	<% list.group_by{|s| s.start.to_date}.sort.each do |start_date, parent_items_for_date| %>
+		<h3><%= date_and_times(start_date) %></h3>
+		<%= render :partial => item_partial, :collection => parent_items_for_date.sort_by{ |item| [item.start, item.location.venue.name] } %>
+	<% end %>
+
 <% end %>

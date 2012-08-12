@@ -20,39 +20,14 @@
 
 <% in_progress_area do %>
 	<% if @in_progress.count > 0 %>
-	<%= render :partial => 'shared/schedule_list', :locals => {:list => @in_progress, :title => "Happening Now for #{@event.name}", :item_partial => 'events/schedule_item'} %>
+	<%= render :partial => 'shared/schedule_list', :locals => {:list => @in_progress, :options => {:class => "inprogress"}, :title => "Happening Now for #{@event.name}", :item_partial => 'events/schedule_item'} %>
 	<% end %>
 <% end %>
 
 <% upcoming_area do %>
 	<% if @upcoming.count > 0 %>
-	<%= render :partial => 'shared/schedule_list', :locals => {:list => @upcoming, :title => "Upcoming for #{@event.name}", :item_partial => 'events/schedule_item'} %>
+	<%= render :partial => 'shared/schedule_list', :locals => {:list => @upcoming, :options => {:class => "upcoming"}, :title => "Upcoming for #{@event.name}", :item_partial => 'events/schedule_item'} %>
 	<% end %>
-<% end %>
-
-<% if false %>
-<% upcoming_area do %>
-<% if @future_schedulables.count > 0 %>
-<h2>Upcoming for <%= @event.name %></h2>
-		<% @future_schedulables.group_by{|s| s.start.to_date}.sort.each do |start_date, parent_items_for_date| %>
-			<h3><%= date_and_times(start_date) %></h3>
-			<% parent_items_for_date.each do |p| %>
-			<%= link_to schedule_path(p), :class => "link_box" do %>
-			<%= logo_image(p.location.venue, :class => "small") %>
-					<div class="info">
-						<h4><%= p.schedulable.name %><span class="times"><%= time_list([p] + Schedule.children_that_are_same_as(p)) %></span></h4>
-						<%= content_tag :h5, p.location.display_name if p.location.display_name.present? %>
-						<% if p.agenda.count > 0 %>	
-							<% p.agenda.each do | schedulable_key, schedulable_items| %>
-								<p><%= Schedule.retrieve(*schedulable_key).name %><span class="times"><%= time_list(schedulable_items) %></span></p>
-							<% end %>
-						<% end %>
-					</div>
-				<% end %>		
-			<% end %>
-		<% end %>
-	<% end %>
-<% end %>
 <% end %>
 
 <% admin_area do %>
