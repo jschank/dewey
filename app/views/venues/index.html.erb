@@ -34,6 +34,17 @@
     <td><%= link_to 'Edit', edit_venue_path(venue) %></td>
     <td><%= link_to 'Remove', venue, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
+  
+  <% venue.locations.each do |location| %>
+  <tr class="child">
+    <td><%= location.id %></td>
+    <td style="padding-left:25px;"><%= location.name %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>  
+  <% end %>
+  
 <% end %>
 </table>
 <% end %>

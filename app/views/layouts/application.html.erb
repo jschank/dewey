@@ -34,11 +34,10 @@
 <p class="copyright">&copy; 2012 Awkward Fist Bump Software</p>
 <div id="tabbarbg">
 	<div id="tabbar">
-		<a href="/" class="schedule">Schedule</a>
-		<a href="/acts/" class="acts">Acts</a>
-		<a href="/events/" class="events">Events</a>
-		<a href="/venues/" class="venues">Venues</a>
-		<a href="/" class="festivals">Festivals</a>
+		<%= link_to("Schedule", schedules_path, {:class => page_class('schedules')}) %>
+		<%= link_to("Acts", acts_path, {:class => page_class('acts')}) %>
+		<%= link_to("Events", events_path, {:class => page_class('events')}) %>
+		<%= link_to("Venues", venues_path, {:class => page_class('venues')}) %>
 	</div>
 </div>
 </body>

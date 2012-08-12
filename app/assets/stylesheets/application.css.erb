@@ -320,7 +320,7 @@ tr.child	{
 	overflow: hidden;
 }
 
-#tabbar .schedule, #tabbar .acts, #tabbar .events, #tabbar .venues, #tabbar .festivals	{
+#tabbar .schedules_on, #tabbar .acts_on, #tabbar .events_on, #tabbar .venues_on, #tabbar .festivals_on, #tabbar .schedules_off, #tabbar .acts_off, #tabbar .events_off, #tabbar .venues_off, #tabbar .festivals_off	{
 border: none;
 display: block;
 width: 64px;
@@ -330,22 +330,42 @@ float: left;
 text-indent: -9999px;
 }
 
-#tabbar .schedule	{
+#tabbar .schedules_off	{
 background-position: 0px 0px;
 }
 
-#tabbar .acts	{
+#tabbar .schedules_on	{
+background-position: 0px 49px;
+}
+
+#tabbar .acts_off	{
 background-position: -65px 0px;
 }
 
-#tabbar .events	{
+#tabbar .acts_on	{
+background-position: -65px 49px;
+}
+
+#tabbar .events_off	{
 background-position: -129px 0px;
 }
 
-#tabbar .venues	{
+#tabbar .events_on	{
+background-position: -129px 49px;
+}
+
+#tabbar .venues_off	{
 background-position: -193px 0px;
 }
 
-#tabbar .festivals	{
+#tabbar .venues_on	{
+background-position: -193px 49px;
+}
+
+#tabbar .festivals_off	{
 /*background-position: -257px 0px;*/
+}
+
+#tabbar .festivals_on	{
+/*background-position: -257px 49px;*/
 }
