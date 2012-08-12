@@ -3,7 +3,9 @@ class Location < ActiveRecord::Base
   # belongs_to :schedule 
   
   def display_name
-    name.to_s.strip == 'all' ? "" : name.to_s.strip
+    str = name.to_s.strip
+    return "" if str.casecmp("all") == 0
+    str
   end
   
   def form_picker_name
