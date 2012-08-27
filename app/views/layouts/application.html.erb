@@ -11,11 +11,30 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
 </head>
-<body>
+<body onLoad="init()">
 
 <h1>iDewIt</h1>
 <a href="javascript:history.back();"><img src="<%= asset_path 'back-button.png' %>" style="position: absolute; top: 7px; left: 10px; border: none;"></a>
-<!--<div id="search"><img src="<%= asset_path 'search.png' %>" width="320" height="41"></div>-->
+<div id="loading"><img src="<%= asset_path 'loading.gif' %>"></div>
+<script>
+	var ld=(document.all);
+	var ns4=document.layers;
+	var ns6=document.getElementById&&!document.all;
+	var ie4=document.all;
+	if (ns4)
+		ld=document.loading;
+	else if (ns6)
+		ld=document.getElementById("loading").style;
+	else if (ie4)
+		ld=document.all.loading.style;
+	function init()
+		{
+		if(ns4){ld.visibility="hidden";
+		}
+		else if (ns6||ie4) ld.display="none";
+ 		}
+</script>
+
 
 <p id="notice"><%= notice %></p>
 
