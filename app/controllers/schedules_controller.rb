@@ -12,7 +12,7 @@ class SchedulesController < ApplicationController
     
     respond_to do |format|
       format.html {flash[:notice] = params[:notice]}
-      format.json { render :json => @schedule }
+      format.json { render :json => @parents }
     end
   end
 

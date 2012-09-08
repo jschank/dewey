@@ -35,6 +35,7 @@ group :test, :development do
   gem 'jazz_hands'
   gem 'rails-footnotes', '~> 3.7.7'
   gem 'newrelic_rpm'
+  gem 'squeel'
 end
 
 group :test do
