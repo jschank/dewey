@@ -9,7 +9,7 @@
 		<% end %>
 		<%= content_tag :h5, schedule_item.location.display_name if schedule_item.location.display_name.present? %>
 		<% if schedule_item.details.count > 0 %>
-				<% schedule_item.details.each do |detail| %>
+				<% schedule_item.details.sort_by(&:order).each do |detail| %>
 				<div class="addDetails">
 					<p><strong><%= detail.name %><%= detail.description.present? ? ": " : "" %></strong><%= detail.description %></p>
 				</div>				
