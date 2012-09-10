@@ -1,0 +1,12 @@
+<%= link_to schedule_path(schedule_item), :class => "link_box", :target => "_parent" do %>
+	<%= logo_image(schedule_item.location.venue, :class => "small") %>
+	<div class="info">
+		<h4><%= schedule_item.schedulable.name %><span class="times"><%= time_list([schedule_item] + Schedule.children_that_are_same_as(schedule_item)) %></span></h4>
+		<%= content_tag :h5, schedule_item.location.display_name if schedule_item.location.display_name.present? %>
+		<% if schedule_item.agenda.count > 0 %>	
+			<% schedule_item.agenda.each do | schedulable_key, schedulable_items| %>
+				<p><%= Schedule.retrieve(*schedulable_key).name %><span class="times"><%= time_list(schedulable_items) %></span></p>
+			<% end %>
+		<% end %>
+	</div>
+<% end %>		

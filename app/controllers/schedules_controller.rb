@@ -36,6 +36,7 @@ class SchedulesController < ApplicationController
     @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @acts = Act.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @events = Event.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
+    @festivals = Festival.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @schedulables = @acts
 
     respond_to do |format|
@@ -55,6 +56,7 @@ class SchedulesController < ApplicationController
     @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @acts = Act.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @events = Event.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
+    @festivals = Festival.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @schedulables = @acts
   
     respond_to do |format|
