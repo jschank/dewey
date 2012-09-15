@@ -47,7 +47,7 @@ before_filter :authenticate_user!, :except => [:index, :show]
   # POST /festivals
   # POST /festivals.json
   def create
-    @festival = Festival.new(params[:event])
+    @festival = Festival.new(params[:festival])
 
     respond_to do |format|
       if @festival.save
@@ -66,7 +66,7 @@ before_filter :authenticate_user!, :except => [:index, :show]
     @festival = Festival.find(params[:id])
 
     respond_to do |format|
-      if @festival.update_attributes(params[:event])
+      if @festival.update_attributes(params[:festival])
         format.html { redirect_to :action => "index", :notice => 'Festival was successfully updated.' }
         format.json { head :ok }
       else
@@ -82,13 +82,13 @@ before_filter :authenticate_user!, :except => [:index, :show]
     @festival = Festival.find(params[:id])
     if Schedule.where(:schedulable_id => @festival, :schedulable_type => "Festival").exists?
       respond_to do |format|
-        format.html { redirect_to festivals_url, :notice => "Cannot delete the event #{@festival.name} because it is referenced by one or more schedule items. Delete those first." } 
+        format.html { redirect_to festivals_url, :notice => "Cannot delete the festival #{@festival.name} because it is referenced by one or more schedule items. Delete those first." } 
         format.json { head :ok }
       end
     else
       @festival.destroy
       respond_to do |format|
-        format.html { redirect_to festivals_url, :notice => "Successfully deleted the event #{@festival.name}" }
+        format.html { redirect_to festivals_url, :notice => "Successfully deleted the festival #{@festival.name}" }
         format.json { head :ok }
       end
     end
