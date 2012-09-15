@@ -1,3 +1,5 @@
+# Festivals Show page
+
 <p id="notice"><%= notice %></p>
 <% specific_area do %>
 <div class="specificHeader">
@@ -19,8 +21,8 @@
 <% end %>
 
 <% upcoming_area do %>
-	<% if @upcoming.count > 0 %>
-	<%= render :partial => 'shared/schedule_list', :locals => {:list => @upcoming, :options => {:class => "upcoming"}, :title => "Upcoming for #{@festival.name}", :item_partial => 'festivals/schedule_item'} %>
+<% if @upcoming.count > 0 %>
+<%= render :partial => 'shared/schedule_list', :locals => {:list => @upcoming, :options => {:class => "upcoming"}, :title => "Schedule for #{@festival.name}", :item_partial => 'festivals/schedule_item'} %>
 	<% end %>
 <% end %>
 

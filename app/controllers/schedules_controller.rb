@@ -85,6 +85,7 @@ class SchedulesController < ApplicationController
   def edit
     @schedule = Schedule.find(params[:id])
     @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
+    @festivals = Festival.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @schedulables = @schedule.schedulable_type.camelize.constantize.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @parent = @schedule.parent
 

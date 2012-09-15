@@ -15,10 +15,13 @@ class Schedule < ActiveRecord::Base
   has_many :details, :dependent => :destroy
   accepts_nested_attributes_for :details, :allow_destroy => true
   
+  belongs_to :festival
+  
   scope :all_parents, where(:parent_id => nil)
   scope :in_progress, lambda {|date| where("(schedules.start <= ? AND schedules.end is not null AND schedules.end > ?) OR (schedules.end is null AND schedules.start < ? AND schedules.start > ?)", date, date, date, date - 3.hours) }
   scope :upcoming, lambda { |date| where("schedules.start > ?", date) }
   scope :at_venue, lambda { |venue| scoped( :conditions => { :location_id => venue.locations} ).order( :start )  }
+  scope :at_festival, lambda { |festival| scoped( :conditions => { :festival_id => festival} ).order( :start )  }
   scope :of_schedulable, lambda { |schedulable| scoped( :conditions => { :schedulable_id => schedulable.id, :schedulable_type => schedulable.class.name } ).order( :start ).reject{ |i| i == schedulable } }
     
   def is_parent?

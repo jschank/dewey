@@ -7,6 +7,9 @@
 				<p><%= Schedule.retrieve(*schedulable_key).name %><span class="times"><%= time_list(schedulable_items) %></span></p>
 			<% end %>
 		<% end %>
+
+		<%= content_tag :p, schedule_item.festival.name if schedule_item.festival_id.present? %>
+    
 		<%= content_tag :h5, schedule_item.location.display_name if schedule_item.location.display_name.present? %>
 		<% if schedule_item.details.count > 0 %>
 				<% schedule_item.details.sort_by(&:order).each do |detail| %>

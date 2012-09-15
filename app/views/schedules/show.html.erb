@@ -1,3 +1,5 @@
+# Schedule show page
+
 <p id="notice"><%= notice %></p>
 
 <% specific_area do %>
@@ -38,6 +40,14 @@
 <% end %>
 
 <% related_area do %>
+<% if @schedule.festival != nil %>
+  	<h2>Festival</h2>
+  		<%= link_to festival_path(@schedule.festival), :class => "link_box" do %>
+  		<%= logo_image(@schedule.festival, :class => "small") %>
+  		<h4 class="oneline"><%= @schedule.festival.name %></h4>	
+  	<% end %>
+  <% end %>
+
 	<% if @schedule.location != nil %>
 		<h2>Venue</h2>
 			<%= link_to venue_path(@schedule.location.venue), :class => "link_box" do %>
