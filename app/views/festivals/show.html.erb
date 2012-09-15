@@ -7,6 +7,7 @@
 		<div class="description" id="festival_collapsable">
 			<%= textilize(@festival.description) %>
 		</div>
+    <p><%= festival_dates(@festival) %></p>
 	</div>
 	<% if @festival.links.count > 0 %>
 		<p class="visit">Visit us:</p>

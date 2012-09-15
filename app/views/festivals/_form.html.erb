@@ -41,7 +41,6 @@
 	<%= f.datetime_select :end, :id => 'end_select', :include_blank => true  %> <%= submit_tag "Copy Start", :type => 'button', :id => 'copy_start' %> <%= submit_tag "Clear", :type => 'button', :id => 'clear_end' %>
  </div>
 
-<% if false %>
 <div class="form_addition">
 	<p class="form_addition_header">Web Links:</p>
 	<%= link_to_add_fields "Add Link", f, :links %>
@@ -49,11 +48,10 @@
     	<%= render "link_fields", :f => builder %>
     <% end %>
 </div>  
-<% end %>
 
-  <div class="actions" style="padding: 20px 0;">
-    <%= f.submit %>
-  </div>
+<div class="actions" style="padding: 20px 0;">
+	<%= f.submit %>
+</div>
 
 <% end %>
 </div>
