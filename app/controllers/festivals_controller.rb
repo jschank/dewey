@@ -17,7 +17,7 @@ before_filter :authenticate_user!, :except => [:index, :show]
   # GET /festivals/1.json
   def show
     @festival = Festival.find(params[:id])
-    @upcoming = Schedule.at_festival(@festival)
+    @upcoming = Schedule.at_festival(@festival).map{ |i| i.get_ultimate_parent }.uniq
 
     respond_to do |format|
       format.html # show.html.erb

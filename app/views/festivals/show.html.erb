@@ -22,7 +22,7 @@
 
 <% upcoming_area do %>
 <% if @upcoming.count > 0 %>
-<%= render :partial => 'shared/schedule_list', :locals => {:list => @upcoming, :options => {:class => "upcoming"}, :title => "Schedule for #{@festival.name}", :item_partial => 'festivals/schedule_item'} %>
+  <%= render :partial => 'shared/schedule_list', :locals => {:list => @upcoming, :options => {:class => "upcoming"}, :title => "Schedule for #{@festival.name}", :item_partial => 'shared/schedule_item'} %>
 	<% end %>
 <% end %>
 

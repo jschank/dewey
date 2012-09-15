@@ -20,8 +20,8 @@ class SchedulesController < ApplicationController
   # GET /schedules/1.json
   def show
     @schedule = Schedule.find(params[:id])
-    @in_progress = Schedule.in_progress(current_time).of_schedulable(@schedule.schedulable).reject{ |i| i == @schedule }
-    @upcoming = Schedule.upcoming(current_time).of_schedulable(@schedule.schedulable).reject{ |i| i == @schedule }
+    @in_progress = Schedule.in_progress(current_time).of_schedulable(@schedule.schedulable).map{ |i| i.get_ultimate_parent }.uniq.reject{ |i| i == @schedule }
+    @upcoming = Schedule.upcoming(current_time).of_schedulable(@schedule.schedulable).map{ |i| i.get_ultimate_parent }.uniq.reject{ |i| i == @schedule }
 
     respond_to do |format|
       format.html # show.html.erb

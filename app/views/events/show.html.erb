@@ -20,13 +20,13 @@
 
 <% in_progress_area do %>
 	<% if @in_progress.count > 0 %>
-	<%= render :partial => 'shared/schedule_list', :locals => {:list => @in_progress, :options => {:class => "inprogress"}, :title => "Happening Now for #{@event.name}", :item_partial => 'events/schedule_item'} %>
+	<%= render :partial => 'shared/schedule_list', :locals => {:list => @in_progress, :options => {:class => "inprogress"}, :title => "Happening Now for #{@event.name}", :item_partial => 'shared/schedule_item'} %>
 	<% end %>
 <% end %>
 
 <% upcoming_area do %>
 	<% if @upcoming.count > 0 %>
-	<%= render :partial => 'shared/schedule_list', :locals => {:list => @upcoming, :options => {:class => "upcoming"}, :title => "Upcoming for #{@event.name}", :item_partial => 'events/schedule_item'} %>
+	<%= render :partial => 'shared/schedule_list', :locals => {:list => @upcoming, :options => {:class => "upcoming"}, :title => "Upcoming for #{@event.name}", :item_partial => 'shared/schedule_item'} %>
 	<% end %>
 <% end %>
 
