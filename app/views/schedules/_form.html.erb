@@ -29,7 +29,12 @@
 
   <div class="field">
     <%= f.label 'Select Venue/Location' %><br />
-	<%= f.collection_select(:location_id, @locations, :id, :form_picker_name)%>
+  	<%= f.collection_select(:location_id, @locations, :id, :form_picker_name)%>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Optionally select a Festival' %><br />
+  	<%= f.collection_select(:festival_id, @festivals, :id, :name, :include_blank => true )%>
   </div>
 
  <div class="field">

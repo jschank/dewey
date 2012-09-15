@@ -10,6 +10,8 @@ Dewey::Application.routes.draw do
 
   resources :events
 
+  resources :festivals
+
   resources :venues
   
   resources :schedules

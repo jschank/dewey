@@ -1,0 +1,35 @@
+# Festivals Show page
+
+<p id="notice"><%= notice %></p>
+<% specific_area do %>
+<div class="specificHeader">
+	<div class="infoShow">
+		<%= logo_image(@festival, :class => "large") %>
+		<h4><%= @festival.name %></h4>
+    <p><%= festival_dates(@festival) %></p>
+		<div class="description" id="festival_collapsable">
+			<%= textilize(@festival.description) %>
+		</div>
+	</div>
+	<% if @festival.links.count > 0 %>
+		<p class="visit">Visit us:</p>
+		<% @festival.links.sort_by{|festival| festival.weblocation.popularity}.each do |link| %>
+			<%= make_link(link) %>
+		<% end %>
+	<% end %>
+</div>
+<% end %>
+
+<% upcoming_area do %>
+<% if @upcoming.count > 0 %>
+  <%= render :partial => 'shared/schedule_list', :locals => {:list => @upcoming, :options => {:class => "upcoming"}, :title => "Schedule for #{@festival.name}", :item_partial => 'shared/schedule_item'} %>
+	<% end %>
+<% end %>
+
+<% admin_area do %>
+	<% if false %>
+		<%= link_to edit_festival_path(@festival) do %>
+			<img src="<%= asset_path 'edit-button.png' %>" style="position: absolute; top: 7px; right: 10px;">
+		<% end %>
+	<% end %>
+<% end %>

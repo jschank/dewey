@@ -645,6 +645,15 @@ popfest.save!
 
 
 
+
+# ***Festivals***
+
+# *** Dewey Beach Music Conference ***
+DBMC = Festival.create({:name => 'Dewey Beach Music Conference', :description => 'Power Pop, Britpop, and Pop Punk Bands on 4 Stages. No cover.'})
+DBMC.save!
+
+
+
 # ***Parents***
 
 # Popfest Day 1 Stage A

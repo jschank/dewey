@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<% index_area do %>
+<h3>Festivals</h3>
+	<% @festivals.group_by{ |e| e.name.chars.first }.each do |letter, festivals| %>
+		<h2><%= letter %></h2>
+		<% festivals.each do |festival| %>
+		<%= link_to festival_path(festival), :class => "link_box" do %>
+		<%= logo_image(festival, :class => "small") %>
+			<h4 class="oneline"><%= festival.name %></h4>
+		<% end %>
+		<% end %>
+	<% end %>
+<% end %>
+
+<% admin_area do %>
+<h3>Festival Admin - <span class="signout"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></span></h3>
+ 
+<table>
+  <tr class="child">
+    <td colspan="5"><%= link_to 'New Festival', new_festival_path %></td>
+  </tr>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th colspan="3">Functions</th>
+  </tr>
+ 
+<% @festivals.each do |festival| %>
+  <tr class="parent">
+    <td><%= festival.id %></td>
+    <td><%= festival.name %></td>
+    <td><%= link_to 'Show', festival %></td>
+    <td><%= link_to 'Edit', edit_festival_path(festival) %></td>
+    <td><%= link_to 'Remove', festival, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>

@@ -20,8 +20,8 @@ class SchedulesController < ApplicationController
   # GET /schedules/1.json
   def show
     @schedule = Schedule.find(params[:id])
-    @in_progress = Schedule.in_progress(current_time).of_schedulable(@schedule.schedulable).reject{ |i| i == @schedule }
-    @upcoming = Schedule.upcoming(current_time).of_schedulable(@schedule.schedulable).reject{ |i| i == @schedule }
+    @in_progress = Schedule.in_progress(current_time).of_schedulable(@schedule.schedulable).map{ |i| i.get_ultimate_parent }.uniq.reject{ |i| i == @schedule }
+    @upcoming = Schedule.upcoming(current_time).of_schedulable(@schedule.schedulable).map{ |i| i.get_ultimate_parent }.uniq.reject{ |i| i == @schedule }
 
     respond_to do |format|
       format.html # show.html.erb
@@ -36,6 +36,7 @@ class SchedulesController < ApplicationController
     @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @acts = Act.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @events = Event.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
+    @festivals = Festival.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @schedulables = @acts
 
     respond_to do |format|
@@ -55,6 +56,7 @@ class SchedulesController < ApplicationController
     @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @acts = Act.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @events = Event.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
+    @festivals = Festival.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @schedulables = @acts
   
     respond_to do |format|
@@ -83,6 +85,7 @@ class SchedulesController < ApplicationController
   def edit
     @schedule = Schedule.find(params[:id])
     @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
+    @festivals = Festival.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @schedulables = @schedule.schedulable_type.camelize.constantize.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @parent = @schedule.parent
 
