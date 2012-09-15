@@ -4,10 +4,10 @@
 	<div class="infoShow">
 		<%= logo_image(@festival, :class => "large") %>
 		<h4><%= @festival.name %></h4>
+    <p><%= festival_dates(@festival) %></p>
 		<div class="description" id="festival_collapsable">
 			<%= textilize(@festival.description) %>
 		</div>
-    <p><%= festival_dates(@festival) %></p>
 	</div>
 	<% if @festival.links.count > 0 %>
 		<p class="visit">Visit us:</p>
@@ -16,13 +16,6 @@
 		<% end %>
 	<% end %>
 </div>
-<% end %>
-
-
-<% in_progress_area do %>
-	<% if @in_progress.count > 0 %>
-	<%= render :partial => 'shared/schedule_list', :locals => {:list => @in_progress, :options => {:class => "inprogress"}, :title => "Happening Now for #{@festival.name}", :item_partial => 'festivals/schedule_item'} %>
-	<% end %>
 <% end %>
 
 <% upcoming_area do %>
