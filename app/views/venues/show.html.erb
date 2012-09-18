@@ -5,15 +5,19 @@
 	<div class="infoShow">
 		<%= logo_image(@venue, :class => "large") %>
 	    <h4><%= @venue.name %></h4>
-		<div class="description" id="venue_collapsable">
-			<%= textilize(@venue.description) %>
-		</div>		
 	    <p><%= @venue.address1 %><br/>
 		<% if @venue.address2.present? %>	
 			<%= @venue.address2 %><br/>
 		<% end %>
-	    <%= @venue.city %>, <%= @venue.state %>  <%= @venue.zip %></p>
-	    <p>Phone: <%= @venue.phone %></p>
+		<% if @venue.address1.present? %>	
+	    	<%= @venue.city %>, <%= @venue.state %>  <%= @venue.zip %></p>
+		<% end %>
+		<% if @venue.phone.present? %>	
+			<p>Phone: <%= @venue.phone %></p>
+		<% end %>
+		<div class="description" id="venue_collapsable">
+			<%= textilize(@venue.description) %>
+		</div>		
 	</div>
 	<% if @venue.links.count > 0 %>
 		<p class="visit">Visit us:</p>

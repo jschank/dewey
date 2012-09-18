@@ -7,7 +7,10 @@
 		<div class="infoShow">
 			<%= logo_image(@schedule.schedulable, :class => "large") %>
 	    <h4><%= @schedule.schedulable.name %></h4>
-  		<%= content_tag :p, @schedule.festival.name if @schedule.festival_id.present? %>
+		<p class="hometown"><%= @schedule.schedulable.hometown if @schedule.festival_id.present? %></p>
+		<p class="festival"><%= @schedule.festival.name if @schedule.festival_id.present? %></p>
+
+
 			<%= content_tag :h5, @schedule.location.display_name if @schedule.location.display_name.present? %>
 			<p class="dates"><%= date_and_times(@schedule.start) %>, <%= times(@schedule) %></p>	
 			<div class="description" id="venue_collapsable">

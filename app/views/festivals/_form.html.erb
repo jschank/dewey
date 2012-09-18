@@ -58,6 +58,12 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
+        $("select#schedule_schedulable_type").change(populate_schedulables);
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
 		$("#clear_end").click(function(){
 			$("#schedule_end_1i").val('');
 			$("#schedule_end_2i").val('');

@@ -6,8 +6,8 @@
 	<div class="infoShow">
 		<%= logo_image(@festival, :class => "large") %>
 		<h4><%= @festival.name %></h4>
-    <p><%= festival_dates(@festival) %></p>
-		<div class="description" id="festival_collapsable">
+    <pp class="dates"><%= festival_dates(@festival) %></p>
+		<div class="description" id="event_collapsable">
 			<%= textilize(@festival.description) %>
 		</div>
 	</div>
