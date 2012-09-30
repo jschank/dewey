@@ -30,7 +30,7 @@
     <orderEntry type="library" scope="PROVIDED" name="bcrypt-ruby (v3.0.1, RVM: ruby-1.9.3-p0 [dewey]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bluecloth (v2.2.0, RVM: ruby-1.9.3-p0 [dewey]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.0.0, RVM: ruby-1.9.3-p0 [dewey]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.0.21, RVM: ruby-1.9.3-p0 [dewey]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.2.0, RVM: ruby-1.9.3-p0 [dewey]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="carrierwave (v0.5.8, RVM: ruby-1.9.3-p0 [dewey]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coderay (v0.9.8, RVM: ruby-1.9.3-p0 [dewey]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-rails (v3.1.1, RVM: ruby-1.9.3-p0 [dewey]) [gem]" level="application" />
@@ -61,6 +61,7 @@
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.2.0, RVM: ruby-1.9.3-p0 [dewey]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-scp (v1.0.4, RVM: ruby-1.9.3-p0 [dewey]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-ssh (v2.5.2, RVM: ruby-1.9.3-p0 [dewey]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="newrelic_rpm (v3.4.1, RVM: ruby-1.9.3-p0 [dewey]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.5.5, RVM: ruby-1.9.3-p0 [dewey]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="orm_adapter (v0.0.7, RVM: ruby-1.9.3-p0 [dewey]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pg (v0.12.2, RVM: ruby-1.9.3-p0 [dewey]) [gem]" level="application" />
