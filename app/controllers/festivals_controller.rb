@@ -18,7 +18,6 @@ before_filter :authenticate_user!, :except => [:index, :show]
   def show
     @festival = Festival.find(params[:id])
     @upcoming = Schedule.at_festival(@festival).map{ |i| i.get_ultimate_parent }.uniq
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @festival }
@@ -44,7 +43,7 @@ before_filter :authenticate_user!, :except => [:index, :show]
   end
 
   # POST /festivals
-  # POST /festivals.json
+  # POST /festivals.jsonhttp://localhost:3000/schedules/394
   def create
     @festival = Festival.new(params[:festival])
 

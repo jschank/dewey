@@ -22,12 +22,12 @@
 
 <% upcoming_area do %>
 <div id="sortBy">
-	<a href="#" id="bySchedule"></a>
-	<a href="#" id="byActs"></a>
-	<a href="#" id="byVenues"></a>
+  <%= link_to "Sort By Schedule", festival_path(@festival, :organize => "bydate"), :id => "bySchedule" %>
+  <%= link_to "Sort By Acts", festival_path(@festival, :organize => "byact"), :id => "byActs" %>
+  <%= link_to "Sort By Venues", festival_path(@festival, :organize => "byvenue"), :id => "byVenues" %>
 </div>
 <% if @upcoming.count > 0 %>
-  <%= render :partial => 'shared/schedule_list', :locals => {:list => @upcoming, :options => {:class => "upcoming"}, :title => "Schedule for #{@festival.name}", :item_partial => 'shared/schedule_item'} %>
+<%= render :partial => 'shared/schedule_list', :locals => {:list => @upcoming, :options => params.merge({:class => "upcoming"}), :title => "Schedule for #{@festival.name}", :item_partial => 'shared/schedule_item'} %>
 	<% end %>
 <% end %>
 

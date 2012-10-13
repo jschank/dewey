@@ -1,12 +1,19 @@
 <%= content_tag :div, options do %>
-
 	<% if title.present? %>
 		<%= content_tag :h2, title %>
 	<% end %>
 
-	<% list.group_by{|s| s.start.to_date}.sort.each do |start_date, parent_items_for_date| %>
-		<h3><%= date_and_times(start_date) %></h3>
-		<%= render :partial => item_partial, :collection => parent_items_for_date.sort_by{ |item| [item.start, item.location.venue.name] } %>
-	<% end %>
-
+  <% collection = organize_list(list, params) %>
+  <% organize_list(list, params).sort.each do |key, value| %>
+  <%= content_tag :h3, (key.is_a?(Date)) ? date_and_times(key) : key %>
+    <% if value.is_a?(Array) %>
+      <%= render :partial => item_partial, :collection => value %>
+    <% elsif value.is_a?(Hash) %>
+      <% value.each do |k, v| %>
+          <%= content_tag :h3, (k.is_a?(Date))? date_and_times(k) : k %>
+          <%= render :partial => item_partial, :collection => v %>
+      <% end %>
+    <% end %>
+  <% end %>
+  
 <% end %>

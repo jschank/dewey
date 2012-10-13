@@ -70,6 +70,40 @@ module ApplicationHelper
     date.strftime("%a, %B %-d")
   end
   
+  def organize_list(list, params)
+    # list is a unique list of parent schedule items
+    organize_by = params[:organize] || "bydate"
+    case organize_by
+    when "byact"
+      organized_list = list.group_by{|i| i.schedulable.name[0]}
+      organized_list.each { |k, v| organized_list[k] = v.sort_by{ |i| i.schedulable.name } }
+    when "byvenue"
+      organized_list = list.group_by{|i| i.location.venue.name}
+      organized_list.each { |k, v| organized_list[k] = organize_list(v, params.merge({:organize => "bydate"})) }
+    when "bydate"
+      organized_list = list.group_by{|s| s.start.to_date}
+      organized_list.each { |k, v| organized_list[k] = v.sort_by{ |item| [item.start, item.location.venue.name] } }
+    else
+      raise "unknown organization type #{organize_by}"
+    end
+    organized_list
+  end
+  
+  def display(collection, params, item_partial)
+    
+    return unless collection.present?
+    
+    if collection.is_a?(Hash)
+      collection.sort.each do |k, v|
+        # content_tag :h3, k
+        display v, params, item_partial
+      end
+    elsif collection.is_a?(Array)
+    render :partial => item_partial, :collection => collection
+    end    
+    
+  end
+  
   def past_present_future(date)
     return "" unless date.present?
     case (date.to_date <=> current_time.to_date)
