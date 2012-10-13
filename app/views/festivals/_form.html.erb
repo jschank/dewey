@@ -58,28 +58,21 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $("select#schedule_schedulable_type").change(populate_schedulables);
-    });
-</script>
-
-<script type="text/javascript">
-    $(document).ready(function(){
 		$("#clear_end").click(function(){
-			$("#schedule_end_1i").val('');
-			$("#schedule_end_2i").val('');
-			$("#schedule_end_3i").val('');
-			$("#schedule_end_4i").val('');
-			$("#schedule_end_5i").val('');
+			$("#festival_end_1i").val('');
+			$("#festival_end_2i").val('');
+			$("#festival_end_3i").val('');
+			$("#festival_end_4i").val('');
+			$("#festival_end_5i").val('');
 			return false;
 		});
 		$("#copy_start").click(function(){
-			$("#schedule_end_1i").val($("#schedule_start_1i").val());
-			$("#schedule_end_2i").val($("#schedule_start_2i").val());
-			$("#schedule_end_3i").val($("#schedule_start_3i").val());
-			$("#schedule_end_4i").val($("#schedule_start_4i").val());
-			$("#schedule_end_5i").val($("#schedule_start_5i").val());
+			$("#festival_end_1i").val($("#festival_start_1i").val());
+			$("#festival_end_2i").val($("#festival_start_2i").val());
+			$("#festival_end_3i").val($("#festival_start_3i").val());
+			$("#festival_end_4i").val($("#festival_start_4i").val());
+			$("#festival_end_5i").val($("#festival_start_5i").val());
 			return false;
 		});
-        $("select#schedule_schedulable_type").change(populate_schedulables);
     });
 </script>
