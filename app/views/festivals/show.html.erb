@@ -22,9 +22,9 @@
 
 <% upcoming_area do %>
 <div id="sortBy">
-	<div id="bySchedule"></div>
-	<div id="byActs"></div>
-	<div id="byVenues"></div>
+	<a href="#" id="bySchedule"></a>
+	<a href="#" id="byActs"></a>
+	<a href="#" id="byVenues"></a>
 </div>
 <% if @upcoming.count > 0 %>
   <%= render :partial => 'shared/schedule_list', :locals => {:list => @upcoming, :options => {:class => "upcoming"}, :title => "Schedule for #{@festival.name}", :item_partial => 'shared/schedule_item'} %>
