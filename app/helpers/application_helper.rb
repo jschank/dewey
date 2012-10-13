@@ -58,8 +58,13 @@ module ApplicationHelper
     rest.join(' ')
   end 
   
+  def histogram_char_translate(char)
+    return "#" if /\d/.match(char)
+    char
+  end
+  
   def histogram(thing) 
-    thing.sort_by{|t| sortable_name(t.name)}.group_by{ |t| sortable_name(t.name).chars.first }
+    thing.sort_by{|t| sortable_name(t.name)}.group_by{ |t| histogram_char_translate(sortable_name(t.name).chars.first) }
   end
 
   def time_format(datetime)
@@ -88,22 +93,7 @@ module ApplicationHelper
     end
     organized_list
   end
-  
-  def display(collection, params, item_partial)
     
-    return unless collection.present?
-    
-    if collection.is_a?(Hash)
-      collection.sort.each do |k, v|
-        # content_tag :h3, k
-        display v, params, item_partial
-      end
-    elsif collection.is_a?(Array)
-    render :partial => item_partial, :collection => collection
-    end    
-    
-  end
-  
   def past_present_future(date)
     return "" unless date.present?
     case (date.to_date <=> current_time.to_date)
