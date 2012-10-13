@@ -3,6 +3,8 @@ class Festival < ActiveRecord::Base
   has_many :weblocations, :through => :links
   
   validates :name, :presence => true
+  validates :end, :presence => true
+  validates :start, :presence => true
   
   accepts_nested_attributes_for :links, :reject_if => lambda { |a| a[:url].blank? }, :allow_destroy => true
 

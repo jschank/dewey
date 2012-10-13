@@ -46,6 +46,7 @@ before_filter :authenticate_user!, :except => [:index, :show]
   # POST /festivals.jsonhttp://localhost:3000/schedules/394
   def create
     @festival = Festival.new(params[:festival])
+    @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
 
     respond_to do |format|
       if @festival.save
