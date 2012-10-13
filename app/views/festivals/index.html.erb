@@ -2,7 +2,7 @@
 
 <% index_area do %>
 <h3>Festivals</h3>
-	<% @festivals.group_by{ |e| e.name.chars.first }.each do |letter, festivals| %>
+	<% @festivals.group_by{ |e| e.start.year }.sort.reverse.each do |letter, festivals| %>
 		<h2><%= letter %></h2>
 		<% festivals.each do |festival| %>
 		<%= link_to festival_path(festival), :class => "link_box" do %>
