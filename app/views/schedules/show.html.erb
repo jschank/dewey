@@ -6,12 +6,12 @@
     <div class="specificHeader">
 		<div class="infoShow">
 			<%= logo_image(@schedule.schedulable, :class => "large") %>
-	    <h4><%= @schedule.schedulable.name %></h4>
+	    <h5><%= @schedule.schedulable.name %></h5>
 		<p class="hometown"><%= @schedule.schedulable.hometown if @schedule.festival_id.present? %></p>
 		<p class="festival"><%= @schedule.festival.name if @schedule.festival_id.present? %></p>
 
 
-			<%= content_tag :h5, @schedule.location.display_name if @schedule.location.display_name.present? %>
+			<%= content_tag :p, (@schedule.location.display_name if @schedule.location.display_name.present?), :class => "location" %>
 			<p class="dates"><%= date_and_times(@schedule.start) %>, <%= times(@schedule) %></p>	
 			<div class="description" id="venue_collapsable">
 				<%= textilize(@schedule.schedulable.description) %>
@@ -48,7 +48,7 @@
   	<h2>Festival</h2>
   		<%= link_to festival_path(@schedule.festival), :class => "link_box" do %>
   		<%= logo_image(@schedule.festival, :class => "small") %>
-  		<h4 class="oneline"><%= @schedule.festival.name %></h4>	
+  		<h5 class="oneline"><%= @schedule.festival.name %></h5>	
   	<% end %>
   <% end %>
 
@@ -56,7 +56,7 @@
 		<h2>Venue</h2>
 			<%= link_to venue_path(@schedule.location.venue), :class => "link_box" do %>
 			<%= logo_image(@schedule.location.venue, :class => "small") %>
-			<h4 class="oneline"><%= @schedule.location.venue.name %></h4>	
+			<h5 class="oneline"><%= @schedule.location.venue.name %></h5>	
 		<% end %>
 	<% end %>
 
@@ -65,7 +65,7 @@
 		<% @schedule.acts.each do |act| %>
 		<%= link_to act_path(act), :class => "link_box" do %>
 		<%= logo_image(act, :class => "small") %>
-				<h4 class="oneline"><%= act.name %></h4>	
+				<h5 class="oneline"><%= act.name %></h5>	
 			<% end %>
 		<% end %>
 	<% end %>

@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <% index_area do %>
-<h3>Acts</h3>
+<h2>Acts</h2>
 	<% histogram(@acts).each do |letter, acts| %>
-		<h2><%= letter %></h2>
+		<h3><%= letter %></h3>
 		<% acts.each do |act| %>
 		<%= link_to act_path(act), :class => "link_box" do %>
 		<%= logo_image(act, :class => "small") %>
-			<h4 class="oneline"><%= act.name %> <% if act.formerly.present? %><em class="formerly"> - Formerly: <%= act.formerly %></em><%end%></h4>
+			<h5 class="oneline"><%= act.name %> <% if act.formerly.present? %><em class="formerly"> - Formerly: <%= act.formerly %></em><%end%></h5>
 			<% end %>
 		<% end %>
 	<% end %>
@@ -15,7 +15,7 @@
 
 
 <% admin_area do %>
-<h3>Acts Admin - <span class="signout"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></span></h3>
+<h2>Acts Admin - <span class="signout"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></span></h2>
  
 	<table>
 	  <tr class="child">

@@ -49,7 +49,8 @@ h1
 h2
 {
 	border-bottom: 1px solid #949494;
-	background: url(<%= asset_path 'h2-bg.png' %>) repeat-x left top;
+	background-color: #007790;
+	/*background: url(<%= asset_path 'h2-bg.png' %>) repeat-x left top;*/
 	margin: 0;
 	padding: 3px 0 0 5px;
 	font: bold 12pt Helvetica, sans-serif;
@@ -64,23 +65,25 @@ h2
 
 .inprogress h2
 {
-	background: url(<%= asset_path 'h2-inprogress-bg.png' %>) repeat-x left top;
+	background-color: #a12f35;
+	/*background: url(<%= asset_path 'h2-inprogress-bg.png' %>) repeat-x left top;*/
 }
 .inprogress
 {
-	border-bottom: 4px solid #F00;
+	border-bottom: 4px solid #a12f35;
 }
 
 h3	{
 	border-bottom: 1px solid #949494;
-	color: #fff;
+	color: #000;
 	font: bold 12pt Helvetica, sans-serif;
 	margin: 0 0 0 0;
 	padding: 2px 0 0 5px;
 	text-align: left;
-	background: url(<%= asset_path 'h3-bg.png' %>) repeat-x left top;
+	background-color: #92cbdb;
+	/*background: url(<%= asset_path 'h3-bg.png' %>) repeat-x left top;*/
 	height: 20px;
-	text-shadow: 0 1px 2px #000;
+	text-shadow: 0 1px 2px #fff;
 	overflow: hidden;
 	white-space: nowrap;
     text-overflow: ellipsis;
@@ -88,16 +91,16 @@ h3	{
 
 h4
 {
-	margin: 0;
-	font: bold 12pt Helvetica, sans-serif;
+	background-color: #608641;
+	border-bottom: 1px solid #949494;
 	color: #000;
+	font: bold 12pt Helvetica, sans-serif;
+	margin: 0 0 0 0;
+	padding: 2px 0 0 5px;
 	text-align: left;
-}
-
-h4.oneline
-{
-	padding-top: 25px;
-	height: 15pt;
+	/*background: url(<%= asset_path 'h3-bg.png' %>) repeat-x left top;*/
+	height: 20px;
+	text-shadow: 0 1px 2px #fff;
 	overflow: hidden;
 	white-space: nowrap;
     text-overflow: ellipsis;
@@ -106,17 +109,18 @@ h4.oneline
 h5
 {
 	margin: 0;
-	font: bold 10pt Helvetica, sans-serif;
-	color: #9f1d21;
+	font: bold 12pt Helvetica, sans-serif;
+	color: #000;
 	text-align: left;
 }
 
-#search
+h5.oneline
 {
-	background: url(<%= asset_path 'search-bg.png' %>) repeat-x left top;
-	margin: 0;
-	height: 41px;
-	text-align: center;	
+	padding-top: 25px;
+	height: 15pt;
+	overflow: hidden;
+	white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .info
@@ -161,14 +165,6 @@ p
 	margin: 0;
 }
 
-.parent
-{
-	margin: 0;
-	font: bold 12pt Helvetica, sans-serif;
-	color: #000;
-	text-align: left;
-}
-
 .child	
 {
 	font: bold 10pt Helvetica, sans-serif;
@@ -184,6 +180,14 @@ p
 	overflow: hidden;
 	white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+.location
+{
+	margin: 0;
+	font: bold 10pt Helvetica, sans-serif;
+	color: #9f1d21;
+	text-align: left;
 }
 
 .hometown	
