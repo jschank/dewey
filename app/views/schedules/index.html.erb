@@ -8,7 +8,7 @@
   <% if @upcoming.count > 0 %>
   <%= render :partial => 'shared/schedule_list', :locals => {:list => @upcoming, :options => {:class => "upcoming"}, :title => "Upcoming", :item_partial => 'shared/schedule_item'} %>
   <% end %>
-  <%= paginate @upcoming %>
+  <%= paginate @dates %>
 <% end %>
 
 <% admin_area do %>
