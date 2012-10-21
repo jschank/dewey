@@ -8,7 +8,7 @@ class SchedulesController < ApplicationController
   def index
     @parents = Schedule.all_parents
     @in_progress = Schedule.all_parents.in_progress(current_time)
-    @upcoming = Schedule.all_parents.upcoming(current_time)
+    @upcoming = Schedule.all_parents.upcoming(current_time).page(params[:page]).per(10)
     
     respond_to do |format|
       format.html {flash[:notice] = params[:notice]}

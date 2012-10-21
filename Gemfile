@@ -12,6 +12,7 @@ gem 'formatize'
 gem 'fog'
 gem 'carrierwave'
 gem 'devise'
+gem 'kaminari'
 
 # gem 'rmagick'
 
