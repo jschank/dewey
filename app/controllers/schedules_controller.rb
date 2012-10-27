@@ -8,7 +8,6 @@ class SchedulesController < ApplicationController
     parents_grouped_by_dates = Schedule.all_parents.upcoming(current_time).group_by{|sched| sched.start.to_date}
     @dates = Kaminari.paginate_array(parents_grouped_by_dates.keys).page(params[:page]).per(4)
     @upcoming = @dates.reduce([]){ |arr, date| arr += parents_grouped_by_dates[date] }
-    # @upcoming = Schedule.all_parents.upcoming(current_time)
     
     respond_to do |format|
       format.html {flash[:notice] = params[:notice]}

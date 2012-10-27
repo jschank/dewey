@@ -7,15 +7,9 @@ class Admin::SchedulesController < ApplicationController
   # GET /admin/schedules
   # GET /admin/schedules.json
   def index
-    @parents = Schedule.all_parents
-    @in_progress = Schedule.all_parents.in_progress(current_time)
-    parents_grouped_by_dates = Schedule.all_parents.upcoming(current_time).group_by{|sched| sched.start.to_date}
-    @dates = Kaminari.paginate_array(parents_grouped_by_dates.keys).page(params[:page]).per(4)
-    @upcoming = @dates.reduce([]){ |arr, date| arr += parents_grouped_by_dates[date] }
-    # @upcoming = Schedule.all_parents.upcoming(current_time)
-    
+    @parents = Schedule.all_parents    
     respond_to do |format|
-      format.html {flash[:notice] = params[:notice]}
+      format.html 
       format.json { render :json => @parents }
     end
   end
@@ -25,10 +19,9 @@ class Admin::SchedulesController < ApplicationController
   def new
     @schedule = Schedule.new
     @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
-    @acts = Act.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
+    @scheduleables = @acts = Act.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @events = Event.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @festivals = Festival.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
-    @schedulables = @acts
 
     respond_to do |format|
       format.html # new.html.erb
