@@ -1,0 +1,69 @@
+<%= form_for [:admin, @act], :html => {:multipart => true} do |f| %>
+  <% if @act.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@act.errors.count, "error") %> prohibited this act from being saved:</h2>
+
+      <ul>
+      <% @act.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div style="margin: 10px;">
+	
+	<div class="field">
+		<%= f.file_field :logo %>
+	</div>	
+	<div class="field">
+		<%= f.label :remote_logo_url, "or image URL", :style => "font: bold 10pt helvetica;"  %><br />
+		<%= f.text_field :remote_logo_url, :style => "width: 280px;" %>
+	</div>
+	
+	<div class="field">
+		<%= f.label :name, :style => "font: bold 10pt helvetica;" %><br />
+		<%= f.text_field :name, :style => "width: 280px;" %>
+	</div>
+	<div class="field">
+		<%= f.label :hometown, :style => "font: bold 10pt helvetica;" %><br />
+		<%= f.text_field :hometown, :style => "width: 280px;" %>
+	</div>
+	<div class="field">
+		<%= f.label :formerly, :style => "font: bold 10pt helvetica;" %><br />
+		<%= f.text_field :formerly, :style => "width: 280px;" %>
+	</div>
+	<div class="field">
+		<%= f.label :description, :style => "font: bold 10pt helvetica;" %><br />
+		<%= f.text_area :description, :style => "width: 280px;" %>
+	</div>  
+
+
+	<div class="form_addition">
+		<p class="form_addition_header">Web Links</p>
+		<%= link_to_add_fields "Add Link", f, :links %>
+		<%= f.fields_for :links do |builder| %>
+			<%= render "link_fields", :f => builder %>
+		<% end %>
+	</div>  
+
+	<div class="form_addition">
+		<p class="form_addition_header">Related Acts</p>
+		<%= link_to_add_fields "Add Related Act", f, :forward_related_acts %>
+		<%= f.fields_for :forward_related_acts do |builder| %>
+		<%= render "forward_related_act_fields", :f => builder %>
+		<% end %>		
+	</div>  
+	
+	<div class="form_addition">
+		<p class="form_addition_header">Acts claiming to be related to <%= @act.name %></p>
+		<%= f.fields_for :reverse_related_acts do |builder| %>
+		<%= render "reverse_related_act_fields", :f => builder %>
+		<% end %>		
+	</div>  
+
+	<div class="actions" style="padding: 20px 0;">
+		<%= f.submit %>
+	</div>
+<% end %>
+</div>

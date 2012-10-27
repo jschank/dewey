@@ -16,6 +16,18 @@ Dewey::Application.routes.draw do
   
   resources :schedules
   
+  namespace :admin do
+    resources :acts
+  end
+  # map.namespace :admin do |admin|
+  #   admin.resources :acts
+  # end
+  # scope "/admin" do
+  #   match ":controller(/:action(/:id))"
+  #   resources :acts # :controller => PostsController
+  # end
+  
+
   match "/schedules/new_child/:parent_id(.:format)" => "schedules#new_child", :as => :new_child 
 
   # The priority is based upon order of creation:

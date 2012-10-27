@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>iDewIt</title>
+    <title>iDewIt Admin</title>
 
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=0;" />
   	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -13,37 +13,13 @@
 </head>
 <body onLoad="init()">
 
-<h1>iDewIt</h1>
+<h1>iDewIt Admin</h1>
 <a href="javascript:history.back();"><img src="<%= asset_path 'back-button.png' %>" style="position: absolute; top: 7px; left: 10px; border: none;"></a>
-<div id="loading"><img src="<%= asset_path 'loading.gif' %>"></div>
-<script>
-	var ld=(document.all);
-	var ns4=document.layers;
-	var ns6=document.getElementById&&!document.all;
-	var ie4=document.all;
-	if (ns4)
-		ld=document.loading;
-	else if (ns6)
-		ld=document.getElementById("loading").style;
-	else if (ie4)
-		ld=document.all.loading.style;
-	function init()
-		{
-		if(ns4){ld.visibility="hidden";
-		}
-		else if (ns6||ie4) ld.display="none";
- 		}
-</script>
 
-<%= yield :specific %>
+<p id="notice"><%= notice %></p>
+<p id="alert"><%= alert %></p>
 
-<%= yield :related %>
-
-<%= yield :in_progress %>
-
-<%= yield :upcoming %>
-
-<%= yield :index %>
+<%= yield %>
 
 <div id="footnotes_holder"></div>
 
