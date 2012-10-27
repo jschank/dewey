@@ -2,33 +2,24 @@ Dewey::Application.routes.draw do
 
   devise_for :users
 
-  resources :weblocations
-
-  get "schedule/index"
+  # get "schedule/index"
 
   resources :acts
-
   resources :events
-
   resources :festivals
-
-  resources :venues
-  
   resources :schedules
+  resources :venues
   
   namespace :admin do
     resources :acts
+    resources :events
+    resources :festivals
+    resources :schedules
+    resources :venues
+    resources :weblocations
   end
-  # map.namespace :admin do |admin|
-  #   admin.resources :acts
-  # end
-  # scope "/admin" do
-  #   match ":controller(/:action(/:id))"
-  #   resources :acts # :controller => PostsController
-  # end
-  
+  match "/admin/schedules/new_child/:parent_id(.:format)" => "admin/schedules#new_child", :as => :new_child 
 
-  match "/schedules/new_child/:parent_id(.:format)" => "schedules#new_child", :as => :new_child 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

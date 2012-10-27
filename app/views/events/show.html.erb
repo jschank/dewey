@@ -29,11 +29,3 @@
 	<%= render :partial => 'shared/schedule_list', :locals => {:list => @upcoming, :options => {:class => "upcoming"}, :title => "Upcoming for #{@event.name}", :item_partial => 'shared/schedule_item'} %>
 	<% end %>
 <% end %>
-
-<% admin_area do %>
-	<% if false %>
-		<%= link_to edit_event_path(@event) do %>
-			<img src="<%= asset_path 'edit-button.png' %>" style="position: absolute; top: 7px; right: 10px;">
-		<% end %>
-	<% end %>
-<% end %>

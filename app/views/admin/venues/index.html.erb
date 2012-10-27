@@ -1,0 +1,34 @@
+<h2>Venue Admin - <span class="signout"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></span></h2>
+ 
+<table>
+  <tr class="child">
+    <td colspan="5"><%= link_to 'New Venue', new_venue_path %></td>
+  </tr>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th colspan="3">Functions</th>
+  </tr>
+ 
+<% @venues.each do |venue| %>
+  <tr>
+    <td><%= venue.id %></td>
+    <td><%= venue.name %></td>
+    <td><%= link_to 'Show', venue %></td>
+    <td><%= link_to 'Edit', edit_admin_venue_path(venue) %></td>
+    <td><%= link_to 'Remove', venue, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+  
+  <% venue.locations.each do |location| %>
+  <tr class="child">
+    <td><%= location.id %></td>
+    <td style="padding-left:25px;"><%= location.name %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>  
+  <% end %>
+  
+<% end %>
+
+</table>

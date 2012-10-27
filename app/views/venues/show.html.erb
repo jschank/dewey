@@ -1,7 +1,5 @@
-<p id="notice"><%= notice %></p>
-
 <% specific_area do %>
-    <div class="specificHeader">
+  <div class="specificHeader">
 	<div class="infoShow">
 		<%= logo_image(@venue, :class => "large") %>
 	    <h5><%= @venue.name %></h5>
@@ -39,14 +37,3 @@
 	<%= render :partial => 'shared/schedule_list', :locals => {:list => @upcoming, :options => {:class => "upcoming"}, :title => "Upcoming at #{@venue.name}", :item_partial => 'venues/schedule_item'} %>
 	<% end %>
 <% end %>
-
-<% admin_area do %>
-	<% if false %>
-		<%= link_to edit_venue_path(@venue) do %>
-			<img src="<%= asset_path 'edit-button.png' %>" style="position: absolute; top: 7px; right: 10px;">
-		<% end %>
-	<% end %>
-<% end %>
-
-
-

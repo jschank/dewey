@@ -1,0 +1,98 @@
+<%= form_for @schedule do |f| %>
+  <% if @schedule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
+
+      <ul>
+        <% @schedule.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div id="Act_options">  
+  	<%= options_from_collection_for_select(Act.all, :id, :name) %>
+  </div>
+
+  <div id="Event_options">
+  	<%= options_from_collection_for_select(Event.all, :id, :name) %>
+  </div>
+
+  <div style="margin: 10px;">
+
+    <div class="field">
+      <%= f.label 'Select a schedulable child' %><br />
+      <%= f.select(:schedulable_type, ["Act", "Event"]) %><%= f.collection_select(:schedulable_id, @schedulables, :id, :name)%>
+    </div>
+
+    <div class="field">
+      <%= f.label 'Select Venue/Location' %><br />
+    	<%= f.collection_select(:location_id, @locations, :id, :form_picker_name)%>
+    </div>
+
+ <div class="field">
+	<%= f.label :start %><br />
+	<%= f.datetime_select :start, :include_blank => true  %> <%= submit_tag "Clear", :type => 'button', :id => 'clear_start' %> <%= submit_tag "Pull from Parent", :type => 'button', :id => 'parent_start' %>
+ </div>
+
+ <div class="field">
+	<%= f.label :end %><br />
+	<%= f.datetime_select :end, :id => 'end_select', :include_blank => true  %> <%= submit_tag "Clear", :type => 'button', :id => 'clear_end' %> <%= submit_tag "Pull from Parent", :type => 'button', :id => 'parent_end' %>
+ </div>
+	
+ <div class="field">
+	<%= f.label :order %><br />
+	<%= f.text_field :order %>
+ </div>
+
+  	<%= f.hidden_field :parent_id %>
+
+  <div class="actions" style="padding: 20px 0;">
+    <%= f.submit %>
+  </div>
+
+  </div>
+
+
+<% end %>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+		$("#clear_start").click(function(){
+			$("#schedule_start_1i").val('');
+			$("#schedule_start_2i").val('');
+			$("#schedule_start_3i").val('');
+			$("#schedule_start_4i").val('');
+			$("#schedule_start_5i").val('');
+			return false;
+		});
+		$("#clear_end").click(function(){
+			$("#schedule_end_1i").val('');
+			$("#schedule_end_2i").val('');
+			$("#schedule_end_3i").val('');
+			$("#schedule_end_4i").val('');
+			$("#schedule_end_5i").val('');
+			return false;
+		});
+		$("#parent_start").click(function(){
+			$("#schedule_start_1i").val('<%= @parent.start.year %>');
+			$("#schedule_start_2i").val('<%= @parent.start.month %>');
+			$("#schedule_start_3i").val('<%= @parent.start.day %>');
+			$("#schedule_start_4i").val('<%= @parent.start.strftime("%H") %>');
+			$("#schedule_start_5i").val('<%= @parent.start.strftime("%M") %>');
+			return false;
+		});		
+		$("#parent_end").click(function(){
+			$("#schedule_end_1i").val('<%= @parent.end.present? ? @parent.end.year : "" %>');
+			$("#schedule_end_2i").val('<%= @parent.end.present? ? @parent.end.month : "" %>');
+			$("#schedule_end_3i").val('<%= @parent.end.present? ? @parent.end.day : "" %>');
+			$("#schedule_end_4i").val('<%= @parent.end.present? ? @parent.end.strftime("%H") : "" %>');
+			$("#schedule_end_5i").val('<%= @parent.end.present? ? @parent.end.strftime("%M") : "" %>');
+			return false;
+		});
+        $("select#schedule_schedulable_type").change(populate_schedulables);
+    });
+</script>
+
+

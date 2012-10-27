@@ -1,7 +1,5 @@
 class ActsController < ApplicationController
 
-  before_filter :authenticate_user!, :except => [:index, :show]
-
   # GET /acts
   # GET /acts.json
   def index

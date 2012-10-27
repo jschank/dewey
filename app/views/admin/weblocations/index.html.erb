@@ -1,0 +1,25 @@
+<h2>Weblocations</h2>
+
+<table>
+  <tr class="child">
+    <td colspan="5"><%= link_to 'New Weblocation', new_admin_weblocation_path %>/td>
+  </tr>
+  <tr>
+    <th>Name</th>
+    <th>Logo</th>	
+    <th>Popularity</th>	
+    <th>Edit</th>
+    <th>Destroy</th>
+  </tr>
+
+<% @weblocations.each do |weblocation| %>
+  <tr>
+    <td><%= weblocation.name %></td>
+    <td><%= image_tag weblocation.logo %></td>
+    <td><%= weblocation.popularity %></td>
+    <td><%= link_to 'Edit', edit_weblocation_path(weblocation) %></td>
+    <td><%= link_to 'Destroy', weblocation, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+
+</table>

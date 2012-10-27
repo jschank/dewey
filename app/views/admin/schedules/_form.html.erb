@@ -1,0 +1,104 @@
+<%= form_for @schedule do |f| %>
+  <% if @schedule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
+
+      <ul>
+      <% @schedule.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+<div id="Act_options">  
+	<%= options_from_collection_for_select(Act.all, :id, :name) %>
+</div>
+
+<div id="Event_options">
+	<%= options_from_collection_for_select(Event.all, :id, :name) %>
+</div>
+
+<h3>Schedule A Parent</h3>
+<div style="margin: 10px;">
+
+  <div class="field">
+    <%= f.label 'Select a schedulable parent' %><br />
+	<%= f.select(:schedulable_type, ["Act", "Event"]) %><%= f.collection_select(:schedulable_id, @schedulables, :id, :name)%>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Select Venue/Location' %><br />
+  	<%= f.collection_select(:location_id, @locations, :id, :form_picker_name)%>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Optionally select a Festival' %><br />
+  	<%= f.collection_select(:festival_id, @festivals, :id, :name, :include_blank => true )%>
+  </div>
+
+ <div class="field">
+	<%= f.label :start %><br />
+	<%= f.datetime_select :start %>
+ </div>
+
+ <div class="field">
+	<%= f.label :end %><br />
+	<%= f.datetime_select :end, :id => 'end_select', :include_blank => true  %> <%= submit_tag "Copy Start", :type => 'button', :id => 'copy_start' %> <%= submit_tag "Clear", :type => 'button', :id => 'clear_end' %>
+ </div>
+
+  <%= f.hidden_field :parent_id %>
+
+	<div class="form_addition">
+		<p class="form_addition_header">Web Links</p>
+		<%= link_to_add_fields "Add Link", f, :links %>
+		<%= f.fields_for :links do |builder| %>
+			<%= render "link_fields", :f => builder %>
+		<% end %>
+	</div>  
+
+	<div class="form_addition">
+		<p class="form_addition_header">Additional Details</p>
+		<%= link_to_add_fields "Add Details", f, :details %>
+		<%= f.fields_for :details do |builder| %>
+			<%= render "detail_fields", :f => builder %>
+		<% end %>
+	</div>  
+
+<div class="actions" style="padding: 20px 0;">
+<%= f.submit %>
+</div>
+
+</div>
+
+
+<% end %>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("select#schedule_schedulable_type").change(populate_schedulables);
+    });
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+		$("#clear_end").click(function(){
+			$("#schedule_end_1i").val('');
+			$("#schedule_end_2i").val('');
+			$("#schedule_end_3i").val('');
+			$("#schedule_end_4i").val('');
+			$("#schedule_end_5i").val('');
+			return false;
+		});
+		$("#copy_start").click(function(){
+			$("#schedule_end_1i").val($("#schedule_start_1i").val());
+			$("#schedule_end_2i").val($("#schedule_start_2i").val());
+			$("#schedule_end_3i").val($("#schedule_start_3i").val());
+			$("#schedule_end_4i").val($("#schedule_start_4i").val());
+			$("#schedule_end_5i").val($("#schedule_start_5i").val());
+			return false;
+		});
+        $("select#schedule_schedulable_type").change(populate_schedulables);
+    });
+</script>

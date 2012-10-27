@@ -1,0 +1,80 @@
+<%= form_for @venue, :html => {:multipart => true} do |f| %>
+  <% if @venue.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@venue.errors.count, "error") %> prohibited this venue from being saved:</h2>
+
+      <ul>
+      <% @venue.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div style="margin: 10px;">
+
+	<div class="field">
+		<%= f.file_field :logo %>
+	</div>	
+
+	<div class="field">
+		<%= f.label :remote_logo_url, "or image URL", :style => "font: bold 10pt helvetica;"  %><br />
+		<%= f.text_field :remote_logo_url, :style => "width: 280px;" %>
+	</div>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :address1 %><br />
+    <%= f.text_field :address1 %>
+  </div>
+  <div class="field">
+    <%= f.label :address2 %><br />
+    <%= f.text_field :address2 %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city, :value => 'Dewey Beach' %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state, :value => 'DE' %>
+  </div>
+  <div class="field">
+    <%= f.label :zip %><br />
+    <%= f.text_field :zip, :value => '19971' %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </div>
+
+<div class="form_addition">
+	<p class="form_addition_header">Location(s):</p>
+	<%= link_to_add_fields "Add Location", f, :locations %>
+    <%= f.fields_for :locations do |builder| %>
+		<%= render "location_fields", :f => builder %>
+    <% end %>
+</div>  
+
+
+<div class="form_addition">
+	<p class="form_addition_header">Web Links:</p>
+	<%= link_to_add_fields "Add Link", f, :links %>
+    <%= f.fields_for :links do |builder| %>
+    	<%= render "link_fields", :f => builder %>
+    <% end %>
+</div>  
+
+
+  <div class="actions" style="padding: 20px 0;">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>

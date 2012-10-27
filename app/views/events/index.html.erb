@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <% index_area do %>
 <h2>Events</h2>
 	<% @events.group_by{ |e| e.name.chars.first }.each do |letter, events| %>
@@ -11,29 +9,4 @@
 		<% end %>
 		<% end %>
 	<% end %>
-<% end %>
-
-<% admin_area do %>
-<h2>Events Admin - <span class="signout"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></span></h2>
- 
-<table>
-  <tr class="child">
-    <td colspan="5"><%= link_to 'New Event', new_event_path %></td>
-  </tr>
-  <tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th colspan="3">Functions</th>
-  </tr>
- 
-<% @events.each do |event| %>
-  <tr class="parent">
-    <td><%= event.id %></td>
-    <td><%= event.name %></td>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Remove', event, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
 <% end %>
