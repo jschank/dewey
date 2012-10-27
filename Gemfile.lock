@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/thedarkone/rails-dev-boost.git
+  revision: c62c1b3763c8d6ce2227782368df97b2bde2f8eb
+  specs:
+    rails-dev-boost (0.2.1)
+      rails (>= 3.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -233,6 +240,7 @@ DEPENDENCIES
   pg
   pry
   rails (= 3.1.0)
+  rails-dev-boost!
   rails-footnotes (~> 3.7.7)
   rspec-rails
   sass-rails (~> 3.1.0)
