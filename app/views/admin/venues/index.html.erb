@@ -2,7 +2,7 @@
  
 <table>
   <tr class="child">
-    <td colspan="5"><%= link_to 'New Venue', new_venue_path %></td>
+    <td colspan="5"><%= link_to 'New Venue', new_admin_venue_path %></td>
   </tr>
   <tr>
     <th>ID</th>
@@ -16,7 +16,7 @@
     <td><%= venue.name %></td>
     <td><%= link_to 'Show', venue %></td>
     <td><%= link_to 'Edit', edit_admin_venue_path(venue) %></td>
-    <td><%= link_to 'Remove', venue, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Remove', [:admin, venue], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
   
   <% venue.locations.each do |location| %>

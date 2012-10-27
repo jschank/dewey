@@ -1,6 +1,7 @@
 class Admin::WeblocationsController < ApplicationController
 
   before_filter :authenticate_user!
+  layout 'admin'
 
     # GET /admin/weblocations
     # GET /admin/weblocations.json

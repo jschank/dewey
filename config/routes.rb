@@ -18,7 +18,7 @@ Dewey::Application.routes.draw do
     resources :venues
     resources :weblocations
   end
-  match "/admin/schedules/new_child/:parent_id(.:format)" => "admin/schedules#new_child", :as => :new_child 
+  match "/admin/schedules/new_child/:parent_id(.:format)" => "admin/schedules#new_child", :as => :new_admin_child 
 
 
   # The priority is based upon order of creation:

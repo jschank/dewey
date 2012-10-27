@@ -1,4 +1,4 @@
-<%= form_for @weblocation, :html => {:multipart => true} do |f| %>
+<%= form_for [:admin, @weblocation], :html => {:multipart => true} do |f| %>
   <% if @weblocation.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@weblocation.errors.count, "error") %> prohibited this weblocation from being saved:</h2>

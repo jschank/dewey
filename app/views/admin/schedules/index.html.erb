@@ -2,7 +2,7 @@
  
 <table>
   <tr class="child">
-    <td colspan="9"><%= link_to 'New Parent Item', new_schedule_path %> <%= submit_tag "Toggle Past", :type => 'button', :id => 'past_button' %> <%= submit_tag "Toggle Present #{current_time.to_date.strftime("%m/%d/%Y")}", :type => 'button', :id => 'present_button' %> <%= submit_tag "Toggle Future", :type => 'button', :id => 'future_button' %></td>
+    <td colspan="9"><%= link_to 'New Parent Item', new_admin_schedule_path %> <%= submit_tag "Toggle Past", :type => 'button', :id => 'past_button' %> <%= submit_tag "Toggle Present #{current_time.to_date.strftime("%m/%d/%Y")}", :type => 'button', :id => 'present_button' %> <%= submit_tag "Toggle Future", :type => 'button', :id => 'future_button' %></td>
   </tr>
   <tr>
     <th>ID</th>
@@ -23,7 +23,7 @@
       <td><%= link_to 'Show', parent %></td>
       <td><%= link_to 'Edit', edit_admin_schedule_path(parent) %></td>
       <td><%= link_to 'Add Child', new_admin_child_path(parent) %></td>
-      <td><%= link_to 'Remove', parent, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to 'Remove', [:admin, parent], :confirm => 'Are you sure?', :method => :delete %></td>
   <% end %>
     <% parent.children.each do |child| %>
   <%= content_tag :tr, :class => "child parent #{past_present_future(child.parent.start)}" do  %>
@@ -35,7 +35,7 @@
         <td><!--<%= link_to 'Show', child %>--></td>
         <td><%= link_to 'Edit', edit_admin_schedule_path(child) %></td>
         <td></td>
-        <td><%= link_to 'Remove', child, :confirm => 'Are you sure?', :method => :delete %></td>
+        <td><%= link_to 'Remove', [:admin, child], :confirm => 'Are you sure?', :method => :delete %></td>
       <% end %>
     <% end %>
   <% end %>

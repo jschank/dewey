@@ -2,6 +2,7 @@ class Admin::SchedulesController < ApplicationController
 
   before_filter :authenticate_user!
   before_filter :get_locations
+  layout 'admin'
 
   # GET /admin/schedules
   # GET /admin/schedules.json
@@ -133,13 +134,13 @@ class Admin::SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
     if @schedule.children.count > 0
       respond_to do |format|
-        format.html { redirect_to admin_schedules_url, :notice => "Cannot delete this parent scheduled item #{@schedule.schedulable.name} because it has child items. Delete those first." } 
+        format.html { redirect_to admin_schedules_url, :alert => "Cannot delete this parent scheduled item #{@schedule.schedulable.name} because it has child items. Delete those first." } 
         format.json { head :ok }
       end
     else
       @schedule.destroy
       respond_to do |format|
-        format.html { redirect_to admin_schedules_url, :notice => "Successfully deleted scheduled item #{@schedule.schedulable.name}" }
+        format.html { redirect_to admin_schedules_url, :alert => "Successfully deleted scheduled item #{@schedule.schedulable.name}" }
         format.json { head :ok }
       end
     end

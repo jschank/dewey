@@ -1,9 +1,9 @@
 <div class="dynamic_fields">
-    <p><%= f.label 'Name' %><br />
+  <p><%= f.label 'Name' %><br />
 	<%= f.text_field :name %></p>
-    <p><%= f.label 'Order' %><br />
-		<%= f.text_field :order %></p>
-    <p><%= f.label 'Description' %><br />
+  <p><%= f.label 'Order' %><br />
+	<%= f.text_field :order %></p>
+  <p><%= f.label 'Description' %><br />
 	<%= f.text_area :description %></p>
 	<%= f.hidden_field :_destroy %><%= link_to_function "remove", "remove_fields(this)" %>
 </div>  

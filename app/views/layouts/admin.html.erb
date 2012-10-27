@@ -16,8 +16,8 @@
 <h1>iDewIt Admin</h1>
 <a href="javascript:history.back();"><img src="<%= asset_path 'back-button.png' %>" style="position: absolute; top: 7px; left: 10px; border: none;"></a>
 
-<p id="notice"><%= notice %></p>
-<p id="alert"><%= alert %></p>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
 <%= yield %>
 
@@ -26,11 +26,11 @@
 <p class="copyright">&copy; 2012 Awkward Fist Bump Software</p>
 <div id="tabbarbg">
 	<div id="tabbar">
-		<%= link_to("Schedule", schedules_path, {:class => page_class('schedules')}) %>
-		<%= link_to("Acts", acts_path, {:class => page_class('acts')}) %>
-		<%= link_to("Events", events_path, {:class => page_class('events')}) %>
-		<%= link_to("Venues", venues_path, {:class => page_class('venues')}) %>
-		<%= link_to("Festivals", festivals_path, {:class => page_class('festivals')}) %>
+		<%= link_to("Schedule", admin_schedules_path, {:class => page_class('schedules')}) %>
+		<%= link_to("Acts", admin_acts_path, {:class => page_class('acts')}) %>
+		<%= link_to("Events", admin_events_path, {:class => page_class('events')}) %>
+		<%= link_to("Venues", admin_venues_path, {:class => page_class('venues')}) %>
+		<%= link_to("Festivals", admin_festivals_path, {:class => page_class('festivals')}) %>
 	</div>
 </div>
 

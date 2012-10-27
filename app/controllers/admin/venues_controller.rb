@@ -1,6 +1,7 @@
 class Admin::VenuesController < ApplicationController
 
   before_filter :authenticate_user!
+  layout 'admin'
 
     # GET /venues
     # GET /venues.json
@@ -70,7 +71,7 @@ class Admin::VenuesController < ApplicationController
       @venue.destroy
 
       respond_to do |format|
-        format.html { redirect_to venues_url }
+        format.html { redirect_to admin_venues_url }
         format.json { head :ok }
       end
     end

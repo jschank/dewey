@@ -17,8 +17,8 @@
     <td><%= weblocation.name %></td>
     <td><%= image_tag weblocation.logo %></td>
     <td><%= weblocation.popularity %></td>
-    <td><%= link_to 'Edit', edit_weblocation_path(weblocation) %></td>
-    <td><%= link_to 'Destroy', weblocation, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Edit', edit_admin_weblocation_path(weblocation) %></td>
+    <td><%= link_to 'Destroy', [:admin, weblocation], confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 

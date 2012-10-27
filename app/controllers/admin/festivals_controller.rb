@@ -1,6 +1,7 @@
 class Admin::FestivalsController < ApplicationController
 
   before_filter :authenticate_user!
+  layout 'admin'
 
     # GET /admin/festivals
     # GET /admin/festivals.json

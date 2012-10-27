@@ -2,7 +2,7 @@
  
 <table>
   <tr class="child">
-    <td colspan="5"><%= link_to 'New Festival', new_festival_path %></td>
+    <td colspan="5"><%= link_to 'New Festival', new_admin_festival_path %></td>
   </tr>
   <tr>
     <th>ID</th>
@@ -16,7 +16,7 @@
     <td><%= festival.name %></td>
     <td><%= link_to 'Show', festival %></td>
     <td><%= link_to 'Edit', edit_admin_festival_path(festival) %></td>
-    <td><%= link_to 'Remove', festival, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Remove', [:admin, festival], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 
