@@ -6,7 +6,7 @@ namespace :db do
     then puts "Server already running." 
     else
       puts "Starting PostgreSQL Server..."
-      if system('pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start') && dbstatus
+      if system('pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start')
       then puts "Server started!"
       else puts "Could not start server!"
       end
