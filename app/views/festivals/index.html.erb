@@ -1,12 +1,12 @@
 <% index_area do %>
-<h2>Festivals</h2>
+  <h2>Festivals</h2>
 	<% @festivals.group_by{ |e| e.start.year }.sort.reverse.each do |letter, festivals| %>
 		<h3><%= letter %></h3>
 		<% festivals.each do |festival| %>
-		<%= link_to festival_path(festival), :class => "link_box" do %>
-		<%= logo_image(festival, :class => "small") %>
-			<h5 class="oneline"><%= festival.name %></h5>
-		<% end %>
+  		<%= link_to festival_path(festival), :class => "link_box" do %>
+    		<%= logo_image(festival, :class => "small") %>
+  			<h5 class="oneline"><%= festival.name %></h5>
+  		<% end %>
 		<% end %>
 	<% end %>
 <% end %>

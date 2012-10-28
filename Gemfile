@@ -13,8 +13,7 @@ gem 'fog'
 gem 'carrierwave'
 gem 'devise'
 gem 'kaminari'
-
-# gem 'rmagick'
+gem 'jquery-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -23,8 +22,6 @@ group :assets do
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
 end
-  
-gem 'jquery-rails'
 
 group :test, :development do
   gem 'rspec-rails'
@@ -37,6 +34,7 @@ group :test, :development do
   gem 'rails-footnotes', '~> 3.7.7'
   gem 'newrelic_rpm'
   gem 'pry'
+  gem 'bullet'
   # gem 'squeel' Squeel causes the related acts to break with an #<NoMethodError: undefined method `downcase' for #<Arel::Table: error
   gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
 end

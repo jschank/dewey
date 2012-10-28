@@ -1,39 +1,38 @@
 <% specific_area do %>
   <div class="specificHeader">
-	<div class="infoShow">
-		<%= logo_image(@venue, :class => "large") %>
+  	<div class="infoShow">
+  		<%= logo_image(@venue, :class => "large") %>
 	    <h5><%= @venue.name %></h5>
-	    <p><%= @venue.address1 %><br/>
-		<% if @venue.address2.present? %>	
-			<%= @venue.address2 %><br/>
-		<% end %>
-		<% if @venue.address1.present? %>	
+  		<% if @venue.address1.present? %>	
+  	    <p><%= @venue.address1 %><br/>
+    		<% if @venue.address2.present? %>	
+    			<%= @venue.address2 %><br/>
+    		<% end %>
 	    	<%= @venue.city %>, <%= @venue.state %>  <%= @venue.zip %></p>
-		<% end %>
-		<% if @venue.phone.present? %>	
-			<p>Phone: <%= @venue.phone %></p>
-		<% end %>
-		<div class="description" id="venue_collapsable">
-			<%= textilize(@venue.description) %>
-		</div>		
-	</div>
-	<% if @venue.links.count > 0 %>
-		<p class="visit">Visit us:</p>
+  		<% end %>
+  		<% if @venue.phone.present? %>	
+  			<p>Phone: <%= @venue.phone %></p>
+  		<% end %>
+  		<div class="description" id="venue_collapsable">
+  			<%= textilize(@venue.description) %>
+  		</div>		
+  	</div>
+
+    <%= content_tag :p, "Visit us:", :class => "visit" if @venue.links.present? %>
 		<% @venue.links.sort_by{|venue| venue.weblocation.popularity}.each do |link| %>
 			<%= make_link(link) %>
-		<% end %>
-	<% end %>
-    </div>
+  	<% end %>
+  </div>
 <% end %>
 
 <% in_progress_area do %>
-	<% if @in_progress.count > 0 %>
-	<%= render :partial => 'shared/schedule_list', :locals => {:list => @in_progress, :options => {:class => "inprogress"}, :title => "Happening Now at #{@venue.name}", :item_partial => 'venues/schedule_item'} %>
+  <% if @in_progress.present? %>
+  	<%= render :partial => 'shared/schedule_list', :locals => {:list => @in_progress, :options => {:class => "inprogress"}, :title => "Happening Now at #{@venue.name}", :item_partial => 'venues/schedule_item'} %>
 	<% end %>
 <% end %>
 
 <% upcoming_area do %>
-	<% if @upcoming.count > 0 %>
-	<%= render :partial => 'shared/schedule_list', :locals => {:list => @upcoming, :options => {:class => "upcoming"}, :title => "Upcoming at #{@venue.name}", :item_partial => 'venues/schedule_item'} %>
+  <% if @upcoming.present? %>
+    <%= render :partial => 'shared/schedule_list', :locals => {:list => @upcoming, :options => {:class => "upcoming"}, :title => "Upcoming at #{@venue.name}", :item_partial => 'venues/schedule_item'} %>
 	<% end %>
 <% end %>

@@ -1,12 +1,12 @@
 <% index_area do %>
-<h2>Venues</h2>
+  <h2>Venues</h2>
 	<% @venues.group_by{ |v| sortable_name(v.name).chars.first }.each do |letter, venues| %>
 		<h3><%= letter %></h3>
 		<% venues.each do |venue| %>
-		<%= link_to venue_path(venue), :class => "link_box" do %>
-		<%= logo_image(venue, :class => "small") %>
-			<h5 class="oneline"><%= venue.name %></h5>
-		<% end %>
+  		<%= link_to venue_path(venue), :class => "link_box" do %>
+    		<%= logo_image(venue, :class => "small") %>
+  			<h5 class="oneline"><%= venue.name %></h5>
+    	<% end %>
 		<% end %>
 	<% end %>
 <% end %>

@@ -1,46 +1,40 @@
 <% specific_area do %>
-    <div class="specificHeader">
+
+  <div class="specificHeader">
 		<div class="infoShow">
 			<%= logo_image(@schedule.schedulable, :class => "large") %>
-	    <h5><%= @schedule.schedulable.name %></h5>
-		<p class="hometown"><%= @schedule.schedulable.hometown if @schedule.festival_id.present? %></p>
-		<p class="festival"><%= @schedule.festival.name if @schedule.festival_id.present? %></p>
-
-
-			<%= content_tag :p, (@schedule.location.display_name if @schedule.location.display_name.present?), :class => "location" %>
-			<p class="dates"><%= date_and_times(@schedule.start) %>, <%= times(@schedule) %></p>	
+      <%= content_tag :h5, @schedule.schedulable.name %>
+      <%= content_tag :p,  @schedule.schedulable.hometown,   :class => "hometown" if @schedule.festival_id.present? %>
+      <%= content_tag :p,  @schedule.festival.name,          :class => "festival" if @schedule.festival_id.present? %>
+			<%= content_tag :p,  @schedule.location.display_name,  :class => "location" if @schedule.location.display_name.present?  %>
+      <%= content_tag :p,  date_and_times(@schedule.start) + ", " + times(@schedule), :class => "dates" %>
 			<div class="description" id="venue_collapsable">
 				<%= textilize(@schedule.schedulable.description) %>
 			</div>
 			
-			<% if @schedule.details.count > 0 %>
-				<p>Additional Details:<p>
-					<% @schedule.details.sort_by(&:order).each do |detail| %>
-					<div class="addDetails">
-						<p><strong><%= detail.name %></strong><%= detail.description.present? ? ": " : "" %><%= detail.description %></p>
-					</div>				
-				<% end %>
+      <%= content_tag :p, "Additional Details:" unless @schedule.details.empty? %>
+			<% @schedule.details.sort_by(&:order).each do |detail| %>
+				<div class="addDetails">
+					<p><strong><%= detail.name %></strong><%= detail.description.present? ? ": " : "" %><%= detail.description %></p>
+				</div>				
 			<% end %>
 
-
-			<% if @schedule.schedulable.links.count > 0 %>
-				<% @schedule.links.each do |link| %>
-					<%= make_link(link) %>
-				<% end %>
-			<% end %>
-	    </div>
-		
-		<% if @schedule.schedulable.links.count > 0 %>
-		<p class="visit">Links for <%= @schedule.schedulable.name %>:</p>
-			<% @schedule.schedulable.links.sort_by{|schedulable| schedulable.weblocation.popularity}.each do |link| %>
+			<% @schedule.links.each do |link| %>
 				<%= make_link(link) %>
 			<% end %>
-		<% end %>
     </div>
+		
+    <%= content_tag :p, "Links for #{@schedule.schedulable.name}:", :class => "visit" if @schedule.schedulable.links.present? %>
+		<% @schedule.schedulable.links.sort_by{|schedulable| schedulable.weblocation.popularity}.each do |link| %>
+			<%= make_link(link) %>
+		<% end %>
+  </div>
+
 <% end %>
 
 <% related_area do %>
-<% if @schedule.festival != nil %>
+
+  <% if @schedule.festival.present? %>
   	<h2>Festival</h2>
   		<%= link_to festival_path(@schedule.festival), :class => "link_box" do %>
   		<%= logo_image(@schedule.festival, :class => "small") %>
@@ -48,7 +42,7 @@
   	<% end %>
   <% end %>
 
-	<% if @schedule.location != nil %>
+	<% if @schedule.location.present? %>
 		<h2>Venue</h2>
 			<%= link_to venue_path(@schedule.location.venue), :class => "link_box" do %>
 			<%= logo_image(@schedule.location.venue, :class => "small") %>
@@ -56,27 +50,30 @@
 		<% end %>
 	<% end %>
 
-	<% if @schedule.children.count > 0 %>
-		<h2>Acts</h2>
-		<% @schedule.acts.each do |act| %>
-		<%= link_to act_path(act), :class => "link_box" do %>
-		<%= logo_image(act, :class => "small") %>
-				<h5 class="oneline"><%= act.name %></h5>	
-			<% end %>
+  <%= content_tag :h2, "Acts" unless @schedule.children.empty? %>
+	<% @schedule.acts.each do |act| %>
+  	<%= link_to act_path(act), :class => "link_box" do %>
+    	<%= logo_image(act, :class => "small") %>
+    	<h5 class="oneline"><%= act.name %></h5>	
 		<% end %>
 	<% end %>
+
 <% end %>
 
 <% in_progress_area do %>
-  <% if @in_progress.count > 0 %>
-  <%= render :partial => 'shared/schedule_list', :locals => {:list => @in_progress, :options => {:class => "inprogress"}, :title => "Happening Now", :item_partial => 'shared/schedule_item'} %>
+
+  <% if @in_progress.present? %>
+    <%= render :partial => 'shared/schedule_list', :locals => {:list => @in_progress, :options => {:class => "inprogress"}, :title => "Happening Now", :item_partial => 'shared/schedule_item'} %>
   <% end %>
+
 <% end %>
 
 <% upcoming_area do %>
-  <% if @upcoming.count > 0 %>
-  <%= render :partial => 'shared/schedule_list', :locals => {:list => @upcoming, :options => {:class => "upcoming"}, :title => "Upcoming #{@schedule.schedulable.name}", :item_partial => 'shared/schedule_item'} %>
+
+  <% if @upcoming.present? %>
+    <%= render :partial => 'shared/schedule_list', :locals => {:list => @upcoming, :options => {:class => "upcoming"}, :title => "Upcoming #{@schedule.schedulable.name}", :item_partial => 'shared/schedule_item'} %>
   <% end %>
+
 <% end %>
 
 

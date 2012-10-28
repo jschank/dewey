@@ -7,10 +7,8 @@
 		<p class="hometown"><%= schedule_item.schedulable.hometown if schedule_item.festival_id.present? %></p>
 		<p class="festival"><%= schedule_item.festival.name if schedule_item.festival_id.present? %></p>
 		<%= content_tag :p, (schedule_item.location.display_name if schedule_item.location.display_name.present?), :class => "location" %>
-		<% if schedule_item.agenda.count > 0 %>	
-			<% schedule_item.agenda.each do | schedulable_key, schedulable_items| %>
-				<p><%= Schedule.retrieve(*schedulable_key).name %><span class="times"><%= time_list(schedulable_items) %></span></p>
-			<% end %>
+		<% schedule_item.agenda.each do | schedulable_key, schedulable_items| %>
+			<p><%= Schedule.retrieve(*schedulable_key).name %><span class="times"><%= time_list(schedulable_items) %></span></p>
 		<% end %>
 	</div>
 <% end %>
