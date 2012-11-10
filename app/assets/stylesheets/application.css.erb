@@ -395,12 +395,29 @@ tr.child	{
 	overflow: hidden;
 }
 
+#tabbarAdmin	{
+	margin: 0 auto;
+	width: 384px;
+	height: 49px;
+	overflow: hidden;
+}
+
 #tabbar .schedules_on, #tabbar .acts_on, #tabbar .events_on, #tabbar .venues_on, #tabbar .festivals_on, #tabbar .schedules_off, #tabbar .acts_off, #tabbar .events_off, #tabbar .venues_off, #tabbar .festivals_off	{
 border: none;
 display: block;
 width: 64px;
 height: 49px;
 background-image: url(<%= asset_path 'tabbar.png' %>);
+float: left;
+text-indent: -9999px;
+}
+
+#tabbarAdmin .schedules_on, #tabbarAdmin .acts_on, #tabbarAdmin .events_on, #tabbarAdmin .venues_on, #tabbarAdmin .festivals_on, #tabbarAdmin .public_off, #tabbarAdmin .schedules_off, #tabbarAdmin .acts_off, #tabbarAdmin .events_off, #tabbarAdmin .venues_off, #tabbarAdmin .festivals_off	{
+border: none;
+display: block;
+width: 64px;
+height: 49px;
+background-image: url(<%= asset_path 'tabbar-admin.png' %>);
 float: left;
 text-indent: -9999px;
 }
@@ -443,4 +460,49 @@ background-position: -257px 0px;
 
 #tabbar .festivals_on	{
 background-position: -257px 49px;
+}
+
+
+#tabbarAdmin .public_off	{
+background-position: 0px 0px;
+}
+
+#tabbarAdmin .schedules_off	{
+background-position: -65px 0px;
+}
+
+#tabbarAdmin .schedules_on	{
+background-position: -65px 49px;
+}
+
+#tabbarAdmin .acts_off	{
+background-position: -129px 0px;
+}
+
+#tabbarAdmin .acts_on	{
+background-position: -129px 49px;
+}
+
+#tabbarAdmin .events_off	{
+background-position: -193px 0px;
+}
+
+#tabbarAdmin .events_on	{
+background-position: -193px 49px;
+}
+
+#tabbarAdmin .venues_off	{
+background-position: -257px 0px;
+}
+
+#tabbarAdmin .venues_on	{
+background-position: -257px 49px;
+}
+
+#tabbarAdmin .festivals_off	{
+background-position: -321px 0px;
+}
+
+#tabbarAdmin .festivals_on	{
+background-position: -321px 49px;
 }

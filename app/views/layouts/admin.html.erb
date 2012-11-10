@@ -25,7 +25,8 @@
 
 <p class="copyright">&copy; 2012 Awkward Fist Bump Software</p>
 <div id="tabbarbg">
-	<div id="tabbar">
+	<div id="tabbarAdmin">
+		<%= link_to("Public", schedules_path, {:class => admin_page_class('public')}) %>
 		<%= link_to("Schedule", admin_schedules_path, {:class => admin_page_class('schedules')}) %>
 		<%= link_to("Acts", admin_acts_path, {:class => admin_page_class('acts')}) %>
 		<%= link_to("Events", admin_events_path, {:class => admin_page_class('events')}) %>
