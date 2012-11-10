@@ -19,7 +19,7 @@ class Admin::SchedulesController < ApplicationController
   def new
     @schedule = Schedule.new
     @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
-    @scheduleables = @acts = Act.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
+    @schedulables = @acts = Act.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @events = Event.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @festivals = Festival.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
 
