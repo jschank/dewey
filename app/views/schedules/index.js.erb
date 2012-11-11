@@ -1,1 +1,1 @@
-$("#paginated_upcoming").append("<div class='page'><%= escape_javascript(render_list(@upcoming, "upcoming", "upcoming page", 'shared/schedule_item') ) %></div>");
+$("#paginated_upcoming").append("<div class='sausage_page'><%= escape_javascript(render_list(@upcoming, "upcoming", nil, 'shared/schedule_item') ) %></div>");
