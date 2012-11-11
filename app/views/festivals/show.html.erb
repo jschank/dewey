@@ -1,29 +1,23 @@
-<% specific_area do %>
-  <div class="specificHeader">
-  	<div class="infoShow">
-  		<%= logo_image(@festival, :class => "large") %>
-  		<h5><%= @festival.name %></h5>
-      <pp class="dates"><%= festival_dates(@festival) %></p>
-  		<div class="description" id="event_collapsable">
-  			<%= textilize(@festival.description) %>
-  		</div>
-  	</div>
-    <%= content_tag :p, "Visit us:", :class => "visit" if @festival.links.present? %>
-		<% @festival.links.sort_by{|festival| festival.weblocation.popularity}.each do |link| %>
-			<%= make_link(link) %>
-  	<% end %>
-  </div>
-<% end %>
-
-<% upcoming_area do %>
-  <div id="sortBy">
-    <%= link_to "Sort By Schedule", festival_path(@festival, :organize => "bydate"),  :id => "bySchedule" %>
-    <%= link_to "Sort By Acts",     festival_path(@festival, :organize => "byact"),   :id => "byActs" %>
-    <%= link_to "Sort By Venues",   festival_path(@festival, :organize => "byvenue"), :id => "byVenues" %>
-  </div>
-
-  <% if @upcoming.present? %>
-    <%= render :partial => 'shared/schedule_list', :locals => {:list => @upcoming, :options => params.merge({:class => "upcoming"}), :title => "Schedule for #{@festival.name}", :item_partial => 'shared/schedule_item'} %>
+<div class="specificHeader">
+	<div class="infoShow">
+		<%= logo_image(@festival, :class => "large") %>
+		<h5><%= @festival.name %></h5>
+    <pp class="dates"><%= festival_dates(@festival) %></p>
+		<div class="description" id="event_collapsable">
+			<%= textilize(@festival.description) %>
+		</div>
+	</div>
+  <%= content_tag :p, "Visit us:", :class => "visit" if @festival.links.present? %>
+	<% @festival.links.sort_by{|festival| festival.weblocation.popularity}.each do |link| %>
+		<%= make_link(link) %>
 	<% end %>
-<% end %>
+</div>
+
+<div id="sortBy">
+  <%= link_to "Sort By Schedule", festival_path(@festival, :organize => "bydate"),  :id => "bySchedule" %>
+  <%= link_to "Sort By Acts",     festival_path(@festival, :organize => "byact"),   :id => "byActs" %>
+  <%= link_to "Sort By Venues",   festival_path(@festival, :organize => "byvenue"), :id => "byVenues" %>
+</div>
+
+<%= render_list(@upcoming, "upcoming", "Schedule for #{@festival.name}", 'shared/schedule_item') %>
 

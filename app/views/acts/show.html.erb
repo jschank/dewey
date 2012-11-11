@@ -1,39 +1,27 @@
-<% specific_area do %>
-  <div class="specificHeader">
-  	<div class="infoShow">
-			<%= logo_image(@act, :class => "large") %>
-			<%= content_tag :h5, @act.name %>	
-			<%= display_hometown(@act) %>
-			<div class="description" id="act_collapsable">
-				<%= textilize(@act.description) %>
-			</div>
+<div class="specificHeader">
+	<div class="infoShow">
+		<%= logo_image(@act, :class => "large") %>
+		<%= content_tag :h5, @act.name %>	
+		<%= display_hometown(@act) %>
+		<div class="description" id="act_collapsable">
+			<%= textilize(@act.description) %>
 		</div>
+	</div>
 
-    <%= content_tag :p, "Visit us:", :class => "visit" if @act.links.present? %>
-		<% @act.links.sort_by{|act| act.weblocation.popularity}.each do |link| %>
-			<%= make_link(link) %>
-		<% end %>
-	</div>	
-<% end %>
+  <%= content_tag :p, "Visit us:", :class => "visit" if @act.links.present? %>
+	<% @act.links.sort_by{|act| act.weblocation.popularity}.each do |link| %>
+		<%= make_link(link) %>
+	<% end %>
+</div>	
 
-<% related_area do %>
-  <%= content_tag :h2, "Related Acts" if @act.related.present? %>
-	<% @act.related.sort_by{ |a| sortable_name(a.name) }.each do |related_act| %>
-		<%= link_to act_path(related_act), :class => "link_box" do %>
-			<%= logo_image(related_act, :class => "small") %>
-				<h4 class="oneline"><%= related_act.name %></h4>	
-		<% end %>
+<%= content_tag :h2, "Related Acts" if @act.related.present? %>
+<% @act.related.sort_by{ |a| sortable_name(a.name) }.each do |related_act| %>
+	<%= link_to act_path(related_act), :class => "link_box" do %>
+		<%= logo_image(related_act, :class => "small") %>
+			<h4 class="oneline"><%= related_act.name %></h4>	
 	<% end %>
 <% end %>
 
-<% in_progress_area do %>
-  <% if @in_progress.present? %>
-  	<%= render :partial => 'shared/schedule_list', :locals => {:list => @in_progress, :options => {:class => "inprogress"}, :title => "Happening Now", :item_partial => 'shared/schedule_item'} %>
-	<% end %>
-<% end %>
+<%= render_list(@in_progress, "inprogress", "Happening Now", 'shared/schedule_item') %>
 
-<% upcoming_area do %>
-  <% if @upcoming.present? %>
-    <%= render :partial => 'shared/schedule_list', :locals => {:list => @upcoming, :options => {:class => "upcoming"}, :title => "Upcoming for #{@act.name}", :item_partial => 'shared/schedule_item'} %>
-	<% end %>
-<% end %>
+<%= render_list(@upcoming, "upcoming", "Upcoming for #{@act.name}", 'shared/schedule_item') %>

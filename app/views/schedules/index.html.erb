@@ -1,14 +1,10 @@
-<% in_progress_area do %>
 <%= render_list(@in_progress, "inprogress", "Happening Now", 'shared/schedule_item') %>
-<% end %>
 
-<% upcoming_area do %>
 <div id="paginated_upcoming">
   <div class="sausage_page">
     <%= render_list(@upcoming, "upcoming", "Upcoming", 'shared/schedule_item') %>
   </div>
 </div>
-  <%= paginate @dates %>
-<% end %>
+<%= paginate @dates %>
 
 

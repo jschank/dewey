@@ -1,12 +1,10 @@
-<% index_area do %>
-  <h2>Events</h2>
-	<% @events.group_by{ |e| e.name.chars.first }.each do |letter, events| %>
-		<h3><%= letter %></h3>
-		<% events.each do |event| %>
-  		<%= link_to event_path(event), :class => "link_box" do %>
-    		<%= logo_image(event, :class => "small") %>
-    		<h5 class="oneline"><%= event.name %></h5>
-  		<% end %>
+<h2>Events</h2>
+<% @events.group_by{ |e| e.name.chars.first }.each do |letter, events| %>
+	<h3><%= letter %></h3>
+	<% events.each do |event| %>
+		<%= link_to event_path(event), :class => "link_box" do %>
+  		<%= logo_image(event, :class => "small") %>
+  		<h5 class="oneline"><%= event.name %></h5>
 		<% end %>
 	<% end %>
 <% end %>
