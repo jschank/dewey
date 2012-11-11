@@ -5,6 +5,9 @@
     <%= render_list(@upcoming, "upcoming", "Upcoming", 'shared/schedule_item') %>
   </div>
 </div>
+
+<div id="paginate_loading"><img src="<%= asset_path 'loading.gif' %>"></div>
+
 <%= paginate @dates %>
 
 
