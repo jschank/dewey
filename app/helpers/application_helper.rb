@@ -67,6 +67,10 @@ module ApplicationHelper
     date.strftime("%a, %B %-d")
   end
   
+  def render_list(list, klass, title, item_partial)
+    if list.present? then render :partial => 'shared/schedule_list', :locals => {:list => list, :options => {:class => klass}, :title => title, :item_partial => item_partial} end
+  end
+  
   def organize_list(list, params)
     # list is a unique list of parent schedule items
     organize_by = params[:organize] || "bydate"

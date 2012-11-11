@@ -24,7 +24,7 @@
 
   <div class="field">
     <%= f.label 'Select a schedulable parent' %><br />
-	<%= f.select(:schedulable_type, ["Act", "Event"]) %><%= f.collection_select(:schedulable_id, @schedulables, :id, :name)%>
+  	<%= f.select(:schedulable_type, ["Act", "Event"]) %><%= f.collection_select(:schedulable_id, @schedulables, :id, :name)%>
   </div>
 
   <div class="field">

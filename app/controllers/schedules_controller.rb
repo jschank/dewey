@@ -10,8 +10,8 @@ class SchedulesController < ApplicationController
     @upcoming = @dates.reduce([]){ |arr, date| arr += parents_grouped_by_dates[date] }
     
     respond_to do |format|
+      format.js
       format.html {flash[:notice] = params[:notice]}
-      format.json { render :json => @parents }
     end
   end
 

@@ -1,13 +1,13 @@
 <% in_progress_area do %>
-  <% if @in_progress.present? %>
-	  <%= render :partial => 'shared/schedule_list', :locals => {:list => @in_progress, :options => {:class => "inprogress"}, :title => "Happening Now", :item_partial => 'shared/schedule_item'} %>
-  <% end %>
+<%= render_list(@in_progress, "inprogress", "Happening Now", 'shared/schedule_item') %>
 <% end %>
 
 <% upcoming_area do %>
-  <% if @upcoming.present? %>
-    <%= render :partial => 'shared/schedule_list', :locals => {:list => @upcoming, :options => {:class => "upcoming"}, :title => "Upcoming", :item_partial => 'shared/schedule_item'} %>
-  <% end %>
+<div id="paginated_upcoming">
+  <div class="page">
+    <%= render_list(@upcoming, "upcoming", "Upcoming", 'shared/schedule_item') %>
+  </div>
+</div>
   <%= paginate @dates %>
 <% end %>
 
