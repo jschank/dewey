@@ -9,8 +9,10 @@ class SchedulesController < ApplicationController
     @dates = Kaminari.paginate_array(parents_grouped_by_dates.keys).page(params[:page]).per(4)
     @upcoming = @dates.reduce([]){ |arr, date| arr += parents_grouped_by_dates[date] }
     
+    
+        
     respond_to do |format|
-      format.js
+      format.js { raise ActionController::RoutingError.new('Not Found') if params[:page].present? && params[:page].to_i > @dates.num_pages }
       format.html {flash[:notice] = params[:notice]}
     end
   end

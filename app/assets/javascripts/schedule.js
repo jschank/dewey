@@ -1,7 +1,8 @@
 
 (function() {
   var page = 1,
-      loading = false;
+      loading = false,
+      stop_it = false;
 
   function nearBottomOfPage() {
     return $(window).scrollTop() > $(document).height() - $(window).height() - 200;
@@ -13,6 +14,8 @@
     }
 
     if(nearBottomOfPage()) {
+      if (stop_it)
+          return; 
       loading=true;
       $("#paginate_loading").show();
       $(".pagination").hide();
@@ -24,8 +27,12 @@
         success: function() {
           $("#paginate_loading").hide();
           $(window).sausage('draw');
-          loading=false;
-        }
+          loading=false;          
+        },
+        error: function() {
+          $("#paginate_loading").hide();
+          stop_it = true;
+        }        
       });
     }
   });
