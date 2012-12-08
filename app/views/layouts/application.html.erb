@@ -13,7 +13,7 @@
 </head>
 <body onLoad="init()">
 
-<h1>iDewIt</h1>
+<h1><%= @title || "iDewIt" %></h1>
 <a href="javascript:history.back();"><img src="<%= asset_path 'back-button.png' %>" style="position: absolute; top: 7px; left: 10px; border: none;"></a>
 <div id="loading"><img src="<%= asset_path 'loading.gif' %>"></div>
 <script>

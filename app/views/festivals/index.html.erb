@@ -1,6 +1,6 @@
-<h2>Festivals</h2>
+<% @title = "Festivals" %>
 <% @festivals.group_by{ |e| e.start.year }.sort.reverse.each do |letter, festivals| %>
-	<h3><%= letter %></h3>
+	<h2><%= letter %></h2>
 	<% festivals.each do |festival| %>
 		<%= link_to festival_path(festival), :class => "link_box" do %>
   		<%= logo_image(festival, :class => "small") %>

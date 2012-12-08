@@ -1,6 +1,6 @@
-<h2>Events</h2>
+<% @title = "Events" %>
 <% @events.group_by{ |e| e.name.chars.first }.each do |letter, events| %>
-	<h3><%= letter %></h3>
+	<h2><%= letter %></h2>
 	<% events.each do |event| %>
 		<%= link_to event_path(event), :class => "link_box" do %>
   		<%= logo_image(event, :class => "small") %>

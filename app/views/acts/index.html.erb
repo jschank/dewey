@@ -1,7 +1,7 @@
+<% @title="Acts" %>
 <div class='boxIndex'>
-<h2>Acts</h2>
 <% histogram(@acts).each do |letter, acts| %>
-	<h3><%= letter %></h3>
+	<h2><%= letter %></h2>
 	<% acts.each do |act| %>
 		<%= link_to act_path(act), :class => "link_box" do %>
 		<%= logo_image(act, :class => "small") %>
