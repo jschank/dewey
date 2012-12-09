@@ -6,6 +6,9 @@
 		<% @schedule.schedulable.links.sort_by{|schedulable| schedulable.weblocation.popularity}.each do |link| %>
 			<%= make_link(link) %>
 		<% end %>
+		<% @schedule.links.each do |link| %>
+			<%= make_link(link) %>
+		<% end %>
 	</div>
 	<div class="infoShow">
     <%= content_tag :h5, @schedule.schedulable.name %>
@@ -24,9 +27,6 @@
 			</div>				
 		<% end %>
 
-		<% @schedule.links.each do |link| %>
-			<%= make_link(link) %>
-		<% end %>
   </div>
 		
 </div>
