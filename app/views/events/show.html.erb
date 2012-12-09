@@ -1,17 +1,18 @@
 <% @title = @event.name %>
 <div class="specificHeader">
-	<div class="infoShow">
+	<div id="side">
 		<%= logo_image(@event, :class => "large") %>
+		<%= content_tag :p, "Visit us:", :class => "visit" if @event.links.present? %>
+			<% @event.links.sort_by{|event| event.weblocation.popularity}.each do |link| %>
+				<%= make_link(link) %>
+			<% end %>
+	</div>
+	<div class="infoShow">
 		<h5><%= @event.name %></h5>
 		<div class="description" id="event_collapsable">
 			<%= textilize(@event.description) %>
 		</div>
 	</div>
-
-  <%= content_tag :p, "Visit us:", :class => "visit" if @event.links.present? %>
-	<% @event.links.sort_by{|event| event.weblocation.popularity}.each do |link| %>
-		<%= make_link(link) %>
-	<% end %>
 </div>
 
 <%= render_list(@in_progress, "inprogress", "Happening Now for #{@event.name}", 'shared/schedule_item') %>

@@ -1,7 +1,13 @@
 <% @title = @act.name %>
 <div class="specificHeader">
-	<div class="infoShow">
+	<div id="side">
 		<%= logo_image(@act, :class => "large") %>
+		<%= content_tag :p, "Visit us:", :class => "visit" if @act.links.present? %>
+			<% @act.links.sort_by{|act| act.weblocation.popularity}.each do |link| %>
+				<%= make_link(link) %>
+			<% end %>
+	</div>
+	<div class="infoShow">
 		<%= content_tag :h5, @act.name %>	
 		<%= display_hometown(@act) %>
 		<div class="description" id="act_collapsable">
@@ -9,10 +15,6 @@
 		</div>
 	</div>
 
-  <%= content_tag :p, "Visit us:", :class => "visit" if @act.links.present? %>
-	<% @act.links.sort_by{|act| act.weblocation.popularity}.each do |link| %>
-		<%= make_link(link) %>
-	<% end %>
 </div>	
 
 <%= content_tag :h2, "Related Acts" if @act.related.present? %>

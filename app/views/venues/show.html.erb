@@ -1,7 +1,13 @@
 <% @title = @venue.name %>
 <div class="specificHeader">
-	<div class="infoShow">
+	<div id="side">
 		<%= logo_image(@venue, :class => "large") %>
+		<%= content_tag :p, "Visit us:", :class => "visit" if @venue.links.present? %>
+		<% @venue.links.sort_by{|venue| venue.weblocation.popularity}.each do |link| %>
+			<%= make_link(link) %>
+		<% end %>
+	</div>
+	<div class="infoShow">
     <h5><%= @venue.name %></h5>
 		<% if @venue.address1.present? %>	
 	    <p><%= @venue.address1 %><br/>
@@ -18,10 +24,6 @@
 		</div>		
 	</div>
 
-  <%= content_tag :p, "Visit us:", :class => "visit" if @venue.links.present? %>
-	<% @venue.links.sort_by{|venue| venue.weblocation.popularity}.each do |link| %>
-		<%= make_link(link) %>
-	<% end %>
 </div>
 
 <%= render_list(@in_progress, "inprogress", "Happening Now at #{@venue.name}", 'venues/schedule_item') %>

@@ -8,7 +8,7 @@
 
 body   
 {
-  margin: 0;
+	margin: 0;
 	background: #ccc;
 }
 
@@ -25,43 +25,41 @@ body
 
 /*Header Tags*/
 
+h1, h2, h3, h4	{
+	white-space: nowrap;  
+	overflow: hidden;
+  	text-overflow: ellipsis;
+	border-bottom: 1px solid #949494;
+	margin: 0;
+}
+
 h1 
 {
-	color: #fff;
-	background: url(<%= asset_path 'h1-bg.png' %>) repeat-x left top;
 	font: bold 15pt Georgia, "Times New Roman", Times, serif;
 	letter-spacing: .1em;
+	text-shadow: 0 1px #000;
 	text-align: center;
-	margin: 0;
-	padding: 12px 75px 0 83px;
 	height: 32px;
-	overflow: hidden;
-	white-space: nowrap;  
-	text-shadow: 0 -1px #888;
-  text-overflow: ellipsis;
+	padding: 12px 75px 0 83px;
+	color: #fff;
+	background-color: #2e4b89;
+	background: -webkit-linear-gradient(top, #6d84b6, #2e4b89);
 }
 
 h2
 {
-	border-bottom: 1px solid #949494;
-	background-color: #007790;
-	/*background: url(<%= asset_path 'h2-bg.png' %>) repeat-x left top;*/
-	margin: 0;
-	padding: 3px 0 0 5px;
 	font: bold 12pt Helvetica, sans-serif;
-	color: #fff;
-	text-align: left;
 	text-shadow: 0 1px #000;
-	height: 19px;
-	overflow: hidden;
-	white-space: nowrap;
-  text-overflow: ellipsis;
+	text-align: left;
+	height: 20px;
+	padding: 3px 0 0 5px;
+	color: #fff;
+	background-color: #007790;
 }
 
 .inprogress h2
 {
 	background-color: #a12f35;
-	/*background: url(<%= asset_path 'h2-inprogress-bg.png' %>) repeat-x left top;*/
 }
 .inprogress
 {
@@ -69,36 +67,24 @@ h2
 }
 
 h3	{
-	border-bottom: 1px solid #949494;
-	color: #000;
 	font: bold 12pt Helvetica, sans-serif;
-	margin: 0 0 0 0;
-	padding: 2px 0 0 5px;
-	text-align: left;
-	background-color: #92cbdb;
-	/*background: url(<%= asset_path 'h3-bg.png' %>) repeat-x left top;*/
-	height: 20px;
 	text-shadow: 0 1px 2px #fff;
-	overflow: hidden;
-	white-space: nowrap;
-    text-overflow: ellipsis;
+	text-align: left;
+	height: 20px;
+	padding: 2px 0 0 5px;
+	color: #000;
+	background-color: #92cbdb;
 }
 
 h4
 {
-	background-color: #608641;
-	border-bottom: 1px solid #949494;
-	color: #000;
 	font: bold 12pt Helvetica, sans-serif;
-	margin: 0 0 0 0;
-	padding: 2px 0 0 5px;
+	text-shadow: 0 1px 2px #000;
 	text-align: left;
-	/*background: url(<%= asset_path 'h3-bg.png' %>) repeat-x left top;*/
 	height: 20px;
-	text-shadow: 0 1px 2px #fff;
-	overflow: hidden;
-	white-space: nowrap;
-    text-overflow: ellipsis;
+	padding: 2px 0 0 5px;
+	color: #fff;
+	background-color: #608641;
 }
 
 h5
@@ -115,7 +101,7 @@ h5.oneline
 	height: 15pt;
 	overflow: hidden;
 	white-space: nowrap;
-  text-overflow: ellipsis;
+  	text-overflow: ellipsis;
 }
 
 .info
@@ -124,9 +110,14 @@ h5.oneline
 	width: auto;
 }
 
+#side	{
+	float: left;
+	width: 106px;
+}
+
 .infoShow
 {
-	padding: 0;
+	padding: 0 0 0 106px;
 	width: auto;
 }
 
@@ -257,7 +248,7 @@ p
 }
 
 .specificHeader	{
-	margin: 0 0 0 0;
+	margin: 0;
 	padding: 3px 3px 3px 3px;
 	text-align: left;
 	background: #eee;
@@ -269,8 +260,8 @@ p
 {
 	display: block;
 	float: left;
-	height: 32px;
-	margin: 3px 7px 0 0;
+	height: 30px;
+	margin: 5px 5px 0 0;
 }
 
 .copyright

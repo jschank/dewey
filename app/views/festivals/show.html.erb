@@ -1,17 +1,19 @@
 <% @title = @festival.name %>
 <div class="specificHeader">
-	<div class="infoShow">
+	<div id="side">
 		<%= logo_image(@festival, :class => "large") %>
+		<%= content_tag :p, "Visit us:", :class => "visit" if @festival.links.present? %>
+			<% @festival.links.sort_by{|festival| festival.weblocation.popularity}.each do |link| %>
+				<%= make_link(link) %>
+			<% end %>
+	</div>
+	<div class="infoShow">
 		<h5><%= @festival.name %></h5>
     <pp class="dates"><%= festival_dates(@festival) %></p>
 		<div class="description" id="event_collapsable">
 			<%= textilize(@festival.description) %>
 		</div>
 	</div>
-  <%= content_tag :p, "Visit us:", :class => "visit" if @festival.links.present? %>
-	<% @festival.links.sort_by{|festival| festival.weblocation.popularity}.each do |link| %>
-		<%= make_link(link) %>
-	<% end %>
 </div>
 
 <div id="sortBy">

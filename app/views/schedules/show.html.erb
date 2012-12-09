@@ -1,7 +1,13 @@
 <% @title = @schedule.schedulable.name %>
 <div class="specificHeader">
-	<div class="infoShow">
+	<div id="side">
 		<%= logo_image(@schedule.schedulable, :class => "large") %>
+		<%= content_tag :p, "Links for #{@schedule.schedulable.name}:", :class => "visit" if @schedule.schedulable.links.present? %>
+		<% @schedule.schedulable.links.sort_by{|schedulable| schedulable.weblocation.popularity}.each do |link| %>
+			<%= make_link(link) %>
+		<% end %>
+	</div>
+	<div class="infoShow">
     <%= content_tag :h5, @schedule.schedulable.name %>
     <%= content_tag :p,  @schedule.schedulable.hometown,   :class => "hometown" if @schedule.festival_id.present? %>
     <%= content_tag :p,  @schedule.festival.name,          :class => "festival" if @schedule.festival_id.present? %>
@@ -23,10 +29,6 @@
 		<% end %>
   </div>
 		
-  <%= content_tag :p, "Links for #{@schedule.schedulable.name}:", :class => "visit" if @schedule.schedulable.links.present? %>
-	<% @schedule.schedulable.links.sort_by{|schedulable| schedulable.weblocation.popularity}.each do |link| %>
-		<%= make_link(link) %>
-	<% end %>
 </div>
 
 <% if @schedule.festival.present? %>
