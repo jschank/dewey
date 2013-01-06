@@ -1,1 +1,11 @@
-$("#paginated_upcoming").append("<div class='sausage_page'><%= escape_javascript(render_list(@upcoming, "upcoming", nil, 'shared/schedule_item') ) %></div>");
+function resizeRolodex(height, width) {
+  var viewportWidth = $(window).width();
+  var viewportHeight = $(window).height();
+  
+  alert("Setting height to " + viewportHeight);
+  // $("#rolodex").height(viewportHeight);
+}
+
+$().ready(resizeRolodex);
+$(window).resize(resizeRolodex);
+

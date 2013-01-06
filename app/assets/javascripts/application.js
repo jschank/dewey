@@ -41,3 +41,19 @@ function populate_schedulables(chooser)
 
 (function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone");
 
+function resizeRolodex() {
+  var viewportHeight = $(window).height();
+  if (viewportHeight < 900)
+  {
+    $("#rolodex").hide();    
+  }
+  else
+  {
+    $("#rolodex").height(viewportHeight-100);
+    $("#rolodex").show();    
+  }
+}
+
+$().ready(resizeRolodex);
+$(window).resize(resizeRolodex);
+
