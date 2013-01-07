@@ -49,7 +49,7 @@ function resizeRolodex() {
   }
   else
   {
-    $("#rolodex").height(viewportHeight-132);
+    $("#rolodex").height(viewportHeight-100);
     $("#rolodex").show();    
   }
 }
