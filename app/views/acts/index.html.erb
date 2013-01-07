@@ -12,6 +12,7 @@
 <% end %>
 </div>
 <div id='rolodex'>
+  <a href="#" style="visibility: hidden;">0</a>
   <% histogram.each do |letter, acts| %>
   <%= content_tag :a, letter, :href=>"#"+letter %>
   <% end %>

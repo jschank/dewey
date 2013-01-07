@@ -43,13 +43,13 @@ function populate_schedulables(chooser)
 
 function resizeRolodex() {
   var viewportHeight = $(window).height();
-  if (viewportHeight < 900)
+  if (viewportHeight < 480)
   {
     $("#rolodex").hide();    
   }
   else
   {
-    $("#rolodex").height(viewportHeight-100);
+    $("#rolodex").height(viewportHeight-132);
     $("#rolodex").show();    
   }
 }
