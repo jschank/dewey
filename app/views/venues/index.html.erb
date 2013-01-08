@@ -1,6 +1,6 @@
 <% @title = "Venues" %>
 <% @venues.group_by{ |v| sortable_name(v.name).chars.first }.each do |letter, venues| %>
-	<h2><%= letter %></h2>
+	<h2 id="<%= letter %>"><%= letter %></h2>
 	<% venues.each do |venue| %>
 		<%= link_to venue_path(venue), :class => "link_box" do %>
   		<%= logo_image(venue, :class => "small") %>
