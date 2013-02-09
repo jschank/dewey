@@ -18,7 +18,7 @@
           return; 
       loading=true;
       $("#paginate_loading").show();
-      $(".pagination").hide();
+      $("nav.pagination").hide();
       page++;
       $.ajax({
         url: '/schedules?page=' + page,
