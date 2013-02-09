@@ -21,7 +21,7 @@
       $("nav.pagination").hide();
       page++;
       $.ajax({
-        url: '/schedules?page=' + page,
+        url: '/schedules/page/' + page,
         type: 'get',
         dataType: 'script',
         success: function() {

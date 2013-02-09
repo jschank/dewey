@@ -9,3 +9,4 @@ function resizeRolodex(height, width) {
 $().ready(resizeRolodex);
 $(window).resize(resizeRolodex);
 
+$("#paginated_upcoming").append("<div class='sausage_page'><%= escape_javascript(render_list(@upcoming, "upcoming", nil, 'shared/schedule_item') ) %></div>");

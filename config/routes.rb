@@ -7,7 +7,9 @@ Dewey::Application.routes.draw do
   resources :acts
   resources :events
   resources :festivals
-  resources :schedules
+  resources :schedules do
+      get 'page/:page', :action => :index, :on => :collection
+    end
   resources :venues
   
   namespace :admin do
