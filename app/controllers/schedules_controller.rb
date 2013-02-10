@@ -1,11 +1,15 @@
 class SchedulesController < ApplicationController
 
+  # should refactor this into a config file.
+  PAGINATION_THRESHOLD = 20
+
   # GET /schedules
   # GET /schedules.json
   def index
     parents_grouped_by_dates = Schedule.includes(:schedulable, :children, :festival, :details, :location => [:venue] ).all_parents.upcoming(current_time).group_by{|sched| sched.start.to_date}
     dates = parents_grouped_by_dates.keys.sort
-    @dates = Kaminari.paginate_array(dates).page(params[:page]).per(4)
+    page, per = (dates.count < PAGINATION_THRESHOLD) ? [1, nil] : [params[:page], 4]
+    @dates = Kaminari.paginate_array(dates).page(page).per(per)
     @upcoming = @dates.reduce([]){ |arr, date| arr += parents_grouped_by_dates[date] }
         
     respond_to do |format|
