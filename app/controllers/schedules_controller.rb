@@ -6,9 +6,10 @@ class SchedulesController < ApplicationController
   # GET /schedules
   # GET /schedules.json
   def index
-    parents_grouped_by_dates = Schedule.includes(:schedulable, :children, :festival, :details, :location => [:venue] ).all_parents.upcoming(current_time).group_by{|sched| sched.start.to_date}
+    all_parents_upcoming = Schedule.includes(:schedulable, :children, :festival, :details, :location => [:venue] ).all_parents.upcoming(current_time)
+    parents_grouped_by_dates = all_parents_upcoming.group_by{|sched| sched.start.to_date}
+    page, per = (all_parents_upcoming.count < PAGINATION_THRESHOLD) ? [1, nil] : [params[:page], 4]
     dates = parents_grouped_by_dates.keys.sort
-    page, per = (dates.count < PAGINATION_THRESHOLD) ? [1, nil] : [params[:page], 4]
     @dates = Kaminari.paginate_array(dates).page(page).per(per)
     @upcoming = @dates.reduce([]){ |arr, date| arr += parents_grouped_by_dates[date] }
         
