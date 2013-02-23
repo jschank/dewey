@@ -8,7 +8,7 @@ class SchedulesController < ApplicationController
   def index
     all_parents_upcoming = Schedule.includes(:schedulable, :children, :festival, :details, :location => [:venue] ).all_parents.upcoming(current_time)
     parents_grouped_by_dates = all_parents_upcoming.group_by{|sched| sched.start.to_date}
-    page, per = (all_parents_upcoming.count < PAGINATION_THRESHOLD) ? [1, nil] : [params[:page], 4]
+    page, per = (all_parents_upcoming.count < PAGINATION_THRESHOLD) ? [1, nil] : [params[:page], 8]
     dates = parents_grouped_by_dates.keys.sort
     @dates = Kaminari.paginate_array(dates).page(page).per(per)
     @upcoming = @dates.reduce([]){ |arr, date| arr += parents_grouped_by_dates[date] }
