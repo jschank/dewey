@@ -1,3 +1,7 @@
+Questions to ask smart people
+How does the asset pipeline work. And should I have nothing in my public directory under the assumption that the asset pipeline pre-compile will put what it needs in there.
+Do I use asset_path or image_path and what is the difference as it relates to the asset pipeline
+
 Problems
 Next Meeting:
 
