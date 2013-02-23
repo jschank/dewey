@@ -1,16 +1,17 @@
 <% @title = "Events" %>
-<% @events.group_by{ |e| e.name.chars.first }.each do |letter, events| %>
+<% histogram = histogram(@events) %>
+<% histogram.each do |letter, events| %>
 	<h2 id="<%= letter %>"><%= letter %></h2>
 	<% events.each do |event| %>
 		<%= link_to event_path(event), :class => "link_box" do %>
-  		<%= logo_image(event, :class => "small") %>
-  		<h5 class="oneline"><%= event.name %></h5>
+		<%= logo_image(event, :class => "small") %>
+			<h5 class="oneline"><%= event.name %></h5>
 		<% end %>
 	<% end %>
 <% end %>
 <div id='rolodex'>
   <a href="#" style="visibility: hidden;">0</a>
-  <% @events.group_by{ |e| e.name.chars.first }.each do |letter, events| %>
+  <% histogram.each do |letter, acts| %>
   <%= content_tag :a, letter, :href=>"#"+letter %>
   <% end %>
 </div>
