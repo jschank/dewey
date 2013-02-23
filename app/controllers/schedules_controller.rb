@@ -2,6 +2,8 @@ class SchedulesController < ApplicationController
 
   # should refactor this into a config file.
   PAGINATION_THRESHOLD = 20
+  MOBILE_PAGE_SIZE = 7
+  BROWSER_PAGE_SIZE = 14
 
   # GET /schedules
   # GET /schedules.json
@@ -9,7 +11,8 @@ class SchedulesController < ApplicationController
     all_parents_upcoming = Schedule.includes(:schedulable, :children, :festival, :details, :location => [:venue] ).all_parents.upcoming(current_time)
     parents_grouped_by_dates = all_parents_upcoming.group_by{|sched| sched.start.to_date}
     
-    page, per = (all_parents_upcoming.count < PAGINATION_THRESHOLD) ? [1, nil] : [params[:page], 14]
+    page_size = (request.user_agent =~ /[M|m]obile/) ? MOBILE_PAGE_SIZE : BROWSER_PAGE_SIZE  
+    page, per = (all_parents_upcoming.count < PAGINATION_THRESHOLD) ? [1, nil] : [params[:page], page_size]
     dates = parents_grouped_by_dates.keys.sort
     @dates = Kaminari.paginate_array(dates).page(page).per(per)
     @upcoming = @dates.reduce([]){ |arr, date| arr += parents_grouped_by_dates[date] }
