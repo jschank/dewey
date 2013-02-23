@@ -23,6 +23,7 @@ class Schedule < ActiveRecord::Base
   scope :at_venue, lambda { |venue| scoped( :conditions => { :location_id => venue.locations} ).order( :start )  }
   scope :at_festival, lambda { |festival| scoped( :conditions => { :festival_id => festival} ).order( :start )  }
   scope :of_schedulable, lambda { |schedulable| scoped( :conditions => { :schedulable_id => schedulable.id, :schedulable_type => schedulable.class.name } ).order( :start ).reject{ |i| i == schedulable } }
+  scope :of_type, lambda { |type| scoped( :conditions => { :schedulable_type => type } ).order( :start )}
     
   def is_parent?
     parent_id == nil

@@ -3,7 +3,7 @@ class ActsController < ApplicationController
   # GET /acts
   # GET /acts.json
   def index
-    @acts = Act.all
+    @acts = Schedule.upcoming(current_time - 6.months).of_type(Act).map{|item| item.schedulable}.uniq
 
     respond_to do |format|
       format.html 
