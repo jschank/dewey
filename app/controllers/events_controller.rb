@@ -3,7 +3,8 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    # @events = Event.all
+    @events = Schedule.upcoming(current_time - 6.months).of_type(Event).map{|item| item.schedulable}.uniq
 
     respond_to do |format|
       format.html 
