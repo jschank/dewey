@@ -35,6 +35,8 @@ icon.png: icon-9831b459d742bfd8367069540bed0f1d.png
 icon/index.png: icon-9831b459d742bfd8367069540bed0f1d.png
 loading-bg.png: loading-bg-be7ae41106437f75e8bf267f83d681fa.png
 loading-bg/index.png: loading-bg-be7ae41106437f75e8bf267f83d681fa.png
+loading-small.gif: loading-small-a57d026a8154fb739fec1ad0946a89bf.gif
+loading-small/index.gif: loading-small-a57d026a8154fb739fec1ad0946a89bf.gif
 loading.gif: loading-883b3524c2ab3f5abc041a21c1b2ea78.gif
 loading/index.gif: loading-883b3524c2ab3f5abc041a21c1b2ea78.gif
 search-bg.png: search-bg-15fe7bc2cdd3199abb56b897d7c3c39a.png
@@ -49,7 +51,7 @@ tabbar-bg.png: tabbar-bg-8caeebafaa04bc68c1b6a0f92d6538e1.png
 tabbar-bg/index.png: tabbar-bg-8caeebafaa04bc68c1b6a0f92d6538e1.png
 tabbar.png: tabbar-ff707ade2d25a7314219724c764758d6.png
 tabbar/index.png: tabbar-ff707ade2d25a7314219724c764758d6.png
-application.js: application-aeb302ed7dc84844c49cee17f7d5cb96.js
-application/index.js: application-aeb302ed7dc84844c49cee17f7d5cb96.js
-application.css: application-3404302582cd25b39e74e978e7c636a7.css
-application/index.css: application-3404302582cd25b39e74e978e7c636a7.css
+application.js: application-5a7453e9a6747ea60ccadd361d70c9f4.js
+application/index.js: application-5a7453e9a6747ea60ccadd361d70c9f4.js
+application.css: application-596cf0984f73ed110ef28416e7d57e7f.css
+application/index.css: application-596cf0984f73ed110ef28416e7d57e7f.css
