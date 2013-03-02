@@ -47,6 +47,11 @@
 	<%= f.datetime_select :end, :id => 'end_select', :include_blank => true  %> <%= submit_tag "Copy Start", :type => 'button', :id => 'copy_start' %> <%= submit_tag "Clear", :type => 'button', :id => 'clear_end' %>
  </div>
 
+ <div class="field">
+	<%= f.label :display_time %>
+	<%= f.check_box :display_time %>
+ </div>
+
   <%= f.hidden_field :parent_id %>
 
 	<div class="form_addition">

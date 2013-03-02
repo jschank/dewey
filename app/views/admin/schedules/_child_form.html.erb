@@ -40,6 +40,12 @@
 	<%= f.label :end %><br />
 	<%= f.datetime_select :end, :id => 'end_select', :include_blank => true  %> <%= submit_tag "Clear", :type => 'button', :id => 'clear_end' %> <%= submit_tag "Pull from Parent", :type => 'button', :id => 'parent_end' %>
  </div>
+
+ <div class="field">
+	<%= f.label :display_time %>
+	<%= f.check_box :display_time %>
+ </div>
+ <br />
 	
  <div class="field">
 	<%= f.label :order %><br />

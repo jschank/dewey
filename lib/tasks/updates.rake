@@ -17,7 +17,7 @@ namespace :update do
         sched.start = parent_start
         sched.end = parent_end unless child_end.present?
         sched.display_time = false
-        sched.update!
+        sched.save!
         puts "\tsetting start time to #{sched.start}"
         puts "\tsetting end time to #{sched.end}" unless child_end.present?
         puts "\tsetting display time to #{sched.display_time}"

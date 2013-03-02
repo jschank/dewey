@@ -79,6 +79,7 @@ module ApplicationHelper
 
   def times(schedulable)
     return "" unless schedulable
+    return "" unless schedulable.display_time
     times_array = []
     times_array << time_format(schedulable.start).chop if schedulable.start.present?
     times_array << time_format(schedulable.end).chop if schedulable.end.present?
