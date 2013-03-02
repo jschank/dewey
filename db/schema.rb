@@ -119,7 +119,7 @@ ActiveRecord::Schema.define(:version => 20130302182405) do
     t.datetime "updated_at"
     t.integer  "order",            :default => 1000
     t.integer  "festival_id"
-    t.boolean  "DisplayTime",      :default => true
+    t.boolean  "display_time",     :default => true
   end
 
   create_table "users", :force => true do |t|

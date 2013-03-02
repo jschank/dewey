@@ -1,5 +1,5 @@
 class AddDisplayTimeToSchedule < ActiveRecord::Migration
   def change
-    add_column :schedules, :DisplayTime, :boolean, :default => true
+    add_column :schedules, :display_time, :boolean, :default => true
   end
 end
