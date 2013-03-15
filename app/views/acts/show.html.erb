@@ -21,7 +21,7 @@
 <% @act.related.sort_by{ |a| sortable_name(a.name) }.each do |related_act| %>
 	<%= link_to act_path(related_act), :class => "link_box" do %>
 		<%= logo_image(related_act, :class => "small") %>
-			<h4 class="oneline"><%= related_act.name %></h4>	
+			<h5 class="oneline"><%= related_act.name %></h5>	
 	<% end %>
 <% end %>
 
