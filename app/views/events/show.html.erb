@@ -17,4 +17,4 @@
 
 <%= render_list(@in_progress, "inprogress", "Happening Now for #{@event.name}", 'shared/schedule_item') %>
 
-<%= render_list(@upcoming, "upcoming", "Upcoming for #{@event.name}", 'shared/schedule_item') %>
+<%= render_list(@upcoming, "upcoming", "Upcoming for #{@event.name} (#{pluralize(@upcoming.count, 'show')})", 'shared/schedule_item') %>

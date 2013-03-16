@@ -28,4 +28,4 @@
 
 <%= render_list(@in_progress, "inprogress", "Happening Now at #{@venue.name}", 'venues/schedule_item') %>
 
-<%= render_list(@upcoming, "upcoming", "Upcoming at #{@venue.name}", 'venues/schedule_item') %>
+<%= render_list(@upcoming, "upcoming", "Upcoming at #{@venue.name} (#{pluralize(@upcoming.count, 'show')})", 'venues/schedule_item') %>
