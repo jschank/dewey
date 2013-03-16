@@ -42,6 +42,16 @@
 <p class="copyright">&copy; 2012 Awkward Fist Bump Software</p>
 
 <div id="tabbarbg">
+  <% if user_signed_in? %>
+	<div id="tabbarAdmin">
+		<%= link_to("Admin", admin_schedules_path, {:class => admin_page_class('public')}) %>
+		<%= link_to("Schedule", schedules_path, {:class => page_class('schedules')}) %>
+		<%= link_to("Acts", acts_path, {:class => page_class('acts')}) %>
+		<%= link_to("Events", events_path, {:class => page_class('events')}) %>
+		<%= link_to("Venues", venues_path, {:class => page_class('venues')}) %>
+		<%= link_to("Festivals", festivals_path, {:class => page_class('festivals')}) %>
+	</div>
+  <% else %>
 	<div id="tabbar">
 		<%= link_to("Schedule", schedules_path, {:class => page_class('schedules')}) %>
 		<%= link_to("Acts", acts_path, {:class => page_class('acts')}) %>
@@ -49,6 +59,7 @@
 		<%= link_to("Venues", venues_path, {:class => page_class('venues')}) %>
 		<%= link_to("Festivals", festivals_path, {:class => page_class('festivals')}) %>
 	</div>
+  <% end %>
 </div>
 
 </body>
