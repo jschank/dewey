@@ -9,6 +9,7 @@
 	</div>
 	<div class="infoShow">
 		<%= content_tag :h5, @act.name %>	
+		<%= display_formerly(@act) %>
 		<%= display_hometown(@act) %>
 		<div class="description" id="act_collapsable">
 			<%= textilize(@act.description) %>
