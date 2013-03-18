@@ -15,6 +15,7 @@
 
 <h1>iDewIt Admin</h1>
 <a href="javascript:history.back();"><img src="<%= asset_path 'back-button.png' %>" style="position: absolute; top: 7px; left: 10px; border: none;"></a>
+<a href="/schedules/"><img src="<%= asset_path 'public-button.png' %>" style="position: absolute; top: 7px; right: 10px; border: none;"></a>
 
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
@@ -24,14 +25,16 @@
 <div id="footnotes_holder"></div>
 
 <p class="copyright">&copy; 2012 Awkward Fist Bump Software</p>
+
+
 <div id="tabbarbg">
 	<div id="tabbarAdmin">
-		<%= link_to("Public", schedules_path, {:class => admin_page_class('public')}) %>
 		<%= link_to("Schedule", admin_schedules_path, {:class => admin_page_class('schedules')}) %>
 		<%= link_to("Acts", admin_acts_path, {:class => admin_page_class('acts')}) %>
 		<%= link_to("Events", admin_events_path, {:class => admin_page_class('events')}) %>
 		<%= link_to("Venues", admin_venues_path, {:class => admin_page_class('venues')}) %>
 		<%= link_to("Festivals", admin_festivals_path, {:class => admin_page_class('festivals')}) %>
+		<%= link_to("Weblocations", admin_weblocations_path, {:class => admin_page_class('weblocations')}) %>
 	</div>
 </div>
 
