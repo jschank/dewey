@@ -16,6 +16,7 @@ class FestivalsController < ApplicationController
   def show
     @festival = Festival.find(params[:id])
     @upcoming = Schedule.at_festival(@festival).map{ |i| i.get_ultimate_parent }.uniq
+    @upcoming.each { |u| puts u.schedulable.name.inspect }
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @festival }

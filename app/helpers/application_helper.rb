@@ -46,7 +46,7 @@ module ApplicationHelper
     organize_by = params[:organize] || "bydate"
     case organize_by
     when "byact"
-      organized_list = list.group_by{|i| sortable_name(i.schedulable.name[0])}
+      organized_list = list.group_by{|i| sortable_name(i.schedulable.name)[0]}
       organized_list.each { |k, v| organized_list[k] = v.sort_by{ |i| [sortable_name(i.schedulable.name), i.start] } }
     when "byvenue"
       organized_list = list.group_by{|i| sortable_name(i.location.venue.name)}
