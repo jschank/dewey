@@ -3,8 +3,8 @@
 <% histogram.each do |letter, venues| %>
 	<h2 id="<%= letter %>"><%= letter %></h2>
 	<% venues.each do |venue| %>
-		<%= link_to venue_path(venue), :class => "link_box" do %>
-		<%= logo_image(venue, :class => "small") %>
+		<%= link_to venue_path(venue), :class => "list_box" do %>
+		<%= logo_image(venue, :class => "list") %>
 			<h5 class="oneline"><%= venue.name %></h5>
 		<% end %>
 	<% end %>

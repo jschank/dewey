@@ -4,8 +4,8 @@
 <% histogram.each do |letter, acts| %>
 	<h2 id="<%= letter %>"><%= letter %></h2>
 	<% acts.each do |act| %>
-		<%= link_to act_path(act), :class => "link_box" do %>
-		<%= logo_image(act, :class => "small") %>
+		<%= link_to act_path(act), :class => "list_box" do %>
+		<%= logo_image(act, :class => "list") %>
 			<h5 class="oneline"><%= act.name %> <% if act.formerly.present? %><em class="formerly"> - Formerly: <%= act.formerly %></em><%end%></h5>
 		<% end %>
 	<% end %>
