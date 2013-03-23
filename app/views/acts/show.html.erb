@@ -20,8 +20,8 @@
 
 <%= content_tag :h2, "Related Acts" if @act.related.present? %>
 <% @act.related.sort_by{ |a| sortable_name(a.name) }.each do |related_act| %>
-	<%= link_to act_path(related_act), :class => "link_box" do %>
-		<%= logo_image(related_act, :class => "small") %>
+	<%= link_to act_path(related_act), :class => "list_box" do %>
+		<%= logo_image(related_act, :class => "list") %>
 			<h5 class="oneline"><%= related_act.name %></h5>	
 	<% end %>
 <% end %>

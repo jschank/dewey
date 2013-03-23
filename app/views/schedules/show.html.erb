@@ -33,24 +33,24 @@
 
 <% if @schedule.festival.present? %>
 	<h2>Festival</h2>
-		<%= link_to festival_path(@schedule.festival), :class => "link_box" do %>
-		<%= logo_image(@schedule.festival, :class => "small") %>
+		<%= link_to festival_path(@schedule.festival), :class => "list_box" do %>
+		<%= logo_image(@schedule.festival, :class => "list") %>
 		<h5 class="oneline"><%= @schedule.festival.name %></h5>	
 	<% end %>
 <% end %>
 
 <% if @schedule.location.present? %>
 	<h2>Venue</h2>
-		<%= link_to venue_path(@schedule.location.venue), :class => "link_box" do %>
-		<%= logo_image(@schedule.location.venue, :class => "small") %>
+		<%= link_to venue_path(@schedule.location.venue), :class => "list_box" do %>
+		<%= logo_image(@schedule.location.venue, :class => "list") %>
 		<h5 class="oneline"><%= @schedule.location.venue.name %></h5>	
 	<% end %>
 <% end %>
 
 <%= content_tag :h2, "Acts" unless @schedule.children.empty? %>
 <% @schedule.acts.each do |act| %>
-	<%= link_to act_path(act), :class => "link_box" do %>
-  	<%= logo_image(act, :class => "small") %>
+	<%= link_to act_path(act), :class => "list_box" do %>
+  	<%= logo_image(act, :class => "list") %>
   	<h5 class="oneline"><%= act.name %></h5>	
 	<% end %>
 <% end %>
