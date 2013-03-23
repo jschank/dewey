@@ -17,9 +17,9 @@
 </div>
 
 <div id="sortBy">
-  <%= link_to "Sort By Schedule", festival_path(@festival, :organize => "bydate"),  :id => "bySchedule" %>
-  <%= link_to "Sort By Acts",     festival_path(@festival, :organize => "byact"),   :id => "byActs" %>
-  <%= link_to "Sort By Venues",   festival_path(@festival, :organize => "byvenue"), :id => "byVenues" %>
+  <%= link_to "Sort By Schedule", festival_path(@festival, :organize => "bydate"),  {:id => "bySchedule", :class => org_class('bydate') } %>
+  <%= link_to "Sort By Acts",     festival_path(@festival, :organize => "byact"),   {:id => "byActs",     :class => org_class('byact') } %>
+  <%= link_to "Sort By Venues",   festival_path(@festival, :organize => "byvenue"), {:id => "byVenues",   :class => org_class('byvenue') } %>
 </div>
 
 <%= render_list(@upcoming, "upcoming", "Schedule for #{@festival.name}", 'shared/schedule_item') %>

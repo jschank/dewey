@@ -40,10 +40,10 @@ module ApplicationHelper
   def render_list(list, css_class, title, item_partial)
     if list.present? then render :partial => 'shared/schedule_list', :locals => {:list => list, :options => {:class => css_class}, :title => title, :item_partial => item_partial} end
   end
-  
+    
   def organize_list(list, params)
     # list is a unique list of parent schedule items
-    organize_by = params[:organize] || "bydate"
+    organize_by = params[:organize] || default_organize_by
     case organize_by
     when "byact"
       organized_list = list.group_by{|i| sortable_name(i.schedulable.name)[0]}
