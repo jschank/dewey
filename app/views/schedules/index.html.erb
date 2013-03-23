@@ -1,8 +1,10 @@
-<%= render_list(@in_progress, "inprogress", "Happening Now", 'shared/schedule_item') %>
+<div id ="happening_now">
+  <%= render_list(@in_progress, "inprogress", "Happening Now", 'shared/schedule_item') %>
+</div>
 
 <div id="paginated_upcoming">
   <div class="sausage_page">
-    <%= render_list(@upcoming, "upcoming", "Upcoming", 'shared/schedule_item') %>
+    <%= render_list(@upcoming, "upcoming", nil, 'shared/schedule_item') %>
   </div>
 </div>
 
