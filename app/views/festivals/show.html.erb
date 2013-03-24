@@ -16,11 +16,14 @@
 	</div>
 </div>
 
-<div id="sortBy">
-  <%= link_to "Sort By Schedule", festival_path(@festival, :organize => "bydate"),  {:id => "bySchedule", :class => org_class('bydate') } %>
-  <%= link_to "Sort By Acts",     festival_path(@festival, :organize => "byact"),   {:id => "byActs",     :class => org_class('byact') } %>
-  <%= link_to "Sort By Venues",   festival_path(@festival, :organize => "byvenue"), {:id => "byVenues",   :class => org_class('byvenue') } %>
-</div>
+<table id="sortBy">
+	<tr>
+		<td><%= link_to "Sort By Schedule", festival_path(@festival, :organize => "bydate"),  {:id => "bySchedule", :class => org_class('bydate') } %></td>
+		<td><%= link_to "Sort By Acts",     festival_path(@festival, :organize => "byact"),   {:id => "byActs",     :class => org_class('byact') } %></td>
+		<td><%= link_to "Sort By Venues",   festival_path(@festival, :organize => "byvenue"), {:id => "byVenues",   :class => org_class('byvenue') } %></td>
+	</tr>
+</table>
+
 
 <%= render_list(@upcoming, "upcoming", "Schedule for #{@festival.name}", 'shared/schedule_item') %>
 

@@ -360,35 +360,58 @@ tr.child	{
 }
 
 #sortBy	{
-	background-color: #eee;
 	width: 100%;
 	height: 44px;
-	border-bottom: 2px solid #6f7b94;
+	margin: 0;
+	padding: 0;
+	border: 0px;
 }
 
 #sortBy #bySchedule, #sortBy #byActs, #sortBy #byVenues	{
 	display: block;
-	width: 33%;
 	height: 44px;
-	background-repeat: no-repeat; background-position: center center;
-	float: left;
+	background-repeat: no-repeat;
+	background-position: center center;
 	text-indent: -9999px;
-	border-top: 2px solid #a9aaad;
+	border-left: 1px solid #fff;
+	border-right: 1px solid #949494;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #949494;
+	margin: 0;
+	padding: 0;
 }
 
-#sortBy #bySchedule	{
-	background-image: url('<%= asset_path 'by-schedule.png' %>');
+#sortBy td	{
+	margin: 0;
+	padding: 0;
+	border: 0px;
+	width: 33%;
 }
 
-#sortBy #byActs	{
-	background-image: url('<%= asset_path 'by-acts.png' %>');
-	border-left: 2px solid #a9aaad; 
-	border-right: 2px solid #a9aaad;
+.bydate_off	{
+	background-image: url('<%= asset_path 'by-schedule_off.png' %>'), -webkit-linear-gradient(top, #dcdde0, #eef0ef);
 }
 
-#sortBy #byVenues	{
-	background-image: url('<%= asset_path 'by-venues.png' %>');
+.byact_off	{
+	background-image: url('<%= asset_path 'by-acts_off.png' %>'), -webkit-linear-gradient(top, #dcdde0, #eef0ef);
 }
+
+.byvenue_off	{
+	background-image: url('<%= asset_path 'by-venues_off.png' %>'), -webkit-linear-gradient(top, #dcdde0, #eef0ef);
+}
+
+.bydate_on,	{
+	background-image: url('<%= asset_path 'by-schedule_on.png' %>'), -webkit-linear-gradient(top, #b0b0b0, #d7d8da);
+}
+
+.byact_on	{
+	background-image: url('<%= asset_path 'by-acts_on.png' %>'), -webkit-linear-gradient(top, #b0b0b0, #d7d8da);
+}
+
+.byvenue_on	{
+	background-image: url('<%= asset_path 'by-venues_on.png' %>'), -webkit-linear-gradient(top, #b0b0b0, #d7d8da);
+}
+
 
 #tabbarbg	{
 	position: fixed;
