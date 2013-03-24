@@ -9,8 +9,13 @@
 	</div>
 	<div class="infoShow">
 		<%= content_tag :h5, @act.name %>	
-		<%= display_formerly(@act) %>
-		<%= display_hometown(@act) %>
+		<% if @act.formerly.present? %>
+			<p class="formerly">Formerly: <%= @act.formerly %></p>
+		<%end%>
+		<% if @act.hometown.present? %>
+			<p class="hometown">Hometown: <%= @act.hometown %></p>
+		<%end%>
+		<hr />
 		<div class="description" id="act_collapsable">
 			<%= textilize(@act.description) %>
 		</div>

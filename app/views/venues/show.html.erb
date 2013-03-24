@@ -19,6 +19,7 @@
 		<% if @venue.phone.present? %>	
 			<p>Phone: <%= @venue.phone %></p>
 		<% end %>
+		<hr />
 		<div class="description" id="venue_collapsable">
 			<%= textilize(@venue.description) %>
 		</div>		
