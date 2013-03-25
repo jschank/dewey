@@ -4,11 +4,19 @@
     <%= content_tag :h5 do %>
       <%= schedule_item.schedulable.name %><span class="times"><%= time_list([schedule_item] + Schedule.children_that_are_same_as(schedule_item)) %></span>
     <% end %>
-		<p class="hometown"><%= schedule_item.schedulable.hometown if schedule_item.festival_id.present? %></p>
 		<% schedule_item.agenda.each do | schedulable_key, schedulable_items| %>
-			<p><%= Schedule.retrieve(*schedulable_key).name %><span class="times"><%= time_list(schedulable_items) %></span></p>
+			<p class="child"><%= Schedule.retrieve(*schedulable_key).name %><span class="times"><%= time_list(schedulable_items) %></span></p>
 		<% end %>
-		<p class="festival"><%= schedule_item.festival.name if schedule_item.festival_id.present? %></p>
-		<%= content_tag :p, (schedule_item.location.display_name if schedule_item.location.display_name.present?), :class => "location" %>
+
+		<%= content_tag :p, (schedule_item.festival.name          if schedule_item.festival_id.present?),           :class => "festival" %>    
+		<%= content_tag :p, (date_and_times(schedule_item.start)  if params[:organize] == "byact"),                 :class => "date" %>
+		<%= content_tag :p, (schedule_item.location.display_name  if schedule_item.location.display_name.present?), :class => "location" %>
+
+		<% schedule_item.details.sort_by(&:order).each do |detail| %>
+			<div class="addDetails">
+				<p><strong><%= detail.name %><%= detail.description.present? ? ": " : "" %></strong><%= detail.description %></p>
+			</div>				
+		<% end %>
+    
 	</div>
 <% end %>
