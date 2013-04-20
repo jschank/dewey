@@ -97,11 +97,13 @@
 			return false;
 		});
 		$("#copy_start").click(function(){
-			$("#schedule_end_1i").val($("#schedule_start_1i").val());
-			$("#schedule_end_2i").val($("#schedule_start_2i").val());
-			$("#schedule_end_3i").val($("#schedule_start_3i").val());
-			$("#schedule_end_4i").val($("#schedule_start_4i").val());
-			$("#schedule_end_5i").val($("#schedule_start_5i").val());
+      var date = new Date($("#schedule_start_1i").val(), $("#schedule_start_2i").val()-1,  $("#schedule_start_3i").val(), 1, 0);
+      var newDate = new Date(date.getTime() + 24*60*60*1000);
+			$("#schedule_end_1i").val(newDate.getFullYear());
+			$("#schedule_end_2i").val(newDate.getMonth()+1);
+			$("#schedule_end_3i").val(newDate.getDate());
+			$("#schedule_end_4i").val("01");
+			$("#schedule_end_5i").val("00");
 			return false;
 		});
         $("select#schedule_schedulable_type").change(populate_schedulables);

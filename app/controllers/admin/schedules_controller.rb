@@ -18,6 +18,8 @@ class Admin::SchedulesController < ApplicationController
   # GET /admin/schedules/new.json
   def new
     @schedule = Schedule.new
+    current_time
+    @schedule.start = DateTime.civil(current_time.year, current_time.month, current_time.day, 21, 00, 0, "-4")    
     @weblocations = Weblocation.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @schedulables = @acts = Act.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
     @events = Event.all.sort{ |a, b| a.name.downcase <=> b.name.downcase }
