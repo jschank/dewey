@@ -16,7 +16,7 @@ class SchedulesController < ApplicationController
     dates = parents_grouped_by_dates.keys.sort
     @dates = Kaminari.paginate_array(dates).page(page).per(per)
     @upcoming = @dates.reduce([]){ |arr, date| arr += parents_grouped_by_dates[date] }
-    @in_progress = Schedule.in_progress(current_time)
+    @in_progress = Schedule.in_progress(current_time).map{ |i| i.get_ultimate_parent }.uniq.reject{ |i| i == @schedule }
             
     respond_to do |format|
       format.js { raise ActionController::RoutingError.new('Not Found') if params[:page].present? && params[:page].to_i > @dates.num_pages }
