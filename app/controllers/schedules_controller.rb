@@ -3,7 +3,7 @@ class SchedulesController < ApplicationController
   # should refactor this into a config file.
   PAGINATION_THRESHOLD = 20
   MOBILE_PAGE_SIZE = 7
-  BROWSER_PAGE_SIZE = 14
+  BROWSER_PAGE_SIZE = 1000
 
   # GET /schedules
   # GET /schedules.json
