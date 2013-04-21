@@ -4,12 +4,12 @@
 	<% end %>
 
   <% organize_list(list, params).sort.each do |key, value| %>
-    <%= content_tag :h2, (key.is_a?(Date)) ? date_and_times(key) : key %>
+    <%= content_tag :h3, (key.is_a?(Date)) ? date_and_times(key) : key %>
     <% if value.is_a?(Array) %>
       <%= render :partial => item_partial, :collection => value %>
     <% elsif value.is_a?(Hash) %>
       <% value.each do |k, v| %>
-      <%= content_tag :h2, (k.is_a?(Date))? date_and_times(k) : k %>
+      <%= content_tag :h3, (k.is_a?(Date))? date_and_times(k) : k %>
         <%= render :partial => item_partial, :collection => v %>
       <% end %>
     <% end %>
