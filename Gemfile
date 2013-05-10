@@ -37,6 +37,7 @@ group :test, :development do
   gem 'bullet'
   # gem 'squeel' Squeel causes the related acts to break with an #<NoMethodError: undefined method `downcase' for #<Arel::Table: error
   gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
+  gem 'rails-erd'
 end
 
 group :test do
