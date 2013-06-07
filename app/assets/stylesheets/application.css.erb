@@ -29,8 +29,8 @@ h1, h2, h3, h4	{
 	white-space: nowrap;  
 	overflow: hidden;
   	text-overflow: ellipsis;
-	border-top: 1px solid #fff;
-	border-bottom: 1px solid #949494;
+	border-top: 1px solid #bcbcbc;
+	border-bottom: 1px solid #bebebe;
 	margin: 0;
 }
 
@@ -44,7 +44,8 @@ h1
 	padding: 12px 75px 0 83px;
 	color: #000;
 	background-color: #f7f7f7;
-	background: -webkit-linear-gradient(top, #e0e0e0, #f7f7f7);
+	background: -webkit-linear-gradient(top, #fafafa, #efefef);
+	border-bottom: 1px solid #8a8a8a;
 }
 
 h2, h3
@@ -54,8 +55,8 @@ h2, h3
 	text-align: left;
 	height: 18px;
 	padding: 2px 0 0 4px;
-	color: #595959;
-	background-color: #c4c4c4;
+	color: #333333;
+	background-color: #d3d3d3;
 }
 
 #happening_now	{
@@ -146,15 +147,16 @@ h5.oneline
 a.link_box
 {
 	display: block;
-	border-top: 1px solid #fff;
-	border-bottom: 1px solid #949494;
+	border-top: 1px solid #fefefe;
+	border-bottom: 1px solid #e0e0e0;
 	padding: 0 30px 0 0;
 	text-decoration: none;
 	position: relative;
 	overflow: auto;
+	background-color: #fefefe;
 }
 
-a.link_box:nth-of-type(odd)
+/*a.link_box:nth-of-type(odd)
 {
 	background-color: #eaeaea;
 }
@@ -162,7 +164,7 @@ a.link_box:nth-of-type(odd)
 a.link_box:nth-of-type(even)
 {
 	background-color: #dedede;
-}
+}*/
 
 a.list_box
 {
@@ -450,7 +452,7 @@ tr.child	{
 	height: 50px;
 	background-image: url( <%= asset_path 'tabbar-bg.png' %> );
 	background-repeat: repeat-x;
-	border-top: 1px solid #949494;
+	border-top: 1px solid #919192;
 }
 
 #tabbar	{
