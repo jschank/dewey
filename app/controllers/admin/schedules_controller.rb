@@ -7,7 +7,8 @@ class Admin::SchedulesController < ApplicationController
   # GET /admin/schedules
   # GET /admin/schedules.json
   def index
-    @parents = Schedule.all_parents    
+    @parents = Schedule.all_parents.sort_by(&:start)
+    @venues = Venue.all.sort_by{ |v| v.name.upcase }    
     respond_to do |format|
       format.html 
       format.json { render :json => @parents }

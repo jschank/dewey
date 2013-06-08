@@ -1,12 +1,34 @@
 <h2>Schedule Admin - <span class="signout"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></span></h2>
- 
+<div class="options">
+<%= link_to 'New Parent Item', new_admin_schedule_path %><br />
+<ul class="venues" style="list-style-type: none;" >
+  <li>
+    <%= check_box_tag 'past', 'past', {:checked => true} -%> Past Events
+  </li>
+  <li>
+    <%= check_box_tag 'present', 'present', {:checked => true} -%> Current Events
+  </li>
+  <li>
+    <%= check_box_tag 'future', 'future', {:checked => true} -%> Future Events
+  </li>
+</ul>
+
+
+<ul class="venues" style="list-style-type: none;" >
+<% @venues.each do |venue| %>
+  <li>
+    <%= check_box_tag venue.name.to_s.parameterize.underscore, venue.name.to_s.parameterize.underscore -%>
+    <%= venue.name.to_s %>
+  </li>
+<% end %>
+</ul>
+</div>
+
 <table>
-  <tr class="child">
-    <td colspan="9"><%= link_to 'New Parent Item', new_admin_schedule_path %> <%= submit_tag "Toggle Past", :type => 'button', :id => 'past_button' %> <%= submit_tag "Toggle Present #{current_time.to_date.strftime("%m/%d/%Y")}", :type => 'button', :id => 'present_button' %> <%= submit_tag "Toggle Future", :type => 'button', :id => 'future_button' %></td>
-  </tr>
   <tr>
     <th>ID</th>
     <th>Name</th>
+    <th>Venue</th>
     <th>Start</th>
     <th>End</th>
     <th>Order</th>	  
@@ -14,9 +36,10 @@
   </tr>
  
   <% @parents.each do |parent| %>
-  <%= content_tag :tr, :class => "parent #{past_present_future(parent.start)}" do  %>
+  <%= content_tag :tr, :class => "parent #{past_present_future(parent.start)} #{parent.location.venue.name.to_s.parameterize.underscore}" do  %>
       <td><%= parent.id %></td>
       <td><%= parent.schedulable.name %></td>
+      <td><%= parent.location.form_picker_name %></td>
       <td><%= display_time(parent.start) %></td>
       <td><%= display_time(parent.end) %></td>
       <td><%= parent.order %></td>
@@ -26,9 +49,10 @@
       <td><%= link_to 'Remove', [:admin, parent], :confirm => 'Are you sure?', :method => :delete %></td>
   <% end %>
     <% parent.children.each do |child| %>
-  <%= content_tag :tr, :class => "child parent #{past_present_future(child.parent.start)}" do  %>
+  <%= content_tag :tr, :class => "child parent #{past_present_future(child.parent.start)} #{child.parent.location.venue.name.to_s.parameterize.underscore}" do  %>
         <td><%= child.id %></td>
         <td style="padding-left: 50px;"><%= child.schedulable.name %></td>
+        <td><%= child.location.form_picker_name %></td>
         <td><%= display_time(child.start) %></td>
         <td><%= display_time(child.end) %></td>
         <td><%= child.order %></td>
@@ -42,21 +66,20 @@
 </table>
 
 <script type="text/javascript">
-    $(document).ready(function(){
-		$("#past_button").click(function(){
-			$('.past').toggle();
-			return false;
-		});
-		$("#present_button").click(function(){
-			$('.present').toggle();
-			return false;
-		});
-		$("#future_button").click(function(){
-			$('.future').toggle();
-			return false;
-		});
-		$(".past").hide();
-		$(".present").hide();
+    $(document).ready(function(){    
+    $('input').each(function(idx, item){
+      $(item).click(function(){
+        if ($(this).is(":checked"))
+        {
+          $("."+item.id).show();          
+        }
+        else
+        {
+          $("."+item.id).hide();          
+        }
+      });
+    });
+    
     });
 </script>
 
